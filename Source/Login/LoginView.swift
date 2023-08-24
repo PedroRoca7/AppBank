@@ -29,11 +29,11 @@ class LoginView: UIView {
     
     lazy var emailTextFiled = TextFieldDefault(placeholder: "Digite seu Email:", keyboardType: .emailAddress)
         
-    lazy var senhaTextField = TextFieldDefault(placeholder: "Digite sua Senha:", keyboardType: .numberPad)
+    lazy var passwordTextField = TextFieldDefault(placeholder: "Digite sua Senha:", keyboardType: .numberPad)
     
     lazy var logarButton = ButtonDefault(title: "Entrar",backgroundColor: .blue)
     
-    lazy var registratButton = ButtonDefault(title: "Registrar",backgroundColor: .lightGray)
+    lazy var registerButton = ButtonDefault(title: "Registrar",backgroundColor: .lightGray)
  
     // MARK: Inits
     
@@ -90,13 +90,13 @@ class LoginView: UIView {
     }
     
     private func setSenhaTextField() {
-        self.addSubview(senhaTextField)
+        self.addSubview(passwordTextField)
         
         NSLayoutConstraint.activate([
-            senhaTextField.topAnchor.constraint(equalTo: emailTextFiled.bottomAnchor, constant: 15),
-            senhaTextField.leadingAnchor.constraint(equalTo: emailTextFiled.leadingAnchor),
-            senhaTextField.widthAnchor.constraint(equalTo: emailTextFiled.widthAnchor),
-            senhaTextField.heightAnchor.constraint(equalTo: emailTextFiled.heightAnchor)
+            passwordTextField.topAnchor.constraint(equalTo: emailTextFiled.bottomAnchor, constant: 15),
+            passwordTextField.leadingAnchor.constraint(equalTo: emailTextFiled.leadingAnchor),
+            passwordTextField.widthAnchor.constraint(equalTo: emailTextFiled.widthAnchor),
+            passwordTextField.heightAnchor.constraint(equalTo: emailTextFiled.heightAnchor)
         ])
     }
     
@@ -105,19 +105,19 @@ class LoginView: UIView {
         
         NSLayoutConstraint.activate([
             logarButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            logarButton.topAnchor.constraint(equalTo: senhaTextField.bottomAnchor, constant: 60),
+            logarButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 60),
             logarButton.widthAnchor.constraint(equalToConstant: 200)
         ])
     }
     
     private func setRegistratButton() {
-        self.addSubview(registratButton)
+        self.addSubview(registerButton)
         
         NSLayoutConstraint.activate([
-            registratButton.centerXAnchor.constraint(equalTo: logarButton.centerXAnchor),
-            registratButton.topAnchor.constraint(equalTo: logarButton.bottomAnchor, constant: 30),
-            registratButton.widthAnchor.constraint(equalToConstant: 170),
-            registratButton.bottomAnchor.constraint(lessThanOrEqualTo: self.bottomAnchor, constant: 150)
+            registerButton.centerXAnchor.constraint(equalTo: logarButton.centerXAnchor),
+            registerButton.topAnchor.constraint(equalTo: logarButton.bottomAnchor, constant: 30),
+            registerButton.widthAnchor.constraint(equalToConstant: 170),
+            registerButton.bottomAnchor.constraint(lessThanOrEqualTo: self.bottomAnchor, constant: 150)
             
         ])
     }

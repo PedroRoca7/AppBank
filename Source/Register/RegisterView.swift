@@ -34,9 +34,11 @@ class RegisterView: UIView {
     
     lazy var emailTextField = TextFieldDefault(placeholder: "Insira seu Email", keyboardType: .emailAddress)
     
-    lazy var senhaLabel = LabelDefault(text: "Senha")
+    lazy var passwordLabel = LabelDefault(text: "Senha")
     
-    lazy var senhaTextField = TextFieldDefault(placeholder: "Insira sua senha")
+    lazy var passwordTextField = TextFieldDefault(placeholder: "Insira sua senha")
+    
+    lazy var registerButton = ButtonDefault(title: "Registrar", backgroundColor: .blue)
     
     // MARK: Inits
     
@@ -60,6 +62,7 @@ class RegisterView: UIView {
         setEmailTextField()
         setSenhaLabel()
         setSenhaTextField()
+        setRegisterButton()
     }
     
     private func setBackgroundImage() {
@@ -99,7 +102,8 @@ class RegisterView: UIView {
         NSLayoutConstraint.activate([
             nameTextField.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 20),
             nameTextField.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
-            nameTextField.widthAnchor.constraint(equalToConstant: 250)
+            nameTextField.widthAnchor.constraint(equalToConstant: 250),
+            nameTextField.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
     
@@ -119,27 +123,41 @@ class RegisterView: UIView {
         NSLayoutConstraint.activate([
             emailTextField.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 20),
             emailTextField.leadingAnchor.constraint(equalTo: emailLabel.leadingAnchor),
-            emailTextField.widthAnchor.constraint(equalToConstant: 250)
+            emailTextField.widthAnchor.constraint(equalToConstant: 250),
+            emailTextField.heightAnchor.constraint(equalTo: nameTextField.heightAnchor)
         ])
     }
     
     private func setSenhaLabel() {
-        self.addSubview(senhaLabel)
+        self.addSubview(passwordLabel)
         
         NSLayoutConstraint.activate([
-            senhaLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 25),
-            senhaLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 25),
-            senhaLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 80)
+            passwordLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 25),
+            passwordLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 25),
+            passwordLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 80)
         ])
     }
     
     private func setSenhaTextField() {
-        self.addSubview(senhaTextField)
+        self.addSubview(passwordTextField)
         
         NSLayoutConstraint.activate([
-            senhaTextField.topAnchor.constraint(equalTo: senhaLabel.bottomAnchor, constant: 20),
-            senhaTextField.leadingAnchor.constraint(equalTo: senhaLabel.leadingAnchor),
-            senhaTextField.widthAnchor.constraint(equalToConstant: 250)
+            passwordTextField.topAnchor.constraint(equalTo: passwordLabel.bottomAnchor, constant: 20),
+            passwordTextField.leadingAnchor.constraint(equalTo: passwordLabel.leadingAnchor),
+            passwordTextField.widthAnchor.constraint(equalToConstant: 250),
+            passwordTextField.heightAnchor.constraint(equalTo: nameTextField.heightAnchor)
+        ])
+    }
+    
+    private func setRegisterButton() {
+        self.addSubview(registerButton)
+        
+        NSLayoutConstraint.activate([
+            registerButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            registerButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 50),
+            registerButton.widthAnchor.constraint(equalToConstant: 150),
+            registerButton.bottomAnchor.constraint(lessThanOrEqualTo: self.bottomAnchor, constant: 150)
+            
         ])
     }
 }

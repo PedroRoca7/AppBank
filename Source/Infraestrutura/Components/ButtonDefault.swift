@@ -9,6 +9,8 @@ import UIKit
 
 class ButtonDefault: UIButton {
     
+    // MARK: Inits
+    
     init(title: String, backgroundColor: UIColor) {
         super.init(frame: .zero)
         

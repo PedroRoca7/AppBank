@@ -10,7 +10,11 @@ import UIKit
 
 class LoginCoordinator: Coordinator {
     
+    // MARK: Propertys
+    
     let navigationController: UINavigationController
+    
+    // MARK: Inits
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -18,8 +22,16 @@ class LoginCoordinator: Coordinator {
     
     func start() {
         let viewController = LoginViewController()
+        
+        viewController.onRegisterTap = {
+            self.showRegister()
+        }
+        
         navigationController.pushViewController(viewController, animated: true)
     }
     
-    
+    private func showRegister() {
+        let coordinator = RegisterCoordinator(navigationController: navigationController)
+        coordinator.start()
+    }
 }

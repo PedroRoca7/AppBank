@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CBD38C4E18D9BB128F99969A /* Pods_Itubers_ItubersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6464F85739BB081BE70C4CC /* Pods_Itubers_ItubersUITests.framework */; };
 		CE1DCEF02A97004400E3CC3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCEEF2A97004400E3CC3E /* AppDelegate.swift */; };
 		CE1DCEF22A97004400E3CC3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCEF12A97004400E3CC3E /* SceneDelegate.swift */; };
 		CE1DCEF92A97004800E3CC3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1DCEF82A97004800E3CC3E /* Assets.xcassets */; };
@@ -24,6 +25,16 @@
 		CE5BA4C82A97AAB300449C0A /* ViewControllerDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BA4C72A97AAB300449C0A /* ViewControllerDefault.swift */; };
 		CE5BA4CB2A97ABC500449C0A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BA4CA2A97ABC500449C0A /* RegisterView.swift */; };
 		CE5BA4CD2A97ABD100449C0A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BA4CC2A97ABD100449C0A /* RegisterViewController.swift */; };
+		CE5BA4CF2A97B9B600449C0A /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BA4CE2A97B9B600449C0A /* RegisterCoordinator.swift */; };
+		CE5BA4D12A97E99A00449C0A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BA4D02A97E99A00449C0A /* LoginViewModel.swift */; };
+		CE5BA4D32A97EBA100449C0A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE5BA4D22A97EBA100449C0A /* GoogleService-Info.plist */; };
+		CE5BA4D62A97EC8C00449C0A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CE5BA4D52A97EC8C00449C0A /* FirebaseAuth */; };
+		CE5BA4D82A97EC8C00449C0A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CE5BA4D72A97EC8C00449C0A /* FirebaseFirestore */; };
+		CE5BA4DB2A97EE4900449C0A /* AuthenticatorFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BA4DA2A97EE4900449C0A /* AuthenticatorFirebase.swift */; };
+		CE5BA4DD2A97EF4200449C0A /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BA4DC2A97EF4200449C0A /* RegisterViewModel.swift */; };
+		CE5BA4E02A97EFB800449C0A /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BA4DF2A97EFB800449C0A /* Users.swift */; };
+		DDBC039299E602F2813EA210 /* Pods_Itubers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4AEECEB59B9C712FAE34DB /* Pods_Itubers.framework */; };
+		FD214C5F15D4E61ABDB5DF79 /* Pods_ItubersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E288E1C8F1D5F33464B21F /* Pods_ItubersTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +55,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2662D6C632BB774AB78F69FC /* Pods-Itubers-ItubersUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Itubers-ItubersUITests.release.xcconfig"; path = "Target Support Files/Pods-Itubers-ItubersUITests/Pods-Itubers-ItubersUITests.release.xcconfig"; sourceTree = "<group>"; };
+		52D5A020203C32F5216C41E2 /* Pods-Itubers-ItubersUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Itubers-ItubersUITests.debug.xcconfig"; path = "Target Support Files/Pods-Itubers-ItubersUITests/Pods-Itubers-ItubersUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		696EE36C91E2F28F42DEF894 /* Pods-Itubers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Itubers.release.xcconfig"; path = "Target Support Files/Pods-Itubers/Pods-Itubers.release.xcconfig"; sourceTree = "<group>"; };
+		97E288E1C8F1D5F33464B21F /* Pods_ItubersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ItubersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6464F85739BB081BE70C4CC /* Pods_Itubers_ItubersUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Itubers_ItubersUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B096BF502BBA353DB97C2989 /* Pods-ItubersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ItubersTests.debug.xcconfig"; path = "Target Support Files/Pods-ItubersTests/Pods-ItubersTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BA4AEECEB59B9C712FAE34DB /* Pods_Itubers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Itubers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8AC14F57A3A1BBC828B90BA /* Pods-Itubers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Itubers.debug.xcconfig"; path = "Target Support Files/Pods-Itubers/Pods-Itubers.debug.xcconfig"; sourceTree = "<group>"; };
 		CE1DCEEC2A97004400E3CC3E /* Itubers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Itubers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1DCEEF2A97004400E3CC3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE1DCEF12A97004400E3CC3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +84,13 @@
 		CE5BA4C72A97AAB300449C0A /* ViewControllerDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDefault.swift; sourceTree = "<group>"; };
 		CE5BA4CA2A97ABC500449C0A /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		CE5BA4CC2A97ABD100449C0A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		CE5BA4CE2A97B9B600449C0A /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
+		CE5BA4D02A97E99A00449C0A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		CE5BA4D22A97EBA100449C0A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE5BA4DA2A97EE4900449C0A /* AuthenticatorFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatorFirebase.swift; sourceTree = "<group>"; };
+		CE5BA4DC2A97EF4200449C0A /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		CE5BA4DF2A97EFB800449C0A /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		EAC9253E87BF947148568B74 /* Pods-ItubersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ItubersTests.release.xcconfig"; path = "Target Support Files/Pods-ItubersTests/Pods-ItubersTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +98,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDBC039299E602F2813EA210 /* Pods_Itubers.framework in Frameworks */,
+				CE5BA4D62A97EC8C00449C0A /* FirebaseAuth in Frameworks */,
+				CE5BA4D82A97EC8C00449C0A /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD214C5F15D4E61ABDB5DF79 /* Pods_ItubersTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,12 +116,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBD38C4E18D9BB128F99969A /* Pods_Itubers_ItubersUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB4C61C18CA69575C9363E76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA4AEECEB59B9C712FAE34DB /* Pods_Itubers.framework */,
+				A6464F85739BB081BE70C4CC /* Pods_Itubers_ItubersUITests.framework */,
+				97E288E1C8F1D5F33464B21F /* Pods_ItubersTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE1DCEE32A97004400E3CC3E = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +141,8 @@
 				CE1DCF052A97004900E3CC3E /* ItubersTests */,
 				CE1DCF0F2A97004900E3CC3E /* ItubersUITests */,
 				CE1DCEED2A97004400E3CC3E /* Products */,
+				D4F9E917F3E3693F45C5871C /* Pods */,
+				BB4C61C18CA69575C9363E76 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +163,7 @@
 				CE1DCEF12A97004400E3CC3E /* SceneDelegate.swift */,
 				CE1DCEF82A97004800E3CC3E /* Assets.xcassets */,
 				CE1DCEFA2A97004800E3CC3E /* LaunchScreen.storyboard */,
+				CE5BA4D22A97EBA100449C0A /* GoogleService-Info.plist */,
 				CE1DCEFD2A97004800E3CC3E /* Info.plist */,
 			);
 			path = Itubers;
@@ -148,7 +192,9 @@
 				CE1DCF222A9700B300E3CC3E /* Coordinator */,
 				CE1DCF2B2A9704A200E3CC3E /* Infraestrutura */,
 				CE1DCF212A9700AA00E3CC3E /* Login */,
+				CE5BA4DE2A97EFA600449C0A /* Model */,
 				CE5BA4C92A97ABAB00449C0A /* Register */,
+				CE5BA4D92A97EE3500449C0A /* Service */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -158,6 +204,7 @@
 			children = (
 				CE1DCF252A97012E00E3CC3E /* LoginView.swift */,
 				CE1DCF232A97012300E3CC3E /* LoginViewController.swift */,
+				CE5BA4D02A97E99A00449C0A /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -167,6 +214,7 @@
 			children = (
 				CE1DCF292A97026C00E3CC3E /* Coordinator.swift */,
 				CE1DCF272A97013A00E3CC3E /* LoginCoordinator.swift */,
+				CE5BA4CE2A97B9B600449C0A /* RegisterCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -195,8 +243,38 @@
 			children = (
 				CE5BA4CA2A97ABC500449C0A /* RegisterView.swift */,
 				CE5BA4CC2A97ABD100449C0A /* RegisterViewController.swift */,
+				CE5BA4DC2A97EF4200449C0A /* RegisterViewModel.swift */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		CE5BA4D92A97EE3500449C0A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CE5BA4DA2A97EE4900449C0A /* AuthenticatorFirebase.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		CE5BA4DE2A97EFA600449C0A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE5BA4DF2A97EFB800449C0A /* Users.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D4F9E917F3E3693F45C5871C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C8AC14F57A3A1BBC828B90BA /* Pods-Itubers.debug.xcconfig */,
+				696EE36C91E2F28F42DEF894 /* Pods-Itubers.release.xcconfig */,
+				52D5A020203C32F5216C41E2 /* Pods-Itubers-ItubersUITests.debug.xcconfig */,
+				2662D6C632BB774AB78F69FC /* Pods-Itubers-ItubersUITests.release.xcconfig */,
+				B096BF502BBA353DB97C2989 /* Pods-ItubersTests.debug.xcconfig */,
+				EAC9253E87BF947148568B74 /* Pods-ItubersTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,15 +284,21 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE1DCF162A97004900E3CC3E /* Build configuration list for PBXNativeTarget "Itubers" */;
 			buildPhases = (
+				7EE797A0BD4536BE951FB139 /* [CP] Check Pods Manifest.lock */,
 				CE1DCEE82A97004400E3CC3E /* Sources */,
 				CE1DCEE92A97004400E3CC3E /* Frameworks */,
 				CE1DCEEA2A97004400E3CC3E /* Resources */,
+				1B6DA016633956B52B8BFD79 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Itubers;
+			packageProductDependencies = (
+				CE5BA4D52A97EC8C00449C0A /* FirebaseAuth */,
+				CE5BA4D72A97EC8C00449C0A /* FirebaseFirestore */,
+			);
 			productName = Itubers;
 			productReference = CE1DCEEC2A97004400E3CC3E /* Itubers.app */;
 			productType = "com.apple.product-type.application";
@@ -223,6 +307,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE1DCF192A97004900E3CC3E /* Build configuration list for PBXNativeTarget "ItubersTests" */;
 			buildPhases = (
+				537FC2A912D96E9A5C590A79 /* [CP] Check Pods Manifest.lock */,
 				CE1DCEFE2A97004900E3CC3E /* Sources */,
 				CE1DCEFF2A97004900E3CC3E /* Frameworks */,
 				CE1DCF002A97004900E3CC3E /* Resources */,
@@ -241,9 +326,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE1DCF1C2A97004900E3CC3E /* Build configuration list for PBXNativeTarget "ItubersUITests" */;
 			buildPhases = (
+				A18E424238E5EFED6A8ECA0B /* [CP] Check Pods Manifest.lock */,
 				CE1DCF082A97004900E3CC3E /* Sources */,
 				CE1DCF092A97004900E3CC3E /* Frameworks */,
 				CE1DCF0A2A97004900E3CC3E /* Resources */,
+				EBB4B422BAC14AA92113B8EC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -287,6 +374,9 @@
 				Base,
 			);
 			mainGroup = CE1DCEE32A97004400E3CC3E;
+			packageReferences = (
+				CE5BA4D42A97EC8C00449C0A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = CE1DCEED2A97004400E3CC3E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -305,6 +395,7 @@
 			files = (
 				CE1DCEFC2A97004800E3CC3E /* LaunchScreen.storyboard in Resources */,
 				CE1DCEF92A97004800E3CC3E /* Assets.xcassets in Resources */,
+				CE5BA4D32A97EBA100449C0A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +415,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1B6DA016633956B52B8BFD79 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Itubers/Pods-Itubers-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Itubers/Pods-Itubers-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Itubers/Pods-Itubers-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		537FC2A912D96E9A5C590A79 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ItubersTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7EE797A0BD4536BE951FB139 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Itubers-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A18E424238E5EFED6A8ECA0B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Itubers-ItubersUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBB4B422BAC14AA92113B8EC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Itubers-ItubersUITests/Pods-Itubers-ItubersUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Itubers-ItubersUITests/Pods-Itubers-ItubersUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Itubers-ItubersUITests/Pods-Itubers-ItubersUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CE1DCEE82A97004400E3CC3E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -331,13 +525,18 @@
 			files = (
 				CE5BA4CB2A97ABC500449C0A /* RegisterView.swift in Sources */,
 				CE1DCF242A97012300E3CC3E /* LoginViewController.swift in Sources */,
+				CE5BA4CF2A97B9B600449C0A /* RegisterCoordinator.swift in Sources */,
+				CE5BA4DD2A97EF4200449C0A /* RegisterViewModel.swift in Sources */,
 				CE5BA4C82A97AAB300449C0A /* ViewControllerDefault.swift in Sources */,
 				CE5BA4CD2A97ABD100449C0A /* RegisterViewController.swift in Sources */,
 				CE1DCF322A9709D400E3CC3E /* ButtonDefault.swift in Sources */,
+				CE5BA4D12A97E99A00449C0A /* LoginViewModel.swift in Sources */,
 				CE1DCEF02A97004400E3CC3E /* AppDelegate.swift in Sources */,
+				CE5BA4E02A97EFB800449C0A /* Users.swift in Sources */,
 				CE1DCF2A2A97026C00E3CC3E /* Coordinator.swift in Sources */,
 				CE1DCF282A97013A00E3CC3E /* LoginCoordinator.swift in Sources */,
 				CE1DCF262A97012E00E3CC3E /* LoginView.swift in Sources */,
+				CE5BA4DB2A97EE4900449C0A /* AuthenticatorFirebase.swift in Sources */,
 				CE1DCF2E2A9704D200E3CC3E /* LabelDefault.swift in Sources */,
 				CE1DCEF22A97004400E3CC3E /* SceneDelegate.swift in Sources */,
 				CE1DCF302A97074B00E3CC3E /* TextFieldDefault.swift in Sources */,
@@ -504,6 +703,7 @@
 		};
 		CE1DCF172A97004900E3CC3E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8AC14F57A3A1BBC828B90BA /* Pods-Itubers.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -535,6 +735,7 @@
 		};
 		CE1DCF182A97004900E3CC3E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 696EE36C91E2F28F42DEF894 /* Pods-Itubers.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -566,6 +767,7 @@
 		};
 		CE1DCF1A2A97004900E3CC3E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B096BF502BBA353DB97C2989 /* Pods-ItubersTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -586,6 +788,7 @@
 		};
 		CE1DCF1B2A97004900E3CC3E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAC9253E87BF947148568B74 /* Pods-ItubersTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -606,6 +809,7 @@
 		};
 		CE1DCF1D2A97004900E3CC3E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52D5A020203C32F5216C41E2 /* Pods-Itubers-ItubersUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -624,6 +828,7 @@
 		};
 		CE1DCF1E2A97004900E3CC3E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2662D6C632BB774AB78F69FC /* Pods-Itubers-ItubersUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -680,6 +885,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE5BA4D42A97EC8C00449C0A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE5BA4D52A97EC8C00449C0A /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE5BA4D42A97EC8C00449C0A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		CE5BA4D72A97EC8C00449C0A /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE5BA4D42A97EC8C00449C0A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE1DCEE42A97004400E3CC3E /* Project object */;
 }

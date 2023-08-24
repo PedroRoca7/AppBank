@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>963693849308-oln54qmddrqn1a4ft2dss99cojcer1h0.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.963693849308-oln54qmddrqn1a4ft2dss99cojcer1h0</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAHiMJRqshGVgrY9l2_vOR6uWtHVTby7l0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>963693849308</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.pedroroca.Itubers</string>
+	<key>PROJECT_ID</key>
+	<string>itubers-2da63</string>
+	<key>STORAGE_BUCKET</key>
+	<string>itubers-2da63.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:963693849308:ios:446eb84031115a39286219</string>
+</dict>
+</plist>

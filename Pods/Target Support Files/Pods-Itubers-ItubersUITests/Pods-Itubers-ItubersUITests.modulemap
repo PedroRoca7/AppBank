@@ -1,0 +1,6 @@
+framework module Pods_Itubers_ItubersUITests {
+  umbrella header "Pods-Itubers-ItubersUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

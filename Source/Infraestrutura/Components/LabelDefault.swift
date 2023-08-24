@@ -9,6 +9,8 @@ import UIKit
 
 class LabelDefault: UILabel {
     
+    // MARK: Inits
+    
     init(text: String, color: UIColor, font: UIFont) {
          super.init(frame: .zero)
          
