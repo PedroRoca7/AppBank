@@ -23,6 +23,7 @@
 		CE1DCF2E2A9704D200E3CC3E /* LabelDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCF2D2A9704D200E3CC3E /* LabelDefault.swift */; };
 		CE1DCF302A97074B00E3CC3E /* TextFieldDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCF2F2A97074B00E3CC3E /* TextFieldDefault.swift */; };
 		CE1DCF322A9709D400E3CC3E /* ButtonDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCF312A9709D400E3CC3E /* ButtonDefault.swift */; };
+		CE270CDB2A98172C00E69BF1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE270CDA2A98172C00E69BF1 /* GoogleService-Info.plist */; };
 		CE5BA4C82A97AAB300449C0A /* ViewControllerDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BA4C72A97AAB300449C0A /* ViewControllerDefault.swift */; };
 		CE5BA4CB2A97ABC500449C0A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BA4CA2A97ABC500449C0A /* RegisterView.swift */; };
 		CE5BA4CD2A97ABD100449C0A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BA4CC2A97ABD100449C0A /* RegisterViewController.swift */; };
@@ -81,6 +82,7 @@
 		CE1DCF2D2A9704D200E3CC3E /* LabelDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelDefault.swift; sourceTree = "<group>"; };
 		CE1DCF2F2A97074B00E3CC3E /* TextFieldDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDefault.swift; sourceTree = "<group>"; };
 		CE1DCF312A9709D400E3CC3E /* ButtonDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDefault.swift; sourceTree = "<group>"; };
+		CE270CDA2A98172C00E69BF1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE5BA4C72A97AAB300449C0A /* ViewControllerDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDefault.swift; sourceTree = "<group>"; };
 		CE5BA4CA2A97ABC500449C0A /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		CE5BA4CC2A97ABD100449C0A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		CE1DCEEE2A97004400E3CC3E /* Itubers */ = {
 			isa = PBXGroup;
 			children = (
+				CE270CDA2A98172C00E69BF1 /* GoogleService-Info.plist */,
 				CE1DCEEF2A97004400E3CC3E /* AppDelegate.swift */,
 				CE1DCEF12A97004400E3CC3E /* SceneDelegate.swift */,
 				CE1DCEF82A97004800E3CC3E /* Assets.xcassets */,
@@ -392,6 +395,7 @@
 			files = (
 				CE1DCEFC2A97004800E3CC3E /* LaunchScreen.storyboard in Resources */,
 				CE1DCEF92A97004800E3CC3E /* Assets.xcassets in Resources */,
+				CE270CDB2A98172C00E69BF1 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
