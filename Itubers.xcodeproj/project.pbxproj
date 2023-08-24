@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CBD38C4E18D9BB128F99969A /* Pods_Itubers_ItubersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6464F85739BB081BE70C4CC /* Pods_Itubers_ItubersUITests.framework */; };
-		CE1B474C2A97FE9000056914 /* AuthenticatorFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B474B2A97FE9000056914 /* AuthenticatorFirebase.swift */; };
 		CE1DCEF02A97004400E3CC3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCEEF2A97004400E3CC3E /* AppDelegate.swift */; };
 		CE1DCEF22A97004400E3CC3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCEF12A97004400E3CC3E /* SceneDelegate.swift */; };
 		CE1DCEF92A97004800E3CC3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1DCEF82A97004800E3CC3E /* Assets.xcassets */; };
@@ -63,7 +62,6 @@
 		B096BF502BBA353DB97C2989 /* Pods-ItubersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ItubersTests.debug.xcconfig"; path = "Target Support Files/Pods-ItubersTests/Pods-ItubersTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BA4AEECEB59B9C712FAE34DB /* Pods_Itubers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Itubers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8AC14F57A3A1BBC828B90BA /* Pods-Itubers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Itubers.debug.xcconfig"; path = "Target Support Files/Pods-Itubers/Pods-Itubers.debug.xcconfig"; sourceTree = "<group>"; };
-		CE1B474B2A97FE9000056914 /* AuthenticatorFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatorFirebase.swift; sourceTree = "<group>"; };
 		CE1DCEEC2A97004400E3CC3E /* Itubers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Itubers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1DCEEF2A97004400E3CC3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE1DCEF12A97004400E3CC3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -251,7 +249,6 @@
 		CE5BA4D92A97EE3500449C0A /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				CE1B474B2A97FE9000056914 /* AuthenticatorFirebase.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -524,7 +521,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE5BA4CB2A97ABC500449C0A /* RegisterView.swift in Sources */,
-				CE1B474C2A97FE9000056914 /* AuthenticatorFirebase.swift in Sources */,
 				CE1DCF242A97012300E3CC3E /* LoginViewController.swift in Sources */,
 				CE5BA4CF2A97B9B600449C0A /* RegisterCoordinator.swift in Sources */,
 				CE5BA4DD2A97EF4200449C0A /* RegisterViewModel.swift in Sources */,
