@@ -28,7 +28,6 @@
 		CE5BA4CD2A97ABD100449C0A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BA4CC2A97ABD100449C0A /* RegisterViewController.swift */; };
 		CE5BA4CF2A97B9B600449C0A /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BA4CE2A97B9B600449C0A /* RegisterCoordinator.swift */; };
 		CE5BA4D12A97E99A00449C0A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BA4D02A97E99A00449C0A /* LoginViewModel.swift */; };
-		CE5BA4D32A97EBA100449C0A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE5BA4D22A97EBA100449C0A /* GoogleService-Info.plist */; };
 		CE5BA4D62A97EC8C00449C0A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CE5BA4D52A97EC8C00449C0A /* FirebaseAuth */; };
 		CE5BA4D82A97EC8C00449C0A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CE5BA4D72A97EC8C00449C0A /* FirebaseFirestore */; };
 		CE5BA4DD2A97EF4200449C0A /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BA4DC2A97EF4200449C0A /* RegisterViewModel.swift */; };
@@ -87,7 +86,6 @@
 		CE5BA4CC2A97ABD100449C0A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CE5BA4CE2A97B9B600449C0A /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
 		CE5BA4D02A97E99A00449C0A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		CE5BA4D22A97EBA100449C0A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE5BA4DC2A97EF4200449C0A /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		CE5BA4DF2A97EFB800449C0A /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		EAC9253E87BF947148568B74 /* Pods-ItubersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ItubersTests.release.xcconfig"; path = "Target Support Files/Pods-ItubersTests/Pods-ItubersTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 				CE1DCEF12A97004400E3CC3E /* SceneDelegate.swift */,
 				CE1DCEF82A97004800E3CC3E /* Assets.xcassets */,
 				CE1DCEFA2A97004800E3CC3E /* LaunchScreen.storyboard */,
-				CE5BA4D22A97EBA100449C0A /* GoogleService-Info.plist */,
 				CE1DCEFD2A97004800E3CC3E /* Info.plist */,
 			);
 			path = Itubers;
@@ -395,7 +392,6 @@
 			files = (
 				CE1DCEFC2A97004800E3CC3E /* LaunchScreen.storyboard in Resources */,
 				CE1DCEF92A97004800E3CC3E /* Assets.xcassets in Resources */,
-				CE5BA4D32A97EBA100449C0A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
