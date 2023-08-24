@@ -21,6 +21,12 @@ class TextFieldDefault: UITextField {
         initDefault(placeholder: placeholder, keyboardType: keyboardType)
     }
     
+    init(placeholder: String) {
+        super.init(frame: .zero)
+        
+        initDefault(placeholder: placeholder, keyboardType: .default)
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

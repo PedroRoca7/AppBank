@@ -18,4 +18,9 @@ class LoginViewController: ViewControllerDefault {
     override func loadView() {
         self.view = viewScreen
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
 }

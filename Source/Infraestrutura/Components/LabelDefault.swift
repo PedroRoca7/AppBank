@@ -9,19 +9,27 @@ import UIKit
 
 class LabelDefault: UILabel {
     
-     init(text: String) {
+    init(text: String, color: UIColor, font: UIFont) {
          super.init(frame: .zero)
          
-         initDefault(text: text)
+         initDefault(text: text, color: color, font: font)
+    }
+    
+    init(text: String) {
+         super.init(frame: .zero)
+         
+        initDefault(text: text, color: UIColor.black, font: .systemFont(ofSize: 17))
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func initDefault(text: String) {
+    private func initDefault(text: String, color: UIColor, font: UIFont) {
         self.text = text
+        self.textColor = color
         self.translatesAutoresizingMaskIntoConstraints = false
+        self.font = font
     }
     
 }

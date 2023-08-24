@@ -22,6 +22,8 @@
 		CE1DCF302A97074B00E3CC3E /* TextFieldDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCF2F2A97074B00E3CC3E /* TextFieldDefault.swift */; };
 		CE1DCF322A9709D400E3CC3E /* ButtonDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCF312A9709D400E3CC3E /* ButtonDefault.swift */; };
 		CE5BA4C82A97AAB300449C0A /* ViewControllerDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BA4C72A97AAB300449C0A /* ViewControllerDefault.swift */; };
+		CE5BA4CB2A97ABC500449C0A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BA4CA2A97ABC500449C0A /* RegisterView.swift */; };
+		CE5BA4CD2A97ABD100449C0A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BA4CC2A97ABD100449C0A /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		CE1DCF2F2A97074B00E3CC3E /* TextFieldDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDefault.swift; sourceTree = "<group>"; };
 		CE1DCF312A9709D400E3CC3E /* ButtonDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDefault.swift; sourceTree = "<group>"; };
 		CE5BA4C72A97AAB300449C0A /* ViewControllerDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDefault.swift; sourceTree = "<group>"; };
+		CE5BA4CA2A97ABC500449C0A /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		CE5BA4CC2A97ABD100449C0A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,9 +145,10 @@
 		CE1DCF202A97009500E3CC3E /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				CE1DCF2B2A9704A200E3CC3E /* Infraestrutura */,
 				CE1DCF222A9700B300E3CC3E /* Coordinator */,
+				CE1DCF2B2A9704A200E3CC3E /* Infraestrutura */,
 				CE1DCF212A9700AA00E3CC3E /* Login */,
+				CE5BA4C92A97ABAB00449C0A /* Register */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -177,12 +182,21 @@
 		CE1DCF2C2A9704BF00E3CC3E /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				CE1DCF312A9709D400E3CC3E /* ButtonDefault.swift */,
 				CE1DCF2D2A9704D200E3CC3E /* LabelDefault.swift */,
 				CE1DCF2F2A97074B00E3CC3E /* TextFieldDefault.swift */,
-				CE1DCF312A9709D400E3CC3E /* ButtonDefault.swift */,
 				CE5BA4C72A97AAB300449C0A /* ViewControllerDefault.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		CE5BA4C92A97ABAB00449C0A /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				CE5BA4CA2A97ABC500449C0A /* RegisterView.swift */,
+				CE5BA4CC2A97ABD100449C0A /* RegisterViewController.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,8 +329,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE5BA4CB2A97ABC500449C0A /* RegisterView.swift in Sources */,
 				CE1DCF242A97012300E3CC3E /* LoginViewController.swift in Sources */,
 				CE5BA4C82A97AAB300449C0A /* ViewControllerDefault.swift in Sources */,
+				CE5BA4CD2A97ABD100449C0A /* RegisterViewController.swift in Sources */,
 				CE1DCF322A9709D400E3CC3E /* ButtonDefault.swift in Sources */,
 				CE1DCEF02A97004400E3CC3E /* AppDelegate.swift in Sources */,
 				CE1DCF2A2A97026C00E3CC3E /* Coordinator.swift in Sources */,

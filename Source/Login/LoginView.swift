@@ -9,8 +9,9 @@ import UIKit
 
 class LoginView: UIView {
     
-    // MARK: Property
+    // MARK: Propertys
     
+    lazy var guide = self.safeAreaLayoutGuide
     
     // MARK: ElementsVisual
     
@@ -24,38 +25,16 @@ class LoginView: UIView {
         return image
     }()
     
-    lazy var titleLabel: LabelDefault = {
-        let lb = LabelDefault(text: "Login")
-        lb.font = UIFont.boldSystemFont(ofSize: 36)
-        lb.textColor = .white
-        
-        return lb
-    }()
+    lazy var titleLabel = LabelDefault(text: "Login", color: .white, font: .boldSystemFont(ofSize: 36))
     
-    lazy var emailTextFiled: TextFieldDefault = {
-        let tf = TextFieldDefault(placeholder: "Digite seu Email:", keyboardType: .emailAddress)
+    lazy var emailTextFiled = TextFieldDefault(placeholder: "Digite seu Email:", keyboardType: .emailAddress)
         
-        return tf
-    }()
+    lazy var senhaTextField = TextFieldDefault(placeholder: "Digite sua Senha:", keyboardType: .numberPad)
     
-    lazy var senhaTextField: TextFieldDefault = {
-        let tf = TextFieldDefault(placeholder: "Digite sua Senha:", keyboardType: .numberPad)
-        
-        return tf
-    }()
+    lazy var logarButton = ButtonDefault(title: "Entrar",backgroundColor: .blue)
     
-    lazy var logarButton: ButtonDefault = {
-        let bt = ButtonDefault(title: "Entrar",backgroundColor: .blue)
-        
-        return bt
-    }()
-    
-    lazy var registratButton: ButtonDefault = {
-        let bt = ButtonDefault(title: "Registrar",backgroundColor: .lightGray)
-        
-        return bt
-    }()
-    
+    lazy var registratButton = ButtonDefault(title: "Registrar",backgroundColor: .lightGray)
+ 
     // MARK: Inits
     
     override init(frame: CGRect) {
@@ -91,10 +70,9 @@ class LoginView: UIView {
         
     private func setTitleLabel() {
         self.addSubview(titleLabel)
-        let guide = self.safeAreaLayoutGuide
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 70),
+            titleLabel.topAnchor.constraint(equalTo: self.guide.topAnchor, constant: 70),
             titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 25),
             titleLabel.widthAnchor.constraint(equalToConstant: 130)
         ])
