@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: ViewControllerDefault {
     
     lazy var viewScreen: LoginView = {
         let view = LoginView()

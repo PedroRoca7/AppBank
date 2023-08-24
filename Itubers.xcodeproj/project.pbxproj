@@ -21,6 +21,7 @@
 		CE1DCF2E2A9704D200E3CC3E /* LabelDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCF2D2A9704D200E3CC3E /* LabelDefault.swift */; };
 		CE1DCF302A97074B00E3CC3E /* TextFieldDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCF2F2A97074B00E3CC3E /* TextFieldDefault.swift */; };
 		CE1DCF322A9709D400E3CC3E /* ButtonDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCF312A9709D400E3CC3E /* ButtonDefault.swift */; };
+		CE5BA4C82A97AAB300449C0A /* ViewControllerDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BA4C72A97AAB300449C0A /* ViewControllerDefault.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		CE1DCF2D2A9704D200E3CC3E /* LabelDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelDefault.swift; sourceTree = "<group>"; };
 		CE1DCF2F2A97074B00E3CC3E /* TextFieldDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDefault.swift; sourceTree = "<group>"; };
 		CE1DCF312A9709D400E3CC3E /* ButtonDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDefault.swift; sourceTree = "<group>"; };
+		CE5BA4C72A97AAB300449C0A /* ViewControllerDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDefault.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 				CE1DCF2D2A9704D200E3CC3E /* LabelDefault.swift */,
 				CE1DCF2F2A97074B00E3CC3E /* TextFieldDefault.swift */,
 				CE1DCF312A9709D400E3CC3E /* ButtonDefault.swift */,
+				CE5BA4C72A97AAB300449C0A /* ViewControllerDefault.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1DCF242A97012300E3CC3E /* LoginViewController.swift in Sources */,
+				CE5BA4C82A97AAB300449C0A /* ViewControllerDefault.swift in Sources */,
 				CE1DCF322A9709D400E3CC3E /* ButtonDefault.swift in Sources */,
 				CE1DCEF02A97004400E3CC3E /* AppDelegate.swift in Sources */,
 				CE1DCF2A2A97026C00E3CC3E /* Coordinator.swift in Sources */,
