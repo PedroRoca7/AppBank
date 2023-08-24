@@ -9,13 +9,18 @@
 /* Begin PBXBuildFile section */
 		CE1DCEF02A97004400E3CC3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCEEF2A97004400E3CC3E /* AppDelegate.swift */; };
 		CE1DCEF22A97004400E3CC3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCEF12A97004400E3CC3E /* SceneDelegate.swift */; };
-		CE1DCEF42A97004400E3CC3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCEF32A97004400E3CC3E /* ViewController.swift */; };
-		CE1DCEF72A97004400E3CC3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1DCEF52A97004400E3CC3E /* Main.storyboard */; };
 		CE1DCEF92A97004800E3CC3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1DCEF82A97004800E3CC3E /* Assets.xcassets */; };
 		CE1DCEFC2A97004800E3CC3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1DCEFA2A97004800E3CC3E /* LaunchScreen.storyboard */; };
 		CE1DCF072A97004900E3CC3E /* ItubersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCF062A97004900E3CC3E /* ItubersTests.swift */; };
 		CE1DCF112A97004900E3CC3E /* ItubersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCF102A97004900E3CC3E /* ItubersUITests.swift */; };
 		CE1DCF132A97004900E3CC3E /* ItubersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCF122A97004900E3CC3E /* ItubersUITestsLaunchTests.swift */; };
+		CE1DCF242A97012300E3CC3E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCF232A97012300E3CC3E /* LoginViewController.swift */; };
+		CE1DCF262A97012E00E3CC3E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCF252A97012E00E3CC3E /* LoginView.swift */; };
+		CE1DCF282A97013A00E3CC3E /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCF272A97013A00E3CC3E /* LoginCoordinator.swift */; };
+		CE1DCF2A2A97026C00E3CC3E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCF292A97026C00E3CC3E /* Coordinator.swift */; };
+		CE1DCF2E2A9704D200E3CC3E /* LabelDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCF2D2A9704D200E3CC3E /* LabelDefault.swift */; };
+		CE1DCF302A97074B00E3CC3E /* TextFieldDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCF2F2A97074B00E3CC3E /* TextFieldDefault.swift */; };
+		CE1DCF322A9709D400E3CC3E /* ButtonDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCF312A9709D400E3CC3E /* ButtonDefault.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +44,6 @@
 		CE1DCEEC2A97004400E3CC3E /* Itubers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Itubers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1DCEEF2A97004400E3CC3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE1DCEF12A97004400E3CC3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE1DCEF32A97004400E3CC3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CE1DCEF62A97004400E3CC3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE1DCEF82A97004800E3CC3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE1DCEFB2A97004800E3CC3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE1DCEFD2A97004800E3CC3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +52,13 @@
 		CE1DCF0C2A97004900E3CC3E /* ItubersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ItubersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1DCF102A97004900E3CC3E /* ItubersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItubersUITests.swift; sourceTree = "<group>"; };
 		CE1DCF122A97004900E3CC3E /* ItubersUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItubersUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CE1DCF232A97012300E3CC3E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CE1DCF252A97012E00E3CC3E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		CE1DCF272A97013A00E3CC3E /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		CE1DCF292A97026C00E3CC3E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		CE1DCF2D2A9704D200E3CC3E /* LabelDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelDefault.swift; sourceTree = "<group>"; };
+		CE1DCF2F2A97074B00E3CC3E /* TextFieldDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDefault.swift; sourceTree = "<group>"; };
+		CE1DCF312A9709D400E3CC3E /* ButtonDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDefault.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +89,7 @@
 		CE1DCEE32A97004400E3CC3E = {
 			isa = PBXGroup;
 			children = (
+				CE1DCF202A97009500E3CC3E /* Source */,
 				CE1DCEEE2A97004400E3CC3E /* Itubers */,
 				CE1DCF052A97004900E3CC3E /* ItubersTests */,
 				CE1DCF0F2A97004900E3CC3E /* ItubersUITests */,
@@ -101,8 +112,6 @@
 			children = (
 				CE1DCEEF2A97004400E3CC3E /* AppDelegate.swift */,
 				CE1DCEF12A97004400E3CC3E /* SceneDelegate.swift */,
-				CE1DCEF32A97004400E3CC3E /* ViewController.swift */,
-				CE1DCEF52A97004400E3CC3E /* Main.storyboard */,
 				CE1DCEF82A97004800E3CC3E /* Assets.xcassets */,
 				CE1DCEFA2A97004800E3CC3E /* LaunchScreen.storyboard */,
 				CE1DCEFD2A97004800E3CC3E /* Info.plist */,
@@ -125,6 +134,52 @@
 				CE1DCF122A97004900E3CC3E /* ItubersUITestsLaunchTests.swift */,
 			);
 			path = ItubersUITests;
+			sourceTree = "<group>";
+		};
+		CE1DCF202A97009500E3CC3E /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				CE1DCF2B2A9704A200E3CC3E /* Infraestrutura */,
+				CE1DCF222A9700B300E3CC3E /* Coordinator */,
+				CE1DCF212A9700AA00E3CC3E /* Login */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		CE1DCF212A9700AA00E3CC3E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CE1DCF252A97012E00E3CC3E /* LoginView.swift */,
+				CE1DCF232A97012300E3CC3E /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		CE1DCF222A9700B300E3CC3E /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CE1DCF292A97026C00E3CC3E /* Coordinator.swift */,
+				CE1DCF272A97013A00E3CC3E /* LoginCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		CE1DCF2B2A9704A200E3CC3E /* Infraestrutura */ = {
+			isa = PBXGroup;
+			children = (
+				CE1DCF2C2A9704BF00E3CC3E /* Components */,
+			);
+			path = Infraestrutura;
+			sourceTree = "<group>";
+		};
+		CE1DCF2C2A9704BF00E3CC3E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CE1DCF2D2A9704D200E3CC3E /* LabelDefault.swift */,
+				CE1DCF2F2A97074B00E3CC3E /* TextFieldDefault.swift */,
+				CE1DCF312A9709D400E3CC3E /* ButtonDefault.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +288,6 @@
 			files = (
 				CE1DCEFC2A97004800E3CC3E /* LaunchScreen.storyboard in Resources */,
 				CE1DCEF92A97004800E3CC3E /* Assets.xcassets in Resources */,
-				CE1DCEF72A97004400E3CC3E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +312,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE1DCEF42A97004400E3CC3E /* ViewController.swift in Sources */,
+				CE1DCF242A97012300E3CC3E /* LoginViewController.swift in Sources */,
+				CE1DCF322A9709D400E3CC3E /* ButtonDefault.swift in Sources */,
 				CE1DCEF02A97004400E3CC3E /* AppDelegate.swift in Sources */,
+				CE1DCF2A2A97026C00E3CC3E /* Coordinator.swift in Sources */,
+				CE1DCF282A97013A00E3CC3E /* LoginCoordinator.swift in Sources */,
+				CE1DCF262A97012E00E3CC3E /* LoginView.swift in Sources */,
+				CE1DCF2E2A9704D200E3CC3E /* LabelDefault.swift in Sources */,
 				CE1DCEF22A97004400E3CC3E /* SceneDelegate.swift in Sources */,
+				CE1DCF302A97074B00E3CC3E /* TextFieldDefault.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +357,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CE1DCEF52A97004400E3CC3E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CE1DCEF62A97004400E3CC3E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CE1DCEFA2A97004800E3CC3E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -442,7 +494,7 @@
 				INFOPLIST_FILE = Itubers/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -452,9 +504,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pedroroca.Itubers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -470,7 +525,7 @@
 				INFOPLIST_FILE = Itubers/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -480,9 +535,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pedroroca.Itubers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
