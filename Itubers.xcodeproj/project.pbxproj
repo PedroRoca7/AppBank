@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CBD38C4E18D9BB128F99969A /* Pods_Itubers_ItubersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6464F85739BB081BE70C4CC /* Pods_Itubers_ItubersUITests.framework */; };
+		CE1B474C2A97FE9000056914 /* AuthenticatorFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B474B2A97FE9000056914 /* AuthenticatorFirebase.swift */; };
 		CE1DCEF02A97004400E3CC3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCEEF2A97004400E3CC3E /* AppDelegate.swift */; };
 		CE1DCEF22A97004400E3CC3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCEF12A97004400E3CC3E /* SceneDelegate.swift */; };
 		CE1DCEF92A97004800E3CC3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1DCEF82A97004800E3CC3E /* Assets.xcassets */; };
@@ -30,7 +31,6 @@
 		CE5BA4D32A97EBA100449C0A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE5BA4D22A97EBA100449C0A /* GoogleService-Info.plist */; };
 		CE5BA4D62A97EC8C00449C0A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CE5BA4D52A97EC8C00449C0A /* FirebaseAuth */; };
 		CE5BA4D82A97EC8C00449C0A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CE5BA4D72A97EC8C00449C0A /* FirebaseFirestore */; };
-		CE5BA4DB2A97EE4900449C0A /* AuthenticatorFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BA4DA2A97EE4900449C0A /* AuthenticatorFirebase.swift */; };
 		CE5BA4DD2A97EF4200449C0A /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BA4DC2A97EF4200449C0A /* RegisterViewModel.swift */; };
 		CE5BA4E02A97EFB800449C0A /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BA4DF2A97EFB800449C0A /* Users.swift */; };
 		DDBC039299E602F2813EA210 /* Pods_Itubers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4AEECEB59B9C712FAE34DB /* Pods_Itubers.framework */; };
@@ -63,6 +63,7 @@
 		B096BF502BBA353DB97C2989 /* Pods-ItubersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ItubersTests.debug.xcconfig"; path = "Target Support Files/Pods-ItubersTests/Pods-ItubersTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BA4AEECEB59B9C712FAE34DB /* Pods_Itubers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Itubers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8AC14F57A3A1BBC828B90BA /* Pods-Itubers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Itubers.debug.xcconfig"; path = "Target Support Files/Pods-Itubers/Pods-Itubers.debug.xcconfig"; sourceTree = "<group>"; };
+		CE1B474B2A97FE9000056914 /* AuthenticatorFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatorFirebase.swift; sourceTree = "<group>"; };
 		CE1DCEEC2A97004400E3CC3E /* Itubers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Itubers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1DCEEF2A97004400E3CC3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE1DCEF12A97004400E3CC3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,7 +88,6 @@
 		CE5BA4CE2A97B9B600449C0A /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
 		CE5BA4D02A97E99A00449C0A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		CE5BA4D22A97EBA100449C0A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		CE5BA4DA2A97EE4900449C0A /* AuthenticatorFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatorFirebase.swift; sourceTree = "<group>"; };
 		CE5BA4DC2A97EF4200449C0A /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		CE5BA4DF2A97EFB800449C0A /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		EAC9253E87BF947148568B74 /* Pods-ItubersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ItubersTests.release.xcconfig"; path = "Target Support Files/Pods-ItubersTests/Pods-ItubersTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -251,7 +251,7 @@
 		CE5BA4D92A97EE3500449C0A /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				CE5BA4DA2A97EE4900449C0A /* AuthenticatorFirebase.swift */,
+				CE1B474B2A97FE9000056914 /* AuthenticatorFirebase.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -524,6 +524,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE5BA4CB2A97ABC500449C0A /* RegisterView.swift in Sources */,
+				CE1B474C2A97FE9000056914 /* AuthenticatorFirebase.swift in Sources */,
 				CE1DCF242A97012300E3CC3E /* LoginViewController.swift in Sources */,
 				CE5BA4CF2A97B9B600449C0A /* RegisterCoordinator.swift in Sources */,
 				CE5BA4DD2A97EF4200449C0A /* RegisterViewModel.swift in Sources */,
@@ -536,7 +537,6 @@
 				CE1DCF2A2A97026C00E3CC3E /* Coordinator.swift in Sources */,
 				CE1DCF282A97013A00E3CC3E /* LoginCoordinator.swift in Sources */,
 				CE1DCF262A97012E00E3CC3E /* LoginView.swift in Sources */,
-				CE5BA4DB2A97EE4900449C0A /* AuthenticatorFirebase.swift in Sources */,
 				CE1DCF2E2A9704D200E3CC3E /* LabelDefault.swift in Sources */,
 				CE1DCEF22A97004400E3CC3E /* SceneDelegate.swift in Sources */,
 				CE1DCF302A97074B00E3CC3E /* TextFieldDefault.swift in Sources */,
