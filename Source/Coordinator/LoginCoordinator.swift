@@ -23,6 +23,10 @@ class LoginCoordinator: Coordinator {
     func start() {
         let viewController = LoginViewController()
         
+        viewController.onLoginTap = { [weak self] user in
+            self?.showHome(user: user)
+        }
+        
         viewController.onRegisterTap = {
             self.showRegister()
         }
@@ -33,5 +37,9 @@ class LoginCoordinator: Coordinator {
     private func showRegister() {
         let coordinator = RegisterCoordinator(navigationController: navigationController)
         coordinator.start()
+    }
+        
+    private func showHome(user: User) {
+       // Criar a outra tela e o coordinator dela.
     }
 }
