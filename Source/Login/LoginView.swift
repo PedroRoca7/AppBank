@@ -29,7 +29,12 @@ class LoginView: UIView {
     
     lazy var emailTextFiled = TextFieldDefault(placeholder: "Digite seu Email:", keyboardType: .emailAddress)
         
-    lazy var passwordTextField = TextFieldDefault(placeholder: "Digite sua Senha:", keyboardType: .numberPad)
+    lazy var passwordTextField: TextFieldDefault = {
+        let tf = TextFieldDefault(placeholder: "Digite sua Senha:", keyboardType: .numberPad)
+        tf.isSecureTextEntry = true
+        
+        return tf
+    }()
     
     lazy var logarButton = ButtonDefault(title: "Entrar",backgroundColor: .blue)
     

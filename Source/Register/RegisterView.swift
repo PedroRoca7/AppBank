@@ -36,7 +36,11 @@ class RegisterView: UIView {
     
     lazy var passwordLabel = LabelDefault(text: "Senha")
     
-    lazy var passwordTextField = TextFieldDefault(placeholder: "Insira sua senha")
+    lazy var passwordTextField: TextFieldDefault = {
+        let tf = TextFieldDefault(placeholder: "Insira sua senha",keyboardType: .numberPad)
+        tf.isSecureTextEntry = true
+        return tf
+    }()
     
     lazy var registerButton = ButtonDefault(title: "Registrar", backgroundColor: .blue)
     
