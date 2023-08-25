@@ -38,6 +38,8 @@
 		CE6F211E2A98F674000B1B01 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F211D2A98F674000B1B01 /* HomeViewController.swift */; };
 		CE6F21202A98F684000B1B01 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F211F2A98F684000B1B01 /* HomeViewModel.swift */; };
 		CE6F21222A98F925000B1B01 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F21212A98F925000B1B01 /* HomeCoordinator.swift */; };
+		CE6F21252A99227E000B1B01 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F21242A99227E000B1B01 /* CellView.swift */; };
+		CE6F21272A99229C000B1B01 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F21262A99229C000B1B01 /* CustomTableViewCell.swift */; };
 		DDBC039299E602F2813EA210 /* Pods_Itubers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4AEECEB59B9C712FAE34DB /* Pods_Itubers.framework */; };
 		FD214C5F15D4E61ABDB5DF79 /* Pods_ItubersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E288E1C8F1D5F33464B21F /* Pods_ItubersTests.framework */; };
 /* End PBXBuildFile section */
@@ -100,6 +102,8 @@
 		CE6F211D2A98F674000B1B01 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CE6F211F2A98F684000B1B01 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CE6F21212A98F925000B1B01 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		CE6F21242A99227E000B1B01 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		CE6F21262A99229C000B1B01 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		EAC9253E87BF947148568B74 /* Pods-ItubersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ItubersTests.release.xcconfig"; path = "Target Support Files/Pods-ItubersTests/Pods-ItubersTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,8 +211,8 @@
 		CE1DCF202A97009500E3CC3E /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				CE6F211A2A98F656000B1B01 /* Home */,
 				CE1DCF222A9700B300E3CC3E /* Coordinator */,
+				CE6F211A2A98F656000B1B01 /* Home */,
 				CE1DCF2B2A9704A200E3CC3E /* Infraestrutura */,
 				CE1DCF212A9700AA00E3CC3E /* Login */,
 				CE5BA4DE2A97EFA600449C0A /* Model */,
@@ -288,11 +292,21 @@
 		CE6F211A2A98F656000B1B01 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CE6F21232A992257000B1B01 /* Cell */,
 				CE6F211B2A98F663000B1B01 /* HomeView.swift */,
 				CE6F211D2A98F674000B1B01 /* HomeViewController.swift */,
 				CE6F211F2A98F684000B1B01 /* HomeViewModel.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		CE6F21232A992257000B1B01 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE6F21242A99227E000B1B01 /* CellView.swift */,
+				CE6F21262A99229C000B1B01 /* CustomTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		D4F9E917F3E3693F45C5871C /* Pods */ = {
@@ -557,6 +571,7 @@
 				CE1C4AD72A984E0C00AEA219 /* Alert.swift in Sources */,
 				CE5BA4CB2A97ABC500449C0A /* RegisterView.swift in Sources */,
 				CE1B474E2A97FF8200056914 /* AuthenticatorFirebase.swift in Sources */,
+				CE6F21252A99227E000B1B01 /* CellView.swift in Sources */,
 				CE1DCF242A97012300E3CC3E /* LoginViewController.swift in Sources */,
 				CE5BA4CF2A97B9B600449C0A /* RegisterCoordinator.swift in Sources */,
 				CE5BA4DD2A97EF4200449C0A /* RegisterViewModel.swift in Sources */,
@@ -571,6 +586,7 @@
 				CE1DCF262A97012E00E3CC3E /* LoginView.swift in Sources */,
 				CE6F211E2A98F674000B1B01 /* HomeViewController.swift in Sources */,
 				CE6F21202A98F684000B1B01 /* HomeViewModel.swift in Sources */,
+				CE6F21272A99229C000B1B01 /* CustomTableViewCell.swift in Sources */,
 				CE1DCF2E2A9704D200E3CC3E /* LabelDefault.swift in Sources */,
 				CE1DCEF22A97004400E3CC3E /* SceneDelegate.swift in Sources */,
 				CE1DCF302A97074B00E3CC3E /* TextFieldDefault.swift in Sources */,

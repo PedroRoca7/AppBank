@@ -24,6 +24,30 @@ class HomeViewController: ViewControllerDefault {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewScreen.nameLabel.text = user?.name
+        title = "Olá \(user?.name ?? "")"
+        configDelegates()
+        viewScreen.tableView.backgroundColor = .white
+    }
+    
+    private func configDelegates() {
+        viewScreen.tableView.delegate = self
+        viewScreen.tableView.dataSource = self
+    }
+}
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    // MARK: TableView DataSource
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell
+        
+        //        let character = chars[indexPath.row]
+        //        cell?.prepareCell(with: character)
+        
+        return cell ?? UITableViewCell()
     }
 }

@@ -59,6 +59,4 @@ extension LoginViewController: LoginProtocol {
     func failure(error: Error) {
         Alert.showBasicAlert(title: "Erro", message: "Erro ao tentar fazer login: \(error.localizedDescription)", viewController: self) {}
     }
-    
-    
 }

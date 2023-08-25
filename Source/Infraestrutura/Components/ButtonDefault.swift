@@ -17,6 +17,11 @@ class ButtonDefault: UIButton {
         initDefault(title: title,backgroundColor: backgroundColor)
     }
     
+    init() {
+        super.init(frame: .zero)
+        initDefault(title: "", backgroundColor: .clear)
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
