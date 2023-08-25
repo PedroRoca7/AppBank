@@ -30,7 +30,6 @@ class RegisterCoordinator: Coordinator {
     }
     
     private func showScreenLogin() {
-        let coordinator = LoginCoordinator(navigationController: navigationController)
-        coordinator.start()
+        navigationController.popToRootViewController(animated: true)
     }
 }

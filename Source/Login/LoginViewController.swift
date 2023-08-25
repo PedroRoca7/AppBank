@@ -40,7 +40,7 @@ class LoginViewController: ViewControllerDefault {
         viewScreen.logarButton.rx.tap.bind {
             guard let email = self.viewScreen.emailTextFiled.text, !email.isEmpty,
                   let password = self.viewScreen.passwordTextField.text, !password.isEmpty else {
-                      Alert.showBasicAlert(title: "Erro", message: "Campos vazios", viewController: self)
+                Alert.showBasicAlert(title: "Erro", message: "Campos vazios", viewController: self) {}
                       return }
             self.viewModel.login(email: email, password: password)
         }.disposed(by: disposeBag)
@@ -57,7 +57,7 @@ extension LoginViewController: LoginProtocol {
     }
     
     func failure(error: Error) {
-        Alert.showBasicAlert(title: "Erro", message: "Erro ao tentar fazer login: \(error.localizedDescription)", viewController: self)
+        Alert.showBasicAlert(title: "Erro", message: "Erro ao tentar fazer login: \(error.localizedDescription)", viewController: self) {}
     }
     
     

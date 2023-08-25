@@ -34,6 +34,10 @@
 		CE5BA4D82A97EC8C00449C0A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CE5BA4D72A97EC8C00449C0A /* FirebaseFirestore */; };
 		CE5BA4DD2A97EF4200449C0A /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BA4DC2A97EF4200449C0A /* RegisterViewModel.swift */; };
 		CE5BA4E02A97EFB800449C0A /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BA4DF2A97EFB800449C0A /* Users.swift */; };
+		CE6F211C2A98F663000B1B01 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F211B2A98F663000B1B01 /* HomeView.swift */; };
+		CE6F211E2A98F674000B1B01 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F211D2A98F674000B1B01 /* HomeViewController.swift */; };
+		CE6F21202A98F684000B1B01 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F211F2A98F684000B1B01 /* HomeViewModel.swift */; };
+		CE6F21222A98F925000B1B01 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F21212A98F925000B1B01 /* HomeCoordinator.swift */; };
 		DDBC039299E602F2813EA210 /* Pods_Itubers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4AEECEB59B9C712FAE34DB /* Pods_Itubers.framework */; };
 		FD214C5F15D4E61ABDB5DF79 /* Pods_ItubersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E288E1C8F1D5F33464B21F /* Pods_ItubersTests.framework */; };
 /* End PBXBuildFile section */
@@ -92,6 +96,10 @@
 		CE5BA4D02A97E99A00449C0A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		CE5BA4DC2A97EF4200449C0A /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		CE5BA4DF2A97EFB800449C0A /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		CE6F211B2A98F663000B1B01 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		CE6F211D2A98F674000B1B01 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CE6F211F2A98F684000B1B01 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		CE6F21212A98F925000B1B01 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		EAC9253E87BF947148568B74 /* Pods-ItubersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ItubersTests.release.xcconfig"; path = "Target Support Files/Pods-ItubersTests/Pods-ItubersTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,6 +207,7 @@
 		CE1DCF202A97009500E3CC3E /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				CE6F211A2A98F656000B1B01 /* Home */,
 				CE1DCF222A9700B300E3CC3E /* Coordinator */,
 				CE1DCF2B2A9704A200E3CC3E /* Infraestrutura */,
 				CE1DCF212A9700AA00E3CC3E /* Login */,
@@ -225,6 +234,7 @@
 				CE1DCF292A97026C00E3CC3E /* Coordinator.swift */,
 				CE1DCF272A97013A00E3CC3E /* LoginCoordinator.swift */,
 				CE5BA4CE2A97B9B600449C0A /* RegisterCoordinator.swift */,
+				CE6F21212A98F925000B1B01 /* HomeCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -273,6 +283,16 @@
 				CE5BA4DF2A97EFB800449C0A /* Users.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CE6F211A2A98F656000B1B01 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CE6F211B2A98F663000B1B01 /* HomeView.swift */,
+				CE6F211D2A98F674000B1B01 /* HomeViewController.swift */,
+				CE6F211F2A98F684000B1B01 /* HomeViewModel.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		D4F9E917F3E3693F45C5871C /* Pods */ = {
@@ -549,9 +569,13 @@
 				CE1DCF2A2A97026C00E3CC3E /* Coordinator.swift in Sources */,
 				CE1DCF282A97013A00E3CC3E /* LoginCoordinator.swift in Sources */,
 				CE1DCF262A97012E00E3CC3E /* LoginView.swift in Sources */,
+				CE6F211E2A98F674000B1B01 /* HomeViewController.swift in Sources */,
+				CE6F21202A98F684000B1B01 /* HomeViewModel.swift in Sources */,
 				CE1DCF2E2A9704D200E3CC3E /* LabelDefault.swift in Sources */,
 				CE1DCEF22A97004400E3CC3E /* SceneDelegate.swift in Sources */,
 				CE1DCF302A97074B00E3CC3E /* TextFieldDefault.swift in Sources */,
+				CE6F211C2A98F663000B1B01 /* HomeView.swift in Sources */,
+				CE6F21222A98F925000B1B01 /* HomeCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

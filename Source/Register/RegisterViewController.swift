@@ -40,27 +40,26 @@ class RegisterViewController: ViewControllerDefault {
                   let email = self.viewScreen.emailTextField.text, !email.isEmpty,
                   let password = self.viewScreen.passwordTextField.text, !password.isEmpty else {
                 
-                Alert.showBasicAlert(title: "Erro", message: "Campos Inválidos ou Vazios", viewController: self)
-                return
+                Alert.showBasicAlert(title: "Erro", message: "Campos Inválidos ou Vazios", viewController: self) {}
+            return
             }
             
             if password.count < 6 {
-                Alert.showBasicAlert(title: "Erro", message: "A senha tem que conter no mínimo 6 caracteres.", viewController: self)
-                return
+                Alert.showBasicAlert(title: "Erro", message: "A senha tem que conter no mínimo 6 caracteres.", viewController: self) {}
             }
             
             var user = User(name: name, email: email, password: password)
             
             self.viewModel.registerUser(user: user)
         }.disposed(by: disposeBag)
-        
-        
     }
 }
 
 extension RegisterViewController: RegisterProtocol {
     func success() {
-        loginScreen?()
+        Alert.showBasicAlert(title: "Sucesso", message: "Usuário cadastrado com sucesso.", viewController: self) {
+            self.loginScreen?()
+        }
     }
     
     func failure(error: Error) {
@@ -71,6 +70,4 @@ extension RegisterViewController: RegisterProtocol {
             }
         }
     }
-    
-    
 }

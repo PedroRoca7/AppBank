@@ -40,6 +40,7 @@ class LoginCoordinator: Coordinator {
     }
         
     private func showHome(user: User) {
-       // Criar a outra tela e o coordinator dela.
+        let coordinator = HomeCoordinator(navigationController: navigationController, user: user)
+        coordinator.start()
     }
 }

@@ -9,9 +9,11 @@ import UIKit
 
 class Alert {
     
-    static func showBasicAlert(title: String, message: String, viewController: UIViewController) {
+    static func showBasicAlert(title: String, message: String, viewController: UIViewController, completion: (() -> Void)?) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            completion?()
+        }
         alertController.addAction(okAction)
         viewController.present(alertController, animated: true, completion: nil)
     }
