@@ -24,9 +24,17 @@ class HomeViewController: ViewControllerDefault {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Olá \(user?.name ?? "")"
+        configNavigationController()
         configDelegates()
         viewScreen.tableView.backgroundColor = .white
+    }
+    
+    private func configNavigationController() {
+        title = "Olá \(user?.name ?? "")"
+        navigationItem.hidesBackButton = true
+        navigationController?.navigationBar.prefersLargeTitles = true
+        let textAttributed = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.largeTitleTextAttributes = textAttributed
     }
     
     private func configDelegates() {

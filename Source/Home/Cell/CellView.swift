@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum TypeEntry {
+    case Input
+    case Output
+}
+
 class CellView: UIView {
     
     // MARK: Property
@@ -14,7 +19,11 @@ class CellView: UIView {
     
     // MARK: ElementsVisual
     
-
+    lazy var typeEntryLabel = LabelDefault(text: "Saída", color: .red, font: .systemFont(ofSize: 17))
+    
+    lazy var aboutLabel = LabelDefault(text: "Conta de Agua", color: .white, font: .systemFont(ofSize: 14))
+    
+    lazy var amountLabel = LabelDefault(text: "R$ 120,00", color: .red, font: .systemFont(ofSize: 20))
     
     // MARK: Inits
     
@@ -30,7 +39,39 @@ class CellView: UIView {
     // MARK: Add Elements e Constraints
     
     private func addElementsView() {
+        setTypeEntryLabel()
+        setAboutLabel()
+        setAmountLabel()
+    }
+    
+    private func setTypeEntryLabel() {
+        self.addSubview(typeEntryLabel)
         
+        NSLayoutConstraint.activate([
+            typeEntryLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+            typeEntryLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            typeEntryLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 80)
+        ])
+    }
+    
+    private func setAboutLabel() {
+        self.addSubview(aboutLabel)
+        
+        NSLayoutConstraint.activate([
+            aboutLabel.topAnchor.constraint(equalTo: typeEntryLabel.bottomAnchor, constant: 10),
+            aboutLabel.leadingAnchor.constraint(equalTo: typeEntryLabel.leadingAnchor),
+            aboutLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 50)
+        ])
+    }
+    
+    private func setAmountLabel() {
+        self.addSubview(amountLabel)
+        
+        NSLayoutConstraint.activate([
+            amountLabel.centerYAnchor.constraint(equalTo: typeEntryLabel.centerYAnchor),
+            amountLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            amountLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 80)
+        ])
     }
 }
 

@@ -26,7 +26,17 @@ class CustomTableViewCell: UITableViewCell {
          fatalError("init(coder:) has not been implemented")
      }
     
-    func prepareCell(amount: String) {
-
+    func prepareCell(typeEntry: TypeEntry, about: String, amount: String) {
+        if typeEntry == .Input {
+            viewCell.backgroundColor = .red
+            viewCell.typeEntryLabel.text = "Saída"
+            viewCell.amountLabel.text = amount
+            viewCell.aboutLabel.text = about
+        } else {
+            viewCell.backgroundColor = .green
+            viewCell.typeEntryLabel.text = "Entrada"
+            viewCell.amountLabel.text = amount
+            viewCell.aboutLabel.text = about
+        }
     }
 }
