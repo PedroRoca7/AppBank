@@ -11,11 +11,15 @@ class HomeViewController: ViewControllerDefault {
     
     // MARK: Propertys
     var user: User?
-    var statements: StatementsViewModel = []
+    
     lazy var viewScreen: HomeView = {
         let view = HomeView()
-        
         return view
+    }()
+    
+    lazy var viewModel: HomeViewModel = {
+        let vm = HomeViewModel()
+        return vm
     }()
     
     // MARK: Inits
@@ -27,8 +31,8 @@ class HomeViewController: ViewControllerDefault {
         super.viewDidLoad()
         configNavigationController()
         configDelegates()
-        viewScreen.tableView.backgroundColor = .orange
-        statements = StatementViewModel.mock()
+        viewModel.loadStatements()
+        viewScreen.amountLabel.text = "R$: \(String(viewModel.currentBalance()))"
     }
     
     private func configNavigationController() {
@@ -49,13 +53,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: TableView DataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return statements.count
+        return viewModel.statements.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell
         
-        let statement = statements[indexPath.row]
+        let statement = viewModel.statements[indexPath.row]
         cell?.prepareCell(statement: statement)
         
         return cell ?? UITableViewCell()

@@ -13,16 +13,16 @@ struct StatementModel: Codable {
     let id: Int?
     let type: Int?
     let about: String?
-    let amount: String?
+    let amount: Int?
     
     init() {
         self.id = 0
         self.type = 0
         self.about = String.empty
-        self.amount = String.empty
+        self.amount = 0
     }
     
-    init(id: Int, type: Int, about: String, amount: String) {
+    init(id: Int, type: Int, about: String, amount: Int) {
         self.id = id
         self.type = type
         self.about = about

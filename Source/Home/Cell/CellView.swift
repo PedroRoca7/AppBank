@@ -19,7 +19,7 @@ class CellView: UIView {
     
     // MARK: ElementsVisual
     
-    lazy var downContentView: UIView = {
+    lazy var contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.alpha = 0.5
@@ -27,20 +27,11 @@ class CellView: UIView {
         return view
     }()
     
-    lazy var contentView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .blue
-        view.layer.masksToBounds = true
-        view.layer.cornerRadius = 15
-        return view
-    }()
+    lazy var typeEntryLabel = LabelDefault(text: "Saída", color: .white, font: .boldSystemFont(ofSize: 22))
     
-    lazy var typeEntryLabel = LabelDefault(text: "Saída", color: .red, font: .systemFont(ofSize: 17))
+    lazy var aboutLabel = LabelDefault(text: "Conta de Agua", color: .white, font: .systemFont(ofSize: 16))
     
-    lazy var aboutLabel = LabelDefault(text: "Conta de Agua", color: .red, font: .systemFont(ofSize: 14))
-    
-    lazy var amountLabel = LabelDefault(text: "R$ 120,00", color: .red, font: .systemFont(ofSize: 20))
+    lazy var amountLabel = LabelDefault(text: "R$ 120,00", color: .white, font: .systemFont(ofSize: 20))
     
     // MARK: Inits
     
@@ -56,32 +47,20 @@ class CellView: UIView {
     // MARK: Add Elements e Constraints
     
     private func addElementsView() {
-        //setDownContentView()
-        //setContentView()
+        setContentView()
         setTypeEntryLabel()
         setAboutLabel()
         setAmountLabel()
-    }
-    
-    private func setDownContentView() {
-        self.addSubview(downContentView)
-        
-        NSLayoutConstraint.activate([
-            downContentView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
-            downContentView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
-            downContentView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 5),
-            downContentView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 5)
-        ])
     }
     
     private func setContentView() {
         self.addSubview(contentView)
         
         NSLayoutConstraint.activate([
-            contentView.topAnchor.constraint(equalTo: topAnchor),
-            contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16),
-            contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16)
+            contentView.topAnchor.constraint(equalTo: self.topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
     }
     
@@ -89,8 +68,8 @@ class CellView: UIView {
         self.addSubview(typeEntryLabel)
         
         NSLayoutConstraint.activate([
-            typeEntryLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            typeEntryLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            typeEntryLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+            typeEntryLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             typeEntryLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 80)
         ])
     }
@@ -102,7 +81,7 @@ class CellView: UIView {
             aboutLabel.topAnchor.constraint(equalTo: typeEntryLabel.bottomAnchor, constant: 50),
             aboutLabel.leadingAnchor.constraint(equalTo: typeEntryLabel.leadingAnchor),
             aboutLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 50),
-            aboutLabel.bottomAnchor.constraint(greaterThanOrEqualTo: contentView.bottomAnchor, constant: -25)
+            aboutLabel.bottomAnchor.constraint(greaterThanOrEqualTo: self.bottomAnchor, constant: -25)
         ])
     }
     
@@ -112,7 +91,8 @@ class CellView: UIView {
         NSLayoutConstraint.activate([
             amountLabel.centerYAnchor.constraint(equalTo: typeEntryLabel.centerYAnchor),
             amountLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 80),
-            amountLabel.leadingAnchor.constraint(lessThanOrEqualTo: typeEntryLabel.trailingAnchor, constant: 90)
+            amountLabel.leadingAnchor.constraint(lessThanOrEqualTo: typeEntryLabel.trailingAnchor, constant: 120),
+            amountLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5)
         ])
     }
 }
