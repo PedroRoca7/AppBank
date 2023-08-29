@@ -15,8 +15,8 @@ class HomeViewModel {
         statements = StatementViewModel.mock()
     }
     
-    func currentBalance() -> Int {
-        var balance = 0
+    func currentBalance() -> Double {
+        var balance: Double = 0
         for statement in statements {
             balance += statement.amout
         }

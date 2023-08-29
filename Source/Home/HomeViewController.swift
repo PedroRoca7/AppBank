@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class HomeViewController: ViewControllerDefault {
     
     // MARK: Propertys
     var user: User?
-    
+    var disposeBag = DisposeBag()
     lazy var viewScreen: HomeView = {
         let view = HomeView()
         return view
@@ -32,7 +34,18 @@ class HomeViewController: ViewControllerDefault {
         configNavigationController()
         configDelegates()
         viewModel.loadStatements()
-        viewScreen.amountLabel.text = "R$: \(String(viewModel.currentBalance()))"
+        viewScreen.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: viewModel.currentBalance(), typeCurrency: "pt-BR", currencySimbol: "R$")
+        
+        viewScreen.hideAmountButton.rx.tap.bind {
+            if self.viewScreen.amountLabel.isHidden == true {
+                self.viewScreen.amountLabel.isHidden = false
+                self.viewScreen.hideAmountButton.setImage(UIImage(named: "eyeShow"),for: .normal)
+            } else {
+                self.viewScreen.amountLabel.isHidden = true
+                self.viewScreen.hideAmountButton.setImage(UIImage(named: "eyeHide"),for: .normal)
+            }
+        }.disposed(by: disposeBag)
+        
     }
     
     private func configNavigationController() {

@@ -29,7 +29,7 @@ class StatementViewModel {
         model.about ?? String.empty
     }
     
-    var amout: Int {
+    var amout: Double {
         model.amount ?? 0
     }
     
@@ -38,6 +38,10 @@ class StatementViewModel {
         
         mocks.append(StatementViewModel(model: StatementModel(id: 1, type: 1, about: "Conta de luz", amount: -190)))
         mocks.append(StatementViewModel(model: StatementModel(id: 1, type: 0, about: "Salário do mês", amount: 1900)))
+        mocks.append(StatementViewModel(model: StatementModel(id: 1, type: 1, about: "Conta de Água", amount: -85.99)))
+        mocks.append(StatementViewModel(model: StatementModel(id: 1, type: 1, about: "Internet", amount: -119.90)))
+        mocks.append(StatementViewModel(model: StatementModel(id: 1, type: 1, about: "Supermecado Barbosa", amount: -163.74)))
+        
         
         return mocks
     }

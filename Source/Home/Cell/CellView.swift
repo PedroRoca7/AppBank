@@ -92,7 +92,7 @@ class CellView: UIView {
             amountLabel.centerYAnchor.constraint(equalTo: typeEntryLabel.centerYAnchor),
             amountLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 80),
             amountLabel.leadingAnchor.constraint(lessThanOrEqualTo: typeEntryLabel.trailingAnchor, constant: 120),
-            amountLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5)
+            amountLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
         ])
     }
 }

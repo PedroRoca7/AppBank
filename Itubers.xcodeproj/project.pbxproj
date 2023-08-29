@@ -43,6 +43,7 @@
 		CEA6DC8B2A9CF280004722AF /* StatementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6DC8A2A9CF280004722AF /* StatementModel.swift */; };
 		CEA6DC8D2A9CFF22004722AF /* StatementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6DC8C2A9CFF22004722AF /* StatementViewModel.swift */; };
 		CEA6DC902A9D27CB004722AF /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6DC8F2A9D27CB004722AF /* String+.swift */; };
+		CEE734BC2A9E5F6B002320DB /* FormatterNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE734BB2A9E5F6B002320DB /* FormatterNumber.swift */; };
 		DDBC039299E602F2813EA210 /* Pods_Itubers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4AEECEB59B9C712FAE34DB /* Pods_Itubers.framework */; };
 		FD214C5F15D4E61ABDB5DF79 /* Pods_ItubersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E288E1C8F1D5F33464B21F /* Pods_ItubersTests.framework */; };
 /* End PBXBuildFile section */
@@ -110,6 +111,7 @@
 		CEA6DC8A2A9CF280004722AF /* StatementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementModel.swift; sourceTree = "<group>"; };
 		CEA6DC8C2A9CFF22004722AF /* StatementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementViewModel.swift; sourceTree = "<group>"; };
 		CEA6DC8F2A9D27CB004722AF /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		CEE734BB2A9E5F6B002320DB /* FormatterNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterNumber.swift; sourceTree = "<group>"; };
 		EAC9253E87BF947148568B74 /* Pods-ItubersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ItubersTests.release.xcconfig"; path = "Target Support Files/Pods-ItubersTests/Pods-ItubersTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -253,6 +255,7 @@
 		CE1DCF2B2A9704A200E3CC3E /* Infraestrutura */ = {
 			isa = PBXGroup;
 			children = (
+				CEE734BA2A9E5F3E002320DB /* Utils */,
 				CEA6DC8E2A9D27B6004722AF /* Extensions */,
 				CE1C4AD52A984DFE00AEA219 /* Alert */,
 				CE1DCF2C2A9704BF00E3CC3E /* Components */,
@@ -348,6 +351,14 @@
 				CEA6DC8F2A9D27CB004722AF /* String+.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CEE734BA2A9E5F3E002320DB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CEE734BB2A9E5F6B002320DB /* FormatterNumber.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		D4F9E917F3E3693F45C5871C /* Pods */ = {
@@ -630,6 +641,7 @@
 				CE1DCF262A97012E00E3CC3E /* LoginView.swift in Sources */,
 				CE6F211E2A98F674000B1B01 /* HomeViewController.swift in Sources */,
 				CE6F21202A98F684000B1B01 /* HomeViewModel.swift in Sources */,
+				CEE734BC2A9E5F6B002320DB /* FormatterNumber.swift in Sources */,
 				CE6F21272A99229C000B1B01 /* CustomTableViewCell.swift in Sources */,
 				CE1DCF2E2A9704D200E3CC3E /* LabelDefault.swift in Sources */,
 				CE1DCEF22A97004400E3CC3E /* SceneDelegate.swift in Sources */,

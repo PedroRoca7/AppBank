@@ -37,12 +37,12 @@ class CustomTableViewCell: UITableViewCell {
         if statement.type == .Input {
             viewCell.contentView.backgroundColor = .green
             viewCell.typeEntryLabel.text = "Entrada"
-            viewCell.amountLabel.text = "R$: \(formatNumberToDecimal(value: statement.amout))"
+            viewCell.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: statement.amout, typeCurrency: "pt-BR", currencySimbol: "R$")
             viewCell.aboutLabel.text = statement.about
         } else {
             viewCell.contentView.backgroundColor = .red
             viewCell.typeEntryLabel.text = "Saída"
-            viewCell.amountLabel.text = "R$: \(formatNumberToDecimal(value: statement.amout))"
+            viewCell.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: statement.amout, typeCurrency: "pt-BR", currencySimbol: "R$")
             viewCell.aboutLabel.text = statement.about
         }
     }
@@ -56,19 +56,5 @@ class CustomTableViewCell: UITableViewCell {
             viewCell.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
             viewCell.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -24),
         ])
-    }
-    
-    private func formatNumberToDecimal(value: Int) -> String {
-        let numberFormatter = NumberFormatter()
-
-        // Atribuindo o locale desejado
-        numberFormatter.locale = Locale(identifier: "pt_BR")
-
-        // Importante para que sejam exibidas as duas casas após a vírgula
-        numberFormatter.minimumFractionDigits = 2
-
-        numberFormatter.numberStyle = .decimal
-
-        return numberFormatter.string(from: NSNumber(value:value)) ?? "Valor indefinido"
     }
 }
