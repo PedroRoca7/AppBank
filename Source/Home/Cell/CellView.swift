@@ -19,9 +19,26 @@ class CellView: UIView {
     
     // MARK: ElementsVisual
     
+    lazy var downContentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.alpha = 0.5
+        view.layer.cornerRadius = 15
+        return view
+    }()
+    
+    lazy var contentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .blue
+        view.layer.masksToBounds = true
+        view.layer.cornerRadius = 15
+        return view
+    }()
+    
     lazy var typeEntryLabel = LabelDefault(text: "Saída", color: .red, font: .systemFont(ofSize: 17))
     
-    lazy var aboutLabel = LabelDefault(text: "Conta de Agua", color: .white, font: .systemFont(ofSize: 14))
+    lazy var aboutLabel = LabelDefault(text: "Conta de Agua", color: .red, font: .systemFont(ofSize: 14))
     
     lazy var amountLabel = LabelDefault(text: "R$ 120,00", color: .red, font: .systemFont(ofSize: 20))
     
@@ -39,17 +56,41 @@ class CellView: UIView {
     // MARK: Add Elements e Constraints
     
     private func addElementsView() {
+        //setDownContentView()
+        //setContentView()
         setTypeEntryLabel()
         setAboutLabel()
         setAmountLabel()
+    }
+    
+    private func setDownContentView() {
+        self.addSubview(downContentView)
+        
+        NSLayoutConstraint.activate([
+            downContentView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
+            downContentView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
+            downContentView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 5),
+            downContentView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 5)
+        ])
+    }
+    
+    private func setContentView() {
+        self.addSubview(contentView)
+        
+        NSLayoutConstraint.activate([
+            contentView.topAnchor.constraint(equalTo: topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16),
+            contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16)
+        ])
     }
     
     private func setTypeEntryLabel() {
         self.addSubview(typeEntryLabel)
         
         NSLayoutConstraint.activate([
-            typeEntryLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-            typeEntryLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            typeEntryLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            typeEntryLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             typeEntryLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 80)
         ])
     }
@@ -58,9 +99,10 @@ class CellView: UIView {
         self.addSubview(aboutLabel)
         
         NSLayoutConstraint.activate([
-            aboutLabel.topAnchor.constraint(equalTo: typeEntryLabel.bottomAnchor, constant: 10),
+            aboutLabel.topAnchor.constraint(equalTo: typeEntryLabel.bottomAnchor, constant: 50),
             aboutLabel.leadingAnchor.constraint(equalTo: typeEntryLabel.leadingAnchor),
-            aboutLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 50)
+            aboutLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 50),
+            aboutLabel.bottomAnchor.constraint(greaterThanOrEqualTo: contentView.bottomAnchor, constant: -25)
         ])
     }
     
@@ -69,8 +111,8 @@ class CellView: UIView {
         
         NSLayoutConstraint.activate([
             amountLabel.centerYAnchor.constraint(equalTo: typeEntryLabel.centerYAnchor),
-            amountLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            amountLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 80)
+            amountLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 80),
+            amountLabel.leadingAnchor.constraint(lessThanOrEqualTo: typeEntryLabel.trailingAnchor, constant: 90)
         ])
     }
 }

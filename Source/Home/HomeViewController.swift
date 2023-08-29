@@ -11,6 +11,7 @@ class HomeViewController: ViewControllerDefault {
     
     // MARK: Propertys
     var user: User?
+    var statements: StatementsViewModel = []
     lazy var viewScreen: HomeView = {
         let view = HomeView()
         
@@ -26,7 +27,8 @@ class HomeViewController: ViewControllerDefault {
         super.viewDidLoad()
         configNavigationController()
         configDelegates()
-        viewScreen.tableView.backgroundColor = .white
+        viewScreen.tableView.backgroundColor = .orange
+        statements = StatementViewModel.mock()
     }
     
     private func configNavigationController() {
@@ -47,14 +49,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: TableView DataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return statements.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell
         
-        //        let character = chars[indexPath.row]
-        //        cell?.prepareCell(with: character)
+        let statement = statements[indexPath.row]
+        cell?.prepareCell(statement: statement)
         
         return cell ?? UITableViewCell()
     }

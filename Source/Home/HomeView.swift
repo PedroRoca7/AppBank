@@ -56,9 +56,12 @@ class HomeView: UIView {
     }()
     
     lazy var tableView: UITableView = {
-        let tb = UITableView(frame: .zero, style: .plain)
+        let tb = UITableView()
         tb.translatesAutoresizingMaskIntoConstraints = false
         tb.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
+        tb.rowHeight = 150
+        tb.estimatedRowHeight = 150
+        tb.backgroundColor = .clear
         return tb
     }()
     
