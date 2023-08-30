@@ -23,8 +23,8 @@ class LoginCoordinator: Coordinator {
     func start() {
         let viewController = LoginViewController()
         
-        viewController.onLoginTap = { [weak self] user in
-            self?.showHome(user: user)
+        viewController.onLoginTap = { user in
+            self.showHome(user: user)
         }
         
         viewController.onRegisterTap = {
@@ -40,7 +40,7 @@ class LoginCoordinator: Coordinator {
     }
         
     private func showHome(user: User) {
-        let coordinator = HomeCoordinator(navigationController: navigationController, user: user)
+        let coordinator = TabBarCoordinator(navigationController: navigationController, user: user)
         coordinator.start()
     }
 }

@@ -28,7 +28,7 @@ class HomeViewController: ViewControllerDefault {
     override func loadView() {
         self.view = viewScreen
     }
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configNavigationController()
@@ -49,8 +49,8 @@ class HomeViewController: ViewControllerDefault {
     }
     
     private func configNavigationController() {
-        title = "Olá \(user?.name ?? "")"
-        navigationItem.hidesBackButton = true
+        navigationController?.navigationItem.title = "Olá \(user?.name ?? "")"
+        navigationController?.navigationItem.hidesBackButton = true
         navigationController?.navigationBar.prefersLargeTitles = true
         let textAttributed = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.largeTitleTextAttributes = textAttributed
