@@ -12,7 +12,8 @@ class HomeViewModel {
     var statements: StatementsViewModel = []
     
     func loadStatements() {
-        statements = StatementViewModel.mock()
+        statements = StatementViewModel.loadStatement()
+        print(statements)
     }
     
     func currentBalance() -> Double {
