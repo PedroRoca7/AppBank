@@ -34,8 +34,6 @@ class HomeViewController: ViewControllerDefault {
         configNavigationController()
         configDelegates()
         viewModel.loadStatements()
-        viewScreen.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: viewModel.currentBalance(), typeCurrency: "pt-BR", currencySimbol: "R$")
-        
         viewScreen.hideAmountButton.rx.tap.bind {
             if self.viewScreen.amountLabel.isHidden == true {
                 self.viewScreen.amountLabel.isHidden = false
@@ -59,6 +57,7 @@ class HomeViewController: ViewControllerDefault {
     private func configDelegates() {
         viewScreen.tableView.delegate = self
         viewScreen.tableView.dataSource = self
+        viewModel.delegate = self
     }
 }
 
@@ -77,4 +76,19 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell ?? UITableViewCell()
     }
+}
+
+extension HomeViewController: HomeViewModelProtocol {
+    func success() {
+        DispatchQueue.main.async {
+            self.viewScreen.tableView.reloadData()
+            self.viewScreen.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: self.viewModel.currentBalance(), typeCurrency: "pt-BR", currencySymbol: "R$")
+        }
+    }
+    
+    func failure() {
+        print("Erro ao carregar as informaçõs da tableView")
+    }
+    
+    
 }

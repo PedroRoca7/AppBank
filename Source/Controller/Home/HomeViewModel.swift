@@ -7,13 +7,23 @@
 
 import Foundation
 
+protocol HomeViewModelProtocol: AnyObject {
+    func success()
+    func failure()
+}
+
 class HomeViewModel {
-    
+    weak var delegate: HomeViewModelProtocol?
     var statements: StatementsViewModel = []
     
     func loadStatements() {
-        statements = StatementViewModel.loadStatement()
-        print(statements)
+        StatementViewModel.loadStatement { [weak self] result in
+            guard let self = self else { return }
+            if let result = result {
+                self.statements = result
+            }
+            self.delegate?.success()
+        }
     }
     
     func currentBalance() -> Double {

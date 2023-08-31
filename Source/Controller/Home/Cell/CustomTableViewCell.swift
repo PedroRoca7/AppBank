@@ -37,12 +37,12 @@ class CustomTableViewCell: UITableViewCell {
         if statement.type == .Input {
             viewCell.contentView.backgroundColor = .green
             viewCell.typeEntryLabel.text = "Entrada"
-            viewCell.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: statement.amout, typeCurrency: "pt-BR", currencySimbol: "R$")
+            viewCell.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: statement.amout, typeCurrency: "pt-BR", currencySymbol: "R$")
             viewCell.aboutLabel.text = statement.about
         } else {
             viewCell.contentView.backgroundColor = .red
             viewCell.typeEntryLabel.text = "Saída"
-            viewCell.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: statement.amout, typeCurrency: "pt-BR", currencySimbol: "R$")
+            viewCell.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: statement.amout, typeCurrency: "pt-BR", currencySymbol: "R$")
             viewCell.aboutLabel.text = statement.about
         }
     }

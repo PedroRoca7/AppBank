@@ -8,13 +8,17 @@
 import Foundation
 
 class FormatterNumber {
-    static func formatNumberToCurrency(value: Double, typeCurrency: String, currencySimbol: String) -> String {
+    static func formatNumberToCurrency(value: Double, typeCurrency: String, currencySymbol: String) -> String {
         let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .currency
-        numberFormatter.currencySymbol = currencySimbol
-        numberFormatter.locale = Locale(identifier: typeCurrency)
         numberFormatter.minimumFractionDigits = 2
 
-        return numberFormatter.string(from: NSNumber(value:value)) ?? "Valor indefinido"
+        var formattedString = numberFormatter.string(from: NSNumber(value: abs(value))) ?? "Valor indefinido"
+        
+        if value < 0 {
+            formattedString = "\(currencySymbol) -" + formattedString
+        } else {
+            formattedString = "\(currencySymbol) " + formattedString
+        }
+        return formattedString
     }
 }

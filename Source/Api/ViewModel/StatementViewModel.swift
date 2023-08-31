@@ -33,14 +33,19 @@ class StatementViewModel {
         model.amount ?? 0
     }
     
-    static func loadStatement() -> StatementsViewModel {
+    static func loadStatement(completion: @escaping (StatementsViewModel?) -> Void) {
         var mocks = StatementsViewModel()
         ApiStatement.loadStatements { statements in
             for statement in statements {
-                mocks.append(StatementViewModel(model: statement))
+                if let statementID = statement.id,
+                   let statementType = statement.type,
+                   let statementAbout = statement.about,
+                   let statementAmount = statement.amount {
+                    mocks.append(StatementViewModel(model: StatementModel(id: statementID, type: statementType, about: statementAbout, amount: statementAmount)))
+                }
             }
+            completion(mocks)
         }
-        return mocks
     }
     
     static func mock() -> StatementsViewModel {
