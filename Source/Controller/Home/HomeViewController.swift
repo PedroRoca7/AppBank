@@ -19,21 +19,26 @@ class HomeViewController: ViewControllerDefault {
         return view
     }()
     
-    lazy var viewModel: HomeViewModel = {
-        let vm = HomeViewModel()
+    lazy var viewModel: ExtractViewModel = {
+        let vm = ExtractViewModel()
         return vm
     }()
     
     // MARK: Inits
     override func loadView() {
         self.view = viewScreen
+
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        guard let user = self.user else { return }
+        self.tabBarController?.navigationItem.title = "Olá \(user.name)"
+        self.tabBarController?.navigationItem.setHidesBackButton(true, animated: false)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        configNavigationController()
-        configDelegates()
         viewModel.loadStatements()
+        viewModel.delegate = self
         viewScreen.hideAmountButton.rx.tap.bind {
             if self.viewScreen.amountLabel.isHidden == true {
                 self.viewScreen.amountLabel.isHidden = false
@@ -44,51 +49,17 @@ class HomeViewController: ViewControllerDefault {
             }
         }.disposed(by: disposeBag)
         
-    }
-    
-    private func configNavigationController() {
-        navigationController?.navigationItem.title = "Olá \(user?.name ?? "")"
-        navigationController?.navigationItem.hidesBackButton = true
-        navigationController?.navigationBar.prefersLargeTitles = true
-        let textAttributed = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.largeTitleTextAttributes = textAttributed
-    }
-    
-    private func configDelegates() {
-        viewScreen.tableView.delegate = self
-        viewScreen.tableView.dataSource = self
-        viewModel.delegate = self
+
     }
 }
-
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
-    // MARK: TableView DataSource
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.statements.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell
-        
-        let statement = viewModel.statements[indexPath.row]
-        cell?.prepareCell(statement: statement)
-        
-        return cell ?? UITableViewCell()
-    }
-}
-
-extension HomeViewController: HomeViewModelProtocol {
+extension HomeViewController: ExtractViewModelProtocol {
     func success() {
         DispatchQueue.main.async {
-            self.viewScreen.tableView.reloadData()
             self.viewScreen.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: self.viewModel.currentBalance(), typeCurrency: "pt-BR", currencySymbol: "R$")
         }
     }
     
     func failure() {
-        print("Erro ao carregar as informaçõs da tableView")
+        print("Falha ao carregar o saldo")
     }
-    
-    
 }

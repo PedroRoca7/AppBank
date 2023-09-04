@@ -1,20 +1,22 @@
 //
-//  HomeViewModel.swift
+//  ExtractViewModel.swift
 //  Itubers
 //
-//  Created by Pedro Henrique on 25/08/23.
+//  Created by Pedro Henrique on 04/09/23.
 //
 
 import Foundation
 
-protocol HomeViewModelProtocol: AnyObject {
+protocol ExtractViewModelProtocol: AnyObject {
     func success()
     func failure()
 }
 
-class HomeViewModel {
-    weak var delegate: HomeViewModelProtocol?
+class ExtractViewModel {
+    
     var statements: StatementsViewModel = []
+    weak var delegate: ExtractViewModelProtocol?
+   
     
     func loadStatements() {
         StatementViewModel.loadStatement { [weak self] result in
@@ -26,7 +28,7 @@ class HomeViewModel {
         }
     }
     
-    func currentBalance() -> Double {
+     func currentBalance() -> Double {
         var balance: Double = 0
         for statement in statements {
             balance += statement.amout

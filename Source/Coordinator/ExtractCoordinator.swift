@@ -7,11 +7,11 @@
 
 import UIKit
 
-class StatementCoordinator: Coordinator {
+class ExtractCoordinator: Coordinator {
     
     let navigationController: UINavigationController
-    lazy var statementViewController: StatementViewController = {
-        let viewController = StatementViewController()
+    lazy var extractViewController: ExtractViewController = {
+        let viewController = ExtractViewController()
         viewController.tabBarItem.image = UIImage(systemName: "dollarsign.circle")
         viewController.tabBarItem.title = "Extrato"
         return viewController

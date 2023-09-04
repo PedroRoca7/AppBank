@@ -21,10 +21,10 @@ class TabBarCoordinator: Coordinator {
         let tabBarController = TabBarController()
         
         let homeCoordinator = HomeCoordinator(navigationController: self.navigationController, user: self.user )
-        let statementCoordinator = StatementCoordinator(navigationController: self.navigationController)
+        let extractCoordinator = ExtractCoordinator(navigationController: self.navigationController)
         let productsCoordinator = ProductsCoordinator(navigationController: self.navigationController)
         
-        tabBarController.setViewControllers([homeCoordinator.homeViewController, statementCoordinator.statementViewController, productsCoordinator.productsViewController], animated: true)
+        tabBarController.setViewControllers([homeCoordinator.homeViewController, extractCoordinator.extractViewController, productsCoordinator.productsViewController], animated: true)
         
         self.navigationController.pushViewController(tabBarController, animated: true)
     }

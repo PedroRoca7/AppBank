@@ -55,16 +55,6 @@ class HomeView: UIView {
         return bt
     }()
     
-    lazy var tableView: UITableView = {
-        let tb = UITableView()
-        tb.translatesAutoresizingMaskIntoConstraints = false
-        tb.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
-        tb.rowHeight = 150
-        tb.estimatedRowHeight = 150
-        tb.backgroundColor = .clear
-        return tb
-    }()
-    
     // MARK: Inits
     
     override init(frame: CGRect) {
@@ -85,7 +75,6 @@ class HomeView: UIView {
         setBalanceLabel()
         setAmountLabel()
         setHideAmountButton()
-        setTableView()
     }
     
     private func setBackgroundImage() {
@@ -150,17 +139,6 @@ class HomeView: UIView {
             hideAmountButton.widthAnchor.constraint(equalToConstant: 30),
             hideAmountButton.heightAnchor.constraint(equalToConstant: 30),
             
-        ])
-    }
-    
-    private func setTableView() {
-        self.addSubview(tableView)
-        
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: viewBalance.bottomAnchor,constant: 10),
-            tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
 }
