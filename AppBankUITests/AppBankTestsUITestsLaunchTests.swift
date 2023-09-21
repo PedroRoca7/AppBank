@@ -1,13 +1,13 @@
 //
-//  ItubersUITestsLaunchTests.swift
-//  ItubersUITests
+//  AppBankTestsUITestsLaunchTests.swift
+//  AppBankTestsUITestsLaunchTests
 //
 //  Created by Pedro Henrique on 24/08/23.
 //
 
 import XCTest
 
-final class ItubersUITestsLaunchTests: XCTestCase {
+final class AppBankTestsUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

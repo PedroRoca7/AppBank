@@ -1,6 +1,6 @@
 //
 //  ExtractViewModel.swift
-//  Itubers
+//  AppBank
 //
 //  Created by Pedro Henrique on 04/09/23.
 //

@@ -1,6 +1,6 @@
 //
 //  HomeView.swift
-//  Itubers
+//  AppBank
 //
 //  Created by Pedro Henrique on 25/08/23.
 //
@@ -46,7 +46,7 @@ class HomeView: UIView {
     
     lazy var balanceLabel = LabelDefault(text: "Saldo", color: .white, font: .boldSystemFont(ofSize: 18))
     
-    lazy var amountLabel = LabelDefault(text: "R$ 1.000,00", color: .white, font: .boldSystemFont(ofSize: 26))
+    lazy var amountLabel = LabelDefault(text: "", color: .white, font: .boldSystemFont(ofSize: 26))
     
     lazy var hideAmountButton: ButtonDefault = {
         let bt = ButtonDefault()

@@ -14,9 +14,9 @@
 		CE1DCEF22A97004400E3CC3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCEF12A97004400E3CC3E /* SceneDelegate.swift */; };
 		CE1DCEF92A97004800E3CC3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1DCEF82A97004800E3CC3E /* Assets.xcassets */; };
 		CE1DCEFC2A97004800E3CC3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1DCEFA2A97004800E3CC3E /* LaunchScreen.storyboard */; };
-		CE1DCF072A97004900E3CC3E /* ItubersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCF062A97004900E3CC3E /* ItubersTests.swift */; };
-		CE1DCF112A97004900E3CC3E /* ItubersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCF102A97004900E3CC3E /* ItubersUITests.swift */; };
-		CE1DCF132A97004900E3CC3E /* ItubersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCF122A97004900E3CC3E /* ItubersUITestsLaunchTests.swift */; };
+		CE1DCF072A97004900E3CC3E /* AppBankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCF062A97004900E3CC3E /* AppBankTests.swift */; };
+		CE1DCF112A97004900E3CC3E /* AppBankTestsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCF102A97004900E3CC3E /* AppBankTestsUITests.swift */; };
+		CE1DCF132A97004900E3CC3E /* AppBankTestsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCF122A97004900E3CC3E /* AppBankTestsUITestsLaunchTests.swift */; };
 		CE1DCF242A97012300E3CC3E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCF232A97012300E3CC3E /* LoginViewController.swift */; };
 		CE1DCF262A97012E00E3CC3E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCF252A97012E00E3CC3E /* LoginView.swift */; };
 		CE1DCF282A97013A00E3CC3E /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCF272A97013A00E3CC3E /* LoginCoordinator.swift */; };
@@ -85,17 +85,17 @@
 		C8AC14F57A3A1BBC828B90BA /* Pods-Itubers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Itubers.debug.xcconfig"; path = "Target Support Files/Pods-Itubers/Pods-Itubers.debug.xcconfig"; sourceTree = "<group>"; };
 		CE1B474D2A97FF8200056914 /* AuthenticatorFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatorFirebase.swift; sourceTree = "<group>"; };
 		CE1C4AD62A984E0C00AEA219 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
-		CE1DCEEC2A97004400E3CC3E /* Itubers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Itubers.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE1DCEEC2A97004400E3CC3E /* AppBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1DCEEF2A97004400E3CC3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE1DCEF12A97004400E3CC3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CE1DCEF82A97004800E3CC3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE1DCEFB2A97004800E3CC3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE1DCEFD2A97004800E3CC3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE1DCF022A97004900E3CC3E /* ItubersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ItubersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE1DCF062A97004900E3CC3E /* ItubersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItubersTests.swift; sourceTree = "<group>"; };
-		CE1DCF0C2A97004900E3CC3E /* ItubersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ItubersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE1DCF102A97004900E3CC3E /* ItubersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItubersUITests.swift; sourceTree = "<group>"; };
-		CE1DCF122A97004900E3CC3E /* ItubersUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItubersUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CE1DCF022A97004900E3CC3E /* AppBankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppBankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE1DCF062A97004900E3CC3E /* AppBankTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBankTests.swift; sourceTree = "<group>"; };
+		CE1DCF0C2A97004900E3CC3E /* AppBankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppBankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE1DCF102A97004900E3CC3E /* AppBankTestsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBankTestsUITests.swift; sourceTree = "<group>"; };
+		CE1DCF122A97004900E3CC3E /* AppBankTestsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBankTestsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CE1DCF232A97012300E3CC3E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE1DCF252A97012E00E3CC3E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CE1DCF272A97013A00E3CC3E /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
@@ -185,9 +185,9 @@
 			isa = PBXGroup;
 			children = (
 				CE1DCF202A97009500E3CC3E /* Source */,
-				CE1DCEEE2A97004400E3CC3E /* Itubers */,
-				CE1DCF052A97004900E3CC3E /* ItubersTests */,
-				CE1DCF0F2A97004900E3CC3E /* ItubersUITests */,
+				CE1DCEEE2A97004400E3CC3E /* AppBank */,
+				CE1DCF052A97004900E3CC3E /* AppBankTests */,
+				CE1DCF0F2A97004900E3CC3E /* AppBankUITests */,
 				CE1DCEED2A97004400E3CC3E /* Products */,
 				D4F9E917F3E3693F45C5871C /* Pods */,
 				BB4C61C18CA69575C9363E76 /* Frameworks */,
@@ -197,14 +197,14 @@
 		CE1DCEED2A97004400E3CC3E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE1DCEEC2A97004400E3CC3E /* Itubers.app */,
-				CE1DCF022A97004900E3CC3E /* ItubersTests.xctest */,
-				CE1DCF0C2A97004900E3CC3E /* ItubersUITests.xctest */,
+				CE1DCEEC2A97004400E3CC3E /* AppBank.app */,
+				CE1DCF022A97004900E3CC3E /* AppBankTests.xctest */,
+				CE1DCF0C2A97004900E3CC3E /* AppBankUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CE1DCEEE2A97004400E3CC3E /* Itubers */ = {
+		CE1DCEEE2A97004400E3CC3E /* AppBank */ = {
 			isa = PBXGroup;
 			children = (
 				CE1DCEEF2A97004400E3CC3E /* AppDelegate.swift */,
@@ -214,24 +214,24 @@
 				CE1DCEFA2A97004800E3CC3E /* LaunchScreen.storyboard */,
 				CE1DCEF12A97004400E3CC3E /* SceneDelegate.swift */,
 			);
-			path = Itubers;
+			path = AppBank;
 			sourceTree = "<group>";
 		};
-		CE1DCF052A97004900E3CC3E /* ItubersTests */ = {
+		CE1DCF052A97004900E3CC3E /* AppBankTests */ = {
 			isa = PBXGroup;
 			children = (
-				CE1DCF062A97004900E3CC3E /* ItubersTests.swift */,
+				CE1DCF062A97004900E3CC3E /* AppBankTests.swift */,
 			);
-			path = ItubersTests;
+			path = AppBankTests;
 			sourceTree = "<group>";
 		};
-		CE1DCF0F2A97004900E3CC3E /* ItubersUITests */ = {
+		CE1DCF0F2A97004900E3CC3E /* AppBankUITests */ = {
 			isa = PBXGroup;
 			children = (
-				CE1DCF102A97004900E3CC3E /* ItubersUITests.swift */,
-				CE1DCF122A97004900E3CC3E /* ItubersUITestsLaunchTests.swift */,
+				CE1DCF102A97004900E3CC3E /* AppBankTestsUITests.swift */,
+				CE1DCF122A97004900E3CC3E /* AppBankTestsUITestsLaunchTests.swift */,
 			);
-			path = ItubersUITests;
+			path = AppBankUITests;
 			sourceTree = "<group>";
 		};
 		CE1DCF202A97009500E3CC3E /* Source */ = {
@@ -444,9 +444,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CE1DCEEB2A97004400E3CC3E /* Itubers */ = {
+		CE1DCEEB2A97004400E3CC3E /* AppBank */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE1DCF162A97004900E3CC3E /* Build configuration list for PBXNativeTarget "Itubers" */;
+			buildConfigurationList = CE1DCF162A97004900E3CC3E /* Build configuration list for PBXNativeTarget "AppBank" */;
 			buildPhases = (
 				7EE797A0BD4536BE951FB139 /* [CP] Check Pods Manifest.lock */,
 				CE1DCEE82A97004400E3CC3E /* Sources */,
@@ -458,18 +458,18 @@
 			);
 			dependencies = (
 			);
-			name = Itubers;
+			name = AppBank;
 			packageProductDependencies = (
 				CE5BA4D52A97EC8C00449C0A /* FirebaseAuth */,
 				CE5BA4D72A97EC8C00449C0A /* FirebaseFirestore */,
 			);
 			productName = Itubers;
-			productReference = CE1DCEEC2A97004400E3CC3E /* Itubers.app */;
+			productReference = CE1DCEEC2A97004400E3CC3E /* AppBank.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CE1DCF012A97004900E3CC3E /* ItubersTests */ = {
+		CE1DCF012A97004900E3CC3E /* AppBankTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE1DCF192A97004900E3CC3E /* Build configuration list for PBXNativeTarget "ItubersTests" */;
+			buildConfigurationList = CE1DCF192A97004900E3CC3E /* Build configuration list for PBXNativeTarget "AppBankTests" */;
 			buildPhases = (
 				537FC2A912D96E9A5C590A79 /* [CP] Check Pods Manifest.lock */,
 				CE1DCEFE2A97004900E3CC3E /* Sources */,
@@ -481,14 +481,14 @@
 			dependencies = (
 				CE1DCF042A97004900E3CC3E /* PBXTargetDependency */,
 			);
-			name = ItubersTests;
+			name = AppBankTests;
 			productName = ItubersTests;
-			productReference = CE1DCF022A97004900E3CC3E /* ItubersTests.xctest */;
+			productReference = CE1DCF022A97004900E3CC3E /* AppBankTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		CE1DCF0B2A97004900E3CC3E /* ItubersUITests */ = {
+		CE1DCF0B2A97004900E3CC3E /* AppBankUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE1DCF1C2A97004900E3CC3E /* Build configuration list for PBXNativeTarget "ItubersUITests" */;
+			buildConfigurationList = CE1DCF1C2A97004900E3CC3E /* Build configuration list for PBXNativeTarget "AppBankUITests" */;
 			buildPhases = (
 				A18E424238E5EFED6A8ECA0B /* [CP] Check Pods Manifest.lock */,
 				CE1DCF082A97004900E3CC3E /* Sources */,
@@ -501,9 +501,9 @@
 			dependencies = (
 				CE1DCF0E2A97004900E3CC3E /* PBXTargetDependency */,
 			);
-			name = ItubersUITests;
+			name = AppBankUITests;
 			productName = ItubersUITests;
-			productReference = CE1DCF0C2A97004900E3CC3E /* ItubersUITests.xctest */;
+			productReference = CE1DCF0C2A97004900E3CC3E /* AppBankUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -529,7 +529,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CE1DCEE72A97004400E3CC3E /* Build configuration list for PBXProject "Itubers" */;
+			buildConfigurationList = CE1DCEE72A97004400E3CC3E /* Build configuration list for PBXProject "AppBank" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -545,9 +545,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CE1DCEEB2A97004400E3CC3E /* Itubers */,
-				CE1DCF012A97004900E3CC3E /* ItubersTests */,
-				CE1DCF0B2A97004900E3CC3E /* ItubersUITests */,
+				CE1DCEEB2A97004400E3CC3E /* AppBank */,
+				CE1DCF012A97004900E3CC3E /* AppBankTests */,
+				CE1DCF0B2A97004900E3CC3E /* AppBankUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -731,7 +731,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE1DCF072A97004900E3CC3E /* ItubersTests.swift in Sources */,
+				CE1DCF072A97004900E3CC3E /* AppBankTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -739,8 +739,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE1DCF112A97004900E3CC3E /* ItubersUITests.swift in Sources */,
-				CE1DCF132A97004900E3CC3E /* ItubersUITestsLaunchTests.swift in Sources */,
+				CE1DCF112A97004900E3CC3E /* AppBankTestsUITests.swift in Sources */,
+				CE1DCF132A97004900E3CC3E /* AppBankTestsUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -749,12 +749,12 @@
 /* Begin PBXTargetDependency section */
 		CE1DCF042A97004900E3CC3E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CE1DCEEB2A97004400E3CC3E /* Itubers */;
+			target = CE1DCEEB2A97004400E3CC3E /* AppBank */;
 			targetProxy = CE1DCF032A97004900E3CC3E /* PBXContainerItemProxy */;
 		};
 		CE1DCF0E2A97004900E3CC3E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CE1DCEEB2A97004400E3CC3E /* Itubers */;
+			target = CE1DCEEB2A97004400E3CC3E /* AppBank */;
 			targetProxy = CE1DCF0D2A97004900E3CC3E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -895,7 +895,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 96BGR9J6TU;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Itubers/Info.plist;
+				INFOPLIST_FILE = AppBank/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -927,7 +927,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 96BGR9J6TU;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Itubers/Info.plist;
+				INFOPLIST_FILE = AppBank/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -966,7 +966,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Itubers.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Itubers";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppBank.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AppBank";
 			};
 			name = Debug;
 		};
@@ -987,7 +987,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Itubers.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Itubers";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppBank.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AppBank";
 			};
 			name = Release;
 		};
@@ -1032,7 +1032,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CE1DCEE72A97004400E3CC3E /* Build configuration list for PBXProject "Itubers" */ = {
+		CE1DCEE72A97004400E3CC3E /* Build configuration list for PBXProject "AppBank" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE1DCF142A97004900E3CC3E /* Debug */,
@@ -1041,7 +1041,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE1DCF162A97004900E3CC3E /* Build configuration list for PBXNativeTarget "Itubers" */ = {
+		CE1DCF162A97004900E3CC3E /* Build configuration list for PBXNativeTarget "AppBank" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE1DCF172A97004900E3CC3E /* Debug */,
@@ -1050,7 +1050,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE1DCF192A97004900E3CC3E /* Build configuration list for PBXNativeTarget "ItubersTests" */ = {
+		CE1DCF192A97004900E3CC3E /* Build configuration list for PBXNativeTarget "AppBankTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE1DCF1A2A97004900E3CC3E /* Debug */,
@@ -1059,7 +1059,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE1DCF1C2A97004900E3CC3E /* Build configuration list for PBXNativeTarget "ItubersUITests" */ = {
+		CE1DCF1C2A97004900E3CC3E /* Build configuration list for PBXNativeTarget "AppBankUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE1DCF1D2A97004900E3CC3E /* Debug */,

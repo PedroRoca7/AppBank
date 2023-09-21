@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CE1DCEEB2A97004400E3CC3E"
-               BuildableName = "Itubers.app"
-               BlueprintName = "Itubers"
-               ReferencedContainer = "container:Itubers.xcodeproj">
+               BuildableName = "AppBank.app"
+               BlueprintName = "AppBank"
+               ReferencedContainer = "container:AppBank.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,28 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CE1DCF012A97004900E3CC3E"
-               BuildableName = "ItubersTests.xctest"
-               BlueprintName = "ItubersTests"
-               ReferencedContainer = "container:Itubers.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CE1DCF0B2A97004900E3CC3E"
-               BuildableName = "ItubersUITests.xctest"
-               BlueprintName = "ItubersUITests"
-               ReferencedContainer = "container:Itubers.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -67,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE1DCEEB2A97004400E3CC3E"
-            BuildableName = "Itubers.app"
-            BlueprintName = "Itubers"
-            ReferencedContainer = "container:Itubers.xcodeproj">
+            BuildableName = "AppBank.app"
+            BlueprintName = "AppBank"
+            ReferencedContainer = "container:AppBank.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -84,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE1DCEEB2A97004400E3CC3E"
-            BuildableName = "Itubers.app"
-            BlueprintName = "Itubers"
-            ReferencedContainer = "container:Itubers.xcodeproj">
+            BuildableName = "AppBank.app"
+            BlueprintName = "AppBank"
+            ReferencedContainer = "container:AppBank.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

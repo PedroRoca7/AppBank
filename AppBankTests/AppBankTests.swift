@@ -1,14 +1,14 @@
 //
-//  ItubersTests.swift
-//  ItubersTests
+//  AppBankTests.swift
+//  AppBankTests
 //
 //  Created by Pedro Henrique on 24/08/23.
 //
 
 import XCTest
-@testable import Itubers
+@testable import AppBank
 
-final class ItubersTests: XCTestCase {
+final class AppBankTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

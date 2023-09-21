@@ -1,6 +1,6 @@
 //
 //  Alert.swift
-//  Itubers
+//  AppBank
 //
 //  Created by Pedro Henrique on 24/08/23.
 //

@@ -1,6 +1,6 @@
 //
 //  CustomTableViewCell.swift
-//  Itubers
+//  AppBank
 //
 //  Created by Pedro Henrique on 25/08/23.
 //

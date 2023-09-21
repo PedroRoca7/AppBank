@@ -1,6 +1,6 @@
 //
 //  StatementModel.swift
-//  Itubers
+//  AppBank
 //
 //  Created by Pedro Henrique on 28/08/23.
 //
