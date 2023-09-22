@@ -27,6 +27,9 @@ A aplicação consiste em fazer login de usuário utilizando o Firebase, depois 
 
 
 # Tecnologias utilizadas
+## Pods
+- RxSwift
+- RxCocoa
 ## Back end
 - NodeJs
 ## Mobile
@@ -35,6 +38,7 @@ A aplicação consiste em fazer login de usuário utilizando o Firebase, depois 
 - Banco de dados: Firebase(FireStore)
 ## App
 Pré-requisitos: xCode
+
 # Autor
 
 Pedro Henrique Roca Moreira
