@@ -40,6 +40,7 @@
 		CE6F21222A98F925000B1B01 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F21212A98F925000B1B01 /* HomeCoordinator.swift */; };
 		CE6F21252A99227E000B1B01 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F21242A99227E000B1B01 /* CellView.swift */; };
 		CE6F21272A99229C000B1B01 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F21262A99229C000B1B01 /* CustomTableViewCell.swift */; };
+		CEA554092ACC8395000489B4 /* ViewDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA554082ACC8395000489B4 /* ViewDefault.swift */; };
 		CEA6DC8B2A9CF280004722AF /* StatementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6DC8A2A9CF280004722AF /* StatementModel.swift */; };
 		CEA6DC8D2A9CFF22004722AF /* StatementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6DC8C2A9CFF22004722AF /* StatementViewModel.swift */; };
 		CEA6DC902A9D27CB004722AF /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6DC8F2A9D27CB004722AF /* String+.swift */; };
@@ -117,6 +118,7 @@
 		CE6F21212A98F925000B1B01 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		CE6F21242A99227E000B1B01 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		CE6F21262A99229C000B1B01 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		CEA554082ACC8395000489B4 /* ViewDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDefault.swift; sourceTree = "<group>"; };
 		CEA6DC8A2A9CF280004722AF /* StatementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementModel.swift; sourceTree = "<group>"; };
 		CEA6DC8C2A9CFF22004722AF /* StatementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementViewModel.swift; sourceTree = "<group>"; };
 		CEA6DC8F2A9D27CB004722AF /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				CE1DCF2D2A9704D200E3CC3E /* LabelDefault.swift */,
 				CE1DCF2F2A97074B00E3CC3E /* TextFieldDefault.swift */,
 				CE5BA4C72A97AAB300449C0A /* ViewControllerDefault.swift */,
+				CEA554082ACC8395000489B4 /* ViewDefault.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -718,6 +721,7 @@
 				CE6F211E2A98F674000B1B01 /* HomeViewController.swift in Sources */,
 				CEE734BC2A9E5F6B002320DB /* FormatterNumber.swift in Sources */,
 				CE6F21272A99229C000B1B01 /* CustomTableViewCell.swift in Sources */,
+				CEA554092ACC8395000489B4 /* ViewDefault.swift in Sources */,
 				CEAC14B62AA13B8E00A56C7C /* ApiStatement.swift in Sources */,
 				CE1DCF2E2A9704D200E3CC3E /* LabelDefault.swift in Sources */,
 				CE1DCEF22A97004400E3CC3E /* SceneDelegate.swift in Sources */,

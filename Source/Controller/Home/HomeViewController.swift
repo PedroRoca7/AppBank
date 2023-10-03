@@ -37,6 +37,7 @@ class HomeViewController: ViewControllerDefault {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewScreen.activityIndicator.startAnimating()
         viewModel.loadStatements()
         viewModel.delegate = self
         viewScreen.hideAmountButton.rx.tap.bind {
@@ -49,6 +50,15 @@ class HomeViewController: ViewControllerDefault {
             }
         }.disposed(by: disposeBag)
         
+        viewScreen.hideAmountInvestimentsButton.rx.tap.bind {
+            if self.viewScreen.amountInvestimentsLabel.isHidden == true {
+                self.viewScreen.amountInvestimentsLabel.isHidden = false
+                self.viewScreen.hideAmountInvestimentsButton.setImage(UIImage(named: "eyeShow"),for: .normal)
+            } else {
+                self.viewScreen.amountInvestimentsLabel.isHidden = true
+                self.viewScreen.hideAmountInvestimentsButton.setImage(UIImage(named: "eyeHide"),for: .normal)
+            }
+        }.disposed(by: disposeBag)
 
     }
 }
@@ -56,7 +66,9 @@ extension HomeViewController: ExtractViewModelProtocol {
     func success() {
         DispatchQueue.main.async {
             self.viewScreen.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: self.viewModel.currentBalance(), typeCurrency: "pt-BR", currencySymbol: "R$")
+            self.viewScreen.activityIndicator.stopAnimating()
         }
+        
     }
     
     func failure() {
