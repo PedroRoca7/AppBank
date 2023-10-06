@@ -14,6 +14,13 @@ class ProductsView: UIView {
     
     // MARK: ElementsVisual
     
+    lazy var backgroundImage = ImageViewDefault(backgroundColor: .orange)
+    lazy var subViewCardView = ViewDefault(backgroundColor: .darkGray, alpha: 0.5)
+    lazy var viewCardButton = ButtonDefault(nameImage: "creditcard.fill")
+    lazy var cardLabel = LabelDefault(text: "Crédito", color: .white, font: .boldSystemFont(ofSize: 16))
+    
+    
+    
     // MARK: Inits
     
     override init(frame: CGRect) {

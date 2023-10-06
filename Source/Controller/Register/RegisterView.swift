@@ -15,25 +15,12 @@ class RegisterView: UIView {
     
     // MARK: ElementsVisual
     
-    lazy var backgroundImage: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.backgroundColor = .orange
-        image.clipsToBounds = true
-        
-        return image
-    }()
-    
+    lazy var backgroundImage = ImageViewDefault(backgroundColor: .orange)
     lazy var titleLabel = LabelDefault(text: "Cadastro", color: .white, font: .boldSystemFont(ofSize: 36))
-    
     lazy var nameLabel = LabelDefault(text: "Nome")
-    
     lazy var nameTextField = TextFieldDefault(placeholder: "Insira seu nome")
-    
     lazy var emailLabel = LabelDefault(text: "Email")
-    
     lazy var emailTextField = TextFieldDefault(placeholder: "Insira seu Email", keyboardType: .emailAddress)
-    
     lazy var passwordLabel = LabelDefault(text: "Senha")
     
     lazy var passwordTextField: TextFieldDefault = {

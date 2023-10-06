@@ -28,9 +28,7 @@ class CellView: UIView {
     }()
     
     lazy var typeEntryLabel = LabelDefault(text: "Saída", color: .white, font: .boldSystemFont(ofSize: 22))
-    
     lazy var aboutLabel = LabelDefault(text: "Conta de Agua", color: .white, font: .systemFont(ofSize: 16))
-    
     lazy var amountLabel = LabelDefault(text: "R$ 120,00", color: .white, font: .systemFont(ofSize: 20))
     
     // MARK: Inits

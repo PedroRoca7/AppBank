@@ -15,68 +15,31 @@ class HomeView: UIView {
     
     // MARK: ElementsVisual
     
-    lazy var backgroundImage: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.clipsToBounds = true
-        image.backgroundColor = .orange
-        return image
-    }()
-    
-    lazy var viewBalance: ViewDefault = {
-        let view = ViewDefault()
-        view.backgroundColor = .clear
-        
-        return view
-    }()
-    
-    lazy var subViewBalance: ViewDefault = {
-        let view = ViewDefault()
-        view.alpha = 0.5
-        return view
-    }()
-    
+    lazy var backgroundImage = ImageViewDefault(backgroundColor: .orange)
+    lazy var viewBalance = ViewDefault(backgroundColor: .clear, alpha: 1)
+    lazy var subViewBalance = ViewDefault(backgroundColor: .darkGray, alpha: 0.5)
     lazy var balanceLabel = LabelDefault(text: "Saldo", color: .white, font: .boldSystemFont(ofSize: 18))
-    
     lazy var amountLabel = LabelDefault(text: "", color: .white, font: .boldSystemFont(ofSize: 26))
-    
-    lazy var hideAmountButton: ButtonDefault = {
-        let bt = ButtonDefault()
-        bt.setImage(UIImage(named: "eyeShow"), for: .normal)
-        bt.layer.borderWidth = 0
-        return bt
+    lazy var hideAmountButton = ButtonDefault(nameImage: "eyeShow")
+    lazy var activityIndicator = ActivityDefault()
+   
+    lazy var collectionView: UICollectionView = {
+        let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.backgroundColor = .none
+        cv.register(CustomCollectionCell.self, forCellWithReuseIdentifier: CustomCollectionCell.identifier)
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
+        layout.scrollDirection = .horizontal
+        cv.setCollectionViewLayout(layout, animated: false)
+        cv.showsHorizontalScrollIndicator = false
+        return cv
     }()
     
-    lazy var activityIndicator: UIActivityIndicatorView = {
-        let indicator = UIActivityIndicatorView(style: .medium)
-        indicator.translatesAutoresizingMaskIntoConstraints = false
-        indicator.color = .white
-        indicator.hidesWhenStopped = true
-        return indicator
-    }()
-    
-    lazy var viewInvesiments: ViewDefault = {
-        let view = ViewDefault()
-        view.backgroundColor = .clear
-        return view
-    }()
-    
-    lazy var subViewInvestiments: ViewDefault = {
-        let view = ViewDefault()
-        view.alpha = 0.5
-        return view
-    }()
-    
+    lazy var viewInvesiments = ViewDefault(backgroundColor: .clear, alpha: 1)
+    lazy var subViewInvestiments = ViewDefault(backgroundColor: .darkGray, alpha: 0.5)
     lazy var balanceInvestimentsLabel = LabelDefault(text: "Valor Investido", color: .white, font: .boldSystemFont(ofSize: 18))
-    
     lazy var amountInvestimentsLabel = LabelDefault(text: "R$: 0", color: .white, font: .boldSystemFont(ofSize: 26))
-    
-    lazy var hideAmountInvestimentsButton: ButtonDefault = {
-        let bt = ButtonDefault()
-        bt.setImage(UIImage(named: "eyeShow"), for: .normal)
-        bt.layer.borderWidth = 0
-        return bt
-    }()
+    lazy var hideAmountInvestimentsButton = ButtonDefault(nameImage: "eyeShow")
     
     // MARK: Inits
     
@@ -99,6 +62,7 @@ class HomeView: UIView {
         setAmountLabel()
         setHideAmountButton()
         setActivityIndicator()
+        setCollectionView()
         setSubViewInvestiments()
         setViewInvestiments()
         setBalanceInvestimentsLabel()
@@ -181,11 +145,23 @@ class HomeView: UIView {
         ])
     }
     
+    private func setCollectionView() {
+        self.addSubview(collectionView)
+        
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: viewBalance.bottomAnchor, constant: 30),
+            collectionView.leadingAnchor.constraint(equalTo: viewBalance.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: viewBalance.trailingAnchor),
+            collectionView.widthAnchor.constraint(greaterThanOrEqualToConstant: 250),
+            collectionView.heightAnchor.constraint(greaterThanOrEqualToConstant: 70)
+        ])
+    }
+    
     private func setViewInvestiments() {
         self.addSubview(viewInvesiments)
         
         NSLayoutConstraint.activate([
-            viewInvesiments.topAnchor.constraint(equalTo: viewBalance.bottomAnchor, constant: 30),
+            viewInvesiments.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 30),
             viewInvesiments.leadingAnchor.constraint(equalTo: viewBalance.leadingAnchor),
             viewInvesiments.trailingAnchor.constraint(equalTo: viewBalance.trailingAnchor),
             viewInvesiments.heightAnchor.constraint(equalToConstant: 150)
@@ -196,7 +172,7 @@ class HomeView: UIView {
         self.addSubview(subViewInvestiments)
         
         NSLayoutConstraint.activate([
-            subViewInvestiments.topAnchor.constraint(equalTo: viewBalance.bottomAnchor, constant: 30),
+            subViewInvestiments.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 30),
             subViewInvestiments.leadingAnchor.constraint(equalTo: viewBalance.leadingAnchor),
             subViewInvestiments.trailingAnchor.constraint(equalTo: viewBalance.trailingAnchor),
             subViewInvestiments.heightAnchor.constraint(equalToConstant: 150)

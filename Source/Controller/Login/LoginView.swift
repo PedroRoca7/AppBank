@@ -15,29 +15,17 @@ class LoginView: UIView {
     
     // MARK: ElementsVisual
     
-    lazy var backgroundImage: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.clipsToBounds = true
-        image.contentMode = .scaleAspectFill
-        image.backgroundColor = .orange
-        
-        return image
-    }()
-    
+    lazy var backgroundImage = ImageViewDefault(backgroundColor: .orange)
     lazy var titleLabel = LabelDefault(text: "Login", color: .white, font: .boldSystemFont(ofSize: 36))
-    
     lazy var emailTextFiled = TextFieldDefault(placeholder: "Digite seu Email:", keyboardType: .emailAddress)
-        
+    
     lazy var passwordTextField: TextFieldDefault = {
         let tf = TextFieldDefault(placeholder: "Digite sua Senha:", keyboardType: .numberPad)
         tf.isSecureTextEntry = true
-        
         return tf
     }()
     
     lazy var logarButton = ButtonDefault(title: "Entrar",backgroundColor: .blue)
-    
     lazy var registerButton = ButtonDefault(title: "Registrar",backgroundColor: .lightGray)
  
     // MARK: Inits

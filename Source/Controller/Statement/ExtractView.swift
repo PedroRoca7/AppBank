@@ -15,14 +15,8 @@ class ExtractView: UIView {
     
     // MARK: ElementsVisual
     
-    lazy var backgroundImage: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.clipsToBounds = true
-        image.backgroundColor = .orange
-        return image
-    }()
-    
+    lazy var backgroundImage = ImageViewDefault(backgroundColor: .orange)
+
     lazy var tableView: UITableView = {
         let tb = UITableView()
         tb.translatesAutoresizingMaskIntoConstraints = false

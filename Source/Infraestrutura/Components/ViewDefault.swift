@@ -13,17 +13,22 @@ class ViewDefault: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        initDefault()
+        initDefault(backgroundColor: .clear, alpha: 1)
+    }
+    
+    init(backgroundColor: UIColor, alpha: Double) {
+        super.init(frame: .zero)
+        initDefault(backgroundColor: backgroundColor, alpha: alpha)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func initDefault() {
+    private func initDefault(backgroundColor: UIColor, alpha: Double) {
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.backgroundColor = .darkGray
-        self.alpha = 1
+        self.backgroundColor = backgroundColor
+        self.alpha = alpha
         self.layer.cornerRadius = 15
         self.layer.borderColor = UIColor.white.cgColor
         self.layer.borderWidth = 1

@@ -13,25 +13,41 @@ class ButtonDefault: UIButton {
     
     init(title: String, backgroundColor: UIColor) {
         super.init(frame: .zero)
-        
-        initDefault(title: title,backgroundColor: backgroundColor)
+        initDefault(title: title,backgroundColor: backgroundColor, nameImage: nil)
     }
     
     init() {
         super.init(frame: .zero)
-        initDefault(title: "", backgroundColor: .clear)
+        initDefault(title: "", backgroundColor: .clear, nameImage: nil)
+    }
+    
+    init(title: String, backgroundColor: UIColor, nameImage: String) {
+        super.init(frame: .zero)
+        initDefault(title: title, backgroundColor: backgroundColor, nameImage: nameImage)
+    }
+    
+    init(nameImage: String) {
+        super.init(frame: .zero)
+        initDefault(title: "", backgroundColor: .clear, nameImage: nameImage)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func initDefault(title: String, backgroundColor: UIColor) {
+    // MARK: Methods
+    
+    private func initDefault(title: String, backgroundColor: UIColor, nameImage: String?) {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.setTitle(title, for: .normal)
         self.layer.cornerRadius = 15
         self.layer.borderColor = UIColor.black.cgColor
         self.layer.borderWidth = 1
         self.backgroundColor = backgroundColor
+        self.layer.borderWidth = 0
+        if let image = nameImage {
+            self.setImage(UIImage(named: image), for: .normal)
+        }
+        
     }
 }

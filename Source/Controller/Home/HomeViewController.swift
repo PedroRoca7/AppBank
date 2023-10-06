@@ -13,7 +13,9 @@ class HomeViewController: ViewControllerDefault {
     
     // MARK: Propertys
     var user: User?
-    var disposeBag = DisposeBag()
+    private var disposeBag = DisposeBag()
+    private var collectionViewButtons: [String] = ["Pix", "Fazer Transfêrencia", "Pagar contas", "Seguros"]
+    
     lazy var viewScreen: HomeView = {
         let view = HomeView()
         return view
@@ -39,27 +41,22 @@ class HomeViewController: ViewControllerDefault {
         super.viewDidLoad()
         viewScreen.activityIndicator.startAnimating()
         viewModel.loadStatements()
+        configDelegates()
+        bindToggleAction(button: viewScreen.hideAmountButton, label: viewScreen.amountLabel)
+        bindToggleAction(button: viewScreen.hideAmountInvestimentsButton, label: viewScreen.amountInvestimentsLabel)
+    }
+    
+    private func configDelegates() {
         viewModel.delegate = self
-        viewScreen.hideAmountButton.rx.tap.bind {
-            if self.viewScreen.amountLabel.isHidden == true {
-                self.viewScreen.amountLabel.isHidden = false
-                self.viewScreen.hideAmountButton.setImage(UIImage(named: "eyeShow"),for: .normal)
-            } else {
-                self.viewScreen.amountLabel.isHidden = true
-                self.viewScreen.hideAmountButton.setImage(UIImage(named: "eyeHide"),for: .normal)
-            }
+        viewScreen.collectionView.dataSource = self
+        viewScreen.collectionView.delegate = self
+    }
+    
+    private func bindToggleAction(button: UIButton, label: UILabel) {
+        button.rx.tap.bind {
+            label.isHidden.toggle()
+            button.setImage(UIImage(named: label.isHidden ? "eyeHide" : "eyeShow"), for: .normal)
         }.disposed(by: disposeBag)
-        
-        viewScreen.hideAmountInvestimentsButton.rx.tap.bind {
-            if self.viewScreen.amountInvestimentsLabel.isHidden == true {
-                self.viewScreen.amountInvestimentsLabel.isHidden = false
-                self.viewScreen.hideAmountInvestimentsButton.setImage(UIImage(named: "eyeShow"),for: .normal)
-            } else {
-                self.viewScreen.amountInvestimentsLabel.isHidden = true
-                self.viewScreen.hideAmountInvestimentsButton.setImage(UIImage(named: "eyeHide"),for: .normal)
-            }
-        }.disposed(by: disposeBag)
-
     }
 }
 extension HomeViewController: ExtractViewModelProtocol {
@@ -73,5 +70,29 @@ extension HomeViewController: ExtractViewModelProtocol {
     
     func failure() {
         print("Falha ao carregar o saldo")
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return collectionViewButtons.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionCell.identifier, for: indexPath) as? CustomCollectionCell
+        
+        let button: String = collectionViewButtons[indexPath.row]
+        cell?.prepareCollectionCell(title: button)
+        
+        cell?.cellView.button.rx.tap.bind {
+            print("O botão de \(button) foi precisonado")
+        }.disposed(by: disposeBag)
+        
+        return cell ?? UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 80)
     }
 }
