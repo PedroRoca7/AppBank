@@ -36,6 +36,8 @@ class HomeViewController: ViewControllerDefault {
         guard let user = self.user else { return }
         self.tabBarController?.navigationItem.title = "Olá \(user.name)"
         self.tabBarController?.navigationItem.setHidesBackButton(true, animated: false)
+        self.tabBarController?.navigationItem.titleView?.tintColor = .white
+        self.tabBarController?.navigationItem.titleView?.backgroundColor = .lilas
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,7 +88,19 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell?.prepareCollectionCell(title: button)
         
         cell?.cellView.button.rx.tap.bind {
-            print("O botão de \(button) foi precisonado")
+//            if let buttonEnum = ChooseButton(rawValue: button) {
+//
+//                switch buttonEnum {
+//                case .pix:
+//                    
+//                case .transfer:
+//
+//                case .pay:
+//
+//                case.security:
+//
+//                }
+//            }
         }.disposed(by: disposeBag)
         
         return cell ?? UICollectionViewCell()

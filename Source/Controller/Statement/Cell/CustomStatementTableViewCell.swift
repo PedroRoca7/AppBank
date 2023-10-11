@@ -1,5 +1,5 @@
 //
-//  CustomTableViewCell.swift
+//  CustomStatementTableViewCell.swift
 //  AppBank
 //
 //  Created by Pedro Henrique on 25/08/23.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-class CustomTableViewCell: UITableViewCell {
+class CustomStatementTableViewCell: UITableViewCell {
     
-    static let identifier: String = "CustomTableViewCell"
+    static let identifier: String = "CustomStatementTableViewCell"
     
-    lazy var viewCell: CellView = {
-        let viewCell = CellView()
+    lazy var viewCell: StatementCellView = {
+        let viewCell = StatementCellView()
         viewCell.translatesAutoresizingMaskIntoConstraints = false
         viewCell.layer.cornerRadius = 15
         viewCell.backgroundColor = .clear

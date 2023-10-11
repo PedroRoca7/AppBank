@@ -35,19 +35,7 @@ class CustomCollectionCell: UICollectionViewCell {
     }
     
     public func prepareCollectionCell(title: String) {
-        if let buttonEnum = ChooseButton(rawValue: title) {
-            cellView.button.setTitle(title, for: .normal)
-            switch buttonEnum {
-            case .pix:
-                cellView.button.setImage(UIImage(named: "paperplane.fill"), for: .normal)
-            case .transfer:
-                cellView.button.setImage(UIImage(named: "tray.and.arrow.up.fill"), for: .normal)
-            case .pay:
-                cellView.button.setImage(UIImage(named: "arrow.down.doc.fill"), for: .normal)
-            case.security:
-                cellView.button.setImage(UIImage(named: "lock.fill"), for: .normal)
-            }
-        }
+        cellView.button.setTitle(title, for: .normal)
     }
     
     private func configConstraints() {

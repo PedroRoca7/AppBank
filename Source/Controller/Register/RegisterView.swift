@@ -15,7 +15,7 @@ class RegisterView: UIView {
     
     // MARK: ElementsVisual
     
-    lazy var backgroundImage = ImageViewDefault(backgroundColor: .orange)
+    lazy var backgroundImage = ImageViewDefault(backgroundColor: .backgroundColor)
     lazy var titleLabel = LabelDefault(text: "Cadastro", color: .white, font: .boldSystemFont(ofSize: 36))
     lazy var nameLabel = LabelDefault(text: "Nome")
     lazy var nameTextField = TextFieldDefault(placeholder: "Insira seu nome")
@@ -29,7 +29,7 @@ class RegisterView: UIView {
         return tf
     }()
     
-    lazy var registerButton = ButtonDefault(title: "Registrar", backgroundColor: .blue)
+    lazy var registerButton = ButtonDefault(title: "Registrar", backgroundColor: .lilas)
     
     // MARK: Inits
     

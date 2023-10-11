@@ -13,12 +13,17 @@ class ImageViewDefault: UIImageView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        initImageViewDefault(backgroundColor: .white)
+        initImageViewDefault(backgroundColor: .white, nameImage: "")
     }
     
     init(backgroundColor: UIColor) {
         super.init(frame: .zero)
-        initImageViewDefault(backgroundColor: backgroundColor)
+        initImageViewDefault(backgroundColor: backgroundColor, nameImage: "")
+    }
+    
+    init(backgroundColor: UIColor, nameImage: String) {
+        super.init(frame: .zero)
+        initImageViewDefault(backgroundColor: backgroundColor, nameImage: nameImage)
     }
     
     required init?(coder: NSCoder) {
@@ -26,11 +31,13 @@ class ImageViewDefault: UIImageView {
     }
     
     
-    private func initImageViewDefault(backgroundColor: UIColor) {
+    private func initImageViewDefault(backgroundColor: UIColor, nameImage: String?) {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.clipsToBounds = true
         self.backgroundColor = backgroundColor
-        
+        if let image = nameImage {
+            self.image = UIImage(named: image)
+        }
     }
     
 }

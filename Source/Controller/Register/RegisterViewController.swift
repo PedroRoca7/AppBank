@@ -48,7 +48,7 @@ class RegisterViewController: ViewControllerDefault {
                 Alert.showBasicAlert(title: "Erro", message: "A senha tem que conter no mínimo 6 caracteres.", viewController: self) {}
             }
             
-            var user = User(name: name, email: email, password: password)
+            let user = User(name: name, email: email, password: password)
             
             self.viewModel.registerUser(user: user)
         }.disposed(by: disposeBag)

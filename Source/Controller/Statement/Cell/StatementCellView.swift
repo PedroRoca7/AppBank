@@ -1,5 +1,5 @@
 //
-//  CellView.swift
+//  StatementCellView.swift
 //  AppBank
 //
 //  Created by Pedro Henrique on 25/08/23.
@@ -12,7 +12,7 @@ enum TypeEntry {
     case Output
 }
 
-class CellView: UIView {
+class StatementCellView: UIView {
     
     // MARK: Property
     private lazy var guide = self.safeAreaLayoutGuide

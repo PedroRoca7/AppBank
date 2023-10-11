@@ -12,9 +12,9 @@ class TabBarController: UITabBarController {
         super.setViewControllers(viewControllers, animated: animated)
         self.tabBar.tintColor = .white
         self.tabBar.isTranslucent = false
-        self.tabBar.layer.borderColor = UIColor.blue.cgColor
+        self.tabBar.layer.borderColor = UIColor.white.cgColor
         self.tabBar.layer.borderWidth = 2
-        self.tabBar.backgroundColor = .black
+        self.tabBar.backgroundColor = .lilas
         
     }
 }

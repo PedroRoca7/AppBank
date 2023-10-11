@@ -11,15 +11,18 @@ class ProductsView: UIView {
     
     // MARK: Property
     
+    private lazy var guide = self.safeAreaLayoutGuide
     
     // MARK: ElementsVisual
     
-    lazy var backgroundImage = ImageViewDefault(backgroundColor: .orange)
-    lazy var subViewCardView = ViewDefault(backgroundColor: .darkGray, alpha: 0.5)
-    lazy var viewCardButton = ButtonDefault(nameImage: "creditcard.fill")
-    lazy var cardLabel = LabelDefault(text: "Crédito", color: .white, font: .boldSystemFont(ofSize: 16))
-    
-    
+    lazy var backgroundImage = ImageViewDefault(backgroundColor: .backgroundColor)
+    lazy var tableView: UITableView = {
+        let tb = UITableView(frame: self.bounds, style: .plain)
+        tb.translatesAutoresizingMaskIntoConstraints = false
+        tb.register(CustomProductsTableViewCell.self, forCellReuseIdentifier: CustomProductsTableViewCell.identifier)
+        tb.backgroundColor = .clear
+        return tb
+    }()
     
     // MARK: Inits
     
@@ -35,7 +38,30 @@ class ProductsView: UIView {
     // MARK: Add Elements e Constraints
     
     private func addElementsView() {
+        setBackgroundImage()
+        setTableView()
+    }
+    
+    private func setBackgroundImage() {
+        self.addSubview(backgroundImage)
         
+        NSLayoutConstraint.activate([
+            backgroundImage.topAnchor.constraint(equalTo: self.topAnchor),
+            backgroundImage.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            backgroundImage.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            backgroundImage.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+        ])
+    }
+    
+    private func setTableView() {
+        self.addSubview(tableView)
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: guide.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+        ])
     }
 }
 

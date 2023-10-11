@@ -15,7 +15,7 @@ class LoginView: UIView {
     
     // MARK: ElementsVisual
     
-    lazy var backgroundImage = ImageViewDefault(backgroundColor: .orange)
+    lazy var backgroundImage = ImageViewDefault(backgroundColor: .backgroundColor)
     lazy var titleLabel = LabelDefault(text: "Login", color: .white, font: .boldSystemFont(ofSize: 36))
     lazy var emailTextFiled = TextFieldDefault(placeholder: "Digite seu Email:", keyboardType: .emailAddress)
     
@@ -25,8 +25,8 @@ class LoginView: UIView {
         return tf
     }()
     
-    lazy var logarButton = ButtonDefault(title: "Entrar",backgroundColor: .blue)
-    lazy var registerButton = ButtonDefault(title: "Registrar",backgroundColor: .lightGray)
+    lazy var logarButton = ButtonDefault(title: "Entrar",backgroundColor: .lilas)
+    lazy var registerButton = ButtonDefault(title: "Registrar",backgroundColor: .darkGray)
  
     // MARK: Inits
     
