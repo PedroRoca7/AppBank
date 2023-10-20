@@ -11,8 +11,8 @@ class ImageViewDefault: UIImageView {
     
     // MARK: Inits
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init() {
+        super.init(frame: .zero)
         initImageViewDefault(backgroundColor: .white, nameImage: "")
     }
     

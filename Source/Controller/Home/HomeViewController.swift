@@ -88,19 +88,19 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell?.prepareCollectionCell(title: button)
         
         cell?.cellView.button.rx.tap.bind {
-//            if let buttonEnum = ChooseButton(rawValue: button) {
-//
-//                switch buttonEnum {
-//                case .pix:
-//                    
-//                case .transfer:
-//
-//                case .pay:
-//
-//                case.security:
-//
-//                }
-//            }
+            if let buttonEnum = ChooseButton(rawValue: button) {
+
+                switch buttonEnum {
+                case .pix:
+                    Alert.showBasicAlert(title: "Pix", message: "Você clicou para fazer um pix", viewController: self) {}
+                case .transfer:
+                    Alert.showBasicAlert(title: "Transferências", message: "Você clicou para fazer uma transferencia.", viewController: self) {}
+                case .pay:
+                    Alert.showBasicAlert(title: "Pagamentos", message: "Você clicou para fazer um pagamento.", viewController: self) {}
+                case.security:
+                    Alert.showBasicAlert(title: "Seguros", message: "Você clicou para solicitar um seguro.", viewController: self) {}
+                }
+            }
         }.disposed(by: disposeBag)
         
         return cell ?? UICollectionViewCell()

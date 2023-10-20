@@ -14,13 +14,14 @@ class CustomProductsTableViewCell: UITableViewCell {
     lazy var viewCell: ProductsViewCell = {
         let viewCell = ProductsViewCell()
         viewCell.translatesAutoresizingMaskIntoConstraints = false
+        viewCell.backgroundColor = .lilas
         return viewCell
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setViewScreen()
-        contentView.backgroundColor = .lilas
+        contentView.backgroundColor = .clear
     }
     
     required init?(coder: NSCoder) {
@@ -38,8 +39,9 @@ class CustomProductsTableViewCell: UITableViewCell {
         ])
     }
     
-    public func prepareCell(optionLabel: String) {
-        viewCell.nameOptionLabel.text = optionLabel
+    public func prepareCell(optionLabel: OptionsInvestiments) {
+        viewCell.iconImageView.image = UIImage(named: optionLabel.icon)
+        viewCell.nameOptionLabel.text = optionLabel.optionInvestiment
     }
 }
 

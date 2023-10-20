@@ -37,16 +37,19 @@ class HeaderTableView: UIView {
     private func addElementsView() {
         setCardButton()
         setSecurityButton()
+        setInvestimentsButton()
+        setCreditButton()
+        setNegotiationsButton()
     }
     
     private func setCardButton() {
         self.addSubview(cardsButton)
         
         NSLayoutConstraint.activate([
-            cardsButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
-            cardsButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            cardsButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 15),
+            cardsButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 60),
             cardsButton.heightAnchor.constraint(equalToConstant: 60),
-            cardsButton.widthAnchor.constraint(equalToConstant: 120)
+            cardsButton.widthAnchor.constraint(equalToConstant: 140)
         ])
     }
     
@@ -54,10 +57,46 @@ class HeaderTableView: UIView {
         self.addSubview(securityButton)
         
         NSLayoutConstraint.activate([
-            securityButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
-            securityButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
-            securityButton.widthAnchor.constraint(equalToConstant: 120),
+            securityButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 15),
+            securityButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -60),
+            securityButton.leadingAnchor.constraint(greaterThanOrEqualTo: cardsButton.trailingAnchor, constant: 5),
+            securityButton.widthAnchor.constraint(equalToConstant: 140),
             securityButton.heightAnchor.constraint(equalToConstant: 60)
+        ])
+    }
+    
+    private func setInvestimentsButton() {
+        self.addSubview(investimentsButton)
+        
+        NSLayoutConstraint.activate([
+            investimentsButton.topAnchor.constraint(equalTo: cardsButton.bottomAnchor, constant: 15),
+            investimentsButton.leadingAnchor.constraint(equalTo: cardsButton.leadingAnchor),
+            investimentsButton.heightAnchor.constraint(equalToConstant: 60),
+            investimentsButton.widthAnchor.constraint(equalToConstant: 140)
+        ])
+    }
+    
+    private func setCreditButton() {
+        self.addSubview(creditButton)
+        
+        NSLayoutConstraint.activate([
+            creditButton.topAnchor.constraint(equalTo: securityButton.bottomAnchor, constant: 15),
+            creditButton.trailingAnchor.constraint(equalTo: securityButton.trailingAnchor),
+            creditButton.leadingAnchor.constraint(greaterThanOrEqualTo: investimentsButton.trailingAnchor, constant: 5),
+            creditButton.heightAnchor.constraint(equalToConstant: 60),
+            creditButton.widthAnchor.constraint(equalToConstant: 140)
+        ])
+    }
+    
+    private func setNegotiationsButton() {
+        self.addSubview(negotiationsButton)
+        
+        NSLayoutConstraint.activate([
+            negotiationsButton.topAnchor.constraint(equalTo: investimentsButton.bottomAnchor, constant: 15),
+            negotiationsButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            negotiationsButton.leadingAnchor.constraint(equalTo: cardsButton.leadingAnchor),
+            negotiationsButton.trailingAnchor.constraint(equalTo: securityButton.trailingAnchor),
+            negotiationsButton.heightAnchor.constraint(equalToConstant: 60)
         ])
     }
 }

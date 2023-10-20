@@ -14,8 +14,8 @@ class ProductsViewCell: UIView {
     
     // MARK: ElementsVisual
     
-    lazy var image = UIImageView()
-    lazy var nameOptionLabel = LabelDefault(text: "", color: .white, font: .boldSystemFont(ofSize: 12))
+    lazy var iconImageView = ImageViewDefault(backgroundColor: .clear)
+    lazy var nameOptionLabel = LabelDefault(text: "", color: .white, font: .boldSystemFont(ofSize: 20))
         
     // MARK: Inits
     
@@ -36,11 +36,13 @@ class ProductsViewCell: UIView {
     }
     
     private func setImage() {
-        self.addSubview(image)
+        self.addSubview(iconImageView)
         
         NSLayoutConstraint.activate([
-            image.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            image.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20)
+            iconImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            iconImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            iconImageView.heightAnchor.constraint(equalToConstant: 25),
+            iconImageView.widthAnchor.constraint(equalToConstant: 25)
         ])
     }
     
@@ -48,9 +50,9 @@ class ProductsViewCell: UIView {
         self.addSubview(nameOptionLabel)
         
         NSLayoutConstraint.activate([
-            nameOptionLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            nameOptionLabel.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: 10),
-            nameOptionLabel.trailingAnchor.constraint(greaterThanOrEqualTo: self.trailingAnchor, constant: -50)
+            nameOptionLabel.centerYAnchor.constraint(equalTo: iconImageView.centerYAnchor),
+            nameOptionLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 10),
+            nameOptionLabel.trailingAnchor.constraint(lessThanOrEqualTo: self.trailingAnchor, constant: -50)
         ])
     }
 }

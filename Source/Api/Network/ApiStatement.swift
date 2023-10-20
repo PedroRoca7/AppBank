@@ -7,8 +7,19 @@
 
 import Foundation
 
+enum ApiString {
+    case urlStatement
+
+    var valor: String {
+        switch self {
+        case .urlStatement:
+            return "https://api-bank-iota.vercel.app/extrato"
+        }
+    }
+}
+
 class ApiStatement {
-    private static let basePath = "https://api-app-bank.vercel.app/extrato"
+    private static let basePath = ApiString.urlStatement.valor
     
     
     class public func loadStatements(onComplete: @escaping ([StatementModel]) -> Void) {

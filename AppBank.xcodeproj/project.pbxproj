@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CBD38C4E18D9BB128F99969A /* Pods_Itubers_ItubersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6464F85739BB081BE70C4CC /* Pods_Itubers_ItubersUITests.framework */; };
+		CE016E792AE317A10098F992 /* ScreenPixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE016E782AE317A10098F992 /* ScreenPixView.swift */; };
+		CE016E7B2AE317BB0098F992 /* ScreenPixViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE016E7A2AE317BB0098F992 /* ScreenPixViewModel.swift */; };
+		CE016E7D2AE317CB0098F992 /* ScreenPixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE016E7C2AE317CB0098F992 /* ScreenPixViewController.swift */; };
 		CE1B474E2A97FF8200056914 /* AuthenticatorFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B474D2A97FF8200056914 /* AuthenticatorFirebase.swift */; };
 		CE1C4AD72A984E0C00AEA219 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C4AD62A984E0C00AEA219 /* Alert.swift */; };
 		CE1DCEF02A97004400E3CC3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCEEF2A97004400E3CC3E /* AppDelegate.swift */; };
@@ -93,6 +96,9 @@
 		B096BF502BBA353DB97C2989 /* Pods-ItubersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ItubersTests.debug.xcconfig"; path = "Target Support Files/Pods-ItubersTests/Pods-ItubersTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BA4AEECEB59B9C712FAE34DB /* Pods_Itubers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Itubers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8AC14F57A3A1BBC828B90BA /* Pods-Itubers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Itubers.debug.xcconfig"; path = "Target Support Files/Pods-Itubers/Pods-Itubers.debug.xcconfig"; sourceTree = "<group>"; };
+		CE016E782AE317A10098F992 /* ScreenPixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPixView.swift; sourceTree = "<group>"; };
+		CE016E7A2AE317BB0098F992 /* ScreenPixViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPixViewModel.swift; sourceTree = "<group>"; };
+		CE016E7C2AE317CB0098F992 /* ScreenPixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPixViewController.swift; sourceTree = "<group>"; };
 		CE1B474D2A97FF8200056914 /* AuthenticatorFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatorFirebase.swift; sourceTree = "<group>"; };
 		CE1C4AD62A984E0C00AEA219 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		CE1DCEEC2A97004400E3CC3E /* AppBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +197,16 @@
 				97E288E1C8F1D5F33464B21F /* Pods_ItubersTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE016E772AE317710098F992 /* ScreenPix */ = {
+			isa = PBXGroup;
+			children = (
+				CE016E782AE317A10098F992 /* ScreenPixView.swift */,
+				CE016E7C2AE317CB0098F992 /* ScreenPixViewController.swift */,
+				CE016E7A2AE317BB0098F992 /* ScreenPixViewModel.swift */,
+			);
+			path = ScreenPix;
 			sourceTree = "<group>";
 		};
 		CE1C4AD52A984DFE00AEA219 /* Alert */ = {
@@ -434,12 +450,13 @@
 		CEE734BD2A9E9AA7002320DB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CEE734CE2A9E9EF6002320DB /* TabBar */,
-				CEE734C32A9E9D01002320DB /* Products */,
-				CEE734C22A9E9CFA002320DB /* Statement */,
 				CE6F211A2A98F656000B1B01 /* Home */,
 				CE1DCF212A9700AA00E3CC3E /* Login */,
+				CEE734C32A9E9D01002320DB /* Products */,
 				CE5BA4C92A97ABAB00449C0A /* Register */,
+				CE016E772AE317710098F992 /* ScreenPix */,
+				CEE734C22A9E9CFA002320DB /* Statement */,
+				CEE734CE2A9E9EF6002320DB /* TabBar */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -752,6 +769,7 @@
 				CEE734C72A9E9D26002320DB /* ExtractViewController.swift in Sources */,
 				CEA6DC902A9D27CB004722AF /* String+.swift in Sources */,
 				CE5BA4D12A97E99A00449C0A /* LoginViewModel.swift in Sources */,
+				CE016E7B2AE317BB0098F992 /* ScreenPixViewModel.swift in Sources */,
 				CE1DCEF02A97004400E3CC3E /* AppDelegate.swift in Sources */,
 				CEE734C12A9E9CCF002320DB /* ProductsCoordinator.swift in Sources */,
 				CE6D10AE2AD5A06300EFD5E7 /* ProductsViewCell.swift in Sources */,
@@ -775,8 +793,10 @@
 				CEAC14B62AA13B8E00A56C7C /* ApiStatement.swift in Sources */,
 				CE5F7F622AD048EA00410BFF /* CustomCollectionCell.swift in Sources */,
 				CE5F7F5A2ACDB66200410BFF /* ActivityDefault.swift in Sources */,
+				CE016E792AE317A10098F992 /* ScreenPixView.swift in Sources */,
 				CE1DCF2E2A9704D200E3CC3E /* LabelDefault.swift in Sources */,
 				CE1DCEF22A97004400E3CC3E /* SceneDelegate.swift in Sources */,
+				CE016E7D2AE317CB0098F992 /* ScreenPixViewController.swift in Sources */,
 				CE1DCF302A97074B00E3CC3E /* TextFieldDefault.swift in Sources */,
 				CE6F211C2A98F663000B1B01 /* HomeView.swift in Sources */,
 				CE6F21222A98F925000B1B01 /* HomeCoordinator.swift in Sources */,
