@@ -11,6 +11,7 @@
 		CE016E792AE317A10098F992 /* ScreenPixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE016E782AE317A10098F992 /* ScreenPixView.swift */; };
 		CE016E7B2AE317BB0098F992 /* ScreenPixViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE016E7A2AE317BB0098F992 /* ScreenPixViewModel.swift */; };
 		CE016E7D2AE317CB0098F992 /* ScreenPixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE016E7C2AE317CB0098F992 /* ScreenPixViewController.swift */; };
+		CE016E7F2AE320110098F992 /* ScreenPixCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE016E7E2AE320110098F992 /* ScreenPixCoordinator.swift */; };
 		CE1B474E2A97FF8200056914 /* AuthenticatorFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B474D2A97FF8200056914 /* AuthenticatorFirebase.swift */; };
 		CE1C4AD72A984E0C00AEA219 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C4AD62A984E0C00AEA219 /* Alert.swift */; };
 		CE1DCEF02A97004400E3CC3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCEEF2A97004400E3CC3E /* AppDelegate.swift */; };
@@ -99,6 +100,7 @@
 		CE016E782AE317A10098F992 /* ScreenPixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPixView.swift; sourceTree = "<group>"; };
 		CE016E7A2AE317BB0098F992 /* ScreenPixViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPixViewModel.swift; sourceTree = "<group>"; };
 		CE016E7C2AE317CB0098F992 /* ScreenPixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPixViewController.swift; sourceTree = "<group>"; };
+		CE016E7E2AE320110098F992 /* ScreenPixCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPixCoordinator.swift; sourceTree = "<group>"; };
 		CE1B474D2A97FF8200056914 /* AuthenticatorFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatorFirebase.swift; sourceTree = "<group>"; };
 		CE1C4AD62A984E0C00AEA219 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		CE1DCEEC2A97004400E3CC3E /* AppBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -303,6 +305,7 @@
 				CEE734BE2A9E9CAE002320DB /* ExtractCoordinator.swift */,
 				CEE734C02A9E9CCF002320DB /* ProductsCoordinator.swift */,
 				CEE734CC2A9E9DEF002320DB /* TabBarCoordinator.swift */,
+				CE016E7E2AE320110098F992 /* ScreenPixCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -764,6 +767,7 @@
 				CE5BA4CF2A97B9B600449C0A /* RegisterCoordinator.swift in Sources */,
 				CE5BA4DD2A97EF4200449C0A /* RegisterViewModel.swift in Sources */,
 				CE5BA4C82A97AAB300449C0A /* ViewControllerDefault.swift in Sources */,
+				CE016E7F2AE320110098F992 /* ScreenPixCoordinator.swift in Sources */,
 				CE5BA4CD2A97ABD100449C0A /* RegisterViewController.swift in Sources */,
 				CE1DCF322A9709D400E3CC3E /* ButtonDefault.swift in Sources */,
 				CEE734C72A9E9D26002320DB /* ExtractViewController.swift in Sources */,

@@ -13,6 +13,7 @@ class HomeViewController: ViewControllerDefault {
     
     // MARK: Propertys
     var user: User?
+    var pixButtonTap: (() -> Void)?
     private var disposeBag = DisposeBag()
     private var collectionViewButtons: [String] = ["Pix", "Fazer Transfêrencia", "Pagar contas", "Seguros"]
     
@@ -92,7 +93,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
                 switch buttonEnum {
                 case .pix:
-                    Alert.showBasicAlert(title: "Pix", message: "Você clicou para fazer um pix", viewController: self) {}
+                    self.pixButtonTap?()
                 case .transfer:
                     Alert.showBasicAlert(title: "Transferências", message: "Você clicou para fazer uma transferencia.", viewController: self) {}
                 case .pay:
