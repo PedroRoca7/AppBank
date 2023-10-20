@@ -22,6 +22,7 @@ class ScreenPixView: UIView {
     lazy var valuePixTextField = TextFieldDefault(placeholder: "Ex: 100")
     lazy var descriptionLabel = LabelDefault(text: "Descrição", color: .black, font: .systemFont(ofSize: 14))
     lazy var descriptionTextField = TextFieldDefault(placeholder: "Ex: Devolvendo o empréstimo")
+    lazy var makePixButton = ButtonDefault(title: "Fazer Pix", backgroundColor: .blue)
     
     // MARK: Inits
     
@@ -43,6 +44,7 @@ class ScreenPixView: UIView {
         setValuePixTextField()
         setDescriptionLabel()
         setDescriptionTextField()
+        setMakePixButton()
     }
     
     private func setTitlePixLabel() {
@@ -106,6 +108,18 @@ class ScreenPixView: UIView {
             descriptionTextField.leadingAnchor.constraint(equalTo: descriptionLabel.leadingAnchor),
             descriptionTextField.trailingAnchor.constraint(lessThanOrEqualTo: self.trailingAnchor, constant: 5),
             descriptionTextField.widthAnchor.constraint(equalToConstant: 80)
+        ])
+    }
+    
+    private func setMakePixButton() {
+        self.addSubview(makePixButton)
+        
+        NSLayoutConstraint.activate([
+            makePixButton.topAnchor.constraint(equalTo: descriptionTextField.topAnchor, constant: 15),
+            makePixButton.widthAnchor.constraint(equalToConstant: 100),
+            makePixButton.heightAnchor.constraint(equalToConstant: 60),
+            makePixButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            makePixButton.bottomAnchor.constraint(lessThanOrEqualTo: self.bottomAnchor, constant: -5)
         ])
     }
 }
