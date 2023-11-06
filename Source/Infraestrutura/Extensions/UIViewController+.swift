@@ -1,5 +1,5 @@
 //
-//  ViewControllerDefault.swift
+//  UIViewController+.swift
 //  AppBank
 //
 //  Created by Pedro Henrique on 24/08/23.
@@ -7,12 +7,7 @@
 
 import UIKit
 
-class ViewControllerDefault: UIViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        hideKeyBoardWhenTapped()
-    }
+extension UIViewController {
     
     func hideKeyBoardWhenTapped() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))

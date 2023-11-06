@@ -8,8 +8,8 @@
 import Foundation
 
 protocol RegisterProtocol: AnyObject {
-    func success()
-    func failure(error: Error)
+    func successRegister()
+    func failureRegister()
 }
 
 class RegisterViewModel {
@@ -21,26 +21,33 @@ class RegisterViewModel {
     public func registerUser(user: User) {
         
         AuthenticatorFirebase.auth.createUser(withEmail: user.email, password: user.password) { (result, error) in
-            
             if let error = error {
-                self.delegate?.failure(error: error)
-            } else if let result = result?.user {
-                let userID = result.uid
-                
-                let userData: [String: Any] = [
-                    "nome": user.name,
-                    "email": user.email
-                ]
-                
-                let db = AuthenticatorFirebase.firestore
-                
-                db.collection("Usuários").document(userID).setData(userData) { error in
-                    if let error = error {
-                        self.delegate?.failure(error: error)
-                    } else {
-                        self.delegate?.success()
-                    }
-                }
+                self.delegate?.failureRegister()
+                print("Erro ao fazer registro: \(error.localizedDescription)")
+            } else {
+                guard let result = result else { self.delegate?.failureRegister()
+                    return}
+                let id = result.user.uid
+                self.writeUserDatabase(user: user, id: id)
+            }
+        }
+    }
+    
+    
+    private func writeUserDatabase(user: User, id: String) {
+        let userData: [String: Any] = [
+            "nome": user.name,
+            "email": user.email
+        ]
+        
+        let db = AuthenticatorFirebase.firestore
+        
+        db.collection("Usuários").document(id).setData(userData) { error in
+            if let error = error {
+                self.delegate?.failureRegister()
+                print("Tabela Usuários não encontrada no banco de dados: \(error.localizedDescription)")
+            } else {
+                self.delegate?.successRegister()
             }
         }
     }

@@ -9,11 +9,11 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class RegisterViewController: ViewControllerDefault {
+class RegisterViewController: UIViewController {
     
     // MARK: Propertys
     private let disposeBag = DisposeBag()
-    var loginScreen: (() -> Void)?
+    var showLoginScreen: (() -> Void)?
     
     lazy var viewScreen: RegisterView = {
         let view = RegisterView()
@@ -33,13 +33,17 @@ class RegisterViewController: ViewControllerDefault {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.delegate = self
-        
+        hideKeyBoardWhenTapped()
+        setupDelegates()
+        tappedRegisterButton()
+
+    }
+    
+    private func tappedRegisterButton() {
         viewScreen.registerButton.rx.tap.bind {
             guard let name = self.viewScreen.nameTextField.text, !name.isEmpty,
                   let email = self.viewScreen.emailTextField.text, !email.isEmpty,
                   let password = self.viewScreen.passwordTextField.text, !password.isEmpty else {
-                
                 Alert.showBasicAlert(title: "Erro", message: "Campos Inválidos ou Vazios", viewController: self) {}
             return
             }
@@ -47,26 +51,27 @@ class RegisterViewController: ViewControllerDefault {
             if password.count < 6 {
                 Alert.showBasicAlert(title: "Erro", message: "A senha tem que conter no mínimo 6 caracteres.", viewController: self) {}
             }
-            
             let user = User(name: name, email: email, password: password)
-            
             self.viewModel.registerUser(user: user)
         }.disposed(by: disposeBag)
+    }
+    
+    private func setupDelegates() {
+        viewModel.delegate = self
     }
 }
 
 extension RegisterViewController: RegisterProtocol {
-    func success() {
+    func successRegister() {
         Alert.showBasicAlert(title: "Sucesso", message: "Usuário cadastrado com sucesso.", viewController: self) {
-            self.loginScreen?()
+            self.showLoginScreen?()
         }
     }
     
-    func failure(error: Error) {
-        print("Erro ao cadastrar: \(error.localizedDescription)")
-        Alert.showActionSheet(title: "Erro", message: "Erro ao registar", viewController: self) { result in
+    func failureRegister() {
+        Alert.showActionSheet(title: "Erro", message: "Erro ao registar usuário", viewController: self) { result in
             if !result {
-                self.loginScreen?()
+                self.showLoginScreen?()
             }
         }
     }

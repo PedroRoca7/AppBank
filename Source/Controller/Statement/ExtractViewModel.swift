@@ -14,7 +14,7 @@ protocol ExtractViewModelProtocol: AnyObject {
 
 class ExtractViewModel {
     
-    var statements: StatementsViewModel = []
+    var bankStatements: StatementsViewModel = []
     weak var delegate: ExtractViewModelProtocol?
    
     
@@ -22,7 +22,7 @@ class ExtractViewModel {
         StatementViewModel.loadStatement { [weak self] result in
             guard let self = self else { return }
             if let result = result {
-                self.statements = result
+                self.bankStatements = result
             }
             self.delegate?.success()
         }
@@ -30,8 +30,8 @@ class ExtractViewModel {
     
      func currentBalance() -> Double {
         var balance: Double = 0
-        for statement in statements {
-            balance += statement.amout
+        for bankStatement in bankStatements {
+            balance += bankStatement.amout
         }
         return balance
     }

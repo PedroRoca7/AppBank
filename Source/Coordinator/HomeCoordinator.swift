@@ -26,9 +26,7 @@ class HomeCoordinator: Coordinator {
     }
     
     func start() {
-        let viewController = HomeViewController()
-        
-        viewController.pixButtonTap = {
+        homeViewController.pixButtonTap = {
             self.showScreenPix()
         }
     }

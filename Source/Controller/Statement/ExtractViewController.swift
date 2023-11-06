@@ -7,11 +7,10 @@
 
 import UIKit
 
-class ExtractViewController: ViewControllerDefault {
+class ExtractViewController: UIViewController {
     
     lazy var viewScreen: ExtractView = {
         let view = ExtractView()
-        
         return view
     }()
     
@@ -26,11 +25,16 @@ class ExtractViewController: ViewControllerDefault {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Extrato"
+        setupNavigationItem()
+        hideKeyBoardWhenTapped()
         configDelegates()
         viewModel.loadStatements()
     }
 
+    private func setupNavigationItem() {
+        navigationItem.title = "Extrato"
+    }
+    
     private func configDelegates() {
         viewScreen.tableView.delegate = self
         viewScreen.tableView.dataSource = self
@@ -42,13 +46,13 @@ extension ExtractViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: TableView DataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.statements.count
+        return viewModel.bankStatements.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomStatementTableViewCell.identifier, for: indexPath) as? CustomStatementTableViewCell
         
-        let statement = viewModel.statements[indexPath.row]
+        let statement = viewModel.bankStatements[indexPath.row]
         cell?.prepareCell(statement: statement)
         
         return cell ?? UITableViewCell()

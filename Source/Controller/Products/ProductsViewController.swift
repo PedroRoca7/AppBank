@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProductsViewController: ViewControllerDefault {
+class ProductsViewController: UIViewController {
     
     lazy var viewScreen: ProductsView = {
         let view = ProductsView()
@@ -27,6 +27,7 @@ class ProductsViewController: ViewControllerDefault {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyBoardWhenTapped()
         configDelegates()
         configHeaderTableView()
         addOptionsTableView()

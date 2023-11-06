@@ -9,7 +9,7 @@ import Foundation
 
 import UIKit
 
-class ScreenPixViewController: ViewControllerDefault {
+class ScreenPixViewController: UIViewController {
     
     lazy var viewScreen: ScreenPixView = {
         let view = ScreenPixView()
@@ -18,5 +18,10 @@ class ScreenPixViewController: ViewControllerDefault {
     
     override func loadView() {
         self.view = viewScreen
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        hideKeyBoardWhenTapped()
     }
 }

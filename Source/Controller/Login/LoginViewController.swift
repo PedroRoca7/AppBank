@@ -9,20 +9,20 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class LoginViewController: ViewControllerDefault {
+class LoginViewController: UIViewController {
     
     // MARK: Propertys
     var onLoginTap: ((_ user: User) -> Void)?
     var onRegisterTap: (() -> Void)?
     private let disposeBag = DisposeBag()
     
-    lazy var viewScreen: LoginView = {
+    lazy private var viewScreen: LoginView = {
         let view = LoginView()
         
         return view
     }()
     
-    lazy var viewModel: LoginViewModel = {
+    lazy private var viewModel: LoginViewModel = {
         let vm = LoginViewModel()
         return vm
     }()
@@ -36,7 +36,20 @@ class LoginViewController: ViewControllerDefault {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        
+        hideKeyBoardWhenTapped()
+        tappedLoginButton()
+        tappedRegisterButton()
+    }
+}
+
+private extension LoginViewController {
+    func tappedRegisterButton() {
+        viewScreen.registerButton.rx.tap.bind {
+            self.onRegisterTap?()
+        }.disposed(by: disposeBag)
+    }
+    
+    func tappedLoginButton() {
         viewScreen.logarButton.rx.tap.bind {
             guard let email = self.viewScreen.emailTextFiled.text, !email.isEmpty,
                   let password = self.viewScreen.passwordTextField.text, !password.isEmpty else {
@@ -44,19 +57,15 @@ class LoginViewController: ViewControllerDefault {
                       return }
             self.viewModel.login(email: email, password: password)
         }.disposed(by: disposeBag)
-        
-        viewScreen.registerButton.rx.tap.bind {
-            self.onRegisterTap?()
-        }.disposed(by: disposeBag)
     }
 }
 
 extension LoginViewController: LoginProtocol {
-    func success(user: User) {
+    func successLogin(user: User) {
         onLoginTap?(user)
     }
     
-    func failure(error: Error) {
-        Alert.showBasicAlert(title: "Erro", message: "Erro ao tentar fazer login: \(error.localizedDescription)", viewController: self) {}
+    func failureLogin() {
+        Alert.showBasicAlert(title: "Erro", message: "Erro ao tentar fazer login", viewController: self) {}
     }
 }

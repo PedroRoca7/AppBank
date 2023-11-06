@@ -22,7 +22,7 @@ class RegisterCoordinator: Coordinator {
     func start() {
         let viewController = RegisterViewController()
         
-        viewController.loginScreen = {
+        viewController.showLoginScreen = {
             self.showScreenLogin()
         }
         

@@ -10,7 +10,7 @@ import Foundation
 enum ApiString {
     case urlStatement
 
-    var valor: String {
+    var urlExtract: String {
         switch self {
         case .urlStatement:
             return "https://api-bank-iota.vercel.app/extrato"
@@ -19,7 +19,7 @@ enum ApiString {
 }
 
 class ApiStatement {
-    private static let basePath = ApiString.urlStatement.valor
+    private static let basePath = ApiString.urlStatement.urlExtract
     
     
     class public func loadStatements(onComplete: @escaping ([StatementModel]) -> Void) {
