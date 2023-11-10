@@ -1,5 +1,5 @@
 //
-//  StatementModel.swift
+//  ExtratcModel.swift
 //  AppBank
 //
 //  Created by Pedro Henrique on 28/08/23.
@@ -7,9 +7,9 @@
 
 import Foundation
 
-typealias StatementsModel = [StatementModel]
+typealias ExtractsModel = [ExtratcModel]
 
-struct StatementModel: Codable {
+struct ExtratcModel: Codable {
     let id: Int?
     let type: Int?
     let about: String?

@@ -12,14 +12,25 @@ protocol ExtractViewModelProtocol: AnyObject {
     func failure()
 }
 
-class ExtractViewModel {
-    
-    var bankStatements: StatementsViewModel = []
+protocol ExtractViewModeling: AnyObject {
+    var delegate: ExtractViewModelProtocol? { get set }
+    var bankStatements: Extratcts { get }
+    func loadStatements()
+    func currentBalance() -> Double
+}
+
+class ExtractViewModel: ExtractViewModeling {
+
+    var bankStatements: Extratcts = []
+    private var statementViewModel: ServiceViewModel
     weak var delegate: ExtractViewModelProtocol?
-   
     
+    init(statementViewModel: ServiceViewModel) {
+        self.statementViewModel = statementViewModel
+    }
+   
     func loadStatements() {
-        StatementViewModel.loadStatement { [weak self] result in
+        statementViewModel.loadStatement { [weak self] result in
             guard let self = self else { return }
             if let result = result {
                 self.bankStatements = result

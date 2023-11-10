@@ -14,10 +14,18 @@ class ExtractViewController: UIViewController {
         return view
     }()
     
-    lazy var viewModel: ExtractViewModel = {
-        let vm = ExtractViewModel()
-        return vm
-    }()
+    private var viewModel: ExtractViewModeling
+  
+    // MARK: Inits
+    
+    init(viewModel: ExtractViewModeling) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         self.view = viewScreen
@@ -38,7 +46,6 @@ class ExtractViewController: UIViewController {
     private func configDelegates() {
         viewScreen.tableView.delegate = self
         viewScreen.tableView.dataSource = self
-        viewModel.delegate = self
     }
 }
 
@@ -53,7 +60,7 @@ extension ExtractViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomStatementTableViewCell.identifier, for: indexPath) as? CustomStatementTableViewCell
         
         let statement = viewModel.bankStatements[indexPath.row]
-        cell?.prepareCell(statement: statement)
+        cell?.prepareCell(extract: statement)
         
         return cell ?? UITableViewCell()
     }

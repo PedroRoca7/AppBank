@@ -1,5 +1,5 @@
 //
-//  StatementViewModel.swift
+//  ServiceViewModel.swift
 //  AppBank
 //
 //  Created by Pedro Henrique on 28/08/23.
@@ -7,14 +7,17 @@
 
 import Foundation
 
-typealias StatementsViewModel = [StatementViewModel]
+typealias Extratcts = [ServiceViewModel]
 
-class StatementViewModel {
-    let model: StatementModel
+class ServiceViewModel {
+    private let model: ExtratcModel
+    private let service: ApiStatement
     
+    //MARK: Inits
     
-    init(model: StatementModel) {
+    init(model: ExtratcModel, service: ApiStatement = ApiStatement.serviceGetExtract) {
         self.model = model
+        self.service = service
     }
     
     var id: Int {
@@ -33,15 +36,15 @@ class StatementViewModel {
         model.amount ?? 0
     }
     
-    static func loadStatement(completion: @escaping (StatementsViewModel?) -> Void) {
-        var bankStatements = StatementsViewModel()
-        ApiStatement.loadStatements { statements in
+    func loadStatement(completion: @escaping (Extratcts?) -> Void) {
+        var bankStatements = Extratcts()
+        service.loadStatements { statements in
             for statement in statements {
                 if let statementID = statement.id,
                    let statementType = statement.type,
                    let statementAbout = statement.about,
                    let statementAmount = statement.amount {
-                    bankStatements.append(StatementViewModel(model: StatementModel(id: statementID, type: statementType, about: statementAbout, amount: statementAmount)))
+                    bankStatements.append(ServiceViewModel(model: ExtratcModel(id: statementID, type: statementType, about: statementAbout, amount: statementAmount)))
                 }
             }
             completion(bankStatements)

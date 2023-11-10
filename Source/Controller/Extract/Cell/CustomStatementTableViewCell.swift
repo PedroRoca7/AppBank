@@ -33,17 +33,17 @@ class CustomStatementTableViewCell: UITableViewCell {
          fatalError("init(coder:) has not been implemented")
      }
     
-    func prepareCell(statement: StatementViewModel) {
-        if statement.type == .Input {
+    func prepareCell(extract: ServiceViewModel) {
+        if extract.type == .Input {
             viewCell.contentView.backgroundColor = .green
             viewCell.typeEntryLabel.text = "Entrada"
-            viewCell.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: statement.amout, typeCurrency: "pt-BR", currencySymbol: "R$")
-            viewCell.aboutLabel.text = statement.about
+            viewCell.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: extract.amout, typeCurrency: "pt-BR", currencySymbol: "R$")
+            viewCell.aboutLabel.text = extract.about
         } else {
             viewCell.contentView.backgroundColor = .red
             viewCell.typeEntryLabel.text = "Saída"
-            viewCell.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: statement.amout, typeCurrency: "pt-BR", currencySymbol: "R$")
-            viewCell.aboutLabel.text = statement.about
+            viewCell.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: extract.amout, typeCurrency: "pt-BR", currencySymbol: "R$")
+            viewCell.aboutLabel.text = extract.about
         }
     }
     

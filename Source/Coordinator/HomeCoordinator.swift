@@ -12,13 +12,12 @@ class HomeCoordinator: Coordinator {
     let navigationController: UINavigationController
     let user: User
     lazy var homeViewController: HomeViewController = {
-        let viewController = HomeViewController()
+        let viewController = HomeFactory.makeModule()
         viewController.tabBarItem.image = UIImage(systemName: "homekit")
         viewController.tabBarItem.title = "Home"
         viewController.user = self.user
         return viewController
     }()
-    
     
     init(navigationController: UINavigationController, user: User) {
         self.navigationController = navigationController

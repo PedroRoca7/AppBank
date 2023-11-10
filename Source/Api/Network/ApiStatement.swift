@@ -18,11 +18,15 @@ enum ApiString {
     }
 }
 
-class ApiStatement {
-    private static let basePath = ApiString.urlStatement.urlExtract
-    
-    
-    class public func loadStatements(onComplete: @escaping ([StatementModel]) -> Void) {
+protocol ApiStatementing {
+    func loadStatements(onComplete: @escaping (ExtractsModel) -> Void)
+}
+
+class ApiStatement: ApiStatementing {
+    private let basePath = ApiString.urlStatement.urlExtract
+    static let serviceGetExtract = ApiStatement()
+
+    func loadStatements(onComplete: @escaping (ExtractsModel) -> Void) {
         guard let url = URL(string: basePath) else { return }
         
         let dataTask = URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
@@ -32,7 +36,7 @@ class ApiStatement {
                     
                     guard let data = data else{return}
                     do{
-                        let statement = try JSONDecoder().decode([StatementModel].self, from: data)
+                        let statement = try JSONDecoder().decode(ExtractsModel.self, from: data)
                         onComplete(statement)
                     } catch {
                         print(error.localizedDescription)

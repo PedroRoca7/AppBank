@@ -22,12 +22,19 @@ class HomeViewController: UIViewController {
         return view
     }()
     
-    lazy private var viewModel: ExtractViewModel = {
-        let vm = ExtractViewModel()
-        return vm
-    }()
+    private var viewModel: ExtractViewModeling
     
     // MARK: Inits
+    
+    init(viewModel: ExtractViewModeling) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func loadView() {
         self.view = viewScreen
         
@@ -57,7 +64,6 @@ private extension HomeViewController {
     }
     
     func setupDelegates() {
-        viewModel.delegate = self
         viewScreen.collectionView.dataSource = self
         viewScreen.collectionView.delegate = self
     }
