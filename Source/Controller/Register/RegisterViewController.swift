@@ -13,22 +13,27 @@ class RegisterViewController: UIViewController {
     
     // MARK: Propertys
     private let disposeBag = DisposeBag()
-    var showLoginScreen: (() -> Void)?
     
-    lazy var viewScreen: RegisterView = {
+    private lazy var viewScreen: RegisterView = {
         let view = RegisterView()
         return view
     }()
     
-    lazy var viewModel: RegisterViewModel = {
-        let vm = RegisterViewModel()
-        return vm
-    }()
+    private var viewModel: RegisterViewModeling
     
     // MARK: Inits
     
     override func loadView() {
         self.view = viewScreen
+    }
+    
+    init(viewModel: RegisterViewModeling) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -64,14 +69,14 @@ class RegisterViewController: UIViewController {
 extension RegisterViewController: RegisterProtocol {
     func successRegister() {
         Alert.showBasicAlert(title: "Sucesso", message: "Usuário cadastrado com sucesso.", viewController: self) {
-            self.showLoginScreen?()
+            self.viewModel.showLoginScreen()
         }
     }
     
     func failureRegister() {
         Alert.showActionSheet(title: "Erro", message: "Erro ao registar usuário", viewController: self) { result in
             if !result {
-                self.showLoginScreen?()
+                self.viewModel.showLoginScreen()
             }
         }
     }

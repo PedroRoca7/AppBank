@@ -20,11 +20,11 @@ class TabBarCoordinator: Coordinator {
     func start() {
         let tabBarController = TabBarController()
         
-        let homeCoordinator = HomeCoordinator(navigationController: self.navigationController, user: self.user )
+        let homeScreen = HomeFactory.makeModule(navigationController: navigationController, user: user)
         let extractCoordinator = ExtractCoordinator(navigationController: self.navigationController)
         let productsCoordinator = ProductsCoordinator(navigationController: self.navigationController)
         
-        tabBarController.setViewControllers([homeCoordinator.homeViewController, extractCoordinator.extractViewController, productsCoordinator.productsViewController], animated: true)
+        tabBarController.setViewControllers([homeScreen, extractCoordinator.extractViewController, productsCoordinator.productsViewController], animated: true)
         
         self.navigationController.pushViewController(tabBarController, animated: true)
     }

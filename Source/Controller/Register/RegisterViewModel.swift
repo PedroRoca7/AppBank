@@ -12,11 +12,24 @@ protocol RegisterProtocol: AnyObject {
     func failureRegister()
 }
 
-class RegisterViewModel {
+protocol RegisterViewModeling: AnyObject {
+    var delegate: RegisterProtocol { get set }
+    func registerUser(user: User)
+    func showLoginScreen()
+}
+
+class RegisterViewModel: RegisterViewModeling {
     
     // MARK: Propertys
     
     weak var delegate: RegisterProtocol?
+    private var coordinator: RegisterCoordinatoor
+    
+    //MARK: Inits
+    
+    init(coordinator: RegisterCoordinatoor) {
+        self.coordinator = coordinator
+    }
     
     public func registerUser(user: User) {
         
@@ -32,7 +45,6 @@ class RegisterViewModel {
             }
         }
     }
-    
     
     private func writeUserDatabase(user: User, id: String) {
         let userData: [String: Any] = [
@@ -50,5 +62,9 @@ class RegisterViewModel {
                 self.delegate?.successRegister()
             }
         }
+    }
+    
+    public func showLoginScreen() {
+        coordinator.showLoginScreen()
     }
 }

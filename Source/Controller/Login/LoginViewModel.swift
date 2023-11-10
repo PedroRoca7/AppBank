@@ -7,18 +7,32 @@
 
 import Foundation
 
-protocol LoginProtocol: NSObject {
+protocol LoginProtocol: AnyObject {
     func successLogin(user: User)
     func failureLogin()
 }
 
-class LoginViewModel {
+protocol LoginViewModeling: AnyObject {
+    var delegate: LoginProtocol? { get set }
+    func login(email: String, password: String)
+    func showHomeScreen(user: User)
+    func showRegisterScreen()
+}
+
+class LoginViewModel: LoginViewModeling {
     
     // MARK: Propertys
     
+    private var coordinator: LoginCoordinating
     weak var delegate: LoginProtocol?
     
-    // MARK: Functions
+    //MARK: Init
+    
+    init(coordinator: LoginCoordinating) {
+        self.coordinator = coordinator
+    }
+    
+    // MARK: Methods
     
     public func login(email: String, password: String) {
         AuthenticatorFirebase.auth.signIn(withEmail: email, password: password) { (result, error) in
@@ -32,6 +46,14 @@ class LoginViewModel {
                 self.successLogin(id: userID)
             }
         }
+    }
+    
+    public func showHomeScreen(user: User) {
+        coordinator.startTabController(user: user)
+    }
+    
+    public func showRegisterScreen() {
+        coordinator.startRegisterScreen()
     }
     
     private func successLogin(id: String) {

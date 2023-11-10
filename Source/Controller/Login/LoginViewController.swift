@@ -12,20 +12,14 @@ import RxCocoa
 class LoginViewController: UIViewController {
     
     // MARK: Propertys
-    var onLoginTap: ((_ user: User) -> Void)?
-    var onRegisterTap: (() -> Void)?
     private let disposeBag = DisposeBag()
     
     lazy private var viewScreen: LoginView = {
         let view = LoginView()
-        
         return view
     }()
     
-    lazy private var viewModel: LoginViewModel = {
-        let vm = LoginViewModel()
-        return vm
-    }()
+    private var viewModel: LoginViewModeling
     
     // MARK: Inits
     
@@ -33,9 +27,17 @@ class LoginViewController: UIViewController {
         self.view = viewScreen
     }
     
+    init(viewModel: LoginViewModeling) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.delegate = self
         hideKeyBoardWhenTapped()
         tappedLoginButton()
         tappedRegisterButton()
@@ -45,7 +47,7 @@ class LoginViewController: UIViewController {
 private extension LoginViewController {
     func tappedRegisterButton() {
         viewScreen.registerButton.rx.tap.bind {
-            self.onRegisterTap?()
+            self.viewModel.showRegisterScreen()
         }.disposed(by: disposeBag)
     }
     
@@ -62,7 +64,7 @@ private extension LoginViewController {
 
 extension LoginViewController: LoginProtocol {
     func successLogin(user: User) {
-        onLoginTap?(user)
+        viewModel.showHomeScreen(user: user)
     }
     
     func failureLogin() {

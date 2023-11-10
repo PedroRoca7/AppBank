@@ -9,13 +9,16 @@ import Foundation
 import UIKit
 
 enum HomeFactory {
-    static func makeModule() -> HomeViewController {
+    static func makeModule(navigationController: UINavigationController ,user: User) -> HomeViewController {
         let service = ApiStatement()
         let model = ExtratcModel()
+        let coordinator = HomeCoordinatoor(navigationController: navigationController)
         let serviceViewModel = ServiceViewModel(model: model, service: service)
-        let extractViewModel = ExtractViewModel(statementViewModel: serviceViewModel)
+        let extractViewModel = ExtractViewModel(serviceViewModel: serviceViewModel, coordinator: coordinator)
         let homeViewController = HomeViewController(viewModel: extractViewModel)
         extractViewModel.delegate = homeViewController
+        coordinator.controller = homeViewController
+        homeViewController.user = user
         
         return homeViewController
     }
