@@ -20,17 +20,23 @@ protocol ExtractViewModeling: AnyObject {
 }
 
 class ExtractViewModel: ExtractViewModeling {
-    var user: User
+    
+    //MARK: Propertys
+    
     var bankStatements: Extratcts = []
     private var serviceViewModel: ServiceViewModel
     private var coordinator: HomeCoordinating
     weak var delegate: ExtractViewModelProtocol?
+    
+    //MARK: Init
     
     init(serviceViewModel: ServiceViewModel, coordinator: HomeCoordinating) {
         self.serviceViewModel = serviceViewModel
         self.coordinator = coordinator
     }
    
+    //MARK: Methods
+    
     func loadStatements() {
         serviceViewModel.loadStatement { [weak self] result in
             guard let self = self else { return }
