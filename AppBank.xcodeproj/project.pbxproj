@@ -30,6 +30,8 @@
 		CE1FF8FC2B03A8550021F67B /* ExtractCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FF8FB2B03A8550021F67B /* ExtractCoordinator.swift */; };
 		CE1FF8FE2B03A9D30021F67B /* ProductsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FF8FD2B03A9D30021F67B /* ProductsCoordinator.swift */; };
 		CE1FF9002B03A9E50021F67B /* ProductsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FF8FF2B03A9E50021F67B /* ProductsFactory.swift */; };
+		CE1FF9022B03AE7A0021F67B /* ScreenPixFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FF9012B03AE7A0021F67B /* ScreenPixFactory.swift */; };
+		CE1FF9042B03AE8C0021F67B /* ScreenPixCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FF9032B03AE8C0021F67B /* ScreenPixCoordinator.swift */; };
 		CE20FC532AA6273F00727585 /* ExtractViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20FC522AA6273F00727585 /* ExtractViewModel.swift */; };
 		CE270CDB2A98172C00E69BF1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE270CDA2A98172C00E69BF1 /* GoogleService-Info.plist */; };
 		CE5BA4C82A97AAB300449C0A /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BA4C72A97AAB300449C0A /* UIViewController+.swift */; };
@@ -126,6 +128,8 @@
 		CE1FF8FB2B03A8550021F67B /* ExtractCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractCoordinator.swift; sourceTree = "<group>"; };
 		CE1FF8FD2B03A9D30021F67B /* ProductsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCoordinator.swift; sourceTree = "<group>"; };
 		CE1FF8FF2B03A9E50021F67B /* ProductsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsFactory.swift; sourceTree = "<group>"; };
+		CE1FF9012B03AE7A0021F67B /* ScreenPixFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPixFactory.swift; sourceTree = "<group>"; };
+		CE1FF9032B03AE8C0021F67B /* ScreenPixCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPixCoordinator.swift; sourceTree = "<group>"; };
 		CE20FC522AA6273F00727585 /* ExtractViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractViewModel.swift; sourceTree = "<group>"; };
 		CE270CDA2A98172C00E69BF1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE5BA4C72A97AAB300449C0A /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
@@ -213,6 +217,8 @@
 				CE016E782AE317A10098F992 /* ScreenPixView.swift */,
 				CE016E7C2AE317CB0098F992 /* ScreenPixViewController.swift */,
 				CE016E7A2AE317BB0098F992 /* ScreenPixViewModel.swift */,
+				CE1FF9012B03AE7A0021F67B /* ScreenPixFactory.swift */,
+				CE1FF9032B03AE8C0021F67B /* ScreenPixCoordinator.swift */,
 			);
 			path = ScreenPix;
 			sourceTree = "<group>";
@@ -780,6 +786,7 @@
 				CEE734C92A9E9D30002320DB /* ProductsView.swift in Sources */,
 				CEE734CB2A9E9D3A002320DB /* ProductsViewController.swift in Sources */,
 				CE5BA4E02A97EFB800449C0A /* Users.swift in Sources */,
+				CE1FF9042B03AE8C0021F67B /* ScreenPixCoordinator.swift in Sources */,
 				CEE734D02A9E9F04002320DB /* TabBarController.swift in Sources */,
 				CE5F7F582ACDB63800410BFF /* ImageViewDefault.swift in Sources */,
 				CE6D10B22AD5FC7F00EFD5E7 /* HeaderTableView.swift in Sources */,
@@ -798,6 +805,7 @@
 				CEA554092ACC8395000489B4 /* ViewDefault.swift in Sources */,
 				CEAC14B62AA13B8E00A56C7C /* ApiStatement.swift in Sources */,
 				CE5F7F622AD048EA00410BFF /* CustomCollectionCell.swift in Sources */,
+				CE1FF9022B03AE7A0021F67B /* ScreenPixFactory.swift in Sources */,
 				CE5F7F5A2ACDB66200410BFF /* ActivityDefault.swift in Sources */,
 				CE016E792AE317A10098F992 /* ScreenPixView.swift in Sources */,
 				CE1DCF2E2A9704D200E3CC3E /* LabelDefault.swift in Sources */,

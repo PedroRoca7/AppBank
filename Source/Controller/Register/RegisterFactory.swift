@@ -10,7 +10,7 @@ import UIKit
 
 enum RegisterFactory {
     static func makeModule(navigationController: UINavigationController) -> RegisterViewController {
-        let coordinator = RegisterCoordinatoor(navigationController: navigationController)
+        let coordinator = RegisterCoordinator(navigationController: navigationController)
         let registerViewModel = RegisterViewModel(coordinator: coordinator)
         let registerViewController = RegisterViewController(viewModel: registerViewModel)
         registerViewModel.delegate = registerViewController

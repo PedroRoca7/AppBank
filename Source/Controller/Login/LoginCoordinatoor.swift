@@ -1,5 +1,5 @@
 //
-//  LoginCoordinatoor.swift
+//  LoginCoordinator.swift
 //  AppBank
 //
 //  Created by Pedro Henrique on 10/11/23.
@@ -13,7 +13,7 @@ protocol LoginCoordinating {
     func startRegisterScreen()
 }
 
-class LoginCoordinatoor: LoginCoordinating {
+class LoginCoordinator: LoginCoordinating {
     
     private let navigationController: UINavigationController
     weak var controller: UIViewController?

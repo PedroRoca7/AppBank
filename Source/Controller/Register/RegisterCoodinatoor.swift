@@ -1,5 +1,5 @@
 //
-//  RegisterCoordinatoor.swift
+//  RegisterCoordinator.swift
 //  AppBank
 //
 //  Created by Pedro Henrique on 10/11/23.
@@ -12,7 +12,7 @@ protocol RegisterCoordinating {
     func showLoginScreen()
 }
 
-class RegisterCoordinatoor: RegisterCoordinating {
+class RegisterCoordinator: RegisterCoordinating {
     
     //MARK: Propertys
     

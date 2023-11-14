@@ -1,18 +1,18 @@
 //
-//  HomeCoordinator.swift
+//  ScreenPixCoordinator.swift
 //  AppBank
 //
-//  Created by Pedro Henrique on 10/11/23.
+//  Created by Pedro Henrique on 14/11/23.
 //
 
 import Foundation
 import UIKit
 
-protocol HomeCoordinating {
+protocol ScreenPixCoordinating {
     
 }
 
-class HomeCoordinator: HomeCoordinating {
+class ScreenPixCoordinator: ScreenPixCoordinating {
     
     //MARK: Propertys
     

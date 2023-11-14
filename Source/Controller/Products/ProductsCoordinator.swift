@@ -12,7 +12,7 @@ protocol ProductsCoordinating {
     
 }
 
-class ProductsCoordinatoor: ProductsCoordinating {
+class ProductsCoordinator: ProductsCoordinating {
     
     //MARK: Propertys
     

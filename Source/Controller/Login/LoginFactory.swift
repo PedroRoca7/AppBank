@@ -10,7 +10,7 @@ import UIKit
 
 enum LoginFactory {
     static func makeModule(navigationController: UINavigationController) -> UIViewController {
-        let coordinator = LoginCoordinatoor(navigationController: navigationController)
+        let coordinator = LoginCoordinator(navigationController: navigationController)
         let loginViewModel = LoginViewModel(coordinator: coordinator)
         let loginViewController = LoginViewController(viewModel: loginViewModel)
         loginViewModel.delegate = loginViewController

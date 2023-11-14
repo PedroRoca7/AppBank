@@ -12,7 +12,7 @@ enum HomeFactory {
     static func makeModule(navigationController: UINavigationController ,user: User) -> UIViewController {
         let service = ApiStatement()
         let model = ExtratcModel()
-        let coordinator = HomeCoordinatoor(navigationController: navigationController)
+        let coordinator = HomeCoordinator(navigationController: navigationController)
         let serviceViewModel = ServiceViewModel(model: model, service: service)
         let extractViewModel = ExtractViewModel(serviceViewModel: serviceViewModel, coordinator: coordinator)
         let homeViewController = HomeViewController(viewModel: extractViewModel)
