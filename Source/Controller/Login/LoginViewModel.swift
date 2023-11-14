@@ -8,14 +8,12 @@
 import Foundation
 
 protocol LoginProtocol: AnyObject {
-    func successLogin(user: User)
     func failureLogin()
 }
 
 protocol LoginViewModeling: AnyObject {
     var delegate: LoginProtocol? { get set }
     func login(email: String, password: String)
-    func showHomeScreen(user: User)
     func showRegisterScreen()
 }
 
@@ -48,7 +46,7 @@ class LoginViewModel: LoginViewModeling {
         }
     }
     
-    public func showHomeScreen(user: User) {
+    private func showHomeScreen(user: User) {
         coordinator.startTabController(user: user)
     }
     
@@ -67,7 +65,7 @@ class LoginViewModel: LoginViewModeling {
                     guard let nome = userData["nome"] as? String,
                           let email = userData["email"] as? String else { return }
                     let user = User(name: nome, email: email, password: "")
-                    self.delegate?.successLogin(user: user)
+                    self.showHomeScreen(user: user)
                 }
             }
         }

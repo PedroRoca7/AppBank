@@ -21,10 +21,10 @@ class TabBarCoordinator: Coordinator {
         let tabBarController = TabBarController()
         
         let homeScreen = HomeFactory.makeModule(navigationController: navigationController, user: user)
-        let extractCoordinator = ExtractCoordinator(navigationController: self.navigationController)
-        let productsCoordinator = ProductsCoordinator(navigationController: self.navigationController)
+        let extractScreen = ExtractFactory.makeModule(navigationController: navigationController)
+        let productsScreen = ProductsFactory.makeModule(navigationController: navigationController)
         
-        tabBarController.setViewControllers([homeScreen, extractCoordinator.extractViewController, productsCoordinator.productsViewController], animated: true)
+        tabBarController.setViewControllers([homeScreen, extractScreen, productsScreen], animated: true)
         
         self.navigationController.pushViewController(tabBarController, animated: true)
     }
