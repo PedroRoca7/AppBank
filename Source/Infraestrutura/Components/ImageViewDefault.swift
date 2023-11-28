@@ -21,9 +21,9 @@ class ImageViewDefault: UIImageView {
         initImageViewDefault(backgroundColor: backgroundColor, nameImage: "")
     }
     
-    init(backgroundColor: UIColor, nameImage: String) {
+    init(nameImage: String) {
         super.init(frame: .zero)
-        initImageViewDefault(backgroundColor: backgroundColor, nameImage: nameImage)
+        initImageViewDefault(backgroundColor: .clear, nameImage: nameImage)
     }
     
     required init?(coder: NSCoder) {

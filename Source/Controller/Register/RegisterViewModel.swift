@@ -13,7 +13,7 @@ protocol RegisterProtocol: AnyObject {
 }
 
 protocol RegisterViewModeling: AnyObject {
-    var delegate: RegisterProtocol { get set }
+    var delegate: RegisterProtocol? { get set }
     func registerUser(user: User)
     func showLoginScreen()
 }
@@ -23,11 +23,11 @@ class RegisterViewModel: RegisterViewModeling {
     // MARK: Propertys
     
     weak var delegate: RegisterProtocol?
-    private var coordinator: RegisterCoordinatoor
+    private var coordinator: RegisterCoordinator
     
     //MARK: Inits
     
-    init(coordinator: RegisterCoordinatoor) {
+    init(coordinator: RegisterCoordinator) {
         self.coordinator = coordinator
     }
     

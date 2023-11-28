@@ -45,12 +45,13 @@
 		CE5D57E72AFE980E00FA99BA /* HomeCoordinatoor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D57E62AFE980E00FA99BA /* HomeCoordinatoor.swift */; };
 		CE5D57E92AFEA0CF00FA99BA /* LoginFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D57E82AFEA0CF00FA99BA /* LoginFactory.swift */; };
 		CE5D57EB2AFEA2D400FA99BA /* LoginCoordinatoor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D57EA2AFEA2D400FA99BA /* LoginCoordinatoor.swift */; };
-		CE5D57ED2AFEAF6700FA99BA /* RegisterCoodinatoor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D57EC2AFEAF6700FA99BA /* RegisterCoodinatoor.swift */; };
+		CE5D57ED2AFEAF6700FA99BA /* RegisterCoodinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D57EC2AFEAF6700FA99BA /* RegisterCoodinator.swift */; };
 		CE5D57EF2AFEAF7500FA99BA /* RegisterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D57EE2AFEAF7500FA99BA /* RegisterFactory.swift */; };
 		CE5F7F582ACDB63800410BFF /* ImageViewDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F7F572ACDB63800410BFF /* ImageViewDefault.swift */; };
 		CE5F7F5A2ACDB66200410BFF /* ActivityDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F7F592ACDB66200410BFF /* ActivityDefault.swift */; };
 		CE5F7F622AD048EA00410BFF /* CustomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F7F612AD048EA00410BFF /* CustomCollectionCell.swift */; };
 		CE5F7F642AD0491F00410BFF /* CollectionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F7F632AD0491F00410BFF /* CollectionCellView.swift */; };
+		CE633DF92B0E355D000CFA4D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE633DF82B0E355D000CFA4D /* HomeViewModel.swift */; };
 		CE6D10AB2AD59C7D00EFD5E7 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D10AA2AD59C7D00EFD5E7 /* Color+.swift */; };
 		CE6D10AE2AD5A06300EFD5E7 /* ProductsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D10AD2AD5A06300EFD5E7 /* ProductsViewCell.swift */; };
 		CE6D10B02AD5A07900EFD5E7 /* CustomProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D10AF2AD5A07900EFD5E7 /* CustomProductsTableViewCell.swift */; };
@@ -141,12 +142,13 @@
 		CE5D57E62AFE980E00FA99BA /* HomeCoordinatoor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinatoor.swift; sourceTree = "<group>"; };
 		CE5D57E82AFEA0CF00FA99BA /* LoginFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFactory.swift; sourceTree = "<group>"; };
 		CE5D57EA2AFEA2D400FA99BA /* LoginCoordinatoor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinatoor.swift; sourceTree = "<group>"; };
-		CE5D57EC2AFEAF6700FA99BA /* RegisterCoodinatoor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoodinatoor.swift; sourceTree = "<group>"; };
+		CE5D57EC2AFEAF6700FA99BA /* RegisterCoodinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoodinator.swift; sourceTree = "<group>"; };
 		CE5D57EE2AFEAF7500FA99BA /* RegisterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFactory.swift; sourceTree = "<group>"; };
 		CE5F7F572ACDB63800410BFF /* ImageViewDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewDefault.swift; sourceTree = "<group>"; };
 		CE5F7F592ACDB66200410BFF /* ActivityDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDefault.swift; sourceTree = "<group>"; };
 		CE5F7F612AD048EA00410BFF /* CustomCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionCell.swift; sourceTree = "<group>"; };
 		CE5F7F632AD0491F00410BFF /* CollectionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCellView.swift; sourceTree = "<group>"; };
+		CE633DF82B0E355D000CFA4D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CE6D10AA2AD59C7D00EFD5E7 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		CE6D10AD2AD5A06300EFD5E7 /* ProductsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewCell.swift; sourceTree = "<group>"; };
 		CE6D10AF2AD5A07900EFD5E7 /* CustomProductsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProductsTableViewCell.swift; sourceTree = "<group>"; };
@@ -338,7 +340,7 @@
 				CE5BA4CA2A97ABC500449C0A /* RegisterView.swift */,
 				CE5BA4CC2A97ABD100449C0A /* RegisterViewController.swift */,
 				CE5BA4DC2A97EF4200449C0A /* RegisterViewModel.swift */,
-				CE5D57EC2AFEAF6700FA99BA /* RegisterCoodinatoor.swift */,
+				CE5D57EC2AFEAF6700FA99BA /* RegisterCoodinator.swift */,
 				CE5D57EE2AFEAF7500FA99BA /* RegisterFactory.swift */,
 			);
 			path = Register;
@@ -387,6 +389,7 @@
 				CE6F211D2A98F674000B1B01 /* HomeViewController.swift */,
 				CE0EF1152AFBBE8D00ED76B7 /* HomeFactory.swift */,
 				CE5D57E62AFE980E00FA99BA /* HomeCoordinatoor.swift */,
+				CE633DF82B0E355D000CFA4D /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -767,7 +770,7 @@
 				CE1B474E2A97FF8200056914 /* AuthenticatorFirebase.swift in Sources */,
 				CEE734CD2A9E9DEF002320DB /* TabBarCoordinator.swift in Sources */,
 				CE6D10AB2AD59C7D00EFD5E7 /* Color+.swift in Sources */,
-				CE5D57ED2AFEAF6700FA99BA /* RegisterCoodinatoor.swift in Sources */,
+				CE5D57ED2AFEAF6700FA99BA /* RegisterCoodinator.swift in Sources */,
 				CEE734C52A9E9D13002320DB /* ExtractView.swift in Sources */,
 				CE6F21252A99227E000B1B01 /* StatementCellView.swift in Sources */,
 				CE1DCF242A97012300E3CC3E /* LoginViewController.swift in Sources */,
@@ -779,6 +782,7 @@
 				CEE734C72A9E9D26002320DB /* ExtractViewController.swift in Sources */,
 				CEA6DC902A9D27CB004722AF /* String+.swift in Sources */,
 				CE1FF8FC2B03A8550021F67B /* ExtractCoordinator.swift in Sources */,
+				CE633DF92B0E355D000CFA4D /* HomeViewModel.swift in Sources */,
 				CE5BA4D12A97E99A00449C0A /* LoginViewModel.swift in Sources */,
 				CE016E7B2AE317BB0098F992 /* ScreenPixViewModel.swift in Sources */,
 				CE1DCEF02A97004400E3CC3E /* AppDelegate.swift in Sources */,

@@ -15,7 +15,7 @@ class ProductsView: UIView {
     
     // MARK: ElementsVisual
     
-    lazy var backgroundImage = ImageViewDefault(backgroundColor: .backgroundColor)
+    lazy var backgroundImage = ImageViewDefault(nameImage: "backgroundImage")
     lazy var tableView: UITableView = {
         let tb = UITableView(frame: self.bounds, style: .plain)
         tb.translatesAutoresizingMaskIntoConstraints = false

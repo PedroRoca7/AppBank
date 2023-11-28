@@ -16,7 +16,6 @@ protocol ExtractViewModeling: AnyObject {
     var delegate: ExtractViewModelProtocol? { get set }
     var bankStatements: Extratcts { get }
     func loadStatements()
-    func currentBalance() -> Double
 }
 
 class ExtractViewModel: ExtractViewModeling {
@@ -25,12 +24,12 @@ class ExtractViewModel: ExtractViewModeling {
     
     var bankStatements: Extratcts = []
     private var serviceViewModel: ServiceViewModel
-    private var coordinator: HomeCoordinating
+    private var coordinator: ExtractCoordinator
     weak var delegate: ExtractViewModelProtocol?
     
     //MARK: Init
     
-    init(serviceViewModel: ServiceViewModel, coordinator: HomeCoordinating) {
+    init(serviceViewModel: ServiceViewModel, coordinator: ExtractCoordinator) {
         self.serviceViewModel = serviceViewModel
         self.coordinator = coordinator
     }
@@ -45,13 +44,5 @@ class ExtractViewModel: ExtractViewModeling {
             }
             self.delegate?.success()
         }
-    }
-    
-     func currentBalance() -> Double {
-        var balance: Double = 0
-        for bankStatement in bankStatements {
-            balance += bankStatement.amout
-        }
-        return balance
     }
 }

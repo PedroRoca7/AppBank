@@ -15,20 +15,16 @@ protocol LoginCoordinating {
 
 class LoginCoordinator: LoginCoordinating {
     
-    private let navigationController: UINavigationController
     weak var controller: UIViewController?
     
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
-    }
-    
     func startTabController(user: User) {
-        let tabBarController = TabBarCoordinator(navigationController: navigationController, user: user)
+        let tabBarController = TabBarCoordinator(navigationController: controller?.navigationController ?? UINavigationController(), user: user)
+        tabBarController.controller = self.controller
         tabBarController.start()
     }
     
     func startRegisterScreen() {
-        let register = RegisterFactory.makeModule(navigationController: navigationController)
-        navigationController.pushViewController(register, animated: true)
+        let register = RegisterFactory.makeModule()
+        controller?.navigationController?.pushViewController(register, animated: true)
     }
 }

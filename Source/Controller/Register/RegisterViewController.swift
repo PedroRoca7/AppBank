@@ -24,7 +24,7 @@ class RegisterViewController: UIViewController {
     // MARK: Inits
     
     override func loadView() {
-        self.view = viewScreen
+        view = viewScreen
     }
     
     init(viewModel: RegisterViewModeling) {
@@ -39,9 +39,7 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyBoardWhenTapped()
-        setupDelegates()
         tappedRegisterButton()
-
     }
     
     private func tappedRegisterButton() {
@@ -59,10 +57,6 @@ class RegisterViewController: UIViewController {
             let user = User(name: name, email: email, password: password)
             self.viewModel.registerUser(user: user)
         }.disposed(by: disposeBag)
-    }
-    
-    private func setupDelegates() {
-        viewModel.delegate = self
     }
 }
 

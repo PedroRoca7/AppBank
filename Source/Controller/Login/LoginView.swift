@@ -15,7 +15,7 @@ class LoginView: UIView {
     
     // MARK: ElementsVisual
     
-    lazy var backgroundImage = ImageViewDefault(backgroundColor: .backgroundColor)
+    lazy var backgroundImage = ImageViewDefault(nameImage: "backgroundImage")
     lazy var titleLabel = LabelDefault(text: "Login", color: .white, font: .boldSystemFont(ofSize: 36))
     lazy var emailTextFiled = TextFieldDefault(placeholder: "Digite seu Email:", keyboardType: .emailAddress)
     

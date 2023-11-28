@@ -14,9 +14,9 @@ enum HomeFactory {
         let model = ExtratcModel()
         let coordinator = HomeCoordinator(navigationController: navigationController)
         let serviceViewModel = ServiceViewModel(model: model, service: service)
-        let extractViewModel = ExtractViewModel(serviceViewModel: serviceViewModel, coordinator: coordinator)
-        let homeViewController = HomeViewController(viewModel: extractViewModel)
-        extractViewModel.delegate = homeViewController
+        let homeViewModel = HomeViewModel(serviceViewModel: serviceViewModel, coordinator: coordinator)
+        let homeViewController = HomeViewController(viewModel: homeViewModel)
+        homeViewModel.delegate = homeViewController
         coordinator.controller = homeViewController
         homeViewController.user = user
         

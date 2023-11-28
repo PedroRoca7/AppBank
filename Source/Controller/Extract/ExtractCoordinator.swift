@@ -12,7 +12,7 @@ protocol ExtractCoordinating {
     
 }
 
-class ExtractCoordinatoor: ExtractCoordinating {
+class ExtractCoordinator: ExtractCoordinating {
     
     //MARK: Propertys
     

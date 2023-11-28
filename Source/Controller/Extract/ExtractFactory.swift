@@ -12,7 +12,7 @@ enum ExtractFactory {
     static func makeModule(navigationController: UINavigationController) -> UIViewController {
         let service = ApiStatement()
         let model = ExtratcModel()
-        let coordinator = HomeCoordinatoor(navigationController: navigationController)
+        let coordinator = ExtractCoordinator(navigationController: navigationController)
         let serviceViewModel = ServiceViewModel(model: model, service: service)
         let extractViewModel = ExtractViewModel(serviceViewModel: serviceViewModel, coordinator: coordinator)
         let extractViewController = ExtractViewController(viewModel: extractViewModel)

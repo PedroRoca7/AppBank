@@ -15,7 +15,7 @@ class HomeView: UIView {
     
     // MARK: ElementsVisual
     
-    lazy var backgroundImage = ImageViewDefault(backgroundColor: .backgroundColor)
+    lazy var backgroundImage = ImageViewDefault(nameImage: "backgroundImage")
     lazy var viewBalance = ViewDefault(backgroundColor: .clear, alpha: 1)
     lazy var subViewBalance = ViewDefault(backgroundColor: .lilas, alpha: 0.5)
     lazy var balanceLabel = LabelDefault(text: "Saldo", color: .white, font: .boldSystemFont(ofSize: 18))

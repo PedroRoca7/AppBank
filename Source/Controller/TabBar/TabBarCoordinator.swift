@@ -7,8 +7,9 @@
 
 import UIKit
 
-class TabBarCoordinator: Coordinator {
+class TabBarCoordinator {
     
+    weak var controller: UIViewController?
     let navigationController: UINavigationController
     let user: User
     
@@ -26,7 +27,7 @@ class TabBarCoordinator: Coordinator {
         
         tabBarController.setViewControllers([homeScreen, extractScreen, productsScreen], animated: true)
         
-        self.navigationController.pushViewController(tabBarController, animated: true)
+        controller?.navigationController?.pushViewController(tabBarController, animated: true)
     }
     
     

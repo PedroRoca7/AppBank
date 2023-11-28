@@ -31,7 +31,7 @@ class LoginViewModel: LoginViewModeling {
     }
     
     // MARK: Methods
-    
+        
     public func login(email: String, password: String) {
         AuthenticatorFirebase.auth.signIn(withEmail: email, password: password) { (result, error) in
             if let error = error {

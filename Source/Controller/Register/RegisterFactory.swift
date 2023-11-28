@@ -9,13 +9,12 @@ import Foundation
 import UIKit
 
 enum RegisterFactory {
-    static func makeModule(navigationController: UINavigationController) -> RegisterViewController {
-        let coordinator = RegisterCoordinator(navigationController: navigationController)
+    static func makeModule() -> UIViewController {
+        let coordinator = RegisterCoordinator()
         let registerViewModel = RegisterViewModel(coordinator: coordinator)
         let registerViewController = RegisterViewController(viewModel: registerViewModel)
         registerViewModel.delegate = registerViewController
         coordinator.controller = registerViewController
-        
         return registerViewController
     }
 }

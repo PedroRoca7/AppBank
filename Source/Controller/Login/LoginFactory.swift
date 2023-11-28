@@ -9,13 +9,12 @@ import Foundation
 import UIKit
 
 enum LoginFactory {
-    static func makeModule(navigationController: UINavigationController) -> UIViewController {
-        let coordinator = LoginCoordinator(navigationController: navigationController)
+    static func makeModule() -> UIViewController {
+        let coordinator = LoginCoordinator()
         let loginViewModel = LoginViewModel(coordinator: coordinator)
         let loginViewController = LoginViewController(viewModel: loginViewModel)
         loginViewModel.delegate = loginViewController
         coordinator.controller = loginViewController
-        
         return loginViewController
     }
 }

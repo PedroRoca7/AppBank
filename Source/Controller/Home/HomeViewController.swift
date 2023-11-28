@@ -22,11 +22,11 @@ class HomeViewController: UIViewController {
         return view
     }()
     
-    private var viewModel: ExtractViewModeling
+    private var viewModel: HomeViewModeling
     
     // MARK: Inits
     
-    init(viewModel: ExtractViewModeling) {
+    init(viewModel: HomeViewModeling) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -47,8 +47,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         hideKeyBoardWhenTapped()
         viewScreen.activityIndicator.startAnimating()
-        viewModel.loadStatements()
         setupDelegates()
+        viewModel.currentBalance()
         hideOrShowBalance(button: viewScreen.hideAmountButton, label: viewScreen.amountLabel)
         hideOrShowBalance(button: viewScreen.hideAmountInvestimentsButton, label: viewScreen.amountInvestimentsLabel)
     }
@@ -76,10 +76,10 @@ private extension HomeViewController {
     }
 }
 
-extension HomeViewController: ExtractViewModelProtocol {
-    func success() {
+extension HomeViewController: HomeViewModelProtocol {
+    func success(balance: Double) {
         DispatchQueue.main.async {
-            self.viewScreen.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: self.viewModel.currentBalance(), typeCurrency: "pt-BR", currencySymbol: "R$")
+            self.viewScreen.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: balance, typeCurrency: "pt-BR", currencySymbol: "R$")
             self.viewScreen.activityIndicator.stopAnimating()
         }
     }
