@@ -18,13 +18,14 @@ class LoginCoordinator: LoginCoordinating {
     weak var controller: UIViewController?
     
     func startTabController(user: User) {
-        let tabBarController = TabBarCoordinator(user: user)
-        tabBarController.controller = self.controller
+        let tabBarController = TabBarCoordinator(navigationController: controller?.navigationController ?? UINavigationController(),
+                                                 user: user)
         tabBarController.start()
     }
     
     func startRegisterScreen() {
-        let register = RegisterFactory.makeModule()
+        let register = RegisterFactory.makeModule(navigationController: controller?.navigationController ?? UINavigationController())
         controller?.navigationController?.pushViewController(register, animated: true)
+        
     }
 }

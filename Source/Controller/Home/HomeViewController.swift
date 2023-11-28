@@ -48,7 +48,7 @@ class HomeViewController: UIViewController {
         hideKeyBoardWhenTapped()
         viewScreen.activityIndicator.startAnimating()
         setupDelegates()
-        viewModel.currentBalance()
+        viewModel.loadStatements()
         hideOrShowBalance(button: viewScreen.hideAmountButton, label: viewScreen.amountLabel)
         hideOrShowBalance(button: viewScreen.hideAmountInvestimentsButton, label: viewScreen.amountInvestimentsLabel)
     }

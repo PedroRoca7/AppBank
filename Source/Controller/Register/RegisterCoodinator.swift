@@ -16,11 +16,16 @@ class RegisterCoordinator: RegisterCoordinating {
     
     //MARK: Propertys
 
-    weak var controller: UIViewController?
-    
+//    weak var controller: UIViewController?
+    var navigationController: UINavigationController
+
     //MARK: Init
     
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
+    
     public func showLoginScreen() {
-        controller?.navigationController?.popToRootViewController(animated: true)
+        navigationController.popToRootViewController(animated: true)
     }
 }

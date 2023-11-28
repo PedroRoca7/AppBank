@@ -19,16 +19,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "21EE9B78-1599-4E12-BB81-6DAE7AF615F9"
+            uuid = "5F5475AA-6D5D-4057-B693-FDCB3F70954D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Source/Controller/Home/HomeViewModel.swift"
+            filePath = "Source/Controller/Register/RegisterCoodinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "currentBalance()"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "showLoginScreen()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

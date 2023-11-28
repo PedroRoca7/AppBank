@@ -16,8 +16,11 @@ class ExtractCoordinator: ExtractCoordinating {
     
     //MARK: Propertys
     
-    weak var controller: UIViewController?
+    var navigationController: UINavigationController
     
     //MARK: Init
     
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
 }
