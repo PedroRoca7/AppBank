@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 
 enum ProductsFactory {
-    static func makeModule(navigationController: UINavigationController) -> UIViewController {
-        let coordinator = ProductsCoordinator(navigationController: navigationController)
+    static func makeModule() -> UIViewController {
+        let coordinator = ProductsCoordinator()
         let productsViewController = ProductsViewController()
         coordinator.controller = productsViewController
         return productsViewController

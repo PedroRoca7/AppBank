@@ -10,20 +10,18 @@ import UIKit
 class TabBarCoordinator {
     
     weak var controller: UIViewController?
-    let navigationController: UINavigationController
     let user: User
     
-    init(navigationController: UINavigationController, user: User) {
-        self.navigationController = navigationController
+    init(user: User) {
         self.user = user
     }
     
     func start() {
         let tabBarController = TabBarController()
         
-        let homeScreen = HomeFactory.makeModule(navigationController: navigationController, user: user)
-        let extractScreen = ExtractFactory.makeModule(navigationController: navigationController)
-        let productsScreen = ProductsFactory.makeModule(navigationController: navigationController)
+        let homeScreen = HomeFactory.makeModule(user: user)
+        let extractScreen = ExtractFactory.makeModule()
+        let productsScreen = ProductsFactory.makeModule()
         
         tabBarController.setViewControllers([homeScreen, extractScreen, productsScreen], animated: true)
         

@@ -19,7 +19,7 @@ protocol HomeViewModeling: AnyObject {
 }
 
 class HomeViewModel: HomeViewModeling {
-            
+    
     //MARK: Propertys
     
     var bankStatements: Extratcts = []
@@ -34,7 +34,7 @@ class HomeViewModel: HomeViewModeling {
         self.coordinator = coordinator
     }
     
-    private func loadStatements() {
+    private func loadStatements(onComplete: @escaping (Bool) -> Void ) {
         serviceViewModel.loadStatement { [weak self] result in
             guard let self = self else { return }
             if let result = result {
@@ -46,11 +46,17 @@ class HomeViewModel: HomeViewModeling {
     }
     
     func currentBalance() {
-        loadStatements()
-        var balance: Double = 0
-        for bankStatement in bankStatements {
-            balance += bankStatement.amout
+        loadStatements { [weak self] result in
+            guard let self = self else { return }
+            if result {
+                var balance: Double = 0
+                for bankStatement in self.bankStatements {
+                    balance += bankStatement.amout
+                }
+                self.delegate?.success(balance: balance)
+            } else {
+                self.delegate?.failure()
+            }
         }
-        self.delegate?.success(balance: balance)
     }
 }

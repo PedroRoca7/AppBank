@@ -18,7 +18,7 @@ class LoginCoordinator: LoginCoordinating {
     weak var controller: UIViewController?
     
     func startTabController(user: User) {
-        let tabBarController = TabBarCoordinator(navigationController: controller?.navigationController ?? UINavigationController(), user: user)
+        let tabBarController = TabBarCoordinator(user: user)
         tabBarController.controller = self.controller
         tabBarController.start()
     }

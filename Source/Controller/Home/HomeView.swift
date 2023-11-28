@@ -17,7 +17,7 @@ class HomeView: UIView {
     
     lazy var backgroundImage = ImageViewDefault(nameImage: "backgroundImage")
     lazy var viewBalance = ViewDefault(backgroundColor: .clear, alpha: 1)
-    lazy var subViewBalance = ViewDefault(backgroundColor: .lilas, alpha: 0.5)
+    lazy var subViewBalance = ViewDefault(backgroundColor: .darkGray, alpha: 0.5)
     lazy var balanceLabel = LabelDefault(text: "Saldo", color: .white, font: .boldSystemFont(ofSize: 18))
     lazy var amountLabel = LabelDefault(text: "", color: .white, font: .boldSystemFont(ofSize: 26))
     lazy var hideAmountButton = ButtonDefault(nameImage: "eyeShow")
@@ -36,7 +36,7 @@ class HomeView: UIView {
     }()
     
     lazy var viewInvesiments = ViewDefault(backgroundColor: .clear, alpha: 1)
-    lazy var subViewInvestiments = ViewDefault(backgroundColor: .lilas, alpha: 0.5)
+    lazy var subViewInvestiments = ViewDefault(backgroundColor: .darkGray, alpha: 0.5)
     lazy var balanceInvestimentsLabel = LabelDefault(text: "Valor Investido", color: .white, font: .boldSystemFont(ofSize: 18))
     lazy var amountInvestimentsLabel = LabelDefault(text: "R$: 0", color: .white, font: .boldSystemFont(ofSize: 26))
     lazy var hideAmountInvestimentsButton = ButtonDefault(nameImage: "eyeShow")

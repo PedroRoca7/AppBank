@@ -9,10 +9,10 @@ import Foundation
 import UIKit
 
 enum ExtractFactory {
-    static func makeModule(navigationController: UINavigationController) -> UIViewController {
+    static func makeModule() -> UIViewController {
         let service = ApiStatement()
         let model = ExtratcModel()
-        let coordinator = ExtractCoordinator(navigationController: navigationController)
+        let coordinator = ExtractCoordinator()
         let serviceViewModel = ServiceViewModel(model: model, service: service)
         let extractViewModel = ExtractViewModel(serviceViewModel: serviceViewModel, coordinator: coordinator)
         let extractViewController = ExtractViewController(viewModel: extractViewModel)
