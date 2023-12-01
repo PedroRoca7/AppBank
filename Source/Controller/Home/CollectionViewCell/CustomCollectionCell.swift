@@ -22,6 +22,7 @@ class CustomCollectionCell: UICollectionViewCell {
         let view = CollectionCellView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.clipsToBounds = true
+        view.alpha = 0.7
         return view
     }()
     

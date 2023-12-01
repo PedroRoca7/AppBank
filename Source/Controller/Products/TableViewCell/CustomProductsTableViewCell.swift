@@ -14,14 +14,16 @@ class CustomProductsTableViewCell: UITableViewCell {
     lazy var viewCell: ProductsViewCell = {
         let viewCell = ProductsViewCell()
         viewCell.translatesAutoresizingMaskIntoConstraints = false
-        viewCell.backgroundColor = .lilas
+        viewCell.backgroundColor = .clear
         return viewCell
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setViewScreen()
-        contentView.backgroundColor = .clear
+        contentView.backgroundColor = .white
+        contentView.alpha = 0.7
+        contentView.layer.cornerRadius = 15
     }
     
     required init?(coder: NSCoder) {

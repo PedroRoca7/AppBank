@@ -17,8 +17,11 @@ class CollectionCellView: UIView {
         let bt = ButtonDefault()
         bt.titleLabel?.textAlignment = .center
         bt.layer.cornerRadius = 5
-        bt.layer.borderWidth = 2
-        bt.layer.borderColor = UIColor.white.cgColor
+        bt.layer.borderWidth = 1
+        bt.layer.borderColor = UIColor.black.cgColor
+        bt.backgroundColor = .white
+        bt.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        bt.setTitleColor(.lilas, for: .normal)
         bt.titleLabel?.numberOfLines = 0
         bt.titleLabel?.adjustsFontSizeToFitWidth = true
         bt.titleLabel?.minimumScaleFactor = 0.5
@@ -47,8 +50,8 @@ class CollectionCellView: UIView {
         
         NSLayoutConstraint.activate([
             button.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
-            button.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
-            button.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5),
+            button.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            button.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             button.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5),
             
         ])

@@ -11,11 +11,11 @@ class TabBarController: UITabBarController {
     override func setViewControllers(_ viewControllers: [UIViewController]?, animated: Bool) {
         super.setViewControllers(viewControllers, animated: animated)
         
-        self.tabBar.tintColor = .white
+        self.tabBar.tintColor = .blue
         self.tabBar.isTranslucent = false
         self.tabBar.layer.borderColor = UIColor.white.cgColor
         self.tabBar.layer.borderWidth = 2
-        self.tabBar.backgroundColor = .darkGray
+        self.tabBar.backgroundColor = .white
         
         configureTabBarItems()
     }

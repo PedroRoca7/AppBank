@@ -14,8 +14,14 @@ class ProductsViewCell: UIView {
     
     // MARK: ElementsVisual
     
-    lazy var iconImageView = ImageViewDefault(backgroundColor: .clear)
-    lazy var nameOptionLabel = LabelDefault(text: "", color: .white, font: .boldSystemFont(ofSize: 20))
+    lazy var iconImageView: ImageViewDefault = {
+        let iconImageView = ImageViewDefault()
+        iconImageView.backgroundColor = .lilas
+        iconImageView.layer.masksToBounds = true
+        return iconImageView
+    }()
+    
+    lazy var nameOptionLabel = LabelDefault(text: "", color: .darkGray, font: .boldSystemFont(ofSize: 20))
         
     // MARK: Inits
     
@@ -41,8 +47,8 @@ class ProductsViewCell: UIView {
         NSLayoutConstraint.activate([
             iconImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             iconImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            iconImageView.heightAnchor.constraint(equalToConstant: 25),
-            iconImageView.widthAnchor.constraint(equalToConstant: 25)
+            iconImageView.heightAnchor.constraint(equalToConstant: 35),
+            iconImageView.widthAnchor.constraint(equalToConstant: 35)
         ])
     }
     

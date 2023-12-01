@@ -15,7 +15,7 @@ class HomeViewController: UIViewController {
     var user: User?
     var pixButtonTap: (() -> Void)?
     private var disposeBag = DisposeBag()
-    private var collectionViewButtons: [String] = ["Pix", "Fazer Transfêrencia", "Pagar contas", "Seguros"]
+    private var collectionViewButtons: [String] = ["Pix", "Transfêrencias", "Pagar contas", "Seguros"]
     
     lazy private var viewScreen: HomeView = {
         let view = HomeView()
@@ -39,12 +39,18 @@ class HomeViewController: UIViewController {
         self.view = viewScreen
         
     }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        viewScreen.hideAmountButton.layer.cornerRadius = viewScreen.hideAmountButton.frame.size.height / 2
+        viewScreen.hideAmountInvestimentsButton.layer.cornerRadius = viewScreen.hideAmountInvestimentsButton.frame.size.height / 2
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         setupTabBar()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewScreen.hideAmountButton.layer.cornerRadius = viewScreen.hideAmountButton.frame.size.height/2
         hideKeyBoardWhenTapped()
         viewScreen.activityIndicator.startAnimating()
         setupDelegates()

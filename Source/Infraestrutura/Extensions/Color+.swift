@@ -19,9 +19,13 @@ extension UIColor {
 
 extension UIColor {
     static var backgroundColor: UIColor {
-        return UIColor(hex: 0x191970)
+        return .white
     }
     static var lilas: UIColor {
         return UIColor(hex: 0x9932CD)
+    }
+    
+    static var azulClaro: UIColor {
+        return UIColor(red: 173.0 / 255.0, green: 216.0 / 255.0, blue: 230.0 / 255.0, alpha: 1.0)
     }
 }

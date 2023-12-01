@@ -16,17 +16,20 @@ class LoginView: UIView {
     // MARK: ElementsVisual
     
     lazy var backgroundImage = ImageViewDefault(nameImage: "backgroundImage")
-    lazy var titleLabel = LabelDefault(text: "Login", color: .white, font: .boldSystemFont(ofSize: 36))
-    lazy var emailTextFiled = TextFieldDefault(placeholder: "Digite seu Email:", keyboardType: .emailAddress)
-    
+    lazy var titleLabel = LabelDefault(text: "Login", color: .white, font: .boldSystemFont(ofSize: 42))
+    lazy var emailTextFiled = TextFieldDefault(placeholder: "Digite seu Email:", keyboardType: .emailAddress, backgroundColor: .clear)
     lazy var passwordTextField: TextFieldDefault = {
-        let tf = TextFieldDefault(placeholder: "Digite sua Senha:", keyboardType: .numberPad)
+        let tf = TextFieldDefault(placeholder: "Digite sua Senha:", keyboardType: .numberPad, backgroundColor: .clear)
         tf.isSecureTextEntry = true
         return tf
     }()
     
     lazy var logarButton = ButtonDefault(title: "Entrar",backgroundColor: .lilas)
-    lazy var registerButton = ButtonDefault(title: "Registrar",backgroundColor: .darkGray)
+    lazy var registerButton: ButtonDefault = {
+        let bt = ButtonDefault(title: "Registrar",backgroundColor: .white)
+        bt.setTitleColor(.lilas, for: .normal)
+        return bt
+    }()
  
     // MARK: Inits
     

@@ -16,17 +16,32 @@ class HomeView: UIView {
     // MARK: ElementsVisual
     
     lazy var backgroundImage = ImageViewDefault(nameImage: "backgroundImage")
-    lazy var viewBalance = ViewDefault(backgroundColor: .clear, alpha: 1)
-    lazy var subViewBalance = ViewDefault(backgroundColor: .darkGray, alpha: 0.5)
-    lazy var balanceLabel = LabelDefault(text: "Saldo", color: .white, font: .boldSystemFont(ofSize: 18))
-    lazy var amountLabel = LabelDefault(text: "", color: .white, font: .boldSystemFont(ofSize: 26))
-    lazy var hideAmountButton = ButtonDefault(nameImage: "eyeShow")
+    lazy var viewBalance = ViewDefault(backgroundColor: .white, alpha: 0.7)
+    
+    lazy var balanceLabel: LabelDefault = {
+        let label = LabelDefault(text: "Saldo", color: .white, font: .boldSystemFont(ofSize: 18))
+        label.textAlignment = .center
+        label.backgroundColor = .lilas
+        label.layer.cornerRadius = 8
+        label.layer.masksToBounds = true
+        return label
+    }()
+    
+    lazy var amountLabel = LabelDefault(text: "", color: .lilas, font: .boldSystemFont(ofSize: 26))
+    
+    lazy var hideAmountButton: ButtonDefault = {
+        let button = ButtonDefault(nameImage: "eyeShow")
+        button.layer.masksToBounds = true
+        button.backgroundColor = .lilas
+        return button
+    }()
+    
     lazy var activityIndicator = ActivityDefault()
-   
+    
     lazy var collectionView: UICollectionView = {
         let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.backgroundColor = .none
+        cv.backgroundColor = .clear
         cv.register(CustomCollectionCell.self, forCellWithReuseIdentifier: CustomCollectionCell.identifier)
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
         layout.scrollDirection = .horizontal
@@ -34,18 +49,38 @@ class HomeView: UIView {
         cv.showsHorizontalScrollIndicator = false
         return cv
     }()
+   
+    lazy var viewInvestiments = ViewDefault(backgroundColor: .white, alpha: 0.7)
     
-    lazy var viewInvesiments = ViewDefault(backgroundColor: .clear, alpha: 1)
-    lazy var subViewInvestiments = ViewDefault(backgroundColor: .darkGray, alpha: 0.5)
-    lazy var balanceInvestimentsLabel = LabelDefault(text: "Valor Investido", color: .white, font: .boldSystemFont(ofSize: 18))
-    lazy var amountInvestimentsLabel = LabelDefault(text: "R$: 0", color: .white, font: .boldSystemFont(ofSize: 26))
-    lazy var hideAmountInvestimentsButton = ButtonDefault(nameImage: "eyeShow")
+    lazy var balanceInvestimentsLabel: LabelDefault = {
+        let label = LabelDefault(text: "Valor Investido", color: .white, font: .boldSystemFont(ofSize: 18))
+        label.backgroundColor = .lilas
+        label.textAlignment = .center
+        label.layer.cornerRadius = 8
+        label.layer.shadowColor = UIColor.black.cgColor
+        label.layer.shadowOpacity = 0.5
+        label.layer.shadowOffset = CGSize(width: 20, height: 20)
+        label.layer.shadowRadius = 5.0
+        label.layer.masksToBounds = true
+        return label
+    }()
+    
+    lazy var amountInvestimentsLabel = LabelDefault(text: "R$: 0", color: .lilas, font: .boldSystemFont(ofSize: 26))
+    
+    lazy var hideAmountInvestimentsButton: ButtonDefault = {
+        let button = ButtonDefault(nameImage: "eyeShow")
+        button.layer.cornerRadius = button.frame.size.height/2
+        button.layer.masksToBounds = true
+        button.backgroundColor = .lilas
+        return button
+    }()
     
     // MARK: Inits
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         addElementsView()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -56,14 +91,12 @@ class HomeView: UIView {
     
     private func addElementsView() {
         setBackgroundImage()
-        setSubViewBalance()
         setViewBalance()
         setBalanceLabel()
         setAmountLabel()
         setHideAmountButton()
         setActivityIndicator()
         setCollectionView()
-        setSubViewInvestiments()
         setViewInvestiments()
         setBalanceInvestimentsLabel()
         setAmounInvestimentstLabel()
@@ -93,24 +126,13 @@ class HomeView: UIView {
         ])
     }
     
-    private func setSubViewBalance() {
-        self.addSubview(subViewBalance)
-        
-        NSLayoutConstraint.activate([
-            subViewBalance.topAnchor.constraint(equalTo: self.guide.topAnchor, constant: 20),
-            subViewBalance.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            subViewBalance.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
-            subViewBalance.heightAnchor.constraint(equalToConstant: 150)
-        ])
-    }
-    
     private func setBalanceLabel() {
         viewBalance.addSubview(balanceLabel)
         
         NSLayoutConstraint.activate([
             balanceLabel.topAnchor.constraint(equalTo: viewBalance.topAnchor, constant: 35),
             balanceLabel.leadingAnchor.constraint(equalTo: viewBalance.leadingAnchor, constant: 20),
-            balanceLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 30)
+            balanceLabel.widthAnchor.constraint(equalToConstant: 80)
         ])
     }
     
@@ -130,9 +152,8 @@ class HomeView: UIView {
         NSLayoutConstraint.activate([
             hideAmountButton.centerYAnchor.constraint(equalTo: balanceLabel.centerYAnchor),
             hideAmountButton.leadingAnchor.constraint(equalTo: balanceLabel.trailingAnchor, constant: 10),
-            hideAmountButton.widthAnchor.constraint(equalToConstant: 30),
-            hideAmountButton.heightAnchor.constraint(equalToConstant: 30),
-            
+            hideAmountButton.widthAnchor.constraint(equalToConstant: 35),
+            hideAmountButton.heightAnchor.constraint(equalToConstant: 35),
         ])
     }
     
@@ -158,39 +179,28 @@ class HomeView: UIView {
     }
     
     private func setViewInvestiments() {
-        self.addSubview(viewInvesiments)
+        self.addSubview(viewInvestiments)
         
         NSLayoutConstraint.activate([
-            viewInvesiments.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 30),
-            viewInvesiments.leadingAnchor.constraint(equalTo: viewBalance.leadingAnchor),
-            viewInvesiments.trailingAnchor.constraint(equalTo: viewBalance.trailingAnchor),
-            viewInvesiments.heightAnchor.constraint(equalToConstant: 150)
+            viewInvestiments.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 30),
+            viewInvestiments.leadingAnchor.constraint(equalTo: viewBalance.leadingAnchor),
+            viewInvestiments.trailingAnchor.constraint(equalTo: viewBalance.trailingAnchor),
+            viewInvestiments.heightAnchor.constraint(equalToConstant: 150)
         ])
     }
-    
-    private func setSubViewInvestiments() {
-        self.addSubview(subViewInvestiments)
         
-        NSLayoutConstraint.activate([
-            subViewInvestiments.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 30),
-            subViewInvestiments.leadingAnchor.constraint(equalTo: viewBalance.leadingAnchor),
-            subViewInvestiments.trailingAnchor.constraint(equalTo: viewBalance.trailingAnchor),
-            subViewInvestiments.heightAnchor.constraint(equalToConstant: 150)
-        ])
-    }
-    
     private func setBalanceInvestimentsLabel() {
-        viewInvesiments.addSubview(balanceInvestimentsLabel)
+        viewInvestiments.addSubview(balanceInvestimentsLabel)
         
         NSLayoutConstraint.activate([
-            balanceInvestimentsLabel.topAnchor.constraint(equalTo: viewInvesiments.topAnchor, constant: 35),
-            balanceInvestimentsLabel.leadingAnchor.constraint(equalTo: viewInvesiments.leadingAnchor, constant: 20),
-            balanceInvestimentsLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 30)
+            balanceInvestimentsLabel.topAnchor.constraint(equalTo: viewInvestiments.topAnchor, constant: 35),
+            balanceInvestimentsLabel.leadingAnchor.constraint(equalTo: viewInvestiments.leadingAnchor, constant: 20),
+            balanceInvestimentsLabel.widthAnchor.constraint(equalToConstant: 140)
         ])
     }
     
     private func setAmounInvestimentstLabel() {
-        viewInvesiments.addSubview(amountInvestimentsLabel)
+        viewInvestiments.addSubview(amountInvestimentsLabel)
         
         NSLayoutConstraint.activate([
             amountInvestimentsLabel.topAnchor.constraint(equalTo: balanceInvestimentsLabel.bottomAnchor, constant: 10),
@@ -200,13 +210,13 @@ class HomeView: UIView {
     }
     
     private func setHideAmountInvestimentsButton() {
-        viewInvesiments.addSubview(hideAmountInvestimentsButton)
+        viewInvestiments.addSubview(hideAmountInvestimentsButton)
         
         NSLayoutConstraint.activate([
             hideAmountInvestimentsButton.centerYAnchor.constraint(equalTo: balanceInvestimentsLabel.centerYAnchor),
             hideAmountInvestimentsButton.leadingAnchor.constraint(equalTo: balanceInvestimentsLabel.trailingAnchor, constant: 10),
-            hideAmountInvestimentsButton.widthAnchor.constraint(equalToConstant: 30),
-            hideAmountInvestimentsButton.heightAnchor.constraint(equalToConstant: 30),
+            hideAmountInvestimentsButton.widthAnchor.constraint(equalToConstant: 35),
+            hideAmountInvestimentsButton.heightAnchor.constraint(equalToConstant: 35),
             
         ])
     }

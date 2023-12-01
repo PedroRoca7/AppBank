@@ -35,13 +35,13 @@ class CustomStatementTableViewCell: UITableViewCell {
     
     func prepareCell(extract: ServiceViewModel) {
         if extract.type == .Input {
-            viewCell.contentView.backgroundColor = .green
             viewCell.typeEntryLabel.text = "Entrada"
+            viewCell.typeEntryLabel.backgroundColor = .green
             viewCell.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: extract.amout, typeCurrency: "pt-BR", currencySymbol: "R$")
             viewCell.aboutLabel.text = extract.about
         } else {
-            viewCell.contentView.backgroundColor = .red
             viewCell.typeEntryLabel.text = "Saída"
+            viewCell.typeEntryLabel.backgroundColor = .red
             viewCell.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: extract.amout, typeCurrency: "pt-BR", currencySymbol: "R$")
             viewCell.aboutLabel.text = extract.about
         }

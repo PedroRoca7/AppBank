@@ -70,8 +70,9 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomProductsTableViewCell.identifier, for: indexPath) as? CustomProductsTableViewCell
-        
+
         cell?.prepareCell(optionLabel: optionsTableView[indexPath.section].options[indexPath.row])
+        
         return cell ?? UITableViewCell()
     }
     

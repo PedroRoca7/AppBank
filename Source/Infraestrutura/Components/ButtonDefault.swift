@@ -44,7 +44,6 @@ class ButtonDefault: UIButton {
         self.layer.borderColor = UIColor.black.cgColor
         self.layer.borderWidth = 1
         self.backgroundColor = backgroundColor
-        self.layer.borderWidth = 0
         if let image = nameImage {
             self.setImage(UIImage(named: image), for: .normal)
         }

@@ -16,15 +16,15 @@ class RegisterView: UIView {
     // MARK: ElementsVisual
     
     lazy var backgroundImage = ImageViewDefault(nameImage: "backgroundImage")
-    lazy var titleLabel = LabelDefault(text: "Cadastro", color: .white, font: .boldSystemFont(ofSize: 36))
-    lazy var nameLabel = LabelDefault(text: "Nome")
-    lazy var nameTextField = TextFieldDefault(placeholder: "Insira seu nome")
-    lazy var emailLabel = LabelDefault(text: "Email")
-    lazy var emailTextField = TextFieldDefault(placeholder: "Insira seu Email", keyboardType: .emailAddress)
-    lazy var passwordLabel = LabelDefault(text: "Senha")
+    lazy var titleLabel = LabelDefault(text: "Cadastro", color: .white, font: .boldSystemFont(ofSize: 42))
+    lazy var nameLabel = LabelDefault(text: "Nome", color: .lilas, font: .systemFont(ofSize: 17))
+    lazy var nameTextField = TextFieldDefault(placeholder: "Insira seu nome", keyboardType: .default, backgroundColor: .clear)
+    lazy var emailLabel = LabelDefault(text: "Email", color: .lilas, font: .systemFont(ofSize: 17))
+    lazy var emailTextField = TextFieldDefault(placeholder: "Insira seu Email", keyboardType: .emailAddress, backgroundColor: .clear)
+    lazy var passwordLabel = LabelDefault(text: "Senha", color: .lilas, font: .systemFont(ofSize: 17))
     
     lazy var passwordTextField: TextFieldDefault = {
-        let tf = TextFieldDefault(placeholder: "Insira sua senha",keyboardType: .numberPad)
+        let tf = TextFieldDefault(placeholder: "Insira sua senha",keyboardType: .numberPad, backgroundColor: .clear)
         tf.isSecureTextEntry = true
         return tf
     }()

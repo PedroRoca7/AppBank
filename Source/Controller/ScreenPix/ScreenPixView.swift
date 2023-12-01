@@ -28,6 +28,7 @@ class ScreenPixView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = .backgroundColor
         addElementsView()
     }
     

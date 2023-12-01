@@ -22,14 +22,21 @@ class StatementCellView: UIView {
     lazy var contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.alpha = 0.5
+        view.alpha = 0.7
+        view.backgroundColor = .white
         view.layer.cornerRadius = 15
         return view
     }()
     
-    lazy var typeEntryLabel = LabelDefault(text: "Saída", color: .white, font: .boldSystemFont(ofSize: 22))
-    lazy var aboutLabel = LabelDefault(text: "Conta de Agua", color: .white, font: .systemFont(ofSize: 16))
-    lazy var amountLabel = LabelDefault(text: "R$ 120,00", color: .white, font: .systemFont(ofSize: 20))
+    lazy var typeEntryLabel: LabelDefault = {
+        let label = LabelDefault(text: "Saída", color: .white, font: .boldSystemFont(ofSize: 22))
+        label.layer.cornerRadius = 8
+        label.textAlignment = .center
+        label.clipsToBounds = true
+        return label
+    }()
+    lazy var aboutLabel = LabelDefault(text: "Conta de Agua", color: .darkGray, font: .systemFont(ofSize: 16))
+    lazy var amountLabel = LabelDefault(text: "R$ 120,00", color: .darkGray, font: .systemFont(ofSize: 20))
     
     // MARK: Inits
     
@@ -68,7 +75,7 @@ class StatementCellView: UIView {
         NSLayoutConstraint.activate([
             typeEntryLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
             typeEntryLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            typeEntryLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 80)
+            typeEntryLabel.widthAnchor.constraint(equalToConstant: 90)
         ])
     }
     
