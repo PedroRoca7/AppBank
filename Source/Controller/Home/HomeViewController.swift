@@ -77,7 +77,7 @@ private extension HomeViewController {
     func hideOrShowBalance(button: UIButton, label: UILabel) {
         button.rx.tap.bind {
             label.isHidden.toggle()
-            button.setImage(UIImage(named: label.isHidden ? "eyeHide" : "eyeShow"), for: .normal)
+            button.setImage(UIImage(named: label.isHidden ? "iconEyeHide" : "iconEyeShow"), for: .normal)
         }.disposed(by: disposeBag)
     }
 }

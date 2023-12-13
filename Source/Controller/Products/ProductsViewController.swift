@@ -41,16 +41,16 @@ class ProductsViewController: UIViewController {
     private func addOptionsTableView() {
         
         optionsTableView.append(OptionsTableView(title: "Investimentos",
-                                                 options: [OptionsInvestiments(icon: "eyeShow", optionInvestiment: "Poupança"),
-                                                          OptionsInvestiments(icon: "eyeShow", optionInvestiment: "Aplicação automática")]))
+                                                 options: [OptionsInvestiments(icon: "iconSavings", optionInvestiment: "Poupança"),
+                                                          OptionsInvestiments(icon: "iconEngine", optionInvestiment: "Aplicação automática")]))
         optionsTableView.append(OptionsTableView(title: "Mais proteção e capitalização",
-                                                 options: [OptionsInvestiments(icon: "eyeShow", optionInvestiment: "Odonto"),
-                                                          OptionsInvestiments(icon: "eyeShow", optionInvestiment: "Capitalização(PIC)")]))
+                                                 options: [OptionsInvestiments(icon: "iconDentist", optionInvestiment: "Odonto"),
+                                                          OptionsInvestiments(icon: "iconAplication", optionInvestiment: "Capitalização(PIC)")]))
         optionsTableView.append(OptionsTableView(title: "Produtos exclusivos",
-                                                 options: [OptionsInvestiments(icon: "eyeShow", optionInvestiment: "Itaú Shop"),
-                                                          OptionsInvestiments(icon: "eyeShow", optionInvestiment: "Pontos e cashback"),
-                                                          OptionsInvestiments(icon: "eyeShow", optionInvestiment: "IPhone pra Sempre"),
-                                                          OptionsInvestiments(icon: "eyeShow", optionInvestiment: "Icarros")]))
+                                                 options: [OptionsInvestiments(icon: "iconMarket", optionInvestiment: "Itaú Shop"),
+                                                          OptionsInvestiments(icon: "iconMoney", optionInvestiment: "Pontos e cashback"),
+                                                          OptionsInvestiments(icon: "iconPhone", optionInvestiment: "IPhone pra Sempre"),
+                                                          OptionsInvestiments(icon: "iconCar", optionInvestiment: "Icarros")]))
     }
     
     private func configHeaderTableView() {

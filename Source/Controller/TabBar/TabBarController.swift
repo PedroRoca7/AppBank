@@ -30,19 +30,19 @@ class TabBarController: UITabBarController {
             
             switch index {
             case 0:
-                imageName = "eyeShow"
+                imageName = "iconHome"
                 imageSize = CGSize(width: 30, height: 30)
                 title = "Home"
             case 1:
-                imageName = "eyeShow"
+                imageName = "iconExtract"
                 imageSize = CGSize(width: 30, height: 30)
                 title = "Extrato"
             case 2:
-                imageName = "eyeShow"
+                imageName = "iconSuitcase"
                 imageSize = CGSize(width: 30, height: 30)
                 title = "Produtos"
             default:
-                imageName = "eyeShow"
+                imageName = "iconHome"
                 imageSize = CGSize(width: 30, height: 30)
                 title = "Erro"
             }

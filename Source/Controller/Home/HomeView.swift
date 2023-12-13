@@ -30,7 +30,7 @@ class HomeView: UIView {
     lazy var amountLabel = LabelDefault(text: "", color: .lilas, font: .boldSystemFont(ofSize: 26))
     
     lazy var hideAmountButton: ButtonDefault = {
-        let button = ButtonDefault(nameImage: "eyeShow")
+        let button = ButtonDefault(nameImage: "iconEyeShow")
         button.layer.masksToBounds = true
         button.backgroundColor = .lilas
         return button
@@ -68,7 +68,7 @@ class HomeView: UIView {
     lazy var amountInvestimentsLabel = LabelDefault(text: "R$: 0", color: .lilas, font: .boldSystemFont(ofSize: 26))
     
     lazy var hideAmountInvestimentsButton: ButtonDefault = {
-        let button = ButtonDefault(nameImage: "eyeShow")
+        let button = ButtonDefault(nameImage: "iconEyeShow")
         button.layer.cornerRadius = button.frame.size.height/2
         button.layer.masksToBounds = true
         button.backgroundColor = .lilas
