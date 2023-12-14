@@ -10,9 +10,13 @@ import UIKit
 
 enum ScreenPixFactory {
     static func makeModule(navigationController: UINavigationController) -> UIViewController {
+        let service = ApiStatement()
+        let model = ExtratcModel()
         let coordinator = ScreenPixCoordinator(navigationController: navigationController)
-        let screenPixViewController = ScreenPixViewController()
-        coordinator.controller = screenPixViewController
+        let serviceViewModel = ServiceViewModel(model: model, service: service)
+        let screenPixViewModel = ScreenPixViewModel(serviceViewModel: serviceViewModel, coordinator: coordinator)
+        let screenPixViewController = ScreenPixViewController(viewModel: screenPixViewModel)
+        screenPixViewModel.delegate = screenPixViewController
         
         return screenPixViewController
     }

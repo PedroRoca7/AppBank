@@ -50,4 +50,15 @@ class ServiceViewModel {
             completion(bankStatements)
         }
     }
+    
+    func makePix(modelInformations: ExtratcModel, onComplete: @escaping (Bool) -> Void) {
+        service.updateStatements(extractInformations: modelInformations) { result in
+            if result == true {
+                onComplete(true)
+            } else {
+                onComplete(false)
+            }
+        }
+    }
+    
 }

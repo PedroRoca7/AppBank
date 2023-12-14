@@ -9,19 +9,22 @@ import Foundation
 import UIKit
 
 protocol ScreenPixCoordinating {
-    
+    func showHomeScreen()
 }
 
 class ScreenPixCoordinator: ScreenPixCoordinating {
     
     //MARK: Propertys
     
-    weak var controller: UIViewController?
     private var navigationController: UINavigationController
     
     //MARK: Init
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+    }
+    
+    func showHomeScreen() {
+        navigationController.popViewController(animated: true)
     }
 }
