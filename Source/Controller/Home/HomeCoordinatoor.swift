@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol HomeCoordinating {
-    
+    func startPixScreen()
 }
 
 class HomeCoordinator: HomeCoordinating {
@@ -22,6 +22,11 @@ class HomeCoordinator: HomeCoordinating {
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+    }
+    
+    public func startPixScreen() {
+        let pixView = ScreenPixFactory.makeModule(navigationController: navigationController)
+        navigationController.present(pixView, animated: true)
     }
     
 }

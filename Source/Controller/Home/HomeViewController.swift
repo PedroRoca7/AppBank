@@ -117,7 +117,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func pressedButtonCollectionView(button: ChooseButton) {
         switch button {
         case .pix:
-            self.pixButtonTap?()
+            viewModel.showPixScreen()
         case .transfer:
             Alert.showBasicAlert(title: "Transferências", message: "Você clicou para fazer uma transferencia.", viewController: self) {}
         case .pay:

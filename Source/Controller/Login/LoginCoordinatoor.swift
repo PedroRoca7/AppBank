@@ -24,8 +24,8 @@ class LoginCoordinator: LoginCoordinating {
     }
     
     func startRegisterScreen() {
-        let register = RegisterFactory.makeModule(navigationController: controller?.navigationController ?? UINavigationController())
-        controller?.navigationController?.pushViewController(register, animated: true)
+        let registerView = RegisterFactory.makeModule(navigationController: controller?.navigationController ?? UINavigationController())
+        controller?.navigationController?.pushViewController(registerView, animated: true)
         
     }
 }

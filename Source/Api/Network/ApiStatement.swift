@@ -25,7 +25,7 @@ protocol ApiStatementing {
 class ApiStatement: ApiStatementing {
     private let basePath = ApiString.urlStatement.urlExtract
     static let serviceGetExtract = ApiStatement()
-
+    
     func loadStatements(onComplete: @escaping (ExtractsModel) -> Void) {
         guard let url = URL(string: basePath) else { return }
         
@@ -51,4 +51,29 @@ class ApiStatement: ApiStatementing {
         }
         dataTask.resume()
     }
+        
+    func updateStatements(extractInformations: ExtratcModel, onComplete: @escaping (Bool) -> Void) {
+        guard let url = URL(string: basePath) else {
+            onComplete(false)
+            return }
+        
+        var requisicao = URLRequest(url: url)
+            requisicao.httpMethod = "POST"
+
+            requisicao.httpBody = try? JSONSerialization.data(withJSONObject: extractInformations)
+
+            requisicao.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+            let sessao = URLSession.shared
+
+            let tarefa = sessao.dataTask(with: requisicao) { dados, resposta, error in
+                if error == nil {
+                    onComplete(true)
+                } else {
+                    onComplete(false)
+                }
+            }
+            tarefa.resume()
+    }
+    
 }
