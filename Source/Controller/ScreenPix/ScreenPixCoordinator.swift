@@ -25,6 +25,6 @@ class ScreenPixCoordinator: ScreenPixCoordinating {
     }
     
     func showHomeScreen() {
-        navigationController.popViewController(animated: true)
+        navigationController.dismiss(animated: true)
     }
 }

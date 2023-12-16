@@ -26,7 +26,7 @@ class HomeCoordinator: HomeCoordinating {
     
     public func startPixScreen() {
         let pixView = ScreenPixFactory.makeModule(navigationController: navigationController)
-        navigationController.pushViewController(pixView, animated: true)
+        navigationController.present(pixView, animated: true)
     }
     
 }

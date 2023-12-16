@@ -17,9 +17,9 @@ class LoginView: UIView {
     
     lazy var backgroundImage = ImageViewDefault(nameImage: "backgroundImage")
     lazy var titleLabel = LabelDefault(text: "Login", color: .white, font: .boldSystemFont(ofSize: 42))
-    lazy var emailTextFiled = TextFieldDefault(placeholder: "Digite seu Email:", keyboardType: .emailAddress, backgroundColor: .clear)
+    lazy var emailTextFiled = TextFieldDefault(placeholder: "Digite seu Email:", keyboardType: .emailAddress, backgroundColor: .clear, typeTextField: .onlyLine)
     lazy var passwordTextField: TextFieldDefault = {
-        let tf = TextFieldDefault(placeholder: "Digite sua Senha:", keyboardType: .numberPad, backgroundColor: .clear)
+        let tf = TextFieldDefault(placeholder: "Digite sua Senha:", keyboardType: .numberPad, backgroundColor: .clear, typeTextField: .onlyLine)
         tf.isSecureTextEntry = true
         return tf
     }()

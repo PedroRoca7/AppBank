@@ -9,7 +9,7 @@ import Foundation
 
 enum ApiString {
     case urlStatement
-
+    
     var urlExtract: String {
         switch self {
         case .urlStatement:
@@ -51,29 +51,33 @@ class ApiStatement: ApiStatementing {
         }
         dataTask.resume()
     }
-        
+    
     func updateStatements(extractInformations: ExtratcModel, onComplete: @escaping (Bool) -> Void) {
         guard let url = URL(string: basePath) else {
             onComplete(false)
             return }
         
-        var requisicao = URLRequest(url: url)
-            requisicao.httpMethod = "POST"
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let body: [String: AnyHashable] = [
+            "type": 1,
+            "about": extractInformations.about,
+            "amount": extractInformations.amount,
+            "date": "15 de Dezembro"
+        ]
+        
+        request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
 
-            requisicao.httpBody = try? JSONSerialization.data(withJSONObject: extractInformations)
-
-            requisicao.addValue("application/json", forHTTPHeaderField: "Content-Type")
-
-            let sessao = URLSession.shared
-
-            let tarefa = sessao.dataTask(with: requisicao) { dados, resposta, error in
-                if error == nil {
-                    onComplete(true)
-                } else {
-                    onComplete(false)
-                }
+        let task = URLSession.shared.dataTask(with: request) { date, response, error in
+            if error == nil {
+                onComplete(true)
+            } else {
+                onComplete(false)
             }
-            tarefa.resume()
+        }
+        task.resume()
     }
     
 }

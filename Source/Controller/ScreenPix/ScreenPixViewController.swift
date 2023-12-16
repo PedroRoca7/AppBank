@@ -39,6 +39,7 @@ class ScreenPixViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyBoardWhenTapped()
+        tappedButtonMakePix()
     }
 }
 
@@ -50,23 +51,27 @@ private extension ScreenPixViewController {
                   let description = self.viewScreen.descriptionTextField.text, !description.isEmpty
             else {  Alert.showBasicAlert(title: "Erro", message: "Preencha todos os campos.", viewController: self) {}
                 return }
-            let numberSort = Int.random(in: 0..<100)
-            self.viewModel.makePix(modelInformations: ExtratcModel(id: numberSort, type: 1, about: description, amount: Double(value) ?? 0.0))
+            let valueNegative = Double(value)
+            self.viewModel.makePix(modelInformations: ExtratcModel(id: 0, type: 1, about: description, amount: -(valueNegative ?? 0.0)))
         }.disposed(by: disposeBag)
     }
 }
 
 extension ScreenPixViewController: ScreenPixViewModelProtocol {
     func success() {
-        Alert.showBasicAlert(title: "Sucesso", message: "Pix realizado com sucesso", viewController: self) {
-            self.viewModel.showHomeScreen()
+        DispatchQueue.main.async {
+            Alert.showBasicAlert(title: "Sucesso", message: "Pix realizado com sucesso", viewController: self) {
+                self.viewModel.showHomeScreen()
+            }
         }
     }
     
     func failure() {
-        Alert.showActionSheet(title: "Erro", message: "Erro ao realizar Pix", viewController: self) { result in
-            if result == false {
-                self.viewModel.showHomeScreen()
+        DispatchQueue.main.async {
+            Alert.showActionSheet(title: "Erro", message: "Erro ao realizar Pix", viewController: self) { result in
+                if result == false {
+                    self.viewModel.showHomeScreen()
+                }
             }
         }
     }

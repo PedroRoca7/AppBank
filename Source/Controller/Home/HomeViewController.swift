@@ -47,6 +47,7 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setupTabBar()
+        viewModel.loadStatements()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +55,6 @@ class HomeViewController: UIViewController {
         hideKeyBoardWhenTapped()
         viewScreen.activityIndicator.startAnimating()
         setupDelegates()
-        viewModel.loadStatements()
         hideOrShowBalance(button: viewScreen.hideAmountButton, label: viewScreen.amountLabel)
         hideOrShowBalance(button: viewScreen.hideAmountInvestimentsButton, label: viewScreen.amountInvestimentsLabel)
     }
