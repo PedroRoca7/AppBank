@@ -25,6 +25,7 @@ class RegisterViewController: UIViewController {
     
     override func loadView() {
         view = viewScreen
+        viewScreen.backgroundColor = .backgroundColor
     }
     
     init(viewModel: RegisterViewModeling) {
@@ -43,7 +44,7 @@ class RegisterViewController: UIViewController {
     }
     
     private func tappedRegisterButton() {
-        viewScreen.registerButton.rx.tap.bind {
+        viewScreen.signInButton.rx.tap.bind {
             guard let name = self.viewScreen.nameTextField.text, !name.isEmpty,
                   let email = self.viewScreen.emailTextField.text, !email.isEmpty,
                   let password = self.viewScreen.passwordTextField.text, !password.isEmpty else {

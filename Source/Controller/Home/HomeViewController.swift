@@ -15,7 +15,7 @@ class HomeViewController: UIViewController {
     var user: User?
     var pixButtonTap: (() -> Void)?
     private var disposeBag = DisposeBag()
-    private var collectionViewButtons: [String] = ["Pix", "Transfêrencias", "Pagar contas", "Seguros"]
+    private var collectionViewButtons: [String] = ["Pix", "Transfer", "Pay account", "Security", "Credit Card", "Collect"]
     
     lazy private var viewScreen: HomeView = {
         let view = HomeView()
@@ -39,19 +39,13 @@ class HomeViewController: UIViewController {
         self.view = viewScreen
         
     }
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        viewScreen.hideAmountButton.layer.cornerRadius = viewScreen.hideAmountButton.frame.size.height / 2
-        viewScreen.hideAmountInvestimentsButton.layer.cornerRadius = viewScreen.hideAmountInvestimentsButton.frame.size.height / 2
-    }
     
     override func viewWillAppear(_ animated: Bool) {
-        setupTabBar()
         viewModel.loadStatements()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewScreen.hideAmountButton.layer.cornerRadius = viewScreen.hideAmountButton.frame.size.height/2
+        setupNameClientLabel()
         hideKeyBoardWhenTapped()
         viewScreen.activityIndicator.startAnimating()
         setupDelegates()
@@ -61,12 +55,10 @@ class HomeViewController: UIViewController {
 }
 
 private extension HomeViewController {
-    func setupTabBar() {
+    func setupNameClientLabel() {
         guard let user = self.user else { return }
         self.tabBarController?.navigationItem.title = "Olá \(user.name)"
-        self.tabBarController?.navigationItem.setHidesBackButton(true, animated: false)
-        self.tabBarController?.navigationItem.titleView?.tintColor = .white
-        self.tabBarController?.navigationItem.titleView?.backgroundColor = .lilas
+        self.tabBarController?.navigationController?.isNavigationBarHidden = true
     }
     
     func setupDelegates() {
@@ -104,8 +96,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionCell.identifier, for: indexPath) as? CustomCollectionCell
         let button: String = collectionViewButtons[indexPath.row]
-        cell?.prepareCollectionCell(title: button)
-        
+        if let buttonEnum = ChooseButton(rawValue: button) {
+            cell?.prepareCollectionCell(title: button, button: buttonEnum)
+        }
         cell?.cellView.button.rx.tap.bind {
             if let buttonEnum = ChooseButton(rawValue: button) {
                 self.pressedButtonCollectionView(button: buttonEnum)
@@ -124,6 +117,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             Alert.showBasicAlert(title: "Pagamentos", message: "Você clicou para fazer um pagamento.", viewController: self) {}
         case.security:
             Alert.showBasicAlert(title: "Seguros", message: "Você clicou para solicitar um seguro.", viewController: self) {}
+        case.collect:
+            Alert.showBasicAlert(title: "Collect", message: "You clic Collect", viewController: self) {}
+        case.cardCredit:
+            Alert.showBasicAlert(title: "Credit Card", message: "You clic Credit Card", viewController: self) {}
         }
     }
     

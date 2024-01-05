@@ -8,10 +8,11 @@ import UIKit
 
 enum ChooseButton: String {
     case pix = "Pix"
-    case transfer = "Fazer Transfêrencia"
-    case pay = "Pagar contas"
-    case security = "Seguros"
-    
+    case transfer = "Transfer"
+    case pay = "Pay account"
+    case security = "Security"
+    case cardCredit = "Credit Card"
+    case collect = "Collect"
 }
 
 class CustomCollectionCell: UICollectionViewCell {
@@ -35,8 +36,28 @@ class CustomCollectionCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func prepareCollectionCell(title: String) {
-        cellView.button.setTitle(title, for: .normal)
+    public func prepareCollectionCell(title: String, button: ChooseButton) {
+        
+        switch button {
+            case .pix:
+                cellView.label.text = title
+                cellView.button.setImage(UIImage(named: "iconSend"), for: .normal)
+            case .pay:
+                cellView.label.text = title
+                cellView.button.setImage(UIImage(named: "iconPayments"), for: .normal)
+            case .cardCredit:
+                cellView.label.text = title
+                cellView.button.setImage(UIImage(named: "iconCreditCard"), for: .normal)
+            case .collect:
+                cellView.label.text = title
+                cellView.button.setImage(UIImage(named: "iconMoney"), for: .normal)
+            case.security:
+                cellView.label.text = title
+                cellView.button.setImage(UIImage(named: "iconSecurity"), for: .normal)
+            case.transfer:
+                cellView.label.text = title
+                cellView.button.setImage(UIImage(named: "iconTransfer"), for: .normal)
+        }
     }
     
     private func configConstraints() {

@@ -15,21 +15,74 @@ class RegisterView: UIView {
     
     // MARK: ElementsVisual
     
-    lazy var backgroundImage = ImageViewDefault(nameImage: "backgroundImage")
-    lazy var titleLabel = LabelDefault(text: "Cadastro", color: .white, font: .boldSystemFont(ofSize: 42))
-    lazy var nameLabel = LabelDefault(text: "Nome", color: .lilas, font: .systemFont(ofSize: 17))
-    lazy var nameTextField = TextFieldDefault(placeholder: "Insira seu nome", keyboardType: .default, backgroundColor: .clear, typeTextField: .onlyLine)
-    lazy var emailLabel = LabelDefault(text: "Email", color: .lilas, font: .systemFont(ofSize: 17))
-    lazy var emailTextField = TextFieldDefault(placeholder: "Insira seu Email", keyboardType: .emailAddress, backgroundColor: .clear, typeTextField: .onlyLine)
-    lazy var passwordLabel = LabelDefault(text: "Senha", color: .lilas, font: .systemFont(ofSize: 17))
+    lazy var logoImageView = ImageViewDefault(nameImage: "LogoAppBank")
+    lazy var titleLabel = LabelDefault(text: "Create your Account", color: .black, font: .systemFont(ofSize: 14, weight: .semibold))
+    
+    lazy var textFieldStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [nameTextField, emailTextField, passwordTextField])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.alignment = .center
+        stackView.spacing = 15
+        return stackView
+    }()
+    
+    lazy var nameTextField: TextFieldDefault = {
+        let tf = TextFieldDefault(placeholder: "Name", keyboardType: .default, backgroundColor: .white, typeTextField: .standard)
+        tf.layer.cornerRadius = 5
+        tf.widthAnchor.constraint(equalToConstant: 320).isActive = true
+        return tf
+    }()
+    
+    lazy var emailTextField: TextFieldDefault = {
+        let tf = TextFieldDefault(placeholder: "Email", keyboardType: .emailAddress, backgroundColor: .white, typeTextField: .standard)
+        tf.layer.cornerRadius = 5
+        tf.widthAnchor.constraint(equalToConstant: 320).isActive = true
+        return tf
+    }()
     
     lazy var passwordTextField: TextFieldDefault = {
-        let tf = TextFieldDefault(placeholder: "Insira sua senha",keyboardType: .numberPad, backgroundColor: .clear, typeTextField: .onlyLine)
+        let tf = TextFieldDefault(placeholder: "Password", keyboardType: .numberPad, backgroundColor: .white, typeTextField: .standard)
+        tf.widthAnchor.constraint(equalToConstant: 320).isActive = true
+        tf.layer.cornerRadius = 5
         tf.isSecureTextEntry = true
         return tf
     }()
     
-    lazy var registerButton = ButtonDefault(title: "Registrar", backgroundColor: .lilas)
+    lazy var signInButton = ButtonDefault(title: "sign in", backgroundColor: .lilas)
+    lazy var orSignInLabel = LabelDefault(text: "Or sign in with", color: .lightGray, font: .systemFont(ofSize: 12, weight: .medium))
+    
+    lazy var socialMediaButtonsStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [googleButton, facebookButton, twitterButton])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        stackView.alignment = .center
+        stackView.spacing = 10
+        return stackView
+    }()
+    
+    lazy var googleButton: ButtonDefault = {
+        let button = ButtonDefault(nameImage: "LogoGoogle")
+        button.backgroundColor = .white
+        button.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        return button
+    }()
+    
+    lazy var facebookButton: ButtonDefault = {
+        let button = ButtonDefault(nameImage: "LogoFacebook")
+        button.backgroundColor = .white
+        button.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        return button
+    }()
+    
+    lazy var twitterButton: ButtonDefault = {
+        let button = ButtonDefault(nameImage: "LogoTwitter")
+        button.backgroundColor = .white
+        button.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        return button
+    }()
     
     // MARK: Inits
     
@@ -45,25 +98,22 @@ class RegisterView: UIView {
     // MARK: Add Elements e Constraints
     
     private func addElementsView() {
-        setBackgroundImage()
+        setLogoImageView()
         setTitleLabel()
-        setNameLabel()
-        setNameTextField()
-        setEmailLabel()
-        setEmailTextField()
-        setSenhaLabel()
-        setSenhaTextField()
-        setRegisterButton()
+        setTextfieldStackView()
+        setSignInButton()
+        setOrSignInLabel()
+        setSocialMediaButtonsStackView()
     }
     
-    private func setBackgroundImage() {
-        self.addSubview(backgroundImage)
+    private func setLogoImageView() {
+        self.addSubview(logoImageView)
         
         NSLayoutConstraint.activate([
-            backgroundImage.topAnchor.constraint(equalTo: self.topAnchor),
-            backgroundImage.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            backgroundImage.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            backgroundImage.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            logoImageView.topAnchor.constraint(equalTo: self.guide.topAnchor, constant: 10),
+            logoImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            logoImageView.widthAnchor.constraint(equalToConstant: 107),
+            logoImageView.heightAnchor.constraint(equalToConstant: 107)
         ])
     }
     
@@ -71,84 +121,52 @@ class RegisterView: UIView {
         self.addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: self.guide.topAnchor, constant: 70),
-            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 25),
-            titleLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 130)
+            titleLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 35),
+            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            titleLabel.trailingAnchor.constraint(lessThanOrEqualTo: self.trailingAnchor, constant: -150)
         ])
     }
     
-    private func setNameLabel() {
-        self.addSubview(nameLabel)
+    private func setTextfieldStackView() {
+        self.addSubview(textFieldStackView)
         
         NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 35),
-            nameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 25),
-            nameLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 80)
+            textFieldStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
+            textFieldStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            textFieldStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            textFieldStackView.heightAnchor.constraint(equalToConstant: 140)
         ])
     }
     
-    private func setNameTextField() {
-        self.addSubview(nameTextField)
+    private func setSignInButton() {
+        self.addSubview(signInButton)
         
         NSLayoutConstraint.activate([
-            nameTextField.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 20),
-            nameTextField.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
-            nameTextField.widthAnchor.constraint(equalToConstant: 250),
-            nameTextField.heightAnchor.constraint(equalToConstant: 40)
-        ])
-    }
-    
-    private func setEmailLabel() {
-        self.addSubview(emailLabel)
-        
-        NSLayoutConstraint.activate([
-            emailLabel.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 25),
-            emailLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 25),
-            emailLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 80)
-        ])
-    }
-        
-    private func setEmailTextField() {
-        self.addSubview(emailTextField)
-        
-        NSLayoutConstraint.activate([
-            emailTextField.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 20),
-            emailTextField.leadingAnchor.constraint(equalTo: emailLabel.leadingAnchor),
-            emailTextField.widthAnchor.constraint(equalToConstant: 250),
-            emailTextField.heightAnchor.constraint(equalTo: nameTextField.heightAnchor)
-        ])
-    }
-    
-    private func setSenhaLabel() {
-        self.addSubview(passwordLabel)
-        
-        NSLayoutConstraint.activate([
-            passwordLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 25),
-            passwordLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 25),
-            passwordLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 80)
-        ])
-    }
-    
-    private func setSenhaTextField() {
-        self.addSubview(passwordTextField)
-        
-        NSLayoutConstraint.activate([
-            passwordTextField.topAnchor.constraint(equalTo: passwordLabel.bottomAnchor, constant: 20),
-            passwordTextField.leadingAnchor.constraint(equalTo: passwordLabel.leadingAnchor),
-            passwordTextField.widthAnchor.constraint(equalToConstant: 250),
-            passwordTextField.heightAnchor.constraint(equalTo: nameTextField.heightAnchor)
-        ])
-    }
-    
-    private func setRegisterButton() {
-        self.addSubview(registerButton)
-        
-        NSLayoutConstraint.activate([
-            registerButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            registerButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 50),
-            registerButton.widthAnchor.constraint(equalToConstant: 150),
-            registerButton.bottomAnchor.constraint(lessThanOrEqualTo: self.bottomAnchor, constant: 150)
+            signInButton.topAnchor.constraint(equalTo: textFieldStackView.bottomAnchor, constant: 40),
+            signInButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            signInButton.widthAnchor.constraint(equalToConstant: 320),
+            signInButton.heightAnchor.constraint(equalToConstant: 35)
             
+        ])
+    }
+    
+    private func setOrSignInLabel() {
+        self.addSubview(orSignInLabel)
+        
+        NSLayoutConstraint.activate([
+            orSignInLabel.topAnchor.constraint(equalTo: signInButton.bottomAnchor, constant: 45),
+            orSignInLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+        ])
+    }
+    
+    private func setSocialMediaButtonsStackView() {
+        self.addSubview(socialMediaButtonsStackView)
+        
+        NSLayoutConstraint.activate([
+            socialMediaButtonsStackView.topAnchor.constraint(equalTo: orSignInLabel.bottomAnchor, constant: 10),
+            socialMediaButtonsStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            socialMediaButtonsStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            socialMediaButtonsStackView.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
 }

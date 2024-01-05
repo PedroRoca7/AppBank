@@ -15,18 +15,13 @@ class CollectionCellView: UIView {
     
     lazy var button: ButtonDefault = {
         let bt = ButtonDefault()
-        bt.titleLabel?.textAlignment = .center
-        bt.layer.cornerRadius = 5
-        bt.layer.borderWidth = 1
-        bt.layer.borderColor = UIColor.black.cgColor
+        bt.layer.cornerRadius = bt.frame.size.width / 2
         bt.backgroundColor = .white
-        bt.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        bt.setTitleColor(.lilas, for: .normal)
-        bt.titleLabel?.numberOfLines = 0
-        bt.titleLabel?.adjustsFontSizeToFitWidth = true
-        bt.titleLabel?.minimumScaleFactor = 0.5
+        bt.clipsToBounds = true
         return bt
     }()
+    
+    lazy var label = LabelDefault(text: "", color: .white, font: .systemFont(ofSize: 12, weight: .medium))
     
     // MARK: Inits
     
@@ -54,6 +49,15 @@ class CollectionCellView: UIView {
             button.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             button.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5),
             
+        ])
+    }
+    
+    private func setLabel() {
+        self.addSubview(label)
+        
+        NSLayoutConstraint.activate([
+            label.centerXAnchor.constraint(equalTo: button.centerXAnchor),
+            label.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 5)
         ])
     }
 }
