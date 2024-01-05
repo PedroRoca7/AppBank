@@ -40,7 +40,7 @@ class TextFieldDefault: UITextField {
         self.translatesAutoresizingMaskIntoConstraints = false
         
         self.backgroundColor = backgroundColor
-        self.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        self.attributedPlaceholder = NSAttributedString(string: placeholder)
         self.keyboardType = keyboardType
 
         // Adicionar a linha de baixo usando uma sublayer

@@ -40,9 +40,7 @@ class ButtonDefault: UIButton {
     private func initDefault(title: String, backgroundColor: UIColor, nameImage: String?) {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.setTitle(title, for: .normal)
-        self.layer.cornerRadius = 15
-        self.layer.borderColor = UIColor.black.cgColor
-        self.layer.borderWidth = 1
+        self.layer.cornerRadius = 10
         self.backgroundColor = backgroundColor
         if let image = nameImage {
             self.setImage(UIImage(named: image), for: .normal)

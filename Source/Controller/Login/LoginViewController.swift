@@ -25,6 +25,7 @@ class LoginViewController: UIViewController {
     
     override func loadView() {
         self.view = viewScreen
+        viewScreen.backgroundColor = .backgroundColor
     }
     
     init(viewModel: LoginViewModeling) {
@@ -46,7 +47,7 @@ class LoginViewController: UIViewController {
 
 private extension LoginViewController {
     func tappedRegisterButton() {
-        viewScreen.registerButton.rx.tap.bind {
+        viewScreen.signUpButton.rx.tap.bind {
             self.viewModel.showRegisterScreen()
         }.disposed(by: disposeBag)
     }
