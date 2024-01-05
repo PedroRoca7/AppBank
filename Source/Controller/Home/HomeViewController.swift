@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     var pixButtonTap: (() -> Void)?
     private var disposeBag = DisposeBag()
     private var collectionViewButtons: [String] = ["Pix", "Transfer", "Pay account", "Security", "Credit Card", "Collect"]
+    private var cellView = CollectionCellView()
     
     lazy private var viewScreen: HomeView = {
         let view = HomeView()
@@ -37,15 +38,16 @@ class HomeViewController: UIViewController {
     
     override func loadView() {
         self.view = viewScreen
-        
+        viewScreen.backgroundColor = .backgroundColor
     }
     
     override func viewWillAppear(_ animated: Bool) {
         viewModel.loadStatements()
+        setupNameClientLabel()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNameClientLabel()
+        cellView.button.layer.cornerRadius = cellView.button.frame.width / 2
         hideKeyBoardWhenTapped()
         viewScreen.activityIndicator.startAnimating()
         setupDelegates()
@@ -57,7 +59,7 @@ class HomeViewController: UIViewController {
 private extension HomeViewController {
     func setupNameClientLabel() {
         guard let user = self.user else { return }
-        self.tabBarController?.navigationItem.title = "Olá \(user.name)"
+        viewScreen.helloClientLabel.text = "Hello \(user.name),"
         self.tabBarController?.navigationController?.isNavigationBarHidden = true
     }
     
@@ -77,7 +79,7 @@ private extension HomeViewController {
 extension HomeViewController: HomeViewModelProtocol {
     func success(balance: Double) {
         DispatchQueue.main.async {
-            self.viewScreen.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: balance, typeCurrency: "pt-BR", currencySymbol: "R$")
+            self.viewScreen.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: balance, typeCurrency: "pt-BR", currencySymbol: "$")
             self.viewScreen.activityIndicator.stopAnimating()
         }
     }
@@ -95,6 +97,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionCell.identifier, for: indexPath) as? CustomCollectionCell
+        
         let button: String = collectionViewButtons[indexPath.row]
         if let buttonEnum = ChooseButton(rawValue: button) {
             cell?.prepareCollectionCell(title: button, button: buttonEnum)
@@ -125,6 +128,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 80)
+        CGSize(width: 80, height: 80)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 12
     }
 }

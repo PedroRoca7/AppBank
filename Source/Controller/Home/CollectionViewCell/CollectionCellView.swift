@@ -15,13 +15,14 @@ class CollectionCellView: UIView {
     
     lazy var button: ButtonDefault = {
         let bt = ButtonDefault()
-        bt.layer.cornerRadius = bt.frame.size.width / 2
         bt.backgroundColor = .white
+        bt.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        bt.heightAnchor.constraint(equalToConstant: 50).isActive = true
         bt.clipsToBounds = true
         return bt
     }()
     
-    lazy var label = LabelDefault(text: "", color: .white, font: .systemFont(ofSize: 12, weight: .medium))
+    lazy var label = LabelDefault(text: "Pix", color: .white, font: .systemFont(ofSize: 12, weight: .medium))
     
     // MARK: Inits
     
@@ -38,17 +39,15 @@ class CollectionCellView: UIView {
     
     private func addElementsView() {
         setButton()
+        setLabel()
     }
     
     private func setButton() {
         self.addSubview(button)
         
         NSLayoutConstraint.activate([
-            button.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
-            button.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            button.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            button.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5),
-            
+            button.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            button.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
     }
     
@@ -57,7 +56,7 @@ class CollectionCellView: UIView {
         
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: button.centerXAnchor),
-            label.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 5)
+            label.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 2)
         ])
     }
 }

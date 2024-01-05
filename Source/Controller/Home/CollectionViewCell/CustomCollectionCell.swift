@@ -23,7 +23,8 @@ class CustomCollectionCell: UICollectionViewCell {
         let view = CollectionCellView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.clipsToBounds = true
-        view.alpha = 0.7
+        view.backgroundColor = .clear
+        view.layer.masksToBounds = true
         return view
     }()
     
@@ -37,7 +38,6 @@ class CustomCollectionCell: UICollectionViewCell {
     }
     
     public func prepareCollectionCell(title: String, button: ChooseButton) {
-        
         switch button {
             case .pix:
                 cellView.label.text = title
@@ -63,10 +63,11 @@ class CustomCollectionCell: UICollectionViewCell {
     private func configConstraints() {
         contentView.addSubview(cellView)
         
+        
         NSLayoutConstraint.activate([
             cellView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            cellView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            cellView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            cellView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 5),
+            cellView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
             cellView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
             
         ])
