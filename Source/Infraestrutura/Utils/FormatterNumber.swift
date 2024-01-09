@@ -15,7 +15,7 @@ class FormatterNumber {
         var formattedString = numberFormatter.string(from: NSNumber(value: abs(value))) ?? "Valor indefinido"
         
         if value < 0 {
-            formattedString = "\(currencySymbol) -" + formattedString
+            formattedString = "\(currencySymbol) " + formattedString
         } else {
             formattedString = "\(currencySymbol) " + formattedString
         }

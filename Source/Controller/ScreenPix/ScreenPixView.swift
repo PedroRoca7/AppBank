@@ -17,37 +17,37 @@ class ScreenPixView: UIView {
     // MARK: ElementsVisual
     
     
-    lazy var titlePixLabel = LabelDefault(text: "Para quem você gostaria de fazer um pix?", color: .black, font: .boldSystemFont(ofSize: 16))
+    lazy var titlePixLabel = LabelDefault(text: "Who would you like to make a pix for??", color: .black, font: .boldSystemFont(ofSize: 16))
     
     lazy var nameReceivePixTextField: TextFieldDefault = {
-        let tf = TextFieldDefault(placeholder: "Ex: João", keyboardType: .default, backgroundColor: .lightGray, typeTextField: .standard)
+        let tf = TextFieldDefault(placeholder: "Ex: João", keyboardType: .default, backgroundColor: .white, typeTextField: .standard)
         tf.layer.cornerRadius = 10
         tf.layer.borderWidth = 0.5
         tf.layer.borderColor = UIColor.black.cgColor
         return tf
     }()
     
-    lazy var valuePixLabel = LabelDefault(text: "Valor", color: .black, font: .boldSystemFont(ofSize: 16))
+    lazy var valuePixLabel = LabelDefault(text: "Value", color: .black, font: .boldSystemFont(ofSize: 16))
     
     lazy var valuePixTextField: TextFieldDefault = {
-        let tf = TextFieldDefault(placeholder: "Ex: 100", keyboardType: .default, backgroundColor: .lightGray, typeTextField: .standard)
+        let tf = TextFieldDefault(placeholder: "Ex: 100", keyboardType: .default, backgroundColor: .white, typeTextField: .standard)
         tf.layer.cornerRadius = 10
         tf.layer.borderWidth = 0.5
         tf.layer.borderColor = UIColor.black.cgColor
         return tf
     }()
     
-    lazy var descriptionLabel = LabelDefault(text: "Descrição", color: .black, font: .boldSystemFont(ofSize: 16))
+    lazy var descriptionLabel = LabelDefault(text: "Description", color: .black, font: .boldSystemFont(ofSize: 16))
     
     lazy var descriptionTextField: TextFieldDefault = {
-        let tf = TextFieldDefault(placeholder: "Ex: Devolvendo empréstimo", keyboardType: .default, backgroundColor: .lightGray, typeTextField: .standard)
+        let tf = TextFieldDefault(placeholder: "Ex: Returning loan", keyboardType: .default, backgroundColor: .white, typeTextField: .standard)
         tf.layer.cornerRadius = 10
         tf.layer.borderWidth = 0.5
         tf.layer.borderColor = UIColor.black.cgColor
         return tf
     }()
     
-    lazy var makePixButton = ButtonDefault(title: "Fazer Pix", backgroundColor: .lilas)
+    lazy var makePixButton = ButtonDefault(title: "Send Pix", backgroundColor: .lilas)
     
     // MARK: Inits
     

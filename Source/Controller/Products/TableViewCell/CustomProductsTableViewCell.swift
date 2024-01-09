@@ -14,16 +14,17 @@ class CustomProductsTableViewCell: UITableViewCell {
     lazy var viewCell: ProductsViewCell = {
         let viewCell = ProductsViewCell()
         viewCell.translatesAutoresizingMaskIntoConstraints = false
-        viewCell.backgroundColor = .clear
+        viewCell.backgroundColor = .white
+        viewCell.layer.cornerRadius = 10
+        viewCell.layer.borderColor = UIColor.black.cgColor
+        viewCell.layer.borderWidth = 1
+        viewCell.clipsToBounds = true
         return viewCell
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setViewScreen()
-        contentView.backgroundColor = .white
-        contentView.alpha = 0.7
-        contentView.layer.cornerRadius = 15
     }
     
     required init?(coder: NSCoder) {
@@ -42,8 +43,10 @@ class CustomProductsTableViewCell: UITableViewCell {
     }
     
     public func prepareCell(optionLabel: OptionsInvestiments) {
-        viewCell.iconImageView.image = UIImage(named: optionLabel.icon)
-        viewCell.nameOptionLabel.text = optionLabel.optionInvestiment
+        DispatchQueue.main.async {
+            self.viewCell.iconImageView.image = UIImage(named: optionLabel.icon)
+            self.viewCell.nameOptionLabel.text = optionLabel.optionInvestiment
+        }
     }
 }
 

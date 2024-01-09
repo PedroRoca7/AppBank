@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ExtractViewModelProtocol: AnyObject {
-    func success()
+    func success(balance: Double)
     func failure()
 }
 
@@ -16,13 +16,14 @@ protocol ExtractViewModeling: AnyObject {
     var delegate: ExtractViewModelProtocol? { get set }
     var bankStatements: Extratcts { get }
     func loadStatements()
+    func filterExtract(index: Int)
 }
 
 class ExtractViewModel: ExtractViewModeling {
     
     //MARK: Propertys
-    
     var bankStatements: Extratcts = []
+    private var bankStatementsAll: Extratcts = []
     private var serviceViewModel: ServiceViewModel
     private var coordinator: ExtractCoordinator
     weak var delegate: ExtractViewModelProtocol?
@@ -36,13 +37,39 @@ class ExtractViewModel: ExtractViewModeling {
    
     //MARK: Methods
     
-    func loadStatements() {
+    private func currentBalance() {
+        var balance: Double = 0
+        for value in bankStatementsAll {
+            balance += value.amout
+        }
+        self.delegate?.success(balance: balance)
+    }
+    
+    public func loadStatements() {
         serviceViewModel.loadStatement { [weak self] result in
             guard let self = self else { return }
             if let result = result {
                 self.bankStatements = result
+                self.bankStatementsAll = result
+                self.currentBalance()
+            } else {
+                self.delegate?.failure()
             }
-            self.delegate?.success()
         }
+    }
+    
+    public func filterExtract(index: Int) {
+        switch index {
+            case 0:
+                bankStatements = bankStatementsAll.filter { $0.type == TypeEntry.Input}
+                currentBalance()
+            case 2:
+                bankStatements = bankStatementsAll.filter { $0.type == TypeEntry.Output}
+                currentBalance()
+            default:
+                bankStatements = bankStatementsAll
+                currentBalance()
+        }
+   
     }
 }

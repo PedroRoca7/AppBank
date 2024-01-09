@@ -14,14 +14,9 @@ class ProductsViewCell: UIView {
     
     // MARK: ElementsVisual
     
-    lazy var iconImageView: ImageViewDefault = {
-        let iconImageView = ImageViewDefault()
-        iconImageView.backgroundColor = .lilas
-        iconImageView.layer.masksToBounds = true
-        return iconImageView
-    }()
-    
-    lazy var nameOptionLabel = LabelDefault(text: "", color: .darkGray, font: .boldSystemFont(ofSize: 20))
+    lazy var iconImageView = ImageViewDefault()
+    lazy var nameOptionLabel = LabelDefault(text: "", color: .black, font: .boldSystemFont(ofSize: 16))
+    lazy var arrowImage = ImageViewDefault(nameImage: "iconArrow")
         
     // MARK: Inits
     
@@ -38,6 +33,7 @@ class ProductsViewCell: UIView {
     
     private func addElementsView() {
         setImage()
+        setArrowImage()
         setNameOptionLabel()
     }
     
@@ -58,7 +54,16 @@ class ProductsViewCell: UIView {
         NSLayoutConstraint.activate([
             nameOptionLabel.centerYAnchor.constraint(equalTo: iconImageView.centerYAnchor),
             nameOptionLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 10),
-            nameOptionLabel.trailingAnchor.constraint(lessThanOrEqualTo: self.trailingAnchor, constant: -50)
+            nameOptionLabel.trailingAnchor.constraint(lessThanOrEqualTo: arrowImage.leadingAnchor, constant: -5)
+        ])
+    }
+    
+    private func setArrowImage() {
+        self.addSubview(arrowImage)
+        
+        NSLayoutConstraint.activate([
+            arrowImage.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            arrowImage.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15)
         ])
     }
 }

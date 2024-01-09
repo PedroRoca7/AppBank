@@ -6,11 +6,17 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ExtractViewController: UIViewController {
     
+    // MARK: Propertys
+    
+    let diposedBag = DisposeBag()
     lazy var viewScreen: ExtractView = {
         let view = ExtractView()
+        view.backgroundColor = .lilas
         return view
     }()
     
@@ -31,21 +37,34 @@ class ExtractViewController: UIViewController {
         self.view = viewScreen
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupNavigationItem()
-        hideKeyBoardWhenTapped()
-        configDelegates()
+    override func viewWillAppear(_ animated: Bool) {
         viewModel.loadStatements()
     }
-
-    private func setupNavigationItem() {
-        navigationItem.title = "Extrato"
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        hideKeyBoardWhenTapped()
+        configDelegates()
+        filterExtractSegmentedControlePressed()
     }
     
     private func configDelegates() {
         viewScreen.tableView.delegate = self
         viewScreen.tableView.dataSource = self
+    }
+    
+    private func filterExtractSegmentedControlePressed() {
+        let segmentedControlValeu = BehaviorSubject<Int>(value: 1)
+        
+        viewScreen.segmentedControl.rx.selectedSegmentIndex
+            .asObservable()
+            .bind(to: segmentedControlValeu)
+            .disposed(by: diposedBag)
+        
+        segmentedControlValeu
+            .subscribe { selectedIndex in
+                self.viewModel.filterExtract(index: selectedIndex)
+            }.disposed(by: diposedBag)
     }
 }
 
@@ -67,8 +86,9 @@ extension ExtractViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension ExtractViewController: ExtractViewModelProtocol {
-    func success() {
+    func success(balance: Double) {
         DispatchQueue.main.async {
+            self.viewScreen.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: balance, typeCurrency: "pt-BR", currencySymbol: "$")
             self.viewScreen.tableView.reloadData()
         }
     }

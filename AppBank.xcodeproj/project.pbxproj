@@ -55,7 +55,6 @@
 		CE6D10AB2AD59C7D00EFD5E7 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D10AA2AD59C7D00EFD5E7 /* Color+.swift */; };
 		CE6D10AE2AD5A06300EFD5E7 /* ProductsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D10AD2AD5A06300EFD5E7 /* ProductsViewCell.swift */; };
 		CE6D10B02AD5A07900EFD5E7 /* CustomProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D10AF2AD5A07900EFD5E7 /* CustomProductsTableViewCell.swift */; };
-		CE6D10B22AD5FC7F00EFD5E7 /* HeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D10B12AD5FC7F00EFD5E7 /* HeaderTableView.swift */; };
 		CE6D10B42AD602B800EFD5E7 /* OptionsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D10B32AD602B800EFD5E7 /* OptionsTableView.swift */; };
 		CE6F211C2A98F663000B1B01 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F211B2A98F663000B1B01 /* HomeView.swift */; };
 		CE6F211E2A98F674000B1B01 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F211D2A98F674000B1B01 /* HomeViewController.swift */; };
@@ -152,7 +151,6 @@
 		CE6D10AA2AD59C7D00EFD5E7 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		CE6D10AD2AD5A06300EFD5E7 /* ProductsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewCell.swift; sourceTree = "<group>"; };
 		CE6D10AF2AD5A07900EFD5E7 /* CustomProductsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProductsTableViewCell.swift; sourceTree = "<group>"; };
-		CE6D10B12AD5FC7F00EFD5E7 /* HeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableView.swift; sourceTree = "<group>"; };
 		CE6D10B32AD602B800EFD5E7 /* OptionsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsTableView.swift; sourceTree = "<group>"; };
 		CE6F211B2A98F663000B1B01 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CE6F211D2A98F674000B1B01 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -488,7 +486,6 @@
 				CE6D10AC2AD5A02500EFD5E7 /* TableViewCell */,
 				CEE734C82A9E9D30002320DB /* ProductsView.swift */,
 				CEE734CA2A9E9D3A002320DB /* ProductsViewController.swift */,
-				CE6D10B12AD5FC7F00EFD5E7 /* HeaderTableView.swift */,
 				CE1FF8FD2B03A9D30021F67B /* ProductsCoordinator.swift */,
 				CE1FF8FF2B03A9E50021F67B /* ProductsFactory.swift */,
 			);
@@ -793,7 +790,6 @@
 				CE1FF9042B03AE8C0021F67B /* ScreenPixCoordinator.swift in Sources */,
 				CEE734D02A9E9F04002320DB /* TabBarController.swift in Sources */,
 				CE5F7F582ACDB63800410BFF /* ImageViewDefault.swift in Sources */,
-				CE6D10B22AD5FC7F00EFD5E7 /* HeaderTableView.swift in Sources */,
 				CE1FF9002B03A9E50021F67B /* ProductsFactory.swift in Sources */,
 				CE6D10B02AD5A07900EFD5E7 /* CustomProductsTableViewCell.swift in Sources */,
 				CEA6DC8B2A9CF280004722AF /* ExtratcModel.swift in Sources */,

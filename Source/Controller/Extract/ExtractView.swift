@@ -15,8 +15,19 @@ class ExtractView: UIView {
     
     // MARK: ElementsVisual
     
-    lazy var backgroundImage = ImageViewDefault(nameImage: "backgroundImage")
-
+    lazy var titleAccountLabel = LabelDefault(text: "Account", color: .white, font: .systemFont(ofSize: 14, weight: .bold))
+    
+    lazy var segmentedControl: UISegmentedControl = {
+        let seg = UISegmentedControl(items: ["Input","All","Output"])
+        seg.translatesAutoresizingMaskIntoConstraints = false
+        seg.selectedSegmentIndex = 1
+        seg.tintColor = .white
+        return seg
+    }()
+    
+    lazy var balanceLabel = LabelDefault(text: "Balance", color: .white, font: .systemFont(ofSize: 12, weight: .semibold))
+    lazy var amountLabel = LabelDefault(text: "$ 0.00", color: .white, font: .systemFont(ofSize: 24, weight: .bold))
+    
     lazy var tableView: UITableView = {
         let tb = UITableView()
         tb.translatesAutoresizingMaskIntoConstraints = false
@@ -41,18 +52,48 @@ class ExtractView: UIView {
     // MARK: Add Elements e Constraints
     
     private func addElementsView() {
-        setBackgroundImage()
+        setTitleAccountLabel()
+        setSegmentedControl()
+        setBalanceLabel()
+        setAmountLabel()
         setTableView()
     }
-    
-    private func setBackgroundImage() {
-        self.addSubview(backgroundImage)
+        
+    private func setTitleAccountLabel() {
+        self.addSubview(titleAccountLabel)
         
         NSLayoutConstraint.activate([
-            backgroundImage.topAnchor.constraint(equalTo: self.topAnchor),
-            backgroundImage.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            backgroundImage.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            backgroundImage.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            titleAccountLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 10),
+            titleAccountLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+        ])
+    }
+    
+    private func setSegmentedControl() {
+        self.addSubview(segmentedControl)
+        
+        NSLayoutConstraint.activate([
+            segmentedControl.topAnchor.constraint(equalTo: titleAccountLabel.bottomAnchor, constant: 15),
+            segmentedControl.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            segmentedControl.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            segmentedControl.heightAnchor.constraint(equalToConstant: 20)
+        ])
+    }
+    
+    private func setBalanceLabel() {
+        self.addSubview(balanceLabel)
+        
+        NSLayoutConstraint.activate([
+            balanceLabel.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 15),
+            balanceLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+        ])
+    }
+    
+    private func setAmountLabel() {
+        self.addSubview(amountLabel)
+        
+        NSLayoutConstraint.activate([
+            amountLabel.topAnchor.constraint(equalTo: balanceLabel.bottomAnchor, constant: 10),
+            amountLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ])
     }
     
@@ -60,7 +101,7 @@ class ExtractView: UIView {
         self.addSubview(tableView)
         
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: guide.topAnchor,constant: 10),
+            tableView.topAnchor.constraint(equalTo: amountLabel.bottomAnchor,constant: 10),
             tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)

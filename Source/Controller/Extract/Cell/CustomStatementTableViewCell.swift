@@ -14,8 +14,8 @@ class CustomStatementTableViewCell: UITableViewCell {
     lazy var viewCell: StatementCellView = {
         let viewCell = StatementCellView()
         viewCell.translatesAutoresizingMaskIntoConstraints = false
-        viewCell.layer.cornerRadius = 15
-        viewCell.backgroundColor = .clear
+        viewCell.layer.cornerRadius = 10
+        viewCell.clipsToBounds = true
         viewCell.layer.borderColor = UIColor.black.cgColor
         viewCell.layer.borderWidth = 1
         return viewCell
@@ -35,14 +35,16 @@ class CustomStatementTableViewCell: UITableViewCell {
     
     func prepareCell(extract: ServiceViewModel) {
         if extract.type == .Input {
-            viewCell.typeEntryLabel.text = "Entrada"
-            viewCell.typeEntryLabel.backgroundColor = .green
-            viewCell.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: extract.amout, typeCurrency: "pt-BR", currencySymbol: "R$")
+            viewCell.typeEntryLabel.text = "Input"
+            viewCell.typeEntryLabel.textColor = .green
+            viewCell.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: extract.amout, typeCurrency: "pt-BR", currencySymbol: "+$")
+            viewCell.amountLabel.textColor = .green
             viewCell.aboutLabel.text = extract.about
         } else {
-            viewCell.typeEntryLabel.text = "Saída"
-            viewCell.typeEntryLabel.backgroundColor = .red
-            viewCell.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: extract.amout, typeCurrency: "pt-BR", currencySymbol: "R$")
+            viewCell.typeEntryLabel.text = "Output"
+            viewCell.typeEntryLabel.textColor = .red
+            viewCell.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: extract.amout, typeCurrency: "pt-BR", currencySymbol: "-$")
+            viewCell.amountLabel.textColor = .red
             viewCell.aboutLabel.text = extract.about
         }
     }

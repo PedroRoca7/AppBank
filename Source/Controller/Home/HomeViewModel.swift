@@ -57,6 +57,5 @@ class HomeViewModel: HomeViewModeling {
             balance += bankStatement.amout
         }
         self.delegate?.success(balance: balance)
-        
     }
 }

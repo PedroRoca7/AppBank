@@ -10,7 +10,7 @@ import UIKit
 
 enum ProductsFactory {
     static func makeModule(navigationController: UINavigationController) -> UIViewController {
-      //let coordinator = ProductsCoordinator(navigationController: navigationController)
+        let coordinator = ProductsCoordinator(navigationController: navigationController)
         let productsViewController = ProductsViewController()
         return productsViewController
     }

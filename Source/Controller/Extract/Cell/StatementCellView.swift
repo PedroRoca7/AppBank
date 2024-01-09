@@ -22,21 +22,17 @@ class StatementCellView: UIView {
     lazy var contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.alpha = 0.7
         view.backgroundColor = .white
-        view.layer.cornerRadius = 15
+        view.layer.cornerRadius = 10
         return view
     }()
     
     lazy var typeEntryLabel: LabelDefault = {
-        let label = LabelDefault(text: "Saída", color: .white, font: .boldSystemFont(ofSize: 22))
-        label.layer.cornerRadius = 8
-        label.textAlignment = .center
-        label.clipsToBounds = true
+        let label = LabelDefault(text: "Saída", color: .red, font: .boldSystemFont(ofSize: 18))
         return label
     }()
-    lazy var aboutLabel = LabelDefault(text: "Conta de Agua", color: .darkGray, font: .systemFont(ofSize: 16))
-    lazy var amountLabel = LabelDefault(text: "R$ 120,00", color: .darkGray, font: .systemFont(ofSize: 20))
+    lazy var aboutLabel = LabelDefault(text: "Conta de Agua", color: .gray, font: .systemFont(ofSize: 14,weight: .medium))
+    lazy var amountLabel = LabelDefault(text: "-$ 120,00", color: .red, font: .systemFont(ofSize: 14, weight: .semibold))
     
     // MARK: Inits
     

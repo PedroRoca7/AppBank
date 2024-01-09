@@ -15,11 +15,12 @@ class ProductsView: UIView {
     
     // MARK: ElementsVisual
     
-    lazy var backgroundImage = ImageViewDefault(nameImage: "backgroundImage")
     lazy var tableView: UITableView = {
-        let tb = UITableView(frame: self.bounds, style: .plain)
+        let tb = UITableView()
         tb.translatesAutoresizingMaskIntoConstraints = false
         tb.register(CustomProductsTableViewCell.self, forCellReuseIdentifier: CustomProductsTableViewCell.identifier)
+        tb.rowHeight = 150
+        tb.estimatedRowHeight = 150
         tb.backgroundColor = .clear
         return tb
     }()
@@ -38,19 +39,7 @@ class ProductsView: UIView {
     // MARK: Add Elements e Constraints
     
     private func addElementsView() {
-        setBackgroundImage()
         setTableView()
-    }
-    
-    private func setBackgroundImage() {
-        self.addSubview(backgroundImage)
-        
-        NSLayoutConstraint.activate([
-            backgroundImage.topAnchor.constraint(equalTo: self.topAnchor),
-            backgroundImage.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            backgroundImage.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            backgroundImage.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-        ])
     }
     
     private func setTableView() {

@@ -11,14 +11,10 @@ class ProductsViewController: UIViewController {
     
     lazy var viewScreen: ProductsView = {
         let view = ProductsView()
+        view.backgroundColor = .backgroundColor
         return view
     }()
-    
-    lazy var headerTableView: HeaderTableView = {
-        let view = HeaderTableView(frame: CGRect(x: 0, y: 0, width: viewScreen.tableView.frame.size.width, height: 230))
-        return view
-    }()
-    
+        
     private var optionsTableView: [OptionsTableView] = []
     
     override func loadView() {
@@ -29,7 +25,6 @@ class ProductsViewController: UIViewController {
         super.viewDidLoad()
         hideKeyBoardWhenTapped()
         configDelegates()
-        configHeaderTableView()
         addOptionsTableView()
     }
     
@@ -40,21 +35,17 @@ class ProductsViewController: UIViewController {
     
     private func addOptionsTableView() {
         
-        optionsTableView.append(OptionsTableView(title: "Investimentos",
-                                                 options: [OptionsInvestiments(icon: "iconSavings", optionInvestiment: "Poupança"),
-                                                          OptionsInvestiments(icon: "iconEngine", optionInvestiment: "Aplicação automática")]))
-        optionsTableView.append(OptionsTableView(title: "Mais proteção e capitalização",
-                                                 options: [OptionsInvestiments(icon: "iconDentist", optionInvestiment: "Odonto"),
-                                                          OptionsInvestiments(icon: "iconAplication", optionInvestiment: "Capitalização(PIC)")]))
-        optionsTableView.append(OptionsTableView(title: "Produtos exclusivos",
-                                                 options: [OptionsInvestiments(icon: "iconMarket", optionInvestiment: "Itaú Shop"),
-                                                          OptionsInvestiments(icon: "iconMoney", optionInvestiment: "Pontos e cashback"),
-                                                          OptionsInvestiments(icon: "iconPhone", optionInvestiment: "IPhone pra Sempre"),
+        optionsTableView.append(OptionsTableView(title: "Investiments",
+                                                 options: [OptionsInvestiments(icon: "iconSavings", optionInvestiment: "Savings"),
+                                                          OptionsInvestiments(icon: "iconEngineering", optionInvestiment: "Automatic application")]))
+        optionsTableView.append(OptionsTableView(title: "More protection and capitalization",
+                                                 options: [OptionsInvestiments(icon: "iconDentist", optionInvestiment: "Dentist"),
+                                                          OptionsInvestiments(icon: "iconAccountBalance", optionInvestiment: "Capitalization")]))
+        optionsTableView.append(OptionsTableView(title: "Exclusive products",
+                                                 options: [OptionsInvestiments(icon: "iconMarket", optionInvestiment: "Market"),
+                                                          OptionsInvestiments(icon: "iconMoney", optionInvestiment: "Points and cashback"),
+                                                          OptionsInvestiments(icon: "iconPhone", optionInvestiment: "IPhone Forever"),
                                                           OptionsInvestiments(icon: "iconCar", optionInvestiment: "Icarros")]))
-    }
-    
-    private func configHeaderTableView() {
-        viewScreen.tableView.tableHeaderView = headerTableView
     }
 }
 
@@ -77,16 +68,10 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50.0
+        return 80.0
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return optionsTableView[section].title
     }
-    
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-          if let headerView = view as? UITableViewHeaderFooterView {
-              headerView.textLabel?.textColor = UIColor.white
-          }
-      }
 }

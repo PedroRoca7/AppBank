@@ -51,7 +51,7 @@ class HomeView: UIView {
     
     lazy var iconWalletImageView = ImageViewDefault(nameImage: "iconWallet")
     lazy var balanceLabel = LabelDefault(text: "Your wallet balance:", color: .white, font: .systemFont(ofSize: 12, weight: .bold))
-    lazy var amountLabel = LabelDefault(text: "0.00", color: .white, font: .boldSystemFont(ofSize: 24))
+    lazy var amountLabel = LabelDefault(text: "", color: .white, font: .boldSystemFont(ofSize: 24))
     lazy var hideAmountButton = ButtonDefault(nameImage: "iconEyeShow")
     lazy var activityIndicator = ActivityDefault()
     
@@ -204,8 +204,8 @@ class HomeView: UIView {
         viewBalance.addSubview(activityIndicator)
         
         NSLayoutConstraint.activate([
-            activityIndicator.centerXAnchor.constraint(equalTo: amountLabel.centerXAnchor),
-            activityIndicator.centerYAnchor.constraint(equalTo: amountLabel.centerYAnchor)
+            activityIndicator.centerXAnchor.constraint(equalTo: balanceLabel.centerXAnchor),
+            activityIndicator.topAnchor.constraint(equalTo: balanceLabel.bottomAnchor,constant: 5)
         ])
     }
         
