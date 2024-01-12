@@ -9,15 +9,23 @@ import Foundation
 
 typealias Extratcts = [ServiceViewModel]
 
+protocol ServiceViewModeling: AnyObject {
+    func loadStatement(completion: @escaping (Extratcts?) -> Void)
+    func makePix(modelInformations: ExtractModel, onComplete: @escaping (Bool) -> Void)
+}
 
+extension ServiceViewModeling {
+    func loadStatement(completion: @escaping (Extratcts?) -> Void){}
+    func makePix(modelInformations: ExtractModel, onComplete: @escaping (Bool) -> Void){}
+}
 
-class ServiceViewModel {
-    private let model: ExtratcModel
+class ServiceViewModel: ServiceViewModeling {
+    private let model: ExtractModel
     private let service: ApiStatement
     
     //MARK: Inits
     
-    init(model: ExtratcModel, service: ApiStatement = ApiStatement.serviceGetExtract) {
+    init(model: ExtractModel, service: ApiStatement = ApiStatement.serviceGetExtract) {
         self.model = model
         self.service = service
     }
@@ -38,7 +46,7 @@ class ServiceViewModel {
         model.amount ?? 0
     }
     
-    func loadStatement(completion: @escaping (Extratcts?) -> Void) {
+    public func loadStatement(completion: @escaping (Extratcts?) -> Void) {
         var bankStatements = Extratcts()
         service.loadStatements { statements in
             for statement in statements {
@@ -46,14 +54,14 @@ class ServiceViewModel {
                    let statementType = statement.type,
                    let statementAbout = statement.about,
                    let statementAmount = statement.amount {
-                    bankStatements.append(ServiceViewModel(model: ExtratcModel(id: statementID, type: statementType, about: statementAbout, amount: statementAmount)))
+                    bankStatements.append(ServiceViewModel(model: ExtractModel(id: statementID, type: statementType, about: statementAbout, amount: statementAmount)))
                 }
             }
             completion(bankStatements)
         }
     }
     
-    func makePix(modelInformations: ExtratcModel, onComplete: @escaping (Bool) -> Void) {
+    public func makePix(modelInformations: ExtractModel, onComplete: @escaping (Bool) -> Void) {
         service.updateStatements(extractInformations: modelInformations) { result in
             if result == true {
                 onComplete(true)

@@ -52,7 +52,7 @@ class ApiStatement: ApiStatementing {
         dataTask.resume()
     }
     
-    func updateStatements(extractInformations: ExtratcModel, onComplete: @escaping (Bool) -> Void) {
+    func updateStatements(extractInformations: ExtractModel, onComplete: @escaping (Bool) -> Void) {
         guard let url = URL(string: basePath) else {
             onComplete(false)
             return }

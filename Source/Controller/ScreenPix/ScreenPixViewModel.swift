@@ -13,23 +13,23 @@ protocol ScreenPixViewModelProtocol: AnyObject {
 }
 
 protocol ScreenPixViewModeling {
-    func makePix(modelInformations: ExtratcModel)
+    func makePix(modelInformations: ExtractModel)
     func showHomeScreen()
     var delegate: ScreenPixViewModelProtocol? { get set }
 }
 
 class ScreenPixViewModel: ScreenPixViewModeling {
     
-    private var serviceViewModel: ServiceViewModel
+    private var serviceViewModel: ServiceViewModeling
     private var coordinator: ScreenPixCoordinating
     weak var delegate: ScreenPixViewModelProtocol?
     
-    init(serviceViewModel: ServiceViewModel, coordinator: ScreenPixCoordinating) {
+    init(serviceViewModel: ServiceViewModeling, coordinator: ScreenPixCoordinating) {
         self.serviceViewModel = serviceViewModel
         self.coordinator = coordinator
     }
     
-    func makePix(modelInformations: ExtratcModel) {
+    func makePix(modelInformations: ExtractModel) {
         serviceViewModel.makePix(modelInformations: modelInformations) { result in
             if result == true {
                 self.delegate?.success()

@@ -7,9 +7,9 @@
 
 import Foundation
 
-typealias ExtractsModel = [ExtratcModel]
+typealias ExtractsModel = [ExtractModel]
 
-struct ExtratcModel: Codable {
+struct ExtractModel: Codable {
     let id: Int?
     let type: Int?
     let about: String?

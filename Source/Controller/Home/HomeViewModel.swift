@@ -24,13 +24,13 @@ class HomeViewModel: HomeViewModeling {
     //MARK: Propertys
     
     var bankExtracts: Extratcts = []
-    private var serviceViewModel: ServiceViewModel
+    private var serviceViewModel: ServiceViewModeling
     private var coordinator: HomeCoordinating
     weak var delegate: HomeViewModelProtocol?
     
     //MARK: Init
     
-    init(serviceViewModel: ServiceViewModel, coordinator: HomeCoordinating) {
+    init(serviceViewModel: ServiceViewModeling, coordinator: HomeCoordinating) {
         self.serviceViewModel = serviceViewModel
         self.coordinator = coordinator
     }

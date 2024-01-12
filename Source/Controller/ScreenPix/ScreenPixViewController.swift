@@ -53,7 +53,7 @@ private extension ScreenPixViewController {
             else {  Alert.showBasicAlert(title: "Erro", message: "Preencha todos os campos.", viewController: self) {}
                 return }
             let valueNegative = Double(value)
-            self.viewModel.makePix(modelInformations: ExtratcModel(id: 0, type: 1, about: description, amount: -(valueNegative ?? 0.0)))
+            self.viewModel.makePix(modelInformations: ExtractModel(id: 0, type: 1, about: description, amount: -(valueNegative ?? 0.0)))
         }.disposed(by: disposeBag)
     }
 }
