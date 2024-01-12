@@ -8,7 +8,7 @@
 import XCTest
 @testable import AppBank
 
-class HomeViewModelTests {
+class HomeViewModelTests: XCTestCase {
     
     lazy var sut: HomeViewModel = {
         let viewModel = HomeViewModel(serviceViewModel: serviceViewModel, coordinator: coordinator)
