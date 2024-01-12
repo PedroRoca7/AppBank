@@ -23,11 +23,11 @@ class RegisterViewModel: RegisterViewModeling {
     // MARK: Propertys
     
     weak var delegate: RegisterProtocol?
-    private var coordinator: RegisterCoordinator
+    private var coordinator: RegisterCoordinating
     
     //MARK: Inits
     
-    init(coordinator: RegisterCoordinator) {
+    init(coordinator: RegisterCoordinating) {
         self.coordinator = coordinator
     }
     

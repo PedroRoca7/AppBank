@@ -24,13 +24,13 @@ class ExtractViewModel: ExtractViewModeling {
     //MARK: Propertys
     var bankStatements: Extratcts = []
     private var bankStatementsAll: Extratcts = []
-    private var serviceViewModel: ServiceViewModel
-    private var coordinator: ExtractCoordinator
+    private var serviceViewModel: ServiceViewModeling
+    private var coordinator: ExtractCoordinating
     weak var delegate: ExtractViewModelProtocol?
     
     //MARK: Init
     
-    init(serviceViewModel: ServiceViewModel, coordinator: ExtractCoordinator) {
+    init(serviceViewModel: ServiceViewModeling, coordinator: ExtractCoordinating) {
         self.serviceViewModel = serviceViewModel
         self.coordinator = coordinator
     }

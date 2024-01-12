@@ -33,6 +33,9 @@
 		CE1FF9042B03AE8C0021F67B /* ScreenPixCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FF9032B03AE8C0021F67B /* ScreenPixCoordinator.swift */; };
 		CE20FC532AA6273F00727585 /* ExtractViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20FC522AA6273F00727585 /* ExtractViewModel.swift */; };
 		CE270CDB2A98172C00E69BF1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE270CDA2A98172C00E69BF1 /* GoogleService-Info.plist */; };
+		CE43618D2B51CC72009751C0 /* RegisterViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43618C2B51CC72009751C0 /* RegisterViewModelTests.swift */; };
+		CE4361902B51D262009751C0 /* ScreenPixViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43618F2B51D262009751C0 /* ScreenPixViewModelTests.swift */; };
+		CE4361932B51D77E009751C0 /* ExtractViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4361922B51D77E009751C0 /* ExtractViewModelTests.swift */; };
 		CE5BA4C82A97AAB300449C0A /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BA4C72A97AAB300449C0A /* UIViewController+.swift */; };
 		CE5BA4CB2A97ABC500449C0A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BA4CA2A97ABC500449C0A /* RegisterView.swift */; };
 		CE5BA4CD2A97ABD100449C0A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BA4CC2A97ABD100449C0A /* RegisterViewController.swift */; };
@@ -134,6 +137,9 @@
 		CE20FC522AA6273F00727585 /* ExtractViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractViewModel.swift; sourceTree = "<group>"; };
 		CE270CDA2A98172C00E69BF1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE43618A2B51BC55009751C0 /* AppBankTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppBankTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		CE43618C2B51CC72009751C0 /* RegisterViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModelTests.swift; sourceTree = "<group>"; };
+		CE43618F2B51D262009751C0 /* ScreenPixViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPixViewModelTests.swift; sourceTree = "<group>"; };
+		CE4361922B51D77E009751C0 /* ExtractViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractViewModelTests.swift; sourceTree = "<group>"; };
 		CE5BA4C72A97AAB300449C0A /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		CE5BA4CA2A97ABC500449C0A /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		CE5BA4CC2A97ABD100449C0A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -275,7 +281,10 @@
 		CE1DCF052A97004900E3CC3E /* AppBankTests */ = {
 			isa = PBXGroup;
 			children = (
-				CE90326A2B51A36600ABE254 /* Home */,
+				CE4361912B51D753009751C0 /* ExtractTests */,
+				CE43618E2B51D244009751C0 /* ScreenPixTests */,
+				CE43618B2B51CC41009751C0 /* RegisterTests */,
+				CE90326A2B51A36600ABE254 /* HomeTests */,
 				CE9032622B518DEE00ABE254 /* LoginTests */,
 			);
 			path = AppBankTests;
@@ -336,6 +345,30 @@
 				CE5F7F592ACDB66200410BFF /* ActivityDefault.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		CE43618B2B51CC41009751C0 /* RegisterTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE43618C2B51CC72009751C0 /* RegisterViewModelTests.swift */,
+			);
+			path = RegisterTests;
+			sourceTree = "<group>";
+		};
+		CE43618E2B51D244009751C0 /* ScreenPixTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE43618F2B51D262009751C0 /* ScreenPixViewModelTests.swift */,
+			);
+			path = ScreenPixTests;
+			sourceTree = "<group>";
+		};
+		CE4361912B51D753009751C0 /* ExtractTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE4361922B51D77E009751C0 /* ExtractViewModelTests.swift */,
+			);
+			path = ExtractTests;
 			sourceTree = "<group>";
 		};
 		CE5BA4C92A97ABAB00449C0A /* Register */ = {
@@ -416,12 +449,12 @@
 			path = LoginTests;
 			sourceTree = "<group>";
 		};
-		CE90326A2B51A36600ABE254 /* Home */ = {
+		CE90326A2B51A36600ABE254 /* HomeTests */ = {
 			isa = PBXGroup;
 			children = (
 				CE90326B2B51A37A00ABE254 /* HomeViewModelTests.swift */,
 			);
-			path = Home;
+			path = HomeTests;
 			sourceTree = "<group>";
 		};
 		CEA6DC872A9CF1DF004722AF /* Api */ = {
@@ -850,7 +883,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4361902B51D262009751C0 /* ScreenPixViewModelTests.swift in Sources */,
+				CE43618D2B51CC72009751C0 /* RegisterViewModelTests.swift in Sources */,
 				CE9032672B518F9400ABE254 /* LoginViewModelTests.swift in Sources */,
+				CE4361932B51D77E009751C0 /* ExtractViewModelTests.swift in Sources */,
 				CE90326C2B51A37A00ABE254 /* HomeViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

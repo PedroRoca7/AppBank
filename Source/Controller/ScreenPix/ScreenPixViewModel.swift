@@ -29,7 +29,7 @@ class ScreenPixViewModel: ScreenPixViewModeling {
         self.coordinator = coordinator
     }
     
-    func makePix(modelInformations: ExtractModel) {
+    public func makePix(modelInformations: ExtractModel) {
         serviceViewModel.makePix(modelInformations: modelInformations) { result in
             if result == true {
                 self.delegate?.success()
@@ -39,7 +39,7 @@ class ScreenPixViewModel: ScreenPixViewModeling {
         }
     }
     
-    func showHomeScreen() {
+    public func showHomeScreen() {
         coordinator.showHomeScreen()
     }
 }
