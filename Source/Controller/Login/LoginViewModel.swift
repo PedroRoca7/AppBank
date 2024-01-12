@@ -8,13 +8,15 @@
 import Foundation
 
 protocol LoginProtocol: AnyObject {
-    func failureLogin()
+    func success(user: User)
+    func failure()
 }
 
 protocol LoginViewModeling: AnyObject {
     var delegate: LoginProtocol? { get set }
     func login(email: String, password: String)
     func showRegisterScreen()
+    func showHomeScreen(user: User)
 }
 
 class LoginViewModel: LoginViewModeling {
@@ -35,10 +37,10 @@ class LoginViewModel: LoginViewModeling {
     public func login(email: String, password: String) {
         AuthenticatorFirebase.auth.signIn(withEmail: email, password: password) { (result, error) in
             if let error = error {
-                self.delegate?.failureLogin()
+                self.delegate?.failure()
                 print("Erro ao fazer login: \(error.localizedDescription)")
             } else {
-                guard let result = result else { self.delegate?.failureLogin()
+                guard let result = result else { self.delegate?.failure()
                     return }
                 let userID = result.user.uid
                 self.successLogin(id: userID)
@@ -46,7 +48,7 @@ class LoginViewModel: LoginViewModeling {
         }
     }
     
-    private func showHomeScreen(user: User) {
+    public func showHomeScreen(user: User) {
         coordinator.startTabController(user: user)
     }
     
@@ -59,13 +61,13 @@ class LoginViewModel: LoginViewModeling {
         db.collection("Usuários").document(id).getDocument { document, error in
             if let error = error {
                 print("Dados do usuário não encontrado ou ocorreu um erro: \(error.localizedDescription)")
-                self.delegate?.failureLogin()
+                self.delegate?.failure()
             } else if let document = document, document.exists {
                 if let userData = document.data() {
                     guard let nome = userData["nome"] as? String,
                           let email = userData["email"] as? String else { return }
                     let user = User(name: nome, email: email, password: "")
-                    self.showHomeScreen(user: user)
+                    self.delegate?.success(user: user)
                 }
             }
         }

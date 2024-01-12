@@ -64,7 +64,11 @@ private extension LoginViewController {
 }
 
 extension LoginViewController: LoginProtocol {
-    func failureLogin() {
+    func success(user: User) {
+        viewModel.showHomeScreen(user: user)
+    }
+    
+    func failure() {
         Alert.showBasicAlert(title: "Erro", message: "Erro ao tentar fazer login", viewController: self) {}
     }
 }

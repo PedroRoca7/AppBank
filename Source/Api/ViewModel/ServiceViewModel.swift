@@ -9,6 +9,8 @@ import Foundation
 
 typealias Extratcts = [ServiceViewModel]
 
+
+
 class ServiceViewModel {
     private let model: ExtratcModel
     private let service: ApiStatement
