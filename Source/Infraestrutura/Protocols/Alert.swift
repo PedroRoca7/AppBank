@@ -7,9 +7,14 @@
 
 import UIKit
 
-class Alert {
+protocol AlertProtocol {
+    func showBasicAlert(title: String, message: String, viewController: UIViewController, completion: (() -> Void)?)
+    func showActionSheet(title: String, message: String, viewController: UIViewController, onCompletion: @escaping (Bool) -> Void)
+}
+
+extension AlertProtocol {
     
-    static func showBasicAlert(title: String, message: String, viewController: UIViewController, completion: (() -> Void)?) {
+    func showBasicAlert(title: String, message: String, viewController: UIViewController, completion: (() -> Void)?) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             completion?()
@@ -18,7 +23,7 @@ class Alert {
         viewController.present(alertController, animated: true, completion: nil)
     }
     
-    static func showActionSheet(title: String, message: String, viewController: UIViewController, onCompletion: @escaping (Bool) -> Void) {
+    func showActionSheet(title: String, message: String, viewController: UIViewController, onCompletion: @escaping (Bool) -> Void) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let tryAgainAction = UIAlertAction(title: "Tente outra vez", style: .default) { _ in

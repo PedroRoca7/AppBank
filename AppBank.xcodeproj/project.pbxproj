@@ -33,6 +33,7 @@
 		CE1FF9042B03AE8C0021F67B /* ScreenPixCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FF9032B03AE8C0021F67B /* ScreenPixCoordinator.swift */; };
 		CE20FC532AA6273F00727585 /* ExtractViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20FC522AA6273F00727585 /* ExtractViewModel.swift */; };
 		CE270CDB2A98172C00E69BF1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE270CDA2A98172C00E69BF1 /* GoogleService-Info.plist */; };
+		CE2F3B8A2B55E54400F68503 /* ViewCodeUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F3B892B55E54400F68503 /* ViewCodeUIView.swift */; };
 		CE43618D2B51CC72009751C0 /* RegisterViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43618C2B51CC72009751C0 /* RegisterViewModelTests.swift */; };
 		CE4361902B51D262009751C0 /* ScreenPixViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43618F2B51D262009751C0 /* ScreenPixViewModelTests.swift */; };
 		CE4361932B51D77E009751C0 /* ExtractViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4361922B51D77E009751C0 /* ExtractViewModelTests.swift */; };
@@ -136,6 +137,7 @@
 		CE1FF9032B03AE8C0021F67B /* ScreenPixCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPixCoordinator.swift; sourceTree = "<group>"; };
 		CE20FC522AA6273F00727585 /* ExtractViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractViewModel.swift; sourceTree = "<group>"; };
 		CE270CDA2A98172C00E69BF1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE2F3B892B55E54400F68503 /* ViewCodeUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeUIView.swift; sourceTree = "<group>"; };
 		CE43618A2B51BC55009751C0 /* AppBankTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppBankTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		CE43618C2B51CC72009751C0 /* RegisterViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModelTests.swift; sourceTree = "<group>"; };
 		CE43618F2B51D262009751C0 /* ScreenPixViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPixViewModelTests.swift; sourceTree = "<group>"; };
@@ -234,14 +236,6 @@
 			path = ScreenPix;
 			sourceTree = "<group>";
 		};
-		CE1C4AD52A984DFE00AEA219 /* Alert */ = {
-			isa = PBXGroup;
-			children = (
-				CE1C4AD62A984E0C00AEA219 /* Alert.swift */,
-			);
-			path = Alert;
-			sourceTree = "<group>";
-		};
 		CE1DCEE32A97004400E3CC3E = {
 			isa = PBXGroup;
 			children = (
@@ -326,9 +320,9 @@
 		CE1DCF2B2A9704A200E3CC3E /* Infraestrutura */ = {
 			isa = PBXGroup;
 			children = (
+				CE2F3B882B55E51900F68503 /* Protocols */,
 				CEE734BA2A9E5F3E002320DB /* Utils */,
 				CEA6DC8E2A9D27B6004722AF /* Extensions */,
-				CE1C4AD52A984DFE00AEA219 /* Alert */,
 				CE1DCF2C2A9704BF00E3CC3E /* Components */,
 			);
 			path = Infraestrutura;
@@ -345,6 +339,15 @@
 				CE5F7F592ACDB66200410BFF /* ActivityDefault.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		CE2F3B882B55E51900F68503 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CE2F3B892B55E54400F68503 /* ViewCodeUIView.swift */,
+				CE1C4AD62A984E0C00AEA219 /* Alert.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		CE43618B2B51CC41009751C0 /* RegisterTests */ = {
@@ -866,6 +869,7 @@
 				CEAC14B62AA13B8E00A56C7C /* ApiStatement.swift in Sources */,
 				CE5F7F622AD048EA00410BFF /* CustomCollectionCell.swift in Sources */,
 				CE1FF9022B03AE7A0021F67B /* ScreenPixFactory.swift in Sources */,
+				CE2F3B8A2B55E54400F68503 /* ViewCodeUIView.swift in Sources */,
 				CE5F7F5A2ACDB66200410BFF /* ActivityDefault.swift in Sources */,
 				CE016E792AE317A10098F992 /* ScreenPixView.swift in Sources */,
 				CE1DCF2E2A9704D200E3CC3E /* LabelDefault.swift in Sources */,

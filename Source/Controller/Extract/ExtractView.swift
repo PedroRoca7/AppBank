@@ -42,34 +42,30 @@ class ExtractView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addElementsView()
+        setupView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+}
+
+extension ExtractView: ViewCodeUIView {
     // MARK: Add Elements e Constraints
     
-    private func addElementsView() {
-        setTitleAccountLabel()
-        setSegmentedControl()
-        setBalanceLabel()
-        setAmountLabel()
-        setTableView()
+    func addElementsView() {
+        self.addSubview(titleAccountLabel)
+        self.addSubview(segmentedControl)
+        self.addSubview(balanceLabel)
+        self.addSubview(amountLabel)
+        self.addSubview(tableView)
     }
         
-    private func setTitleAccountLabel() {
-        self.addSubview(titleAccountLabel)
-        
+    func setupConstraints() {
         NSLayoutConstraint.activate([
             titleAccountLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 10),
             titleAccountLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ])
-    }
-    
-    private func setSegmentedControl() {
-        self.addSubview(segmentedControl)
         
         NSLayoutConstraint.activate([
             segmentedControl.topAnchor.constraint(equalTo: titleAccountLabel.bottomAnchor, constant: 15),
@@ -77,29 +73,17 @@ class ExtractView: UIView {
             segmentedControl.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             segmentedControl.heightAnchor.constraint(equalToConstant: 20)
         ])
-    }
-    
-    private func setBalanceLabel() {
-        self.addSubview(balanceLabel)
-        
+
         NSLayoutConstraint.activate([
             balanceLabel.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 15),
             balanceLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ])
-    }
-    
-    private func setAmountLabel() {
-        self.addSubview(amountLabel)
-        
+
         NSLayoutConstraint.activate([
             amountLabel.topAnchor.constraint(equalTo: balanceLabel.bottomAnchor, constant: 10),
             amountLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ])
-    }
-    
-    private func setTableView() {
-        self.addSubview(tableView)
-        
+
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: amountLabel.bottomAnchor,constant: 10),
             tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
@@ -108,4 +92,3 @@ class ExtractView: UIView {
         ])
     }
 }
-

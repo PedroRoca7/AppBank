@@ -23,15 +23,15 @@ class CustomStatementTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setViewScreen()
+        setupView()
         contentView.backgroundColor = .clear
         backgroundColor = .clear
         selectionStyle = .none
     }
-     
-     required init?(coder: NSCoder) {
-         fatalError("init(coder:) has not been implemented")
-     }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     func prepareCell(extract: ServiceViewModel) {
         if extract.type == .Input {
@@ -48,10 +48,14 @@ class CustomStatementTableViewCell: UITableViewCell {
             viewCell.aboutLabel.text = extract.about
         }
     }
-    
-    private func setViewScreen() {
+}
+
+extension CustomStatementTableViewCell: ViewCodeUIView {
+    func addElementsView() {
         contentView.addSubview(viewCell)
-        
+    }
+    
+    func setupConstraints() {
         NSLayoutConstraint.activate([
             viewCell.topAnchor.constraint(equalTo: contentView.topAnchor),
             viewCell.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),

@@ -50,7 +50,7 @@ private extension ScreenPixViewController {
             guard let name = self.viewScreen.nameReceivePixTextField.text, !name.isEmpty,
                   let value = self.viewScreen.valuePixTextField.text, !value.isEmpty,
                   let description = self.viewScreen.descriptionTextField.text, !description.isEmpty
-            else {  Alert.showBasicAlert(title: "Erro", message: "Preencha todos os campos.", viewController: self) {}
+            else {  self.showBasicAlert(title: "Erro", message: "Preencha todos os campos.", viewController: self) {}
                 return }
             let valueNegative = Double(value)
             self.viewModel.makePix(modelInformations: ExtractModel(id: 0, type: 1, about: description, amount: -(valueNegative ?? 0.0)))
@@ -61,7 +61,7 @@ private extension ScreenPixViewController {
 extension ScreenPixViewController: ScreenPixViewModelProtocol {
     func success() {
         DispatchQueue.main.async {
-            Alert.showBasicAlert(title: "Sucesso", message: "Pix realizado com sucesso", viewController: self) {
+            self.showBasicAlert(title: "Sucesso", message: "Pix realizado com sucesso", viewController: self) {
                 self.viewModel.showHomeScreen()
             }
         }
@@ -69,13 +69,12 @@ extension ScreenPixViewController: ScreenPixViewModelProtocol {
     
     func failure() {
         DispatchQueue.main.async {
-            Alert.showActionSheet(title: "Erro", message: "Erro ao realizar Pix", viewController: self) { result in
+            self.showActionSheet(title: "Erro", message: "Erro ao realizar Pix", viewController: self) { result in
                 if result == false {
                     self.viewModel.showHomeScreen()
                 }
             }
         }
     }
-    
-    
 }
+extension ScreenPixViewController: AlertProtocol {}

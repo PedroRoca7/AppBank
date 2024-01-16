@@ -48,12 +48,12 @@ class RegisterViewController: UIViewController {
             guard let name = self.viewScreen.nameTextField.text, !name.isEmpty,
                   let email = self.viewScreen.emailTextField.text, !email.isEmpty,
                   let password = self.viewScreen.passwordTextField.text, !password.isEmpty else {
-                Alert.showBasicAlert(title: "Erro", message: "Campos Inválidos ou Vazios", viewController: self) {}
+                self.showBasicAlert(title: "Erro", message: "Campos Inválidos ou Vazios", viewController: self) {}
             return
             }
             
             if password.count < 6 {
-                Alert.showBasicAlert(title: "Erro", message: "A senha tem que conter no mínimo 6 caracteres.", viewController: self) {}
+                self.showBasicAlert(title: "Erro", message: "A senha tem que conter no mínimo 6 caracteres.", viewController: self) {}
             }
             let user = User(name: name, email: email, password: password)
             self.viewModel.registerUser(user: user)
@@ -63,16 +63,18 @@ class RegisterViewController: UIViewController {
 
 extension RegisterViewController: RegisterProtocol {
     func successRegister() {
-        Alert.showBasicAlert(title: "Sucesso", message: "Usuário cadastrado com sucesso.", viewController: self) {
+        showBasicAlert(title: "Sucesso", message: "Usuário cadastrado com sucesso.", viewController: self) {
             self.viewModel.showLoginScreen()
         }
     }
     
     func failureRegister() {
-        Alert.showActionSheet(title: "Erro", message: "Erro ao registar usuário", viewController: self) { result in
+        showActionSheet(title: "Erro", message: "Erro ao registar usuário", viewController: self) { result in
             if !result {
                 self.viewModel.showLoginScreen()
             }
         }
     }
 }
+
+extension RegisterViewController: AlertProtocol {}

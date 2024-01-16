@@ -88,47 +88,39 @@ class RegisterView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addElementsView()
+        setupView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+}
+
+extension RegisterView: ViewCodeUIView {
     // MARK: Add Elements e Constraints
     
-    private func addElementsView() {
-        setLogoImageView()
-        setTitleLabel()
-        setTextfieldStackView()
-        setSignInButton()
-        setOrSignInLabel()
-        setSocialMediaButtonsStackView()
+    func addElementsView() {
+        self.addSubview(logoImageView)
+        self.addSubview(titleLabel)
+        self.addSubview(textFieldStackView)
+        self.addSubview(signInButton)
+        self.addSubview(orSignInLabel)
+        self.addSubview(socialMediaButtonsStackView)
     }
     
-    private func setLogoImageView() {
-        self.addSubview(logoImageView)
-        
+    func setupConstraints() {
         NSLayoutConstraint.activate([
             logoImageView.topAnchor.constraint(equalTo: self.guide.topAnchor, constant: 10),
             logoImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             logoImageView.widthAnchor.constraint(equalToConstant: 107),
             logoImageView.heightAnchor.constraint(equalToConstant: 107)
         ])
-    }
-    
-    private func setTitleLabel() {
-        self.addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 35),
             titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             titleLabel.trailingAnchor.constraint(lessThanOrEqualTo: self.trailingAnchor, constant: -150)
         ])
-    }
-    
-    private func setTextfieldStackView() {
-        self.addSubview(textFieldStackView)
         
         NSLayoutConstraint.activate([
             textFieldStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
@@ -136,10 +128,6 @@ class RegisterView: UIView {
             textFieldStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             textFieldStackView.heightAnchor.constraint(equalToConstant: 140)
         ])
-    }
-    
-    private func setSignInButton() {
-        self.addSubview(signInButton)
         
         NSLayoutConstraint.activate([
             signInButton.topAnchor.constraint(equalTo: textFieldStackView.bottomAnchor, constant: 40),
@@ -148,19 +136,11 @@ class RegisterView: UIView {
             signInButton.heightAnchor.constraint(equalToConstant: 35)
             
         ])
-    }
-    
-    private func setOrSignInLabel() {
-        self.addSubview(orSignInLabel)
         
         NSLayoutConstraint.activate([
             orSignInLabel.topAnchor.constraint(equalTo: signInButton.bottomAnchor, constant: 45),
             orSignInLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ])
-    }
-    
-    private func setSocialMediaButtonsStackView() {
-        self.addSubview(socialMediaButtonsStackView)
         
         NSLayoutConstraint.activate([
             socialMediaButtonsStackView.topAnchor.constraint(equalTo: orSignInLabel.bottomAnchor, constant: 10),

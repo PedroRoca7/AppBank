@@ -56,19 +56,19 @@ private extension LoginViewController {
         viewScreen.logarButton.rx.tap.bind {
             guard let email = self.viewScreen.emailTextFiled.text, !email.isEmpty,
                   let password = self.viewScreen.passwordTextField.text, !password.isEmpty else {
-                Alert.showBasicAlert(title: "Erro", message: "Campos vazios", viewController: self) {}
-                      return }
+                self.showBasicAlert(title: "Erro", message: "Campos vazios", viewController: self) {}
+                return }
             self.viewModel.login(email: email, password: password)
         }.disposed(by: disposeBag)
     }
 }
 
-extension LoginViewController: LoginProtocol {
+extension LoginViewController: LoginProtocol, AlertProtocol {
     func success(user: User) {
         viewModel.showHomeScreen(user: user)
     }
     
     func failure() {
-        Alert.showBasicAlert(title: "Erro", message: "Erro ao tentar fazer login", viewController: self) {}
+        showBasicAlert(title: "Erro", message: "Erro ao tentar fazer login", viewController: self) {}
     }
 }

@@ -115,23 +115,17 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case .pix:
             viewModel.showPixScreen()
         case .transfer:
-            Alert.showBasicAlert(title: "Transferências", message: "Você clicou para fazer uma transferencia.", viewController: self) {}
+            showBasicAlert(title: "Transferências", message: "Você clicou para fazer uma transferencia.", viewController: self) {}
         case .pay:
-            Alert.showBasicAlert(title: "Pagamentos", message: "Você clicou para fazer um pagamento.", viewController: self) {}
+            showBasicAlert(title: "Pagamentos", message: "Você clicou para fazer um pagamento.", viewController: self) {}
         case.security:
-            Alert.showBasicAlert(title: "Seguros", message: "Você clicou para solicitar um seguro.", viewController: self) {}
+            showBasicAlert(title: "Seguros", message: "Você clicou para solicitar um seguro.", viewController: self) {}
         case.collect:
-            Alert.showBasicAlert(title: "Collect", message: "You clic Collect", viewController: self) {}
+            showBasicAlert(title: "Collect", message: "You clic Collect", viewController: self) {}
         case.cardCredit:
-            Alert.showBasicAlert(title: "Credit Card", message: "You clic Credit Card", viewController: self) {}
+            showBasicAlert(title: "Credit Card", message: "You clic Credit Card", viewController: self) {}
         }
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 80, height: 80)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 12
-    }
 }
+
+extension HomeViewController: AlertProtocol {}

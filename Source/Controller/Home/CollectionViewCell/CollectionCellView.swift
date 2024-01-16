@@ -28,31 +28,30 @@ class CollectionCellView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addElementsView()
+        setupView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
+}
+
+extension CollectionCellView: ViewCodeUIView {
+ 
     // MARK: Add Elements e Constraints
     
-    private func addElementsView() {
-        setButton()
-        setLabel()
+    func addElementsView() {
+        self.addSubview(button)
+        self.addSubview(label)
     }
     
-    private func setButton() {
-        self.addSubview(button)
+    func setupConstraints() {
         
         NSLayoutConstraint.activate([
             button.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             button.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
-    }
-    
-    private func setLabel() {
-        self.addSubview(label)
         
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: button.centerXAnchor),
@@ -60,4 +59,3 @@ class CollectionCellView: UIView {
         ])
     }
 }
-

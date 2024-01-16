@@ -29,28 +29,26 @@ class ProductsView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addElementsView()
+        setupView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+}
+
+extension ProductsView: ViewCodeUIView {
     // MARK: Add Elements e Constraints
-    
-    private func addElementsView() {
-        setTableView()
+    func addElementsView() {
+        self.addSubview(tableView)
     }
     
-    private func setTableView() {
-        self.addSubview(tableView)
-        
+    func setupConstraints() {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: guide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            tableView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
         ])
     }
 }
-

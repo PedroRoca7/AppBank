@@ -54,38 +54,35 @@ class ScreenPixView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
-        addElementsView()
+        setupView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+}
+
+extension ScreenPixView: ViewCodeUIView {
+ 
     // MARK: Add Elements e Constraints
     
-    private func addElementsView() {
-        setTitlePixLabel()
-        setNameReceivePixTextField()
-        setValuePixLabel()
-        setValuePixTextField()
-        setDescriptionLabel()
-        setDescriptionTextField()
-        setMakePixButton()
+    func addElementsView() {
+        self.addSubview(titlePixLabel)
+        self.addSubview(nameReceivePixTextField)
+        self.addSubview(valuePixLabel)
+        self.addSubview(valuePixTextField)
+        self.addSubview(descriptionLabel)
+        self.addSubview(descriptionTextField)
+        self.addSubview(makePixButton)
     }
     
-    private func setTitlePixLabel() {
-        self.addSubview(titlePixLabel)
-        
+    func setupConstraints() {
         NSLayoutConstraint.activate([
             titlePixLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 10),
             titlePixLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
             titlePixLabel.trailingAnchor.constraint(lessThanOrEqualTo: self.trailingAnchor, constant: 5),
         ])
-    }
-    
-    private func setNameReceivePixTextField() {
-        self.addSubview(nameReceivePixTextField)
-        
+
         NSLayoutConstraint.activate([
             nameReceivePixTextField.topAnchor.constraint(equalTo: titlePixLabel.bottomAnchor, constant: 10),
             nameReceivePixTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
@@ -93,21 +90,13 @@ class ScreenPixView: UIView {
             nameReceivePixTextField.widthAnchor.constraint(equalToConstant: 250),
             nameReceivePixTextField.heightAnchor.constraint(equalToConstant: 45)
         ])
-    }
-    
-    private func setValuePixLabel() {
-        self.addSubview(valuePixLabel)
-        
+
         NSLayoutConstraint.activate([
             valuePixLabel.topAnchor.constraint(equalTo: nameReceivePixTextField.bottomAnchor, constant: 10),
             valuePixLabel.leadingAnchor.constraint(equalTo: nameReceivePixTextField.leadingAnchor),
             valuePixLabel.trailingAnchor.constraint(lessThanOrEqualTo: self.trailingAnchor, constant: 5),
         ])
-    }
-    
-    private func setValuePixTextField() {
-        self.addSubview(valuePixTextField)
-        
+ 
         NSLayoutConstraint.activate([
             valuePixTextField.topAnchor.constraint(equalTo: valuePixLabel.bottomAnchor, constant: 5),
             valuePixTextField.leadingAnchor.constraint(equalTo: valuePixLabel.leadingAnchor),
@@ -115,21 +104,15 @@ class ScreenPixView: UIView {
             valuePixTextField.widthAnchor.constraint(equalToConstant: 250),
             valuePixTextField.heightAnchor.constraint(equalToConstant: 45)
         ])
-    }
-    
-    private func setDescriptionLabel() {
-        self.addSubview(descriptionLabel)
+
+        
         
         NSLayoutConstraint.activate([
             descriptionLabel.topAnchor.constraint(equalTo: valuePixTextField.bottomAnchor, constant: 10),
             descriptionLabel.leadingAnchor.constraint(equalTo: valuePixTextField.leadingAnchor),
             descriptionLabel.trailingAnchor.constraint(lessThanOrEqualTo: self.trailingAnchor, constant: 5),
         ])
-    }
-    
-    private func setDescriptionTextField() {
-        self.addSubview(descriptionTextField)
-        
+
         NSLayoutConstraint.activate([
             descriptionTextField.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 5),
             descriptionTextField.leadingAnchor.constraint(equalTo: descriptionLabel.leadingAnchor),
@@ -137,11 +120,7 @@ class ScreenPixView: UIView {
             descriptionTextField.widthAnchor.constraint(equalToConstant: 250),
             descriptionTextField.heightAnchor.constraint(equalToConstant: 45)
         ])
-    }
-    
-    private func setMakePixButton() {
-        self.addSubview(makePixButton)
-        
+
         NSLayoutConstraint.activate([
             makePixButton.topAnchor.constraint(equalTo: descriptionTextField.bottomAnchor, constant: 15),
             makePixButton.widthAnchor.constraint(equalToConstant: 100),

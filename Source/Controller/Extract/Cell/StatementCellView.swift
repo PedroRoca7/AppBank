@@ -38,45 +38,38 @@ class StatementCellView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addElementsView()
+        setupView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+extension StatementCellView: ViewCodeUIView {
     
     // MARK: Add Elements e Constraints
     
-    private func addElementsView() {
-        setContentView()
-        setTypeEntryLabel()
-        setAboutLabel()
-        setAmountLabel()
+    func addElementsView() {
+        self.addSubview(contentView)
+        self.addSubview(typeEntryLabel)
+        self.addSubview(aboutLabel)
+        self.addSubview(amountLabel)
     }
     
-    private func setContentView() {
-        self.addSubview(contentView)
-        
+    func setupConstraints() {
         NSLayoutConstraint.activate([
             contentView.topAnchor.constraint(equalTo: self.topAnchor),
             contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
-    }
-    
-    private func setTypeEntryLabel() {
-        self.addSubview(typeEntryLabel)
-        
+
         NSLayoutConstraint.activate([
             typeEntryLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
             typeEntryLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             typeEntryLabel.widthAnchor.constraint(equalToConstant: 90)
         ])
-    }
-    
-    private func setAboutLabel() {
-        self.addSubview(aboutLabel)
         
         NSLayoutConstraint.activate([
             aboutLabel.topAnchor.constraint(equalTo: typeEntryLabel.bottomAnchor, constant: 50),
@@ -84,11 +77,7 @@ class StatementCellView: UIView {
             aboutLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 50),
             aboutLabel.bottomAnchor.constraint(greaterThanOrEqualTo: self.bottomAnchor, constant: -25)
         ])
-    }
-    
-    private func setAmountLabel() {
-        self.addSubview(amountLabel)
-        
+
         NSLayoutConstraint.activate([
             amountLabel.centerYAnchor.constraint(equalTo: typeEntryLabel.centerYAnchor),
             amountLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 80),
@@ -97,5 +86,4 @@ class StatementCellView: UIView {
         ])
     }
 }
-
 

@@ -15,9 +15,19 @@ class LoginView: UIView {
     
     // MARK: ElementsVisual
     
-    lazy var logoImageView = UIImageView(image: UIImage(named: "LogoAppBank"))
+    lazy var logoImageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "LogoAppBank"))
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     lazy var titleLabel = LabelDefault(text: "Login to your Account", color: .black, font: .systemFont(ofSize: 14, weight: .semibold))
-    lazy var emailTextFiled = TextFieldDefault(placeholder: "Email", keyboardType: .emailAddress, backgroundColor: .white, typeTextField: .standard)
+    
+    lazy var emailTextFiled: TextFieldDefault = {
+        let tf = TextFieldDefault(placeholder: "Email", keyboardType: .emailAddress, backgroundColor: .white, typeTextField: .standard)
+        tf.layer.cornerRadius = 5
+        return tf
+    }()
     
     lazy var passwordTextField: TextFieldDefault = {
         let tf = TextFieldDefault(placeholder: "Password", keyboardType: .numberPad, backgroundColor: .white, typeTextField: .standard)
@@ -72,117 +82,83 @@ class LoginView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addElementsView()
+        setupView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+extension LoginView: ViewCodeUIView {
     
     // MARK: Add Elements e Constraints
     
-    private func addElementsView() {
-        setLogoImageView()
-        setTitleLabel()
-        setEmailTextFiled()
-        setSenhaTextField()
-        setLogarButton()
-        setOrSignInLabel()
-        setStackView()
-        setDontAccountLabel()
-        setSignUpButton()
+     func addElementsView() {
+         self.addSubview(logoImageView)
+         self.addSubview(titleLabel)
+         self.addSubview(emailTextFiled)
+         self.addSubview(passwordTextField)
+         self.addSubview(logarButton)
+         self.addSubview(orSignInLabel)
+         self.addSubview(stackView)
+         self.addSubview(dontHaveAccountLabel)
+         self.addSubview(signUpButton)
     }
-            
-    private func setLogoImageView() {
-        self.addSubview(logoImageView)
-        logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        
+       
+     func setupConstraints() {
         NSLayoutConstraint.activate([
             logoImageView.topAnchor.constraint(equalTo: self.guide.topAnchor, constant: 20),
             logoImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             logoImageView.widthAnchor.constraint(equalToConstant: 107),
             logoImageView.heightAnchor.constraint(equalToConstant: 107)
         ])
-        
-    }
-    
-    private func setTitleLabel() {
-        self.addSubview(titleLabel)
-        
+
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 35),
             titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             titleLabel.trailingAnchor.constraint(lessThanOrEqualTo: self.trailingAnchor, constant: -150)
         ])
-    }
     
-    private func setEmailTextFiled() {
-        self.addSubview(emailTextFiled)
-        emailTextFiled.layer.cornerRadius = 5
-        
         NSLayoutConstraint.activate([
             emailTextFiled.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
             emailTextFiled.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             emailTextFiled.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
             emailTextFiled.heightAnchor.constraint(equalToConstant: 35)
         ])
-    }
-    
-    private func setSenhaTextField() {
-        self.addSubview(passwordTextField)
-        
+
         NSLayoutConstraint.activate([
             passwordTextField.topAnchor.constraint(equalTo: emailTextFiled.bottomAnchor, constant: 15),
             passwordTextField.leadingAnchor.constraint(equalTo: emailTextFiled.leadingAnchor),
             passwordTextField.trailingAnchor.constraint(equalTo: emailTextFiled.trailingAnchor),
             passwordTextField.heightAnchor.constraint(equalTo: emailTextFiled.heightAnchor)
         ])
-    }
-    
-    private func setLogarButton() {
-        self.addSubview(logarButton)
-        
+
         NSLayoutConstraint.activate([
             logarButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 25),
             logarButton.leadingAnchor.constraint(equalTo: emailTextFiled.leadingAnchor),
             logarButton.trailingAnchor.constraint(equalTo: emailTextFiled.trailingAnchor),
             logarButton.heightAnchor.constraint(equalToConstant: 35)
         ])
-    }
-    
-    private func setOrSignInLabel() {
-        self.addSubview(orSignInLabel)
-        
+
         NSLayoutConstraint.activate([
             orSignInLabel.topAnchor.constraint(equalTo: logarButton.bottomAnchor, constant: 45),
             orSignInLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ])
-    }
     
-    private func setStackView() {
-        self.addSubview(stackView)
-        
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: orSignInLabel.bottomAnchor, constant: 10),
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
             stackView.heightAnchor.constraint(equalToConstant: 50)
         ])
-    }
-    
-    private func setDontAccountLabel() {
-        self.addSubview(dontHaveAccountLabel)
-        
+
         NSLayoutConstraint.activate([
             dontHaveAccountLabel.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 50),
             dontHaveAccountLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 65)
             
         ])
-    }
     
-    private func setSignUpButton() {
-        self.addSubview(signUpButton)
-        
         NSLayoutConstraint.activate([
             signUpButton.centerYAnchor.constraint(equalTo: dontHaveAccountLabel.centerYAnchor),
             signUpButton.leadingAnchor.constraint(equalTo: dontHaveAccountLabel.trailingAnchor, constant: 5)
