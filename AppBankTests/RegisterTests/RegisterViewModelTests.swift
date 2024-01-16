@@ -23,11 +23,3 @@ class RegisterViewModelTests: XCTestCase {
         XCTAssertEqual(coordinator.didCalledShowLoginScreen, true)
     }
 }
-
-class RegisterCoordinatorSpy: RegisterCoordinating {
-    private(set) var didCalledShowLoginScreen = false
-    
-    func showLoginScreen() {
-        didCalledShowLoginScreen = true
-    }
-}

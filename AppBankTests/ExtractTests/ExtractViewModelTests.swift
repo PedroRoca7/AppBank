@@ -15,23 +15,11 @@ class ExtractViewModelTests: XCTestCase {
         return viewModel
     }()
     
-    private let service = ExtractServiceViewModel()
-    private let coordinator = ExtractCoordinator()
+    private let service = ExtractServiceViewModelSpy()
+    private let coordinator = ExtractCoordinatorSpy()
     
     func testLoadStatement_shouldCallLoadStatement() {
         sut.loadStatements()
         XCTAssertEqual(service.didCalledLoadStatement, true)
     }
-}
-
-class ExtractServiceViewModel: ServiceViewModeling {
-    private(set) var didCalledLoadStatement = false
-    
-    func loadStatement(completion: @escaping (Extratcts?) -> Void) {
-        didCalledLoadStatement = true
-    }
-}
-
-class ExtractCoordinator: ExtractCoordinating {
-    
 }

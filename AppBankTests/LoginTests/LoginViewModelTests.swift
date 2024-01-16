@@ -33,21 +33,3 @@ class LoginViewModelTests: XCTestCase {
         XCTAssertEqual(coordinatorSpy.didCalledStartRegisterScreen, true)
     }
 }
-
-class LoginCoordinatorSpy: LoginCoordinating {
-    
-    private(set) var didCalledStartTabController = false
-    private(set) var pushDetailsUserSpy: User?
-    private(set) var didCalledStartRegisterScreen = false
-    
-    func startTabController(user: User) {
-        didCalledStartTabController = true
-        pushDetailsUserSpy = user
-    }
-    
-    func startRegisterScreen() {
-        didCalledStartRegisterScreen = true
-    }
-    
-    
-}

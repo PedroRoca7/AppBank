@@ -16,7 +16,7 @@ class ScreenPixViewModelTests: XCTestCase {
     }()
     
     let service = ScreenPixServiceViewModelSpy()
-    let coordinator = ScreenPixCoordinator()
+    let coordinator = ScreenPixCoordinatorSpy()
     
     func testMakePix_shouldCallMakePix() {
         let intRandom = Int.random(in: 0..<10)
@@ -36,22 +36,4 @@ class ScreenPixViewModelTests: XCTestCase {
         XCTAssertEqual(coordinator.didCalledShowHomeScreen, true)
     }
     
-}
-
-class ScreenPixServiceViewModelSpy: ServiceViewModeling {
-    private(set) var didCalledMakePix = false
-    private(set) var pushDetailsExtractInforations: ExtractModel?
-    
-    func makePix(modelInformations: ExtractModel, onComplete: @escaping (Bool) -> Void) {
-        didCalledMakePix = true
-        pushDetailsExtractInforations = modelInformations
-    }
-}
-
-class ScreenPixCoordinator: ScreenPixCoordinating {
-    private(set) var didCalledShowHomeScreen = false
-    
-    func showHomeScreen() {
-        didCalledShowHomeScreen = true
-    }
 }
