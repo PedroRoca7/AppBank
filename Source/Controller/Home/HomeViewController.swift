@@ -42,6 +42,7 @@ class HomeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        viewScreen.activityIndicator.startAnimating()
         viewModel.loadStatements()
         setupNameClientLabel()
     }
@@ -49,7 +50,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         cellView.button.layer.cornerRadius = cellView.button.frame.width / 2
         hideKeyBoardWhenTapped()
-        viewScreen.activityIndicator.startAnimating()
+        
         setupDelegates()
         hideOrShowBalance(button: viewScreen.hideAmountButton, label: viewScreen.amountLabel)
         hideOrShowBalance(button: viewScreen.hideAmountInvestimentsButton, label: viewScreen.amountInvestimentsLabel)
