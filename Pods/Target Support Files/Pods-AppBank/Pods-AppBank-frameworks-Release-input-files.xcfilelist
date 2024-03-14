@@ -1,4 +1,4 @@
-${PODS_ROOT}/Target Support Files/Pods-Itubers-ItubersUITests/Pods-Itubers-ItubersUITests-frameworks.sh
+${PODS_ROOT}/Target Support Files/Pods-AppBank/Pods-AppBank-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework
 ${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework
 ${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework

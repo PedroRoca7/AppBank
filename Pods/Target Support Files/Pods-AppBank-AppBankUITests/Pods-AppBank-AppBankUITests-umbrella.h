@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_ItubersTestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_ItubersTestsVersionString[];
+FOUNDATION_EXPORT double Pods_AppBank_AppBankUITestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_AppBank_AppBankUITestsVersionString[];
 

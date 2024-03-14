@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1420"
+   LastUpgradeVersion = "1300"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "583757F88682FC9C369642ACC4BE9AB3"
-               BuildableName = "Pods_Itubers_ItubersUITests.framework"
-               BlueprintName = "Pods-Itubers-ItubersUITests"
+               BlueprintIdentifier = "B6F022634A52F1C0BCD5D061F9072FF9"
+               BuildableName = "Pods_AppBank.framework"
+               BlueprintName = "Pods-AppBank"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

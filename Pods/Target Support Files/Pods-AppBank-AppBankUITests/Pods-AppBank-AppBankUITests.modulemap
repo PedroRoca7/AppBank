@@ -1,0 +1,6 @@
+framework module Pods_AppBank_AppBankUITests {
+  umbrella header "Pods-AppBank-AppBankUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
