@@ -38,7 +38,7 @@ class HomeViewController: UIViewController {
     
     override func loadView() {
         self.view = viewScreen
-        viewScreen.backgroundColor = .backgroundColor
+        viewScreen.backgroundColor = .azulClaro
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -27,13 +27,33 @@ class StatementCellView: UIView {
         return view
     }()
     
-    lazy var typeEntryLabel: LabelDefault = {
-        let label = LabelDefault(text: "Saída", color: .red, font: .boldSystemFont(ofSize: 18))
-        return label
+    lazy var typeEntryLabel: UILabel = {
+        let element = UILabel()
+        element.translatesAutoresizingMaskIntoConstraints = false
+        element.text = "Saída"
+        element.textColor = .red
+        element.font = .boldSystemFont(ofSize: 18)
+        return element
     }()
-    lazy var aboutLabel = LabelDefault(text: "Conta de Agua", color: .gray, font: .systemFont(ofSize: 14,weight: .medium))
-    lazy var amountLabel = LabelDefault(text: "-$ 120,00", color: .red, font: .systemFont(ofSize: 14, weight: .semibold))
     
+    lazy var aboutLabel: UILabel = {
+        let element = UILabel()
+        element.translatesAutoresizingMaskIntoConstraints = false
+        element.text = "Conta de Agua"
+        element.textColor = .gray
+        element.font = .systemFont(ofSize: 14,weight: .medium)
+        return element
+    }()
+
+    lazy var amountLabel: UILabel = {
+        let element = UILabel()
+        element.translatesAutoresizingMaskIntoConstraints = false
+        element.text = "-$ 120,00"
+        element.textColor = .red
+        element.font = .systemFont(ofSize: 14, weight: .semibold)
+        return element
+    }()
+
     // MARK: Inits
     
     override init(frame: CGRect) {

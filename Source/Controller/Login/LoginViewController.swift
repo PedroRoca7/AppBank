@@ -25,7 +25,6 @@ class LoginViewController: UIViewController {
     
     override func loadView() {
         self.view = viewScreen
-        viewScreen.backgroundColor = .backgroundColor
     }
     
     init(viewModel: LoginViewModeling) {
@@ -47,15 +46,15 @@ class LoginViewController: UIViewController {
 
 private extension LoginViewController {
     func tappedRegisterButton() {
-        viewScreen.signUpButton.rx.tap.bind {
+        viewScreen.registerButton.rx.tap.bind {
             self.viewModel.showRegisterScreen()
         }.disposed(by: disposeBag)
     }
     
     func tappedLoginButton() {
-        viewScreen.logarButton.rx.tap.bind {
-            guard let email = self.viewScreen.emailTextFiled.text, !email.isEmpty,
-                  let password = self.viewScreen.passwordTextField.text, !password.isEmpty else {
+        viewScreen.customView.entryButton.rx.tap.bind {
+            guard let email = self.viewScreen.customView.userTextField.text, !email.isEmpty,
+                  let password = self.viewScreen.customView.passwordTextField.text, !password.isEmpty else {
                 self.showBasicAlert(title: "Erro", message: "Campos vazios", viewController: self) {}
                 return }
             self.viewModel.login(email: email, password: password)

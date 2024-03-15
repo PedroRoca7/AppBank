@@ -14,10 +14,26 @@ class ProductsViewCell: UIView {
     
     // MARK: ElementsVisual
     
-    lazy var iconImageView = ImageViewDefault()
-    lazy var nameOptionLabel = LabelDefault(text: "", color: .black, font: .boldSystemFont(ofSize: 16))
-    lazy var arrowImage = ImageViewDefault(nameImage: "iconArrow")
-        
+    lazy var iconImageView = UIImageView()
+   
+    lazy var nameOptionLabel: UILabel = {
+        let element = UILabel()
+        element.translatesAutoresizingMaskIntoConstraints = false
+        element.text = ""
+        element.textColor = .black
+        element.font = .boldSystemFont(ofSize: 16)
+        return element
+    }()
+    
+    lazy var arrowImage: UIImageView = {
+        let element = UIImageView()
+        element.translatesAutoresizingMaskIntoConstraints = false
+        element.image = UIImage(named: "iconArrow")
+        element.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        element.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        return element
+    }()
+            
     // MARK: Inits
     
     override init(frame: CGRect) {

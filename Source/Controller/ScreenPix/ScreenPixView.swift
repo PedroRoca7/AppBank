@@ -17,8 +17,15 @@ class ScreenPixView: UIView {
     // MARK: ElementsVisual
     
     
-    lazy var titlePixLabel = LabelDefault(text: "Who would you like to make a pix for??", color: .black, font: .boldSystemFont(ofSize: 16))
-    
+    lazy var titlePixLabel: UILabel = {
+        let element = UILabel()
+        element.translatesAutoresizingMaskIntoConstraints = false
+        element.text = "Who would you like to make a pix for?"
+        element.textColor = .black
+        element.font = .boldSystemFont(ofSize: 16)
+        return element
+    }()
+ 
     lazy var nameReceivePixTextField: TextFieldDefault = {
         let tf = TextFieldDefault(placeholder: "Ex: João", keyboardType: .default, backgroundColor: .white, typeTextField: .standard)
         tf.layer.cornerRadius = 10
@@ -27,7 +34,14 @@ class ScreenPixView: UIView {
         return tf
     }()
     
-    lazy var valuePixLabel = LabelDefault(text: "Value", color: .black, font: .boldSystemFont(ofSize: 16))
+    lazy var valuePixLabel: UILabel = {
+        let element = UILabel()
+        element.translatesAutoresizingMaskIntoConstraints = false
+        element.text = "Value"
+        element.textColor = .black
+        element.font = .boldSystemFont(ofSize: 16)
+        return element
+    }()
     
     lazy var valuePixTextField: TextFieldDefault = {
         let tf = TextFieldDefault(placeholder: "Ex: 100", keyboardType: .default, backgroundColor: .white, typeTextField: .standard)
@@ -37,8 +51,15 @@ class ScreenPixView: UIView {
         return tf
     }()
     
-    lazy var descriptionLabel = LabelDefault(text: "Description", color: .black, font: .boldSystemFont(ofSize: 16))
-    
+    lazy var descriptionLabel: UILabel = {
+        let element = UILabel()
+        element.translatesAutoresizingMaskIntoConstraints = false
+        element.text = "Description"
+        element.textColor = .black
+        element.font = .boldSystemFont(ofSize: 16)
+        return element
+    }()
+  
     lazy var descriptionTextField: TextFieldDefault = {
         let tf = TextFieldDefault(placeholder: "Ex: Returning loan", keyboardType: .default, backgroundColor: .white, typeTextField: .standard)
         tf.layer.cornerRadius = 10
@@ -47,7 +68,7 @@ class ScreenPixView: UIView {
         return tf
     }()
     
-    lazy var makePixButton = ButtonDefault(title: "Send Pix", backgroundColor: .lilas)
+    lazy var makePixButton = ButtonDefault(title: "Send Pix", backgroundColor: .azulClaro)
     
     // MARK: Inits
     

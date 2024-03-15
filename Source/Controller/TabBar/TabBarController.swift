@@ -11,7 +11,7 @@ class TabBarController: UITabBarController {
     override func setViewControllers(_ viewControllers: [UIViewController]?, animated: Bool) {
         super.setViewControllers(viewControllers, animated: animated)
         self.tabBar.isTranslucent = false
-        self.tabBar.backgroundColor = .backgroundColor
+        self.tabBar.backgroundColor = .azulClaro
         configureTabBarItems()
     }
     

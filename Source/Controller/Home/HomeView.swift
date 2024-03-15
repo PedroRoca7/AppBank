@@ -24,9 +24,24 @@ class HomeView: UIView {
         return bt
     }()
     
-    lazy var helloClientLabel = LabelDefault(text: "Hello", color: .gray, font: .systemFont(ofSize: 12, weight: .semibold))
-    lazy var welcomeClientLabel = LabelDefault(text: "Welcome Back!", color: .black, font: .systemFont(ofSize: 12, weight: .semibold))
+    lazy var helloClientLabel: UILabel = {
+        let element = UILabel()
+        element.translatesAutoresizingMaskIntoConstraints = false
+        element.text = "Hello"
+        element.textColor = .gray
+        element.font = .systemFont(ofSize: 12, weight: .semibold)
+        return element
+    }()
     
+    lazy var welcomeClientLabel: UILabel = {
+        let element = UILabel()
+        element.translatesAutoresizingMaskIntoConstraints = false
+        element.text = "Welcome Back!"
+        element.textColor = .black
+        element.font = .systemFont(ofSize: 12, weight: .semibold)
+        return element
+    }()
+        
     lazy var notificationButton: ButtonDefault = {
         let bt = ButtonDefault(nameImage: "iconBell")
         bt.layer.cornerRadius = 15
@@ -44,16 +59,47 @@ class HomeView: UIView {
         return stackView
     }()
     
-    lazy var viewBalance: ViewDefault = {
-        let view = ViewDefault(backgroundColor: .lilas)
+    lazy var viewBalance: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .azulClaro
         return view
     }()
     
-    lazy var iconWalletImageView = ImageViewDefault(nameImage: "iconWallet")
-    lazy var balanceLabel = LabelDefault(text: "Your wallet balance:", color: .white, font: .systemFont(ofSize: 12, weight: .bold))
-    lazy var amountLabel = LabelDefault(text: "", color: .white, font: .boldSystemFont(ofSize: 24))
+    lazy var iconWalletImageView: UIImageView = {
+        let element = UIImageView()
+        element.translatesAutoresizingMaskIntoConstraints = false
+        element.image = UIImage(named: "iconWallet")
+        element.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        element.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        return element
+    }()
+    
+    lazy var balanceLabel: UILabel = {
+        let element = UILabel()
+        element.translatesAutoresizingMaskIntoConstraints = false
+        element.text = "Your wallet balance:"
+        element.textColor = .white
+        element.font = .systemFont(ofSize: 12, weight: .bold)
+        return element
+    }()
+
+    lazy var amountLabel: UILabel = {
+        let element = UILabel()
+        element.translatesAutoresizingMaskIntoConstraints = false
+        element.text = ""
+        element.textColor = .white
+        element.font = .boldSystemFont(ofSize: 24)
+        return element
+    }()
+    
     lazy var hideAmountButton = ButtonDefault(nameImage: "iconEyeShow")
-    lazy var activityIndicator = ActivityDefault()
+    
+    lazy var activityIndicator: UIActivityIndicatorView = {
+        let element = UIActivityIndicatorView()
+        element.translatesAutoresizingMaskIntoConstraints = false
+        return element
+    }()
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -62,22 +108,46 @@ class HomeView: UIView {
         layout.sectionInset = UIEdgeInsets(top: .zero, left: 10, bottom: .zero, right: 10)
         let cv = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.backgroundColor = .lilas
+        cv.backgroundColor = .azulClaro
         cv.register(CustomCollectionCell.self, forCellWithReuseIdentifier: CustomCollectionCell.identifier)
         cv.showsHorizontalScrollIndicator = false
         cv.layer.cornerRadius = 10
         return cv
     }()
    
-    lazy var viewInvestiments: ViewDefault = {
-        let view = ViewDefault(backgroundColor: .lilas)
-
+    lazy var viewInvestiments: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .azulClaro
         return view
     }()
-    lazy var iconInvestimentsImage = ImageViewDefault(nameImage: "iconInvestiments")
-    lazy var balanceInvestimentsLabel = LabelDefault(text: "Your investiments", color: .white, font: .systemFont(ofSize: 12, weight: .bold))
-    lazy var amountInvestimentsLabel = LabelDefault(text: "$ 0.00", color: .white, font: .systemFont(ofSize: 24, weight: .bold))
+    lazy var iconInvestimentsImage: UIImageView = {
+        let element = UIImageView()
+        element.translatesAutoresizingMaskIntoConstraints = false
+        element.image = UIImage(named: "iconInvestiments")
+        element.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        element.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        return element
+    }()
     
+    lazy var balanceInvestimentsLabel: UILabel = {
+        let element = UILabel()
+        element.translatesAutoresizingMaskIntoConstraints = false
+        element.text = "Your investiments"
+        element.textColor = .white
+        element.font = .systemFont(ofSize: 12, weight: .bold)
+        return element
+    }()
+    
+    lazy var amountInvestimentsLabel: UILabel = {
+        let element = UILabel()
+        element.translatesAutoresizingMaskIntoConstraints = false
+        element.text = "$ 0.00"
+        element.textColor = .white
+        element.font = .systemFont(ofSize: 24, weight: .bold)
+        return element
+    }()
+ 
     lazy var hideAmountInvestimentsButton = ButtonDefault(nameImage: "iconEyeShow")
     
     // MARK: Inits
@@ -85,7 +155,6 @@ class HomeView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
-        
     }
     
     required init?(coder: NSCoder) {

@@ -16,7 +16,7 @@ class ScreenPixViewController: UIViewController {
     
     lazy var viewScreen: ScreenPixView = {
         let view = ScreenPixView()
-        view.backgroundColor = .backgroundColor
+        view.backgroundColor = .azulClaro
         return view
     }()
     

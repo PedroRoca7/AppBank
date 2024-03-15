@@ -11,7 +11,7 @@ class ProductsViewController: UIViewController {
     
     lazy var viewScreen: ProductsView = {
         let view = ProductsView()
-        view.backgroundColor = .backgroundColor
+        view.backgroundColor = .azulClaro
         return view
     }()
         

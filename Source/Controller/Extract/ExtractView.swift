@@ -15,8 +15,15 @@ class ExtractView: UIView {
     
     // MARK: ElementsVisual
     
-    lazy var titleAccountLabel = LabelDefault(text: "Account", color: .white, font: .systemFont(ofSize: 14, weight: .bold))
-    
+    lazy var titleAccountLabel: UILabel = {
+        let element = UILabel()
+        element.translatesAutoresizingMaskIntoConstraints = false
+        element.text = "Account"
+        element.textColor = .white
+        element.font = .systemFont(ofSize: 14, weight: .bold)
+        return element
+    }()
+
     lazy var segmentedControl: UISegmentedControl = {
         let seg = UISegmentedControl(items: ["Input","All","Output"])
         seg.translatesAutoresizingMaskIntoConstraints = false
@@ -25,8 +32,23 @@ class ExtractView: UIView {
         return seg
     }()
     
-    lazy var balanceLabel = LabelDefault(text: "Balance", color: .white, font: .systemFont(ofSize: 12, weight: .semibold))
-    lazy var amountLabel = LabelDefault(text: "$ 0.00", color: .white, font: .systemFont(ofSize: 24, weight: .bold))
+    lazy var balanceLabel: UILabel = {
+        let element = UILabel()
+        element.translatesAutoresizingMaskIntoConstraints = false
+        element.text = "Balance"
+        element.textColor = .white
+        element.font = .systemFont(ofSize: 12, weight: .semibold)
+        return element
+    }()
+
+    lazy var amountLabel: UILabel = {
+        let element = UILabel()
+        element.translatesAutoresizingMaskIntoConstraints = false
+        element.text = "$ 0.00"
+        element.textColor = .white
+        element.font = .systemFont(ofSize: 24, weight: .bold)
+        return element
+    }()
     
     lazy var tableView: UITableView = {
         let tb = UITableView()

@@ -1,13 +1,14 @@
 //
-//  LoginView.swift
+//  RegisterEmailView.swift
 //  AppBank
 //
-//  Created by Pedro Henrique on 24/08/23.
+//  Created by Pedro Henrique on 15/03/24.
 //
 
+import Foundation
 import UIKit
 
-class LoginView: UIView {
+final class RegisterEmailView: UIView {
     
     // MARK: ElementsVisual
     
@@ -22,9 +23,9 @@ class LoginView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
-    lazy var customView: CustomViewLogin = {
-        let element = CustomViewLogin()
+        
+    lazy var customView: CustomViewRegisterEmail = {
+        let element = CustomViewRegisterEmail()
         element.translatesAutoresizingMaskIntoConstraints = false
         element.backgroundColor = .white
         element.layer.cornerRadius = 20
@@ -34,36 +35,7 @@ class LoginView: UIView {
         element.layer.shadowRadius = 4
         return element
     }()
-
-    lazy var forgotPasswordButton: UIButton = {
-        let element = UIButton()
-        element.translatesAutoresizingMaskIntoConstraints = false
-        element.backgroundColor = .clear
-        element.setTitle("Esqueceu a senha?", for: .normal)
-        element.setTitleColor(UIColor.blue, for: .normal)
-        element.titleLabel?.font = .customSegoeUIFont(type: .bold, size: 16)
-        return element
-    }()
-    
-    private lazy var dontHaveAccountLabel: UILabel = {
-        let element = UILabel()
-        element.translatesAutoresizingMaskIntoConstraints = false
-        element.text = "Não possui uma conta?"
-        element.font = .customSegoeUIFont(type: .bold, size: 16)
-        element.textColor = .cinzaEscuro
-        return element
-    }()
-    
-    lazy var registerButton: UIButton = {
-        let element = UIButton()
-        element.translatesAutoresizingMaskIntoConstraints = false
-        element.backgroundColor = .clear
-        element.setTitle("CADASTRE-SE", for: .normal)
-        element.setTitleColor(UIColor.blue, for: .normal)
-        element.titleLabel?.font = .customSegoeUIFont(type: .bold, size: 16)
-        return element
-    }()
- 
+       
     // MARK: Inits
     
     override init(frame: CGRect) {
@@ -76,20 +48,16 @@ class LoginView: UIView {
     }
 }
 
-extension LoginView: ViewCodeUIView {
-    
+extension RegisterEmailView: ViewCodeUIView {
     // MARK: Add Elements e Constraints
     
-     func addElementsView() {
-         self.addSubview(backgroundHeaderView)
-         self.addSubview(logoHeaderView)
-         self.addSubview(customView)
-         self.addSubview(forgotPasswordButton)
-         self.addSubview(dontHaveAccountLabel)
-         self.addSubview(registerButton)
+    func addElementsView() {
+        self.addSubview(backgroundHeaderView)
+        self.addSubview(logoHeaderView)
+        self.addSubview(customView)
     }
-       
-     func setupConstraints() {
+    
+    func setupConstraints() {
         NSLayoutConstraint.activate([
             backgroundHeaderView.topAnchor.constraint(equalTo: self.topAnchor),
             backgroundHeaderView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
@@ -105,15 +73,6 @@ extension LoginView: ViewCodeUIView {
             customView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             customView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             customView.heightAnchor.constraint(equalToConstant: 300),
-            
-            forgotPasswordButton.topAnchor.constraint(equalTo: customView.bottomAnchor, constant: 10),
-            forgotPasswordButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            
-            dontHaveAccountLabel.topAnchor.constraint(equalTo: forgotPasswordButton.bottomAnchor, constant: 5),
-            dontHaveAccountLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
-            
-            registerButton.centerYAnchor.constraint(equalTo: dontHaveAccountLabel.centerYAnchor),
-            registerButton.leadingAnchor.constraint(equalTo: dontHaveAccountLabel.trailingAnchor, constant: 5),
         ])
     }
     

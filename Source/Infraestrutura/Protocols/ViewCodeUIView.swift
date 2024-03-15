@@ -10,13 +10,17 @@ import Foundation
 protocol ViewCodeUIView {
     func addElementsView()
     func setupConstraints()
+    func applyConditionSpecial()
 }
 
 extension ViewCodeUIView {
     func setupView() {
         addElementsView()
         setupConstraints()
+        applyConditionSpecial()
     }
+    
+    func applyConditionSpecial() {}
 }
 
     

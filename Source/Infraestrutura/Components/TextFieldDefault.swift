@@ -47,8 +47,8 @@ class TextFieldDefault: UITextField {
         if typeTextField == .onlyLine {
             self.borderStyle = UITextField.BorderStyle.none
             let bottomLine = CALayer()
-            bottomLine.frame = CGRectMake(5.0, 40 - 1, 300, 2.5)
-            bottomLine.backgroundColor = UIColor.white.cgColor
+            bottomLine.frame = CGRectMake(5.0, 30 - 1, 300, 0.5)
+            bottomLine.backgroundColor = UIColor.cinzaEscuro.cgColor
             self.borderStyle = .none
             self.layer.addSublayer(bottomLine)
         }

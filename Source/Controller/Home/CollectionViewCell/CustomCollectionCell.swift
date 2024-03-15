@@ -40,22 +40,22 @@ class CustomCollectionCell: UICollectionViewCell {
     public func prepareCollectionCell(title: String, button: ChooseButton) {
         switch button {
         case .pix:
-            cellView.label.text = title
+            cellView.pixLabel.text = title
             cellView.button.setImage(UIImage(named: "iconSend"), for: .normal)
         case .pay:
-            cellView.label.text = title
+            cellView.pixLabel.text = title
             cellView.button.setImage(UIImage(named: "iconPayments"), for: .normal)
         case .cardCredit:
-            cellView.label.text = title
+            cellView.pixLabel.text = title
             cellView.button.setImage(UIImage(named: "iconCreditCard"), for: .normal)
         case .collect:
-            cellView.label.text = title
+            cellView.pixLabel.text = title
             cellView.button.setImage(UIImage(named: "iconMoney"), for: .normal)
         case.security:
-            cellView.label.text = title
+            cellView.pixLabel.text = title
             cellView.button.setImage(UIImage(named: "iconSecurity"), for: .normal)
         case.transfer:
-            cellView.label.text = title
+            cellView.pixLabel.text = title
             cellView.button.setImage(UIImage(named: "iconTransfer"), for: .normal)
         }
     }

@@ -16,7 +16,7 @@ class ExtractViewController: UIViewController {
     let diposedBag = DisposeBag()
     lazy var viewScreen: ExtractView = {
         let view = ExtractView()
-        view.backgroundColor = .lilas
+        view.backgroundColor = .azulClaro
         return view
     }()
     

@@ -22,7 +22,14 @@ class CollectionCellView: UIView {
         return bt
     }()
     
-    lazy var label = LabelDefault(text: "Pix", color: .white, font: .systemFont(ofSize: 12, weight: .medium))
+    lazy var pixLabel: UILabel = {
+        let element = UILabel()
+        element.translatesAutoresizingMaskIntoConstraints = false
+        element.text = "Pix"
+        element.textColor = .white
+        element.font = .systemFont(ofSize: 12, weight: .medium)
+        return element
+    }()
     
     // MARK: Inits
     
@@ -43,7 +50,7 @@ extension CollectionCellView: ViewCodeUIView {
     
     func addElementsView() {
         self.addSubview(button)
-        self.addSubview(label)
+        self.addSubview(pixLabel)
     }
     
     func setupConstraints() {
@@ -54,8 +61,8 @@ extension CollectionCellView: ViewCodeUIView {
         ])
         
         NSLayoutConstraint.activate([
-            label.centerXAnchor.constraint(equalTo: button.centerXAnchor),
-            label.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 2)
+            pixLabel.centerXAnchor.constraint(equalTo: button.centerXAnchor),
+            pixLabel.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 2)
         ])
     }
 }
