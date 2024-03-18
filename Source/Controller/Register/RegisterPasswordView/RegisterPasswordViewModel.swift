@@ -12,22 +12,32 @@ protocol RegisterProtocol: AnyObject {
     func failureRegister()
 }
 
-protocol RegisterViewModeling: AnyObject {
+protocol RegisterPasswordViewModeling: AnyObject {
     var delegate: RegisterProtocol? { get set }
     func registerUser(user: User)
+    func backViewController()
+    func showRequestScreen()
 }
 
-class RegisterViewModel: RegisterViewModeling {
+class RegisterPasswordViewModel: RegisterPasswordViewModeling {
     
     // MARK: Propertys
     
     weak var delegate: RegisterProtocol?
-    private var coordinator: RegisterNameCoordinating
+    private var coordinator: RegisterPasswordCoordinating
     
     //MARK: Inits
     
-    init(coordinator: RegisterNameCoordinating) {
+    init(coordinator: RegisterPasswordCoordinating) {
         self.coordinator = coordinator
+    }
+    
+    public func backViewController() {
+        coordinator.backViewController()
+    }
+    
+    public func showRequestScreen() {
+        coordinator.showRequestScreen()
     }
     
     public func registerUser(user: User) {

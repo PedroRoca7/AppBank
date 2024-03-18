@@ -10,7 +10,7 @@ import UIKit
 
 protocol RegisterEmailCoordinating {
     func backViewController()
-    func showRegisterPassword()
+    func showRegisterPassword(nameUser: String, emailUser: String)
 }
 
 final class RegisterEmailCoordinator: RegisterEmailCoordinating {
@@ -29,7 +29,8 @@ final class RegisterEmailCoordinator: RegisterEmailCoordinating {
         navigationController.popViewController(animated: true)
     }
     
-    public func showRegisterPassword() {
-//        navigationController.popViewController(animated: true)
+    public func showRegisterPassword(nameUser: String, emailUser: String) {
+        let registerPassword = RegisterPasswordFactory.makeModule(navigationController: navigationController, nameUser: nameUser, emailUser: emailUser)
+        navigationController.pushViewController(registerPassword, animated: true)
     }
 }

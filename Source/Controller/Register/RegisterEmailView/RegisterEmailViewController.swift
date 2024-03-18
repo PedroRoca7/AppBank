@@ -14,7 +14,6 @@ class RegisterEmailViewController: UIViewController {
     // MARK: Propertys
     private let disposeBag = DisposeBag()
     private let nameUser: String
-    private var emailUser: String = ""
     
     private lazy var viewScreen: RegisterEmailView = {
         let view = RegisterEmailView()
@@ -52,7 +51,7 @@ class RegisterEmailViewController: UIViewController {
                 self.showBasicAlert(title: "Erro", message: "Campos de e-mail inválido.", viewController: self) {}
                 return
             }
-            self.emailUser = email
+            self.coordinator.showRegisterPassword(nameUser: self.nameUser, emailUser: email)
         }.disposed(by: disposeBag)
     }
     

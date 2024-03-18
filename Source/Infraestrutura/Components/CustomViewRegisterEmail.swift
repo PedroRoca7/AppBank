@@ -14,8 +14,8 @@ final class CustomViewRegisterEmail: UIView {
         element.translatesAutoresizingMaskIntoConstraints = false
         element.setImage(UIImage(systemName: "chevron.backward"), for: .normal)
         element.tintColor = .azulClaro
-        element.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        element.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        element.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        element.heightAnchor.constraint(equalToConstant: 50).isActive = true
         return element
     }()
     
@@ -33,7 +33,7 @@ final class CustomViewRegisterEmail: UIView {
     private lazy var iconeRegisterImage: UIImageView = {
         let element = UIImageView()
         element.translatesAutoresizingMaskIntoConstraints = false
-        element.image = UIImage(named: "registerIcone")
+        element.image = UIImage(named: "email")
         element.widthAnchor.constraint(equalToConstant: 80).isActive = true
         element.heightAnchor.constraint(equalToConstant: 80).isActive = true
         return element
