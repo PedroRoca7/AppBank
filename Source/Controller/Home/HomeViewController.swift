@@ -13,13 +13,17 @@ class HomeViewController: UIViewController {
     
     // MARK: Propertys
     var user: User?
-    var pixButtonTap: (() -> Void)?
     private var disposeBag = DisposeBag()
-    private var collectionViewButtons: [String] = ["Pix", "Transfer", "Pay account", "Security", "Credit Card", "Collect"]
+    private var collectionViewButtons: [String] = ["carteira", "transações", "cartão", "minha conta"]
     private var cellView = CollectionCellView()
     
     lazy private var viewScreen: HomeView = {
         let view = HomeView()
+        return view
+    }()
+    
+    lazy private var walletViewController: WalletViewController = {
+        let view = WalletViewController()
         return view
     }()
     
@@ -38,30 +42,58 @@ class HomeViewController: UIViewController {
     
     override func loadView() {
         self.view = viewScreen
-        viewScreen.backgroundColor = .azulClaro
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        viewScreen.activityIndicator.startAnimating()
         viewModel.loadStatements()
         setupNameClientLabel()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        cellView.button.layer.cornerRadius = cellView.button.frame.width / 2
+        cellView.layer.cornerRadius = cellView.frame.width / 2
         hideKeyBoardWhenTapped()
-        
         setupDelegates()
-        hideOrShowBalance(button: viewScreen.hideAmountButton, label: viewScreen.amountLabel)
-        hideOrShowBalance(button: viewScreen.hideAmountInvestimentsButton, label: viewScreen.amountInvestimentsLabel)
+        setupConfigNavigationBar()
     }
 }
 
 private extension HomeViewController {
+
+    func setupConfigNavigationBar() {
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    func setupAddChildWalletViewController() {
+        addChild(walletViewController)
+        viewScreen.viewCustom.addSubview(walletViewController.view)
+        walletViewController.didMove(toParent: self)
+        
+        NSLayoutConstraint.activate([
+            walletViewController.view.topAnchor.constraint(equalTo: viewScreen.viewCustom.topAnchor),
+            walletViewController.view.leadingAnchor.constraint(equalTo: viewScreen.viewCustom.leadingAnchor),
+            walletViewController.view.trailingAnchor.constraint(equalTo: viewScreen.viewCustom.trailingAnchor),
+            walletViewController.view.bottomAnchor.constraint(equalTo: viewScreen.viewCustom.bottomAnchor),
+        ])
+    }
+    
+    func setupAddChildWalletViewController2() {
+        let viewController = UIViewController()
+        viewController.view.backgroundColor = .red
+        addChild(viewController)
+        viewScreen.viewCustom.addSubview(viewController.view)
+        viewController.didMove(toParent: self)
+        
+        NSLayoutConstraint.activate([
+            viewController.view.topAnchor.constraint(equalTo: viewScreen.viewCustom.topAnchor),
+            viewController.view.leadingAnchor.constraint(equalTo: viewScreen.viewCustom.leadingAnchor),
+            viewController.view.trailingAnchor.constraint(equalTo: viewScreen.viewCustom.trailingAnchor),
+            viewController.view.bottomAnchor.constraint(equalTo: viewScreen.viewCustom.bottomAnchor),
+        ])
+    }
+
     func setupNameClientLabel() {
         guard let user = self.user else { return }
-        viewScreen.helloClientLabel.text = "Hello \(user.name),"
-        self.tabBarController?.navigationController?.isNavigationBarHidden = true
+        viewScreen.nameClientLabel.text = user.name
     }
     
     func setupDelegates() {
@@ -80,8 +112,7 @@ private extension HomeViewController {
 extension HomeViewController: HomeViewModelProtocol {
     func success(balance: Double) {
         DispatchQueue.main.async {
-            self.viewScreen.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: balance, typeCurrency: "pt-BR", currencySymbol: "$")
-            self.viewScreen.activityIndicator.stopAnimating()
+            self.walletViewController.viewScreen.accountView.valueAccountLabel.text = FormatterNumber.formatNumberToCurrency(value: balance, typeCurrency: "pt-BR", currencySymbol: "R$")
         }
     }
     
@@ -99,32 +130,25 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionCell.identifier, for: indexPath) as? CustomCollectionCell
         
-        let button: String = collectionViewButtons[indexPath.row]
-        if let buttonEnum = ChooseButton(rawValue: button) {
-            cell?.prepareCollectionCell(title: button, button: buttonEnum)
-        }
-        cell?.cellView.button.rx.tap.bind {
-            if let buttonEnum = ChooseButton(rawValue: button) {
-                self.pressedButtonCollectionView(button: buttonEnum)
-            }
-        }.disposed(by: disposeBag)
+        let titleString = collectionViewButtons[indexPath.row]
+        cell?.prepareCollectionCell(title: titleString, nameImage: titleString)
+        
         return cell ?? UICollectionViewCell()
     }
     
-    func pressedButtonCollectionView(button: ChooseButton) {
-        switch button {
-        case .pix:
-            viewModel.showPixScreen()
-        case .transfer:
-            showBasicAlert(title: "Transferências", message: "Você clicou para fazer uma transferencia.", viewController: self) {}
-        case .pay:
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        switch indexPath.row {
+        case 0:
+            setupAddChildWalletViewController()
+        case 1:
+            setupAddChildWalletViewController2()
+        case 2:
             showBasicAlert(title: "Pagamentos", message: "Você clicou para fazer um pagamento.", viewController: self) {}
-        case.security:
+        case 3:
             showBasicAlert(title: "Seguros", message: "Você clicou para solicitar um seguro.", viewController: self) {}
-        case.collect:
-            showBasicAlert(title: "Collect", message: "You clic Collect", viewController: self) {}
-        case.cardCredit:
-            showBasicAlert(title: "Credit Card", message: "You clic Credit Card", viewController: self) {}
+        default:
+            break
         }
     }
 }

@@ -13,21 +13,22 @@ class CollectionCellView: UIView {
     
     // MARK: ElementsVisual
     
-    lazy var button: ButtonDefault = {
-        let bt = ButtonDefault()
-        bt.backgroundColor = .white
-        bt.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        bt.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        bt.clipsToBounds = true
-        return bt
+    lazy var imageButton: UIImageView = {
+        let element = UIImageView()
+        element.translatesAutoresizingMaskIntoConstraints = false
+        element.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        element.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        element.clipsToBounds = true
+        element.contentMode = .scaleAspectFit
+        return element
     }()
     
-    lazy var pixLabel: UILabel = {
+    lazy var buttonTitleLabel: UILabel = {
         let element = UILabel()
         element.translatesAutoresizingMaskIntoConstraints = false
-        element.text = "Pix"
+        element.text = ""
         element.textColor = .white
-        element.font = .systemFont(ofSize: 12, weight: .medium)
+        element.font = .customComfortaaFont(type: .bold, size: 12)
         return element
     }()
     
@@ -49,20 +50,20 @@ extension CollectionCellView: ViewCodeUIView {
     // MARK: Add Elements e Constraints
     
     func addElementsView() {
-        self.addSubview(button)
-        self.addSubview(pixLabel)
+        self.addSubview(imageButton)
+        self.addSubview(buttonTitleLabel)
     }
     
     func setupConstraints() {
         
         NSLayoutConstraint.activate([
-            button.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            button.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            imageButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            imageButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
         ])
         
         NSLayoutConstraint.activate([
-            pixLabel.centerXAnchor.constraint(equalTo: button.centerXAnchor),
-            pixLabel.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 2)
+            buttonTitleLabel.centerXAnchor.constraint(equalTo: imageButton.centerXAnchor),
+            buttonTitleLabel.topAnchor.constraint(equalTo: imageButton.bottomAnchor, constant: 2)
         ])
     }
 }

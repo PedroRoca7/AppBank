@@ -93,6 +93,10 @@
 		CEA6DC8D2A9CFF22004722AF /* ServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6DC8C2A9CFF22004722AF /* ServiceViewModel.swift */; };
 		CEA6DC902A9D27CB004722AF /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA6DC8F2A9D27CB004722AF /* String+.swift */; };
 		CEAC14B62AA13B8E00A56C7C /* ApiStatement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC14B52AA13B8E00A56C7C /* ApiStatement.swift */; };
+		CEDDC80D2BA9F022001A0173 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDDC80C2BA9F022001A0173 /* WalletViewController.swift */; };
+		CEDDC80F2BA9F030001A0173 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDDC80E2BA9F030001A0173 /* WalletView.swift */; };
+		CEDDC8112BA9F04B001A0173 /* WalletFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDDC8102BA9F04B001A0173 /* WalletFactory.swift */; };
+		CEDDC8132BAA6E65001A0173 /* CustomViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDDC8122BAA6E65001A0173 /* CustomViewButton.swift */; };
 		CEE2F2642BA4CFDD00362BB0 /* RegisterEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE2F2632BA4CFDD00362BB0 /* RegisterEmailView.swift */; };
 		CEE2F2662BA4D0B800362BB0 /* CustomViewRegisterEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE2F2652BA4D0B800362BB0 /* CustomViewRegisterEmail.swift */; };
 		CEE2F2682BA4D1F000362BB0 /* RegisterEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE2F2672BA4D1F000362BB0 /* RegisterEmailViewController.swift */; };
@@ -103,8 +107,6 @@
 		CEE734C72A9E9D26002320DB /* ExtractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE734C62A9E9D26002320DB /* ExtractViewController.swift */; };
 		CEE734C92A9E9D30002320DB /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE734C82A9E9D30002320DB /* ProductsView.swift */; };
 		CEE734CB2A9E9D3A002320DB /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE734CA2A9E9D3A002320DB /* ProductsViewController.swift */; };
-		CEE734CD2A9E9DEF002320DB /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE734CC2A9E9DEF002320DB /* TabBarCoordinator.swift */; };
-		CEE734D02A9E9F04002320DB /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE734CF2A9E9F04002320DB /* TabBarController.swift */; };
 		DF90E57C8BD739FB9CF07811 /* Pods_AppBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811A1BF2CC6E9846DD5B197E /* Pods_AppBankTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -225,6 +227,10 @@
 		CEA6DC8C2A9CFF22004722AF /* ServiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceViewModel.swift; sourceTree = "<group>"; };
 		CEA6DC8F2A9D27CB004722AF /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		CEAC14B52AA13B8E00A56C7C /* ApiStatement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiStatement.swift; sourceTree = "<group>"; };
+		CEDDC80C2BA9F022001A0173 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		CEDDC80E2BA9F030001A0173 /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
+		CEDDC8102BA9F04B001A0173 /* WalletFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletFactory.swift; sourceTree = "<group>"; };
+		CEDDC8122BAA6E65001A0173 /* CustomViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewButton.swift; sourceTree = "<group>"; };
 		CEE2F2632BA4CFDD00362BB0 /* RegisterEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEmailView.swift; sourceTree = "<group>"; };
 		CEE2F2652BA4D0B800362BB0 /* CustomViewRegisterEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewRegisterEmail.swift; sourceTree = "<group>"; };
 		CEE2F2672BA4D1F000362BB0 /* RegisterEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEmailViewController.swift; sourceTree = "<group>"; };
@@ -235,8 +241,6 @@
 		CEE734C62A9E9D26002320DB /* ExtractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractViewController.swift; sourceTree = "<group>"; };
 		CEE734C82A9E9D30002320DB /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
 		CEE734CA2A9E9D3A002320DB /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
-		CEE734CC2A9E9DEF002320DB /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
-		CEE734CF2A9E9F04002320DB /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		DB7DEE8778CEB9C9736AAADD /* Pods-AppBank-AppBankUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppBank-AppBankUITests.release.xcconfig"; path = "Target Support Files/Pods-AppBank-AppBankUITests/Pods-AppBank-AppBankUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EAC9253E87BF947148568B74 /* Pods-ItubersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ItubersTests.release.xcconfig"; path = "Target Support Files/Pods-ItubersTests/Pods-ItubersTests.release.xcconfig"; sourceTree = "<group>"; };
 		FED7000337A82C74C87633AB /* Pods-AppBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppBank.release.xcconfig"; path = "Target Support Files/Pods-AppBank/Pods-AppBank.release.xcconfig"; sourceTree = "<group>"; };
@@ -396,6 +400,7 @@
 				CE94EBE72BA3D0C500316987 /* CustomViewRegisterName.swift */,
 				CEE2F2652BA4D0B800362BB0 /* CustomViewRegisterEmail.swift */,
 				CE8F9D6F2BA4E8A0002AA060 /* CustomViewRegisterPassword.swift */,
+				CEDDC8122BAA6E65001A0173 /* CustomViewButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -517,6 +522,7 @@
 		CE6F211A2A98F656000B1B01 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CEDDC80B2BA9EFB5001A0173 /* WalletViewController */,
 				CE5F7F602AD048CF00410BFF /* CollectionViewCell */,
 				CE6F211B2A98F663000B1B01 /* HomeView.swift */,
 				CE6F211D2A98F674000B1B01 /* HomeViewController.swift */,
@@ -611,6 +617,16 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		CEDDC80B2BA9EFB5001A0173 /* WalletViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CEDDC80C2BA9F022001A0173 /* WalletViewController.swift */,
+				CEDDC80E2BA9F030001A0173 /* WalletView.swift */,
+				CEDDC8102BA9F04B001A0173 /* WalletFactory.swift */,
+			);
+			path = WalletViewController;
+			sourceTree = "<group>";
+		};
 		CEE2F2602BA4CC5600362BB0 /* RegisterPasswordView */ = {
 			isa = PBXGroup;
 			children = (
@@ -662,7 +678,6 @@
 				CE5BA4C92A97ABAB00449C0A /* Register */,
 				CE016E772AE317710098F992 /* ScreenPix */,
 				CEE734C22A9E9CFA002320DB /* Extract */,
-				CEE734CE2A9E9EF6002320DB /* TabBar */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -690,15 +705,6 @@
 				CE1FF8FF2B03A9E50021F67B /* ProductsFactory.swift */,
 			);
 			path = Products;
-			sourceTree = "<group>";
-		};
-		CEE734CE2A9E9EF6002320DB /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				CEE734CF2A9E9F04002320DB /* TabBarController.swift */,
-				CEE734CC2A9E9DEF002320DB /* TabBarCoordinator.swift */,
-			);
-			path = TabBar;
 			sourceTree = "<group>";
 		};
 		D4F9E917F3E3693F45C5871C /* Pods */ = {
@@ -981,11 +987,12 @@
 				CE20FC532AA6273F00727585 /* ExtractViewModel.swift in Sources */,
 				CE1C4AD72A984E0C00AEA219 /* Alert.swift in Sources */,
 				CE6D10B42AD602B800EFD5E7 /* OptionsTableView.swift in Sources */,
+				CEDDC8132BAA6E65001A0173 /* CustomViewButton.swift in Sources */,
 				CE5BA4CB2A97ABC500449C0A /* RegisterNameView.swift in Sources */,
 				CE1B474E2A97FF8200056914 /* AuthenticatorFirebase.swift in Sources */,
-				CEE734CD2A9E9DEF002320DB /* TabBarCoordinator.swift in Sources */,
 				CE8F9D6E2BA4E833002AA060 /* RegisterPasswordView.swift in Sources */,
 				CE6D10AB2AD59C7D00EFD5E7 /* Color+.swift in Sources */,
+				CEDDC8112BA9F04B001A0173 /* WalletFactory.swift in Sources */,
 				CE5D57ED2AFEAF6700FA99BA /* RegisterNameCoodinator.swift in Sources */,
 				CEE734C52A9E9D13002320DB /* ExtractView.swift in Sources */,
 				CE6F21252A99227E000B1B01 /* StatementCellView.swift in Sources */,
@@ -1010,10 +1017,10 @@
 				CE6D10AE2AD5A06300EFD5E7 /* ProductsViewCell.swift in Sources */,
 				CEE734C92A9E9D30002320DB /* ProductsView.swift in Sources */,
 				CEE734CB2A9E9D3A002320DB /* ProductsViewController.swift in Sources */,
+				CEDDC80F2BA9F030001A0173 /* WalletView.swift in Sources */,
 				CE5BA4E02A97EFB800449C0A /* Users.swift in Sources */,
 				CEE2F26A2BA4D38600362BB0 /* RegisterEmailFactory.swift in Sources */,
 				CE1FF9042B03AE8C0021F67B /* ScreenPixCoordinator.swift in Sources */,
-				CEE734D02A9E9F04002320DB /* TabBarController.swift in Sources */,
 				CE1FF9002B03A9E50021F67B /* ProductsFactory.swift in Sources */,
 				CEE2F26C2BA4D39600362BB0 /* RegisterEmailCoordinator.swift in Sources */,
 				CE6D10B02AD5A07900EFD5E7 /* CustomProductsTableViewCell.swift in Sources */,
@@ -1033,6 +1040,7 @@
 				CEAC14B62AA13B8E00A56C7C /* ApiStatement.swift in Sources */,
 				CE5F7F622AD048EA00410BFF /* CustomCollectionCell.swift in Sources */,
 				CE8F9D792BA89E52002AA060 /* RegisterToAnalyseViewController.swift in Sources */,
+				CEDDC80D2BA9F022001A0173 /* WalletViewController.swift in Sources */,
 				CE1FF9022B03AE7A0021F67B /* ScreenPixFactory.swift in Sources */,
 				CE2F3B8A2B55E54400F68503 /* ViewCodeUIView.swift in Sources */,
 				CEE2F2642BA4CFDD00362BB0 /* RegisterEmailView.swift in Sources */,

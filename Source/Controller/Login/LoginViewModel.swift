@@ -49,7 +49,7 @@ class LoginViewModel: LoginViewModeling {
     }
     
     public func showHomeScreen(user: User) {
-        coordinator.startTabController(user: user)
+        coordinator.showHomeController(user: user)
     }
     
     public func showRegisterScreen() {

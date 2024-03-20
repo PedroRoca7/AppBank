@@ -37,13 +37,13 @@ class CustomStatementTableViewCell: UITableViewCell {
         if extract.type == .Input {
             viewCell.typeEntryLabel.text = "Input"
             viewCell.typeEntryLabel.textColor = .green
-            viewCell.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: extract.amout, typeCurrency: "pt-BR", currencySymbol: "+$")
+            viewCell.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: extract.amout, typeCurrency: "pt-BR", currencySymbol: "+R$")
             viewCell.amountLabel.textColor = .green
             viewCell.aboutLabel.text = extract.about
         } else {
             viewCell.typeEntryLabel.text = "Output"
             viewCell.typeEntryLabel.textColor = .red
-            viewCell.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: extract.amout, typeCurrency: "pt-BR", currencySymbol: "-$")
+            viewCell.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: extract.amout, typeCurrency: "pt-BR", currencySymbol: "-R$")
             viewCell.amountLabel.textColor = .red
             viewCell.aboutLabel.text = extract.about
         }

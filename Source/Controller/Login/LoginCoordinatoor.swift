@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol LoginCoordinating {
-    func startTabController(user: User)
+    func showHomeController(user: User)
     func startRegisterScreen()
 }
 
@@ -17,10 +17,9 @@ class LoginCoordinator: LoginCoordinating {
     
     weak var controller: UIViewController?
     
-    func startTabController(user: User) {
-        let tabBarController = TabBarCoordinator(navigationController: controller?.navigationController ?? UINavigationController(),
-                                                 user: user)
-        tabBarController.start()
+    func showHomeController(user: User) {
+        let homeViewController = HomeFactory.makeModule(navigationController: controller?.navigationController ?? UINavigationController(), user: user)
+        controller?.navigationController?.pushViewController(homeViewController, animated: true)
     }
     
     func startRegisterScreen() {
