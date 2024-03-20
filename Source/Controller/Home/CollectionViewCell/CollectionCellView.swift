@@ -28,7 +28,7 @@ class CollectionCellView: UIView {
         element.translatesAutoresizingMaskIntoConstraints = false
         element.text = ""
         element.textColor = .white
-        element.font = .customComfortaaFont(type: .bold, size: 12)
+        element.font = .customSegoeUIFont(type: .bold, size: 12)
         return element
     }()
     

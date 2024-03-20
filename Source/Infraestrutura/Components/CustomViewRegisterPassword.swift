@@ -53,7 +53,7 @@ final class CustomViewRegisterPassword: UIView {
         element.translatesAutoresizingMaskIntoConstraints = false
         element.text = "Crie uma senha para acessar o aplicativo."
         element.textColor = .cinzaEscuro
-        element.font = .customComfortaaFont(type: .regular, size: 20)
+        element.font = .customSegoeUIFont(type: .regular, size: 20)
         element.numberOfLines = 0
         element.lineBreakMode = .byWordWrapping
         element.textAlignment = .center
@@ -94,7 +94,7 @@ final class CustomViewRegisterPassword: UIView {
         element.translatesAutoresizingMaskIntoConstraints = false
         element.text = "Deve conter no minimo 6 caracteres."
         element.textColor = .red
-        element.font = .customComfortaaFont(type: .regular, size: 16)
+        element.font = .customSegoeUIFont(type: .regular, size: 16)
         return element
     }()
         

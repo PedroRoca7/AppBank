@@ -1,30 +1,24 @@
 //
-//  ExtractViewController.swift
+//  TransactionsViewController.swift
 //  AppBank
 //
-//  Created by Pedro Henrique on 29/08/23.
+//  Created by Pedro Henrique on 20/03/24.
 //
 
+import Foundation
 import UIKit
-import RxSwift
-import RxCocoa
 
-class ExtractViewController: UIViewController {
+final class TransactionsViewController: UIViewController {
     
-    // MARK: Propertys
-    
-    let diposedBag = DisposeBag()
-    lazy var viewScreen: ExtractView = {
-        let view = ExtractView()
-        view.backgroundColor = .azulClaro
-        return view
+    lazy var viewScreen: TransactionsView = {
+        let element = TransactionsView()
+        element.translatesAutoresizingMaskIntoConstraints = false
+        return element
     }()
     
-    private var viewModel: ExtractViewModeling
-  
-    // MARK: Inits
+    private var viewModel: TransactionsViewModeling
     
-    init(viewModel: ExtractViewModeling) {
+    init(viewModel: TransactionsViewModeling) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -34,7 +28,7 @@ class ExtractViewController: UIViewController {
     }
     
     override func loadView() {
-        self.view = viewScreen
+        view = viewScreen
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,33 +37,24 @@ class ExtractViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        hideKeyBoardWhenTapped()
         configDelegates()
-        filterExtractSegmentedControlePressed()
     }
     
     private func configDelegates() {
         viewScreen.tableView.delegate = self
         viewScreen.tableView.dataSource = self
     }
-    
-    private func filterExtractSegmentedControlePressed() {
-        let segmentedControlValeu = BehaviorSubject<Int>(value: 1)
-        
-        viewScreen.segmentedControl.rx.selectedSegmentIndex
-            .asObservable()
-            .bind(to: segmentedControlValeu)
-            .disposed(by: diposedBag)
-        
-        segmentedControlValeu
-            .subscribe { selectedIndex in
-                self.viewModel.filterExtract(index: selectedIndex)
-            }.disposed(by: diposedBag)
-    }
 }
-
-extension ExtractViewController: UITableViewDelegate, UITableViewDataSource {
+extension TransactionsViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: TableView DataSource
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {        
+        return "Transações recentes"
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.bankStatements.count
@@ -85,10 +70,9 @@ extension ExtractViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension ExtractViewController: ExtractViewModelProtocol {
-    func success(balance: Double) {
+extension TransactionsViewController: TransactionsViewModelProtocol {
+    func success() {
         DispatchQueue.main.async {
-            self.viewScreen.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: balance, typeCurrency: "pt-BR", currencySymbol: "$")
             self.viewScreen.tableView.reloadData()
         }
     }

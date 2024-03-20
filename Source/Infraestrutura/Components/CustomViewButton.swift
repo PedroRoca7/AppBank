@@ -24,8 +24,6 @@ final class CustomViewButton: UIView {
         let element = UIImageView()
         element.translatesAutoresizingMaskIntoConstraints = false
         element.contentMode = .scaleAspectFit
-        element.widthAnchor.constraint(equalToConstant: 60).isActive = true
-        element.heightAnchor.constraint(equalToConstant: 60).isActive = true
         return element
     }()
     

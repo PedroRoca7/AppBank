@@ -53,7 +53,7 @@ final class CustomViewRegisterEmail: UIView {
         element.translatesAutoresizingMaskIntoConstraints = false
         element.text = "Informe seu e-mail"
         element.textColor = .cinzaEscuro
-        element.font = .customComfortaaFont(type: .regular, size: 20)
+        element.font = .customSegoeUIFont(type: .regular, size: 20)
         return element
     }()
         

@@ -54,7 +54,7 @@ final class CustomViewRegisterName: UIView {
         element.translatesAutoresizingMaskIntoConstraints = false
         element.text = "Vamos começar"
         element.textColor = .cinzaEscuro
-        element.font = .customComfortaaFont(type: .regular, size: 20)
+        element.font = .customSegoeUIFont(type: .regular, size: 20)
         return element
     }()
     
@@ -63,7 +63,7 @@ final class CustomViewRegisterName: UIView {
         element.translatesAutoresizingMaskIntoConstraints = false
         element.text = "Qual é o seu nome?"
         element.textColor = .cinzaEscuro
-        element.font = .customComfortaaFont(type: .regular, size: 20)
+        element.font = .customSegoeUIFont(type: .regular, size: 20)
         return element
     }()
     

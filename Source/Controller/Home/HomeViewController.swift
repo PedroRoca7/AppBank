@@ -23,7 +23,12 @@ class HomeViewController: UIViewController {
     }()
     
     lazy private var walletViewController: WalletViewController = {
-        let view = WalletViewController()
+        let view = WalletFactory.makeModule()
+        return view
+    }()
+    
+    lazy private var transactionsViewController: TransactionsViewController = {
+        let view = TransactionsFactory.makeModule()
         return view
     }()
     
@@ -76,18 +81,16 @@ private extension HomeViewController {
         ])
     }
     
-    func setupAddChildWalletViewController2() {
-        let viewController = UIViewController()
-        viewController.view.backgroundColor = .red
-        addChild(viewController)
-        viewScreen.viewCustom.addSubview(viewController.view)
-        viewController.didMove(toParent: self)
+    func setupAddChildTransactionsViewController() {
+        addChild(transactionsViewController)
+        viewScreen.viewCustom.addSubview(transactionsViewController.view)
+        transactionsViewController.didMove(toParent: self)
         
         NSLayoutConstraint.activate([
-            viewController.view.topAnchor.constraint(equalTo: viewScreen.viewCustom.topAnchor),
-            viewController.view.leadingAnchor.constraint(equalTo: viewScreen.viewCustom.leadingAnchor),
-            viewController.view.trailingAnchor.constraint(equalTo: viewScreen.viewCustom.trailingAnchor),
-            viewController.view.bottomAnchor.constraint(equalTo: viewScreen.viewCustom.bottomAnchor),
+            transactionsViewController.view.topAnchor.constraint(equalTo: viewScreen.viewCustom.topAnchor),
+            transactionsViewController.view.leadingAnchor.constraint(equalTo: viewScreen.viewCustom.leadingAnchor),
+            transactionsViewController.view.trailingAnchor.constraint(equalTo: viewScreen.viewCustom.trailingAnchor),
+            transactionsViewController.view.bottomAnchor.constraint(equalTo: viewScreen.viewCustom.bottomAnchor),
         ])
     }
 
@@ -142,7 +145,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case 0:
             setupAddChildWalletViewController()
         case 1:
-            setupAddChildWalletViewController2()
+            setupAddChildTransactionsViewController()
         case 2:
             showBasicAlert(title: "Pagamentos", message: "Você clicou para fazer um pagamento.", viewController: self) {}
         case 3:

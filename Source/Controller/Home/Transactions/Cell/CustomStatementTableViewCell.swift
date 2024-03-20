@@ -14,18 +14,15 @@ class CustomStatementTableViewCell: UITableViewCell {
     lazy var viewCell: StatementCellView = {
         let viewCell = StatementCellView()
         viewCell.translatesAutoresizingMaskIntoConstraints = false
-        viewCell.layer.cornerRadius = 10
         viewCell.clipsToBounds = true
-        viewCell.layer.borderColor = UIColor.black.cgColor
-        viewCell.layer.borderWidth = 1
         return viewCell
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupView()
-        contentView.backgroundColor = .clear
-        backgroundColor = .clear
+        contentView.backgroundColor = .white
+        backgroundColor = .white
         selectionStyle = .none
     }
     
@@ -35,16 +32,12 @@ class CustomStatementTableViewCell: UITableViewCell {
     
     func prepareCell(extract: ServiceViewModel) {
         if extract.type == .Input {
-            viewCell.typeEntryLabel.text = "Input"
-            viewCell.typeEntryLabel.textColor = .green
             viewCell.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: extract.amout, typeCurrency: "pt-BR", currencySymbol: "+R$")
             viewCell.amountLabel.textColor = .green
             viewCell.aboutLabel.text = extract.about
         } else {
-            viewCell.typeEntryLabel.text = "Output"
-            viewCell.typeEntryLabel.textColor = .red
             viewCell.amountLabel.text = FormatterNumber.formatNumberToCurrency(value: extract.amout, typeCurrency: "pt-BR", currencySymbol: "-R$")
-            viewCell.amountLabel.textColor = .red
+            viewCell.amountLabel.textColor = .black
             viewCell.aboutLabel.text = extract.about
         }
     }
@@ -58,9 +51,9 @@ extension CustomStatementTableViewCell: ViewCodeUIView {
     func setupConstraints() {
         NSLayoutConstraint.activate([
             viewCell.topAnchor.constraint(equalTo: contentView.topAnchor),
-            viewCell.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
-            viewCell.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
-            viewCell.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -24),
+            viewCell.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            viewCell.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            viewCell.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
         ])
     }
 }

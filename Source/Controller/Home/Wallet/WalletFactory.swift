@@ -8,7 +8,7 @@
 import UIKit
 
 enum WalletFactory {
-    static func makeModule() -> UIViewController {
+    static func makeModule() -> WalletViewController {
         let viewController =  WalletViewController()
         return viewController
     }
