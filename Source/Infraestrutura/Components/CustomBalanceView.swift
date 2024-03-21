@@ -20,6 +20,16 @@ final class CustomBalanceView: UIView {
         return element
     }()
         
+    lazy var valueHideAccountLabel: UILabel = {
+        let element = UILabel()
+        element.translatesAutoresizingMaskIntoConstraints = false
+        element.font = .customSegoeUIFont(type: .bold, size: 22)
+        element.textColor = .azulClaro
+        element.isHidden = false
+        element.text = "R$ *******"
+        return element
+    }()
+    
     lazy var valueAccountLabel: UILabel = {
         let element = UILabel()
         element.translatesAutoresizingMaskIntoConstraints = false
@@ -55,6 +65,7 @@ final class CustomBalanceView: UIView {
     private func setupSubViews() {
         self.addSubview(balanceAccountLabel)
         self.addSubview(valueAccountLabel)
+        self.addSubview(valueHideAccountLabel)
         self.addSubview(showAndHideBalanceButton)
     }
     
@@ -62,6 +73,10 @@ final class CustomBalanceView: UIView {
         NSLayoutConstraint.activate([
             balanceAccountLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 15),
             balanceAccountLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
+            
+            valueHideAccountLabel.topAnchor.constraint(equalTo: balanceAccountLabel.bottomAnchor, constant: 5),
+            valueHideAccountLabel.leadingAnchor.constraint(equalTo: balanceAccountLabel.leadingAnchor),
+            valueHideAccountLabel.trailingAnchor.constraint(lessThanOrEqualTo: showAndHideBalanceButton.leadingAnchor, constant: -3),
             
             valueAccountLabel.topAnchor.constraint(equalTo: balanceAccountLabel.bottomAnchor, constant: 5),
             valueAccountLabel.leadingAnchor.constraint(equalTo: balanceAccountLabel.leadingAnchor),
@@ -79,10 +94,12 @@ final class CustomBalanceView: UIView {
             showAndHideBalanceButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
             showAndHideBalanceButton.tintColor = .azulClaro
             valueAccountLabel.isHidden = true
+            valueHideAccountLabel.isHidden = false
         } else {
             showAndHideBalanceButton.setImage(UIImage(systemName: "eye"), for: .normal)
             showAndHideBalanceButton.tintColor = .azulClaro
             valueAccountLabel.isHidden = false
+            valueHideAccountLabel.isHidden = true
         }
     }
 }

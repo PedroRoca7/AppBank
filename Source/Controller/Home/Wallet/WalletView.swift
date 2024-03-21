@@ -33,7 +33,7 @@ final class WalletView: UIView {
     lazy var insertMoneyButton: CustomViewButton = {
         let element = CustomViewButton()
         element.translatesAutoresizingMaskIntoConstraints = false
-        element.imageButtonImageView.image = UIImage(named: "carteira")
+        element.imageButtonImageView.image = UIImage(named: "inserirDinheiro")
         element.titleButtonLabel.text = "Inserir Dinheiro"
         element.imageButtonImageView.widthAnchor.constraint(equalToConstant: 60).isActive = true
         element.imageButtonImageView.heightAnchor.constraint(equalToConstant: 60).isActive = true
@@ -43,7 +43,7 @@ final class WalletView: UIView {
     lazy var payScanButton: CustomViewButton = {
         let element = CustomViewButton()
         element.translatesAutoresizingMaskIntoConstraints = false
-        element.imageButtonImageView.image = UIImage(named: "cartão")
+        element.imageButtonImageView.image = UIImage(named: "pagarViaScan")
         element.titleButtonLabel.text = "Pagar via Scan"
         element.imageButtonImageView.widthAnchor.constraint(equalToConstant: 60).isActive = true
         element.imageButtonImageView.heightAnchor.constraint(equalToConstant: 60).isActive = true
@@ -53,7 +53,7 @@ final class WalletView: UIView {
     lazy var transferButton: CustomViewButton = {
         let element = CustomViewButton()
         element.translatesAutoresizingMaskIntoConstraints = false
-        element.imageButtonImageView.image = UIImage(named: "carteira")
+        element.imageButtonImageView.image = UIImage(named: "transferir")
         element.titleButtonLabel.text = "Transferir"
         element.imageButtonImageView.widthAnchor.constraint(equalToConstant: 60).isActive = true
         element.imageButtonImageView.heightAnchor.constraint(equalToConstant: 60).isActive = true
@@ -63,7 +63,7 @@ final class WalletView: UIView {
     lazy var showExtractButton: CustomViewButton = {
         let element = CustomViewButton()
         element.translatesAutoresizingMaskIntoConstraints = false
-        element.imageButtonImageView.image = UIImage(named: "carteira")
+        element.imageButtonImageView.image = UIImage(named: "verExtrato")
         element.titleButtonLabel.text = "Ver extrato"
         element.imageButtonImageView.widthAnchor.constraint(equalToConstant: 60).isActive = true
         element.imageButtonImageView.heightAnchor.constraint(equalToConstant: 60).isActive = true

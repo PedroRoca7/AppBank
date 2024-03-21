@@ -34,6 +34,16 @@
 		CE270B2A2BAB2B55008CEEA9 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE270B292BAB2B55008CEEA9 /* TransactionsViewController.swift */; };
 		CE270B2C2BAB2BFE008CEEA9 /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE270B2B2BAB2BFE008CEEA9 /* TransactionsView.swift */; };
 		CE270B2E2BAB2C0D008CEEA9 /* TransactionsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE270B2D2BAB2C0C008CEEA9 /* TransactionsFactory.swift */; };
+		CE270B332BAC7464008CEEA9 /* CreditCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE270B322BAC7464008CEEA9 /* CreditCardView.swift */; };
+		CE270B352BAC7470008CEEA9 /* CreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE270B342BAC7470008CEEA9 /* CreditCardViewController.swift */; };
+		CE270B372BAC7484008CEEA9 /* CreditCardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE270B362BAC7484008CEEA9 /* CreditCardFactory.swift */; };
+		CE270B392BAC75CC008CEEA9 /* CustomBlockedCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE270B382BAC75CC008CEEA9 /* CustomBlockedCardView.swift */; };
+		CE270B3B2BAC7BDE008CEEA9 /* CustomImageCreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE270B3A2BAC7BDE008CEEA9 /* CustomImageCreditCard.swift */; };
+		CE270B3D2BACA6A8008CEEA9 /* SimpleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE270B3C2BACA6A8008CEEA9 /* SimpleScrollView.swift */; };
+		CE270B402BACC3FD008CEEA9 /* MyDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE270B3F2BACC3FD008CEEA9 /* MyDataView.swift */; };
+		CE270B422BACC407008CEEA9 /* MyDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE270B412BACC407008CEEA9 /* MyDataViewController.swift */; };
+		CE270B442BACC412008CEEA9 /* MyDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE270B432BACC412008CEEA9 /* MyDataFactory.swift */; };
+		CE270B462BACC85C008CEEA9 /* CustomLogoutViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE270B452BACC85C008CEEA9 /* CustomLogoutViewButton.swift */; };
 		CE270CDB2A98172C00E69BF1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE270CDA2A98172C00E69BF1 /* GoogleService-Info.plist */; };
 		CE2F3B8A2B55E54400F68503 /* ViewCodeUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F3B892B55E54400F68503 /* ViewCodeUIView.swift */; };
 		CE43618D2B51CC72009751C0 /* RegisterViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43618C2B51CC72009751C0 /* RegisterViewModelTests.swift */; };
@@ -169,6 +179,16 @@
 		CE270B292BAB2B55008CEEA9 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
 		CE270B2B2BAB2BFE008CEEA9 /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
 		CE270B2D2BAB2C0C008CEEA9 /* TransactionsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsFactory.swift; sourceTree = "<group>"; };
+		CE270B322BAC7464008CEEA9 /* CreditCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardView.swift; sourceTree = "<group>"; };
+		CE270B342BAC7470008CEEA9 /* CreditCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardViewController.swift; sourceTree = "<group>"; };
+		CE270B362BAC7484008CEEA9 /* CreditCardFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardFactory.swift; sourceTree = "<group>"; };
+		CE270B382BAC75CC008CEEA9 /* CustomBlockedCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBlockedCardView.swift; sourceTree = "<group>"; };
+		CE270B3A2BAC7BDE008CEEA9 /* CustomImageCreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageCreditCard.swift; sourceTree = "<group>"; };
+		CE270B3C2BACA6A8008CEEA9 /* SimpleScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleScrollView.swift; sourceTree = "<group>"; };
+		CE270B3F2BACC3FD008CEEA9 /* MyDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataView.swift; sourceTree = "<group>"; };
+		CE270B412BACC407008CEEA9 /* MyDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataViewController.swift; sourceTree = "<group>"; };
+		CE270B432BACC412008CEEA9 /* MyDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataFactory.swift; sourceTree = "<group>"; };
+		CE270B452BACC85C008CEEA9 /* CustomLogoutViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLogoutViewButton.swift; sourceTree = "<group>"; };
 		CE270CDA2A98172C00E69BF1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE2F3B892B55E54400F68503 /* ViewCodeUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeUIView.swift; sourceTree = "<group>"; };
 		CE43618A2B51BC55009751C0 /* AppBankTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppBankTests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -402,6 +422,10 @@
 				CEE2F2652BA4D0B800362BB0 /* CustomViewRegisterEmail.swift */,
 				CE8F9D6F2BA4E8A0002AA060 /* CustomViewRegisterPassword.swift */,
 				CEDDC8122BAA6E65001A0173 /* CustomViewButton.swift */,
+				CE270B382BAC75CC008CEEA9 /* CustomBlockedCardView.swift */,
+				CE270B3A2BAC7BDE008CEEA9 /* CustomImageCreditCard.swift */,
+				CE270B3C2BACA6A8008CEEA9 /* SimpleScrollView.swift */,
+				CE270B452BACC85C008CEEA9 /* CustomLogoutViewButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -416,6 +440,39 @@
 				CE20FC522AA6273F00727585 /* TransactionsViewModel.swift */,
 			);
 			path = Transactions;
+			sourceTree = "<group>";
+		};
+		CE270B2F2BAC7318008CEEA9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CE5F7F602AD048CF00410BFF /* CollectionViewCell */,
+				CE6F211B2A98F663000B1B01 /* HomeView.swift */,
+				CE6F211D2A98F674000B1B01 /* HomeViewController.swift */,
+				CE0EF1152AFBBE8D00ED76B7 /* HomeFactory.swift */,
+				CE5D57E62AFE980E00FA99BA /* HomeCoordinatoor.swift */,
+				CE633DF82B0E355D000CFA4D /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CE270B302BAC7329008CEEA9 /* MyData */ = {
+			isa = PBXGroup;
+			children = (
+				CE270B3F2BACC3FD008CEEA9 /* MyDataView.swift */,
+				CE270B412BACC407008CEEA9 /* MyDataViewController.swift */,
+				CE270B432BACC412008CEEA9 /* MyDataFactory.swift */,
+			);
+			path = MyData;
+			sourceTree = "<group>";
+		};
+		CE270B312BAC73C8008CEEA9 /* CreditCard */ = {
+			isa = PBXGroup;
+			children = (
+				CE270B322BAC7464008CEEA9 /* CreditCardView.swift */,
+				CE270B342BAC7470008CEEA9 /* CreditCardViewController.swift */,
+				CE270B362BAC7484008CEEA9 /* CreditCardFactory.swift */,
+			);
+			path = CreditCard;
 			sourceTree = "<group>";
 		};
 		CE2F3B882B55E51900F68503 /* Protocols */ = {
@@ -535,14 +592,11 @@
 		CE6F211A2A98F656000B1B01 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CE270B312BAC73C8008CEEA9 /* CreditCard */,
+				CE270B302BAC7329008CEEA9 /* MyData */,
+				CE270B2F2BAC7318008CEEA9 /* Home */,
 				CE270B282BAB2B13008CEEA9 /* Transactions */,
 				CEDDC80B2BA9EFB5001A0173 /* Wallet */,
-				CE5F7F602AD048CF00410BFF /* CollectionViewCell */,
-				CE6F211B2A98F663000B1B01 /* HomeView.swift */,
-				CE6F211D2A98F674000B1B01 /* HomeViewController.swift */,
-				CE0EF1152AFBBE8D00ED76B7 /* HomeFactory.swift */,
-				CE5D57E62AFE980E00FA99BA /* HomeCoordinatoor.swift */,
-				CE633DF82B0E355D000CFA4D /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -988,8 +1042,10 @@
 				CE1C4AD72A984E0C00AEA219 /* Alert.swift in Sources */,
 				CE6D10B42AD602B800EFD5E7 /* OptionsTableView.swift in Sources */,
 				CEDDC8132BAA6E65001A0173 /* CustomViewButton.swift in Sources */,
+				CE270B422BACC407008CEEA9 /* MyDataViewController.swift in Sources */,
 				CE270B2A2BAB2B55008CEEA9 /* TransactionsViewController.swift in Sources */,
 				CE5BA4CB2A97ABC500449C0A /* RegisterNameView.swift in Sources */,
+				CE270B372BAC7484008CEEA9 /* CreditCardFactory.swift in Sources */,
 				CE1B474E2A97FF8200056914 /* AuthenticatorFirebase.swift in Sources */,
 				CE8F9D6E2BA4E833002AA060 /* RegisterPasswordView.swift in Sources */,
 				CE6D10AB2AD59C7D00EFD5E7 /* Color+.swift in Sources */,
@@ -999,6 +1055,7 @@
 				CE1DCF242A97012300E3CC3E /* LoginViewController.swift in Sources */,
 				CE5BA4DD2A97EF4200449C0A /* RegisterPasswordViewModel.swift in Sources */,
 				CE5BA4C82A97AAB300449C0A /* UIViewController+.swift in Sources */,
+				CE270B462BACC85C008CEEA9 /* CustomLogoutViewButton.swift in Sources */,
 				CE5D57E92AFEA0CF00FA99BA /* LoginFactory.swift in Sources */,
 				CE94EBE62BA3C72900316987 /* CustomViewLogin.swift in Sources */,
 				CE5BA4CD2A97ABD100449C0A /* RegisterNameViewController.swift in Sources */,
@@ -1012,6 +1069,7 @@
 				CEE2F2662BA4D0B800362BB0 /* CustomViewRegisterEmail.swift in Sources */,
 				CE016E7B2AE317BB0098F992 /* ScreenPixViewModel.swift in Sources */,
 				CE1DCEF02A97004400E3CC3E /* AppDelegate.swift in Sources */,
+				CE270B3D2BACA6A8008CEEA9 /* SimpleScrollView.swift in Sources */,
 				CE6D10AE2AD5A06300EFD5E7 /* ProductsViewCell.swift in Sources */,
 				CEE734C92A9E9D30002320DB /* ProductsView.swift in Sources */,
 				CEE734CB2A9E9D3A002320DB /* ProductsViewController.swift in Sources */,
@@ -1023,12 +1081,16 @@
 				CEE2F26C2BA4D39600362BB0 /* RegisterEmailCoordinator.swift in Sources */,
 				CE6D10B02AD5A07900EFD5E7 /* CustomProductsTableViewCell.swift in Sources */,
 				CE452DEB2BA37C6D004D9F61 /* Fonts+.swift in Sources */,
+				CE270B352BAC7470008CEEA9 /* CreditCardViewController.swift in Sources */,
 				CEA6DC8B2A9CF280004722AF /* ExtratcModel.swift in Sources */,
 				CEA6DC8D2A9CFF22004722AF /* ServiceViewModel.swift in Sources */,
+				CE270B402BACC3FD008CEEA9 /* MyDataView.swift in Sources */,
 				CE1DCF262A97012E00E3CC3E /* LoginView.swift in Sources */,
 				CE5D57EB2AFEA2D400FA99BA /* LoginCoordinatoor.swift in Sources */,
 				CE6F211E2A98F674000B1B01 /* HomeViewController.swift in Sources */,
+				CE270B442BACC412008CEEA9 /* MyDataFactory.swift in Sources */,
 				CEE734BC2A9E5F6B002320DB /* FormatterNumber.swift in Sources */,
+				CE270B3B2BAC7BDE008CEEA9 /* CustomImageCreditCard.swift in Sources */,
 				CE6F21272A99229C000B1B01 /* CustomStatementTableViewCell.swift in Sources */,
 				CE270B2C2BAB2BFE008CEEA9 /* TransactionsView.swift in Sources */,
 				CE8F9D742BA4EE3A002AA060 /* RegisterPasswordCoordinator.swift in Sources */,
@@ -1041,8 +1103,10 @@
 				CEDDC80D2BA9F022001A0173 /* WalletViewController.swift in Sources */,
 				CE1FF9022B03AE7A0021F67B /* ScreenPixFactory.swift in Sources */,
 				CE2F3B8A2B55E54400F68503 /* ViewCodeUIView.swift in Sources */,
+				CE270B332BAC7464008CEEA9 /* CreditCardView.swift in Sources */,
 				CEE2F2642BA4CFDD00362BB0 /* RegisterEmailView.swift in Sources */,
 				CE8F9D722BA4EC38002AA060 /* RegisterPasswordViewController.swift in Sources */,
+				CE270B392BAC75CC008CEEA9 /* CustomBlockedCardView.swift in Sources */,
 				CE8F9D7B2BA8A3CA002AA060 /* RegisterToAnalyseFactory.swift in Sources */,
 				CEE2F2682BA4D1F000362BB0 /* RegisterEmailViewController.swift in Sources */,
 				CE016E792AE317A10098F992 /* ScreenPixView.swift in Sources */,
