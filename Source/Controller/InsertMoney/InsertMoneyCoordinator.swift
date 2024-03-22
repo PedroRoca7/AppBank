@@ -1,18 +1,13 @@
 //
-//  HomeCoordinator.swift
+//  InsertMoneyCoordinator.swift
 //  AppBank
 //
-//  Created by Pedro Henrique on 10/11/23.
+//  Created by Pedro Henrique on 22/03/24.
 //
 
-import Foundation
 import UIKit
 
-protocol HomeCoordinating {
-
-}
-
-class HomeCoordinator: HomeCoordinating {
+final class InsertMoneyCoordinator {
     
     //MARK: Propertys
     

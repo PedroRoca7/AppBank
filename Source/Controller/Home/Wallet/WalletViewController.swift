@@ -19,6 +19,17 @@ final class WalletViewController: UIViewController {
         return element
     }()
     
+    private var coordinator: WalletCoordinator
+    
+    init(coordinator: WalletCoordinator) {
+        self.coordinator = coordinator
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func loadView() {
         view = viewScreen
     }
@@ -30,7 +41,7 @@ final class WalletViewController: UIViewController {
     
     private func insertMoneyButtonTapped() {
         viewScreen.insertMoneyButton.button.rx.tap.bind {
-            print("Button Tapped")
+            self.coordinator.showInsertMoneyScreen()
         }.disposed(by: disposeBag)
     }
     

@@ -15,15 +15,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoAppBankWhite" translatesAutoresizingMaskIntoConstraints="NO" id="Pyy-WL-qEO">
-                                <rect key="frame" x="74" y="316" width="245" height="245"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenEasyBank" translatesAutoresizingMaskIntoConstraints="NO" id="1lc-8m-mZ1">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.32549019607843138" green="0.11215911779750956" blue="0.95132900328100001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Pyy-WL-qEO" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="In7-K2-VF0"/>
-                            <constraint firstItem="Pyy-WL-qEO" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="r9f-Gg-yC8"/>
+                            <constraint firstItem="1lc-8m-mZ1" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ZvE-gP-H5d"/>
+                            <constraint firstAttribute="trailing" secondItem="1lc-8m-mZ1" secondAttribute="trailing" id="d8s-bw-Soe"/>
+                            <constraint firstAttribute="bottom" secondItem="1lc-8m-mZ1" secondAttribute="bottom" id="pb3-PV-NTr"/>
+                            <constraint firstItem="1lc-8m-mZ1" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="rFb-gQ-9IA"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -33,6 +34,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LogoAppBankWhite" width="245" height="245"/>
+        <image name="LaunchScreenEasyBank" width="1200" height="2200"/>
     </resources>
 </document>

@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
     }()
     
     lazy private var walletViewController: WalletViewController = {
-        let view = WalletFactory.makeModule()
+        let view = WalletFactory.makeModule(navigationController: navigationController ?? UINavigationController())
         return view
     }()
     
@@ -61,18 +61,25 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         viewModel.loadStatements()
         setupNameClientLabel()
+        setupConfigNavigationBar()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         cellView.layer.cornerRadius = cellView.frame.width / 2
         hideKeyBoardWhenTapped()
         setupDelegates()
-        setupConfigNavigationBar()
+        selectedDefaultCellColletionView()
     }
 }
 
 private extension HomeViewController {
 
+    func selectedDefaultCellColletionView() {
+        let indexPath = IndexPath(item: 0,section: 0)
+        viewScreen.collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .top)
+        setupAddChildWalletViewController()
+    }
+    
     func setupConfigNavigationBar() {
         navigationController?.navigationBar.isHidden = true
     }

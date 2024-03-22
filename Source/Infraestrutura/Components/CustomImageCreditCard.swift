@@ -63,6 +63,13 @@ final class CustomImageCreditCard: UIView {
         return element
     }()
     
+    lazy var button: UIButton = {
+        let element = UIButton()
+        element.translatesAutoresizingMaskIntoConstraints = false
+        element.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+        return element
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupSubViews()
@@ -81,6 +88,7 @@ final class CustomImageCreditCard: UIView {
         self.addSubview(nameCardLabel)
         self.addSubview(validityCardLabel)
         self.addSubview(logoEloIcon)
+        self.addSubview(button)
     }
     
     private func setupConstraints() {
@@ -107,7 +115,24 @@ final class CustomImageCreditCard: UIView {
             logoEloIcon.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -3),
             logoEloIcon.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -3),
             
+            button.topAnchor.constraint(equalTo: self.topAnchor),
+            button.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            button.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            button.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
         ])
     }
+    
+    @objc private func buttonPressed() {
+        var backgroundBackImageCreditCard = UIImageView()
+        backgroundBackImageCreditCard = UIImageView(image: backgroundImageCreditCard.image)
+        backgroundBackImageCreditCard.frame = backgroundImageCreditCard.frame
+        backgroundBackImageCreditCard.layer.cornerRadius = backgroundImageCreditCard.layer.cornerRadius
+        backgroundBackImageCreditCard.layer.masksToBounds = true
+        backgroundBackImageCreditCard.layer.transform = CATransform3DMakeRotation(CGFloat.pi, 0.0, 1.0, 0.0)
+        self.addSubview(backgroundBackImageCreditCard)
+        
+        UIView.transition(from: backgroundImageCreditCard, to: backgroundBackImageCreditCard, duration: 0.5, options: [.transitionFlipFromLeft, .showHideTransitionViews], completion: nil)
+        
+    }
 }
-

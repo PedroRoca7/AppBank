@@ -9,9 +9,8 @@
 /* Begin PBXBuildFile section */
 		41B1F6CE5D04FCBF08741728 /* Pods_AppBank_AppBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B0EA43793D0209308F9197A /* Pods_AppBank_AppBankUITests.framework */; };
 		71BB0179CB1AB0470ABBBF27 /* Pods_AppBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60990546D06C3A8785443F52 /* Pods_AppBank.framework */; };
-		CE016E792AE317A10098F992 /* ScreenPixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE016E782AE317A10098F992 /* ScreenPixView.swift */; };
-		CE016E7B2AE317BB0098F992 /* ScreenPixViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE016E7A2AE317BB0098F992 /* ScreenPixViewModel.swift */; };
-		CE016E7D2AE317CB0098F992 /* ScreenPixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE016E7C2AE317CB0098F992 /* ScreenPixViewController.swift */; };
+		CE016E792AE317A10098F992 /* InsertMoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE016E782AE317A10098F992 /* InsertMoneyView.swift */; };
+		CE016E7D2AE317CB0098F992 /* InsertMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE016E7C2AE317CB0098F992 /* InsertMoneyViewController.swift */; };
 		CE0EF1162AFBBE8D00ED76B7 /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0EF1152AFBBE8D00ED76B7 /* HomeFactory.swift */; };
 		CE1B474E2A97FF8200056914 /* AuthenticatorFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B474D2A97FF8200056914 /* AuthenticatorFirebase.swift */; };
 		CE1C4AD72A984E0C00AEA219 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C4AD62A984E0C00AEA219 /* Alert.swift */; };
@@ -27,8 +26,7 @@
 		CE1DCF322A9709D400E3CC3E /* ButtonDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DCF312A9709D400E3CC3E /* ButtonDefault.swift */; };
 		CE1FF8FE2B03A9D30021F67B /* ProductsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FF8FD2B03A9D30021F67B /* ProductsCoordinator.swift */; };
 		CE1FF9002B03A9E50021F67B /* ProductsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FF8FF2B03A9E50021F67B /* ProductsFactory.swift */; };
-		CE1FF9022B03AE7A0021F67B /* ScreenPixFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FF9012B03AE7A0021F67B /* ScreenPixFactory.swift */; };
-		CE1FF9042B03AE8C0021F67B /* ScreenPixCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FF9032B03AE8C0021F67B /* ScreenPixCoordinator.swift */; };
+		CE1FF9022B03AE7A0021F67B /* InsertMoneyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FF9012B03AE7A0021F67B /* InsertMoneyFactory.swift */; };
 		CE20FC532AA6273F00727585 /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20FC522AA6273F00727585 /* TransactionsViewModel.swift */; };
 		CE270B272BAB2A99008CEEA9 /* CustomBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE270B262BAB2A99008CEEA9 /* CustomBalanceView.swift */; };
 		CE270B2A2BAB2B55008CEEA9 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE270B292BAB2B55008CEEA9 /* TransactionsViewController.swift */; };
@@ -88,6 +86,11 @@
 		CE6F211E2A98F674000B1B01 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F211D2A98F674000B1B01 /* HomeViewController.swift */; };
 		CE6F21252A99227E000B1B01 /* StatementCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F21242A99227E000B1B01 /* StatementCellView.swift */; };
 		CE6F21272A99229C000B1B01 /* CustomStatementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F21262A99229C000B1B01 /* CustomStatementTableViewCell.swift */; };
+		CE7D981D2BADD94600A7EC39 /* CustomViewHorizontalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D981C2BADD94600A7EC39 /* CustomViewHorizontalButton.swift */; };
+		CE7D981F2BAE00CA00A7EC39 /* PixViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D981E2BAE00CA00A7EC39 /* PixViewModel.swift */; };
+		CE7D98212BAE017100A7EC39 /* PixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D98202BAE017100A7EC39 /* PixViewController.swift */; };
+		CE7D98232BAE042D00A7EC39 /* WalletCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D98222BAE042D00A7EC39 /* WalletCoordinator.swift */; };
+		CE7D98252BAE05B700A7EC39 /* InsertMoneyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D98242BAE05B700A7EC39 /* InsertMoneyCoordinator.swift */; };
 		CE8F9D6E2BA4E833002AA060 /* RegisterPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F9D6D2BA4E833002AA060 /* RegisterPasswordView.swift */; };
 		CE8F9D702BA4E8A0002AA060 /* CustomViewRegisterPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F9D6F2BA4E8A0002AA060 /* CustomViewRegisterPassword.swift */; };
 		CE8F9D722BA4EC38002AA060 /* RegisterPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F9D712BA4EC38002AA060 /* RegisterPasswordViewController.swift */; };
@@ -150,9 +153,8 @@
 		B096BF502BBA353DB97C2989 /* Pods-ItubersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ItubersTests.debug.xcconfig"; path = "Target Support Files/Pods-ItubersTests/Pods-ItubersTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BAEECA456012D52C42661D59 /* Pods-AppBankTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppBankTests.debug.xcconfig"; path = "Target Support Files/Pods-AppBankTests/Pods-AppBankTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C8AC14F57A3A1BBC828B90BA /* Pods-Itubers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Itubers.debug.xcconfig"; path = "Target Support Files/Pods-Itubers/Pods-Itubers.debug.xcconfig"; sourceTree = "<group>"; };
-		CE016E782AE317A10098F992 /* ScreenPixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPixView.swift; sourceTree = "<group>"; };
-		CE016E7A2AE317BB0098F992 /* ScreenPixViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPixViewModel.swift; sourceTree = "<group>"; };
-		CE016E7C2AE317CB0098F992 /* ScreenPixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPixViewController.swift; sourceTree = "<group>"; };
+		CE016E782AE317A10098F992 /* InsertMoneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertMoneyView.swift; sourceTree = "<group>"; };
+		CE016E7C2AE317CB0098F992 /* InsertMoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertMoneyViewController.swift; sourceTree = "<group>"; };
 		CE0EF1152AFBBE8D00ED76B7 /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
 		CE1B474D2A97FF8200056914 /* AuthenticatorFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatorFirebase.swift; sourceTree = "<group>"; };
 		CE1C4AD62A984E0C00AEA219 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -172,8 +174,7 @@
 		CE1DCF312A9709D400E3CC3E /* ButtonDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDefault.swift; sourceTree = "<group>"; };
 		CE1FF8FD2B03A9D30021F67B /* ProductsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCoordinator.swift; sourceTree = "<group>"; };
 		CE1FF8FF2B03A9E50021F67B /* ProductsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsFactory.swift; sourceTree = "<group>"; };
-		CE1FF9012B03AE7A0021F67B /* ScreenPixFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPixFactory.swift; sourceTree = "<group>"; };
-		CE1FF9032B03AE8C0021F67B /* ScreenPixCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPixCoordinator.swift; sourceTree = "<group>"; };
+		CE1FF9012B03AE7A0021F67B /* InsertMoneyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertMoneyFactory.swift; sourceTree = "<group>"; };
 		CE20FC522AA6273F00727585 /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
 		CE270B262BAB2A99008CEEA9 /* CustomBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBalanceView.swift; sourceTree = "<group>"; };
 		CE270B292BAB2B55008CEEA9 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
@@ -232,6 +233,11 @@
 		CE6F211D2A98F674000B1B01 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CE6F21242A99227E000B1B01 /* StatementCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementCellView.swift; sourceTree = "<group>"; };
 		CE6F21262A99229C000B1B01 /* CustomStatementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStatementTableViewCell.swift; sourceTree = "<group>"; };
+		CE7D981C2BADD94600A7EC39 /* CustomViewHorizontalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewHorizontalButton.swift; sourceTree = "<group>"; };
+		CE7D981E2BAE00CA00A7EC39 /* PixViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixViewModel.swift; sourceTree = "<group>"; };
+		CE7D98202BAE017100A7EC39 /* PixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixViewController.swift; sourceTree = "<group>"; };
+		CE7D98222BAE042D00A7EC39 /* WalletCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCoordinator.swift; sourceTree = "<group>"; };
+		CE7D98242BAE05B700A7EC39 /* InsertMoneyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertMoneyCoordinator.swift; sourceTree = "<group>"; };
 		CE8F9D6D2BA4E833002AA060 /* RegisterPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPasswordView.swift; sourceTree = "<group>"; };
 		CE8F9D6F2BA4E8A0002AA060 /* CustomViewRegisterPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewRegisterPassword.swift; sourceTree = "<group>"; };
 		CE8F9D712BA4EC38002AA060 /* RegisterPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPasswordViewController.swift; sourceTree = "<group>"; };
@@ -306,16 +312,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CE016E772AE317710098F992 /* ScreenPix */ = {
+		CE016E772AE317710098F992 /* InsertMoney */ = {
 			isa = PBXGroup;
 			children = (
-				CE016E782AE317A10098F992 /* ScreenPixView.swift */,
-				CE016E7C2AE317CB0098F992 /* ScreenPixViewController.swift */,
-				CE016E7A2AE317BB0098F992 /* ScreenPixViewModel.swift */,
-				CE1FF9012B03AE7A0021F67B /* ScreenPixFactory.swift */,
-				CE1FF9032B03AE8C0021F67B /* ScreenPixCoordinator.swift */,
+				CE016E782AE317A10098F992 /* InsertMoneyView.swift */,
+				CE016E7C2AE317CB0098F992 /* InsertMoneyViewController.swift */,
+				CE1FF9012B03AE7A0021F67B /* InsertMoneyFactory.swift */,
+				CE7D98242BAE05B700A7EC39 /* InsertMoneyCoordinator.swift */,
 			);
-			path = ScreenPix;
+			path = InsertMoney;
 			sourceTree = "<group>";
 		};
 		CE1DCEE32A97004400E3CC3E = {
@@ -383,6 +388,8 @@
 				CE1DCF2B2A9704A200E3CC3E /* Infraestrutura */,
 				CE5BA4DE2A97EFA600449C0A /* Model */,
 				CE5BA4D92A97EE3500449C0A /* Service */,
+				CE7D981E2BAE00CA00A7EC39 /* PixViewModel.swift */,
+				CE7D98202BAE017100A7EC39 /* PixViewController.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -426,6 +433,7 @@
 				CE270B3A2BAC7BDE008CEEA9 /* CustomImageCreditCard.swift */,
 				CE270B3C2BACA6A8008CEEA9 /* SimpleScrollView.swift */,
 				CE270B452BACC85C008CEEA9 /* CustomLogoutViewButton.swift */,
+				CE7D981C2BADD94600A7EC39 /* CustomViewHorizontalButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -691,6 +699,7 @@
 				CEDDC80C2BA9F022001A0173 /* WalletViewController.swift */,
 				CEDDC80E2BA9F030001A0173 /* WalletView.swift */,
 				CEDDC8102BA9F04B001A0173 /* WalletFactory.swift */,
+				CE7D98222BAE042D00A7EC39 /* WalletCoordinator.swift */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -744,7 +753,7 @@
 				CE1DCF212A9700AA00E3CC3E /* Login */,
 				CEE734C32A9E9D01002320DB /* Products */,
 				CE5BA4C92A97ABAB00449C0A /* Register */,
-				CE016E772AE317710098F992 /* ScreenPix */,
+				CE016E772AE317710098F992 /* InsertMoney */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1045,6 +1054,7 @@
 				CE270B422BACC407008CEEA9 /* MyDataViewController.swift in Sources */,
 				CE270B2A2BAB2B55008CEEA9 /* TransactionsViewController.swift in Sources */,
 				CE5BA4CB2A97ABC500449C0A /* RegisterNameView.swift in Sources */,
+				CE7D981F2BAE00CA00A7EC39 /* PixViewModel.swift in Sources */,
 				CE270B372BAC7484008CEEA9 /* CreditCardFactory.swift in Sources */,
 				CE1B474E2A97FF8200056914 /* AuthenticatorFirebase.swift in Sources */,
 				CE8F9D6E2BA4E833002AA060 /* RegisterPasswordView.swift in Sources */,
@@ -1062,12 +1072,12 @@
 				CE8F9D7D2BA8A3E8002AA060 /* RegisterToAnalyseCoordinator.swift in Sources */,
 				CE1DCF322A9709D400E3CC3E /* ButtonDefault.swift in Sources */,
 				CEA6DC902A9D27CB004722AF /* String+.swift in Sources */,
+				CE7D981D2BADD94600A7EC39 /* CustomViewHorizontalButton.swift in Sources */,
 				CE8F9D772BA89E3B002AA060 /* RegisterToAnalyseView.swift in Sources */,
 				CE633DF92B0E355D000CFA4D /* HomeViewModel.swift in Sources */,
 				CE5BA4D12A97E99A00449C0A /* LoginViewModel.swift in Sources */,
 				CE94EBE82BA3D0C500316987 /* CustomViewRegisterName.swift in Sources */,
 				CEE2F2662BA4D0B800362BB0 /* CustomViewRegisterEmail.swift in Sources */,
-				CE016E7B2AE317BB0098F992 /* ScreenPixViewModel.swift in Sources */,
 				CE1DCEF02A97004400E3CC3E /* AppDelegate.swift in Sources */,
 				CE270B3D2BACA6A8008CEEA9 /* SimpleScrollView.swift in Sources */,
 				CE6D10AE2AD5A06300EFD5E7 /* ProductsViewCell.swift in Sources */,
@@ -1076,7 +1086,6 @@
 				CEDDC80F2BA9F030001A0173 /* WalletView.swift in Sources */,
 				CE5BA4E02A97EFB800449C0A /* Users.swift in Sources */,
 				CEE2F26A2BA4D38600362BB0 /* RegisterEmailFactory.swift in Sources */,
-				CE1FF9042B03AE8C0021F67B /* ScreenPixCoordinator.swift in Sources */,
 				CE1FF9002B03A9E50021F67B /* ProductsFactory.swift in Sources */,
 				CEE2F26C2BA4D39600362BB0 /* RegisterEmailCoordinator.swift in Sources */,
 				CE6D10B02AD5A07900EFD5E7 /* CustomProductsTableViewCell.swift in Sources */,
@@ -1097,29 +1106,32 @@
 				CE8F9D702BA4E8A0002AA060 /* CustomViewRegisterPassword.swift in Sources */,
 				CE1FF8FE2B03A9D30021F67B /* ProductsCoordinator.swift in Sources */,
 				CE5F7F642AD0491F00410BFF /* CollectionCellView.swift in Sources */,
+				CE7D98252BAE05B700A7EC39 /* InsertMoneyCoordinator.swift in Sources */,
 				CEAC14B62AA13B8E00A56C7C /* ApiStatement.swift in Sources */,
 				CE5F7F622AD048EA00410BFF /* CustomCollectionCell.swift in Sources */,
 				CE8F9D792BA89E52002AA060 /* RegisterToAnalyseViewController.swift in Sources */,
 				CEDDC80D2BA9F022001A0173 /* WalletViewController.swift in Sources */,
-				CE1FF9022B03AE7A0021F67B /* ScreenPixFactory.swift in Sources */,
+				CE1FF9022B03AE7A0021F67B /* InsertMoneyFactory.swift in Sources */,
 				CE2F3B8A2B55E54400F68503 /* ViewCodeUIView.swift in Sources */,
 				CE270B332BAC7464008CEEA9 /* CreditCardView.swift in Sources */,
 				CEE2F2642BA4CFDD00362BB0 /* RegisterEmailView.swift in Sources */,
 				CE8F9D722BA4EC38002AA060 /* RegisterPasswordViewController.swift in Sources */,
+				CE7D98212BAE017100A7EC39 /* PixViewController.swift in Sources */,
 				CE270B392BAC75CC008CEEA9 /* CustomBlockedCardView.swift in Sources */,
 				CE8F9D7B2BA8A3CA002AA060 /* RegisterToAnalyseFactory.swift in Sources */,
 				CEE2F2682BA4D1F000362BB0 /* RegisterEmailViewController.swift in Sources */,
-				CE016E792AE317A10098F992 /* ScreenPixView.swift in Sources */,
+				CE016E792AE317A10098F992 /* InsertMoneyView.swift in Sources */,
 				CE8F9D7F2BA8B07A002AA060 /* RegisterPasswordFactory.swift in Sources */,
 				CE5D57E72AFE980E00FA99BA /* HomeCoordinatoor.swift in Sources */,
 				CE1DCEF22A97004400E3CC3E /* SceneDelegate.swift in Sources */,
 				CE270B272BAB2A99008CEEA9 /* CustomBalanceView.swift in Sources */,
-				CE016E7D2AE317CB0098F992 /* ScreenPixViewController.swift in Sources */,
+				CE016E7D2AE317CB0098F992 /* InsertMoneyViewController.swift in Sources */,
 				CE5D57EF2AFEAF7500FA99BA /* RegisterNameFactory.swift in Sources */,
 				CE1DCF302A97074B00E3CC3E /* TextFieldDefault.swift in Sources */,
 				CE270B2E2BAB2C0D008CEEA9 /* TransactionsFactory.swift in Sources */,
 				CE0EF1162AFBBE8D00ED76B7 /* HomeFactory.swift in Sources */,
 				CE6F211C2A98F663000B1B01 /* HomeView.swift in Sources */,
+				CE7D98232BAE042D00A7EC39 /* WalletCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
