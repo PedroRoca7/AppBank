@@ -9,10 +9,13 @@ import UIKit
 
 final class CustomMyDataView: UIView {
     
+    private var textFieldIsEnable = false
+    
     private lazy var imageQRCode: UIImageView = {
         let element = UIImageView()
         element.translatesAutoresizingMaskIntoConstraints = false
         element.image = UIImage(named: "qrCode")
+        element.contentMode = .scaleAspectFit
         return element
     }()
     
@@ -28,7 +31,8 @@ final class CustomMyDataView: UIView {
     }()
     
     lazy var fullname: CustomTitleAndTextField = {
-        let element = CustomTitleAndTextField(textTitle: "Nome completo", textTextField: "Pedro Henrique")
+        let element = CustomTitleAndTextField(textTitle: "Nome completo", textTextField: "Pedro Henrique", widthLineTextField: 300)
+        element.titleTextField.isEnabled = textFieldIsEnable
         return element
     }()
     
@@ -37,19 +41,22 @@ final class CustomMyDataView: UIView {
         element.translatesAutoresizingMaskIntoConstraints = false
         element.axis = .horizontal
         element.alignment = .leading
-        element.spacing = 5
-        element.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 15, bottom: 10, trailing: 15)
+        element.distribution = .fillProportionally
+        element.spacing = 30
+        element.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         element.isLayoutMarginsRelativeArrangement = true
         return element
     }()
     
     lazy var agency: CustomTitleAndTextField = {
-        let element = CustomTitleAndTextField(textTitle: "Agência", textTextField: "2604-1")
+        let element = CustomTitleAndTextField(textTitle: "Agência", textTextField: "2604-1", widthLineTextField: 120)
+        element.titleTextField.isEnabled = false
         return element
     }()
     
     lazy var account: CustomTitleAndTextField = {
-        let element = CustomTitleAndTextField(textTitle: "Conta", textTextField: "159386-7")
+        let element = CustomTitleAndTextField(textTitle: "Conta", textTextField: "159386-7", widthLineTextField: 150)
+        element.titleTextField.isEnabled = false
         return element
     }()
     
@@ -58,29 +65,34 @@ final class CustomMyDataView: UIView {
         element.translatesAutoresizingMaskIntoConstraints = false
         element.axis = .horizontal
         element.alignment = .leading
-        element.spacing = 5
-        element.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 15, bottom: 10, trailing: 15)
+        element.distribution = .fillProportionally
+        element.spacing = 30
+        element.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         element.isLayoutMarginsRelativeArrangement = true
         return element
     }()
     
     lazy var cpf: CustomTitleAndTextField = {
-        let element = CustomTitleAndTextField(textTitle: "CPF", textTextField: "056.789.123-03")
+        let element = CustomTitleAndTextField(textTitle: "CPF", textTextField: "056.789.123-03", widthLineTextField: 120)
+        element.titleTextField.isEnabled = textFieldIsEnable
         return element
     }()
     
     lazy var phone: CustomTitleAndTextField = {
-        let element = CustomTitleAndTextField(textTitle: "Telefone", textTextField: "(51)98758-4895")
+        let element = CustomTitleAndTextField(textTitle: "Telefone", textTextField: "(51)98758-4895", widthLineTextField: 150)
+        element.titleTextField.isEnabled = textFieldIsEnable
         return element
     }()
     
     lazy var email: CustomTitleAndTextField = {
-        let element = CustomTitleAndTextField(textTitle: "E-mail", textTextField: "Pedro@gmail.com")
+        let element = CustomTitleAndTextField(textTitle: "E-mail", textTextField: "Pedro@gmail.com", widthLineTextField: 300)
+        element.titleTextField.isEnabled = textFieldIsEnable
         return element
     }()
     
     lazy var address: CustomTitleAndTextField = {
-        let element = CustomTitleAndTextField(textTitle: "Endereço", textTextField: "Travessa Francisco Ramos, 1026")
+        let element = CustomTitleAndTextField(textTitle: "Endereço", textTextField: "Travessa Francisco Ramos, 1026", widthLineTextField: 300)
+        element.titleTextField.isEnabled = textFieldIsEnable
         return element
     }()
     
@@ -88,7 +100,8 @@ final class CustomMyDataView: UIView {
         super.init(frame: frame)
         setupSubViews()
         setupConstraints()
-        setupCustomSpacingStackView()
+        self.backgroundColor = .white
+        self.layer.cornerRadius = 10
     }
     
     required init?(coder: NSCoder) {
@@ -116,63 +129,14 @@ final class CustomMyDataView: UIView {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             
-            imageQRCode.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
-            imageQRCode.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
-            imageQRCode.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5),
-            imageQRCode.heightAnchor.constraint(equalToConstant: 50),
+            imageQRCode.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
+            imageQRCode.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            imageQRCode.heightAnchor.constraint(equalToConstant: 100),
             
-            stackView.topAnchor.constraint(equalTo: imageQRCode.bottomAnchor, constant: 5),
+            stackView.topAnchor.constraint(equalTo: imageQRCode.bottomAnchor, constant: 15),
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             stackView.bottomAnchor.constraint(lessThanOrEqualTo: self.bottomAnchor)
         ])
     }
-    
-    private func setupCustomSpacingStackView() {
-
-    }
 }
-
-final class CustomTitleAndTextField: UIStackView {
-    
-    private lazy var titleLabel: UILabel = {
-        let element = UILabel()
-        element.translatesAutoresizingMaskIntoConstraints = false
-        element.font = .customSegoeUIFont(type: .bold, size: 14)
-        element.textColor = .azulClaro
-        return element
-    }()
-    
-    lazy var titleTextField: TextFieldDefault = {
-        let element = TextFieldDefault(placeholder: "", keyboardType: .default, backgroundColor: .clear, typeTextField: .onlyLine)
-        element.textColor = .black
-        element.font = .customSegoeUIFont(type: .bold, size: 14)
-        return element
-    }()
-    
-    init(textTitle: String, textTextField: String) {
-        super.init(frame: .zero)
-        titleLabel.text = textTitle
-        titleTextField.text = textTextField
-        setupView()
-    }
-    
-    required init(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-extension CustomTitleAndTextField: ViewCodeUIView {
-    func addElementsView() {
-        addArrangedSubview(titleLabel)
-        addArrangedSubview(titleTextField)
-    }
-    
-    func setupConstraints() {}
-    
-    func applyConditionSpecial() {
-        translatesAutoresizingMaskIntoConstraints = false
-        axis = .vertical
-    }
-}
-

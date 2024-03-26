@@ -9,7 +9,8 @@ import UIKit
 
 enum TransfersFactory {
     static func makeModule(navigationController: UINavigationController) -> UIViewController {
-        let viewController = TransfersViewController()
+        let coordinator = TransfersCoordinator(navigationController: navigationController)
+        let viewController = TransfersViewController(coordinator: coordinator)
         return viewController
     }
 }

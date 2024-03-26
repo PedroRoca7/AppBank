@@ -14,11 +14,10 @@ class PixViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     
-//    lazy var viewScreen: PixView = {
-//        let view = PixView()
-//        view.backgroundColor = .azulClaro
-//        return view
-//    }()
+    lazy var viewScreen: PixView = {
+        let view = PixView()
+        return view
+    }()
     
     private var viewModel: PixViewModeling
     
@@ -33,28 +32,35 @@ class PixViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-//    override func loadView() {
-//        self.view = viewScreen
-//    }
+    override func loadView() {
+        self.view = viewScreen
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyBoardWhenTapped()
         tappedButtonMakePix()
+        setupNavigationBar()
+    }
+    
+    private func setupNavigationBar() {
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.topItem?.title = "Pix"
+        navigationController?.navigationBar.tintColor = .black
     }
 }
 
+
 private extension PixViewController {
     func tappedButtonMakePix() {
-//        viewScreen.makePixButton.rx.tap.bind {
-//            guard let name = self.viewScreen.nameReceivePixTextField.text, !name.isEmpty,
-//                  let value = self.viewScreen.valuePixTextField.text, !value.isEmpty,
-//                  let description = self.viewScreen.descriptionTextField.text, !description.isEmpty
-//            else {  self.showBasicAlert(title: "Erro", message: "Preencha todos os campos.", viewController: self) {}
-//                return }
-//            let valueNegative = Double(value)
-//            self.viewModel.makePix(modelInformations: ExtractModel(id: 0, type: 1, about: description, amount: -(valueNegative ?? 0.0)))
-//        }.disposed(by: disposeBag)
+        viewScreen.pixView.makePixButton.rx.tap.bind {
+            guard let recipientName = self.viewScreen.pixView.recipientName.titleTextField.text, !recipientName.isEmpty,
+                  let valuePix = self.viewScreen.pixView.valuePix.titleTextField.text, !valuePix.isEmpty
+            else {  self.showBasicAlert(title: "Erro", message: "Nome do destinatário ou Valor do pix vazios.", viewController: self) {}
+                return }
+            let valueNegative = Double(valuePix)
+            self.viewModel.makePix(modelInformations: ExtractModel(id: 0, type: 1, about: self.viewScreen.pixView.descriptionPix.titleTextField.text ?? "", amount: -(valueNegative ?? 0.0)))
+        }.disposed(by: disposeBag)
     }
 }
 

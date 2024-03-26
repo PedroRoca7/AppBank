@@ -10,14 +10,21 @@ import UIKit
 
 class InsertMoneyView: UIView {
     
-    // MARK: ElementsVisual
+    // MARK: - ElementsVisual
     
-    lazy var mainStackView: UIStackView = {
+    private lazy var headerBackground: UIImageView = {
+        let element = UIImageView()
+        element.translatesAutoresizingMaskIntoConstraints = false
+        element.image = UIImage(named: "backgroundHeader")
+        return element
+    }()
+    
+    private lazy var mainStackView: UIStackView = {
         let element = UIStackView()
         element.translatesAutoresizingMaskIntoConstraints = false
         element.spacing = 10
         element.axis = .vertical
-        element.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 15, leading: 20, bottom: 15, trailing: 20)
+        element.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 70, leading: 20, bottom: 15, trailing: 20)
         element.isLayoutMarginsRelativeArrangement = true
         return element
     }()
@@ -49,7 +56,7 @@ class InsertMoneyView: UIView {
         return element
     }()
     
-    // MARK: Inits
+    // MARK: - Inits
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -63,18 +70,24 @@ class InsertMoneyView: UIView {
 
 extension InsertMoneyView: ViewCodeUIView {
     
-    // MARK: Add Elements e Constraints
+    // MARK: - Add Elements e Constraints
     
     func addElementsView() {
         mainStackView.addArrangedSubview(qrCodeButton)
         mainStackView.addArrangedSubview(boletoButton)
         mainStackView.addArrangedSubview(depositTEDButton)
+        self.addSubview(headerBackground)
         self.addSubview(mainStackView)
         
     }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
+            headerBackground.topAnchor.constraint(equalTo: self.topAnchor),
+            headerBackground.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            headerBackground.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            headerBackground.heightAnchor.constraint(equalToConstant: 250),
+            
             mainStackView.topAnchor.constraint(equalTo: self.topAnchor),
             mainStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             mainStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),

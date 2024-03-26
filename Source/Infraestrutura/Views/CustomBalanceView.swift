@@ -82,7 +82,7 @@ final class CustomBalanceView: UIView {
             valueAccountLabel.leadingAnchor.constraint(equalTo: balanceAccountLabel.leadingAnchor),
             valueAccountLabel.trailingAnchor.constraint(lessThanOrEqualTo: showAndHideBalanceButton.leadingAnchor, constant: -3),
             
-            showAndHideBalanceButton.centerYAnchor.constraint(equalTo: valueAccountLabel.centerYAnchor),
+            showAndHideBalanceButton.centerYAnchor.constraint(equalTo: valueHideAccountLabel.centerYAnchor),
             showAndHideBalanceButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5),
         ])
     }

@@ -1,13 +1,13 @@
 //
-//  MyDataView.swift
+//  PixView.swift
 //  AppBank
 //
-//  Created by Pedro Henrique on 25/03/24.
+//  Created by Pedro Henrique on 26/03/24.
 //
 
 import UIKit
 
-final class MyDataView: UIView {
+final class PixView: UIView {
     
     // MARK: - ElementsVisual
     
@@ -18,17 +18,16 @@ final class MyDataView: UIView {
         return element
     }()
     
-    private lazy var mainStackView: SimpleScrollView = {
-        let element = SimpleScrollView(spacing: 10, margins: NSDirectionalEdgeInsets(top: 70,
-                                                                                     leading: 15,
-                                                                                     bottom: 15,
-                                                                                     trailing: 15))
+    private lazy var mainStackView: UIStackView = {
+        let element = UIStackView()
         element.translatesAutoresizingMaskIntoConstraints = false
+        element.isLayoutMarginsRelativeArrangement = true
+        element.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 70, leading: 20, bottom: 20, trailing: 20)
         return element
     }()
     
-    lazy var myDataView: CustomMyDataView = {
-        let element = CustomMyDataView()
+    lazy var pixView: CustomPixView = {
+        let element = CustomPixView()
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
     }()
@@ -45,12 +44,12 @@ final class MyDataView: UIView {
     }
 }
 
-extension MyDataView: ViewCodeUIView {
+extension PixView: ViewCodeUIView {
     
-    // MARK: - Add Elements e Constraints
+    // MARK: Add Elements e Constraints
     
     func addElementsView() {
-        mainStackView.addSubview(myDataView)
+        mainStackView.addArrangedSubview(pixView)
         self.addSubview(headerBackground)
         self.addSubview(mainStackView)
         
@@ -66,7 +65,7 @@ extension MyDataView: ViewCodeUIView {
             mainStackView.topAnchor.constraint(equalTo: self.topAnchor),
             mainStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             mainStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            mainStackView.bottomAnchor.constraint(greaterThanOrEqualTo: self.bottomAnchor),
+            mainStackView.bottomAnchor.constraint(lessThanOrEqualTo: self.bottomAnchor, constant: -15),
         ])
         
         let heightAnchor = mainStackView.heightAnchor.constraint(equalTo: heightAnchor)
@@ -78,4 +77,3 @@ extension MyDataView: ViewCodeUIView {
         self.backgroundColor = .cinzaClaro
     }
 }
-
