@@ -16,6 +16,8 @@ protocol TransactionsViewModeling: AnyObject {
     var delegate: TransactionsViewModelProtocol? { get set }
     var bankStatements: Extratcts { get }
     func loadStatements()
+    func showInsertMoneyScreen()
+    func showTransferScreen()
 }
 
 class TransactionsViewModel: TransactionsViewModeling {
@@ -25,11 +27,13 @@ class TransactionsViewModel: TransactionsViewModeling {
     private var bankStatementsAll: Extratcts = []
     private var serviceViewModel: ServiceViewModeling
     weak var delegate: TransactionsViewModelProtocol?
+    private var coordinator: TransactionsCoordinating
     
     //MARK: Init
     
-    init(serviceViewModel: ServiceViewModeling) {
+    init(serviceViewModel: ServiceViewModeling, coordinator: TransactionsCoordinating) {
         self.serviceViewModel = serviceViewModel
+        self.coordinator = coordinator
     }
    
     //MARK: Methods
@@ -45,5 +49,13 @@ class TransactionsViewModel: TransactionsViewModeling {
                 self.delegate?.failure()
             }
         }
+    }
+    
+    public func showInsertMoneyScreen() {
+        coordinator.showInsertMoneyScreen()
+    }
+    
+    public func showTransferScreen() {
+        coordinator.showTransferScreen()
     }
 }

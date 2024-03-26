@@ -27,7 +27,7 @@ class HomeViewController: UIViewController {
     }()
     
     lazy private var transactionsViewController: TransactionsViewController = {
-        let view = TransactionsFactory.makeModule()
+        let view = TransactionsFactory.makeModule(navigationController: navigationController ?? UINavigationController())
         return view
     }()
     
@@ -36,8 +36,8 @@ class HomeViewController: UIViewController {
         return view
     }()
     
-    lazy private var myDataViewController: MyDataViewController = {
-        let view = MyDataFactory.makeModule()
+    lazy private var myDataViewController: MyAccountViewController = {
+        let view = MyAccountFactory.makeModule()
         return view
     }()
     

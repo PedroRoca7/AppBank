@@ -38,9 +38,9 @@
 		CE270B392BAC75CC008CEEA9 /* CustomBlockedCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE270B382BAC75CC008CEEA9 /* CustomBlockedCardView.swift */; };
 		CE270B3B2BAC7BDE008CEEA9 /* CustomImageCreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE270B3A2BAC7BDE008CEEA9 /* CustomImageCreditCard.swift */; };
 		CE270B3D2BACA6A8008CEEA9 /* SimpleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE270B3C2BACA6A8008CEEA9 /* SimpleScrollView.swift */; };
-		CE270B402BACC3FD008CEEA9 /* MyDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE270B3F2BACC3FD008CEEA9 /* MyDataView.swift */; };
-		CE270B422BACC407008CEEA9 /* MyDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE270B412BACC407008CEEA9 /* MyDataViewController.swift */; };
-		CE270B442BACC412008CEEA9 /* MyDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE270B432BACC412008CEEA9 /* MyDataFactory.swift */; };
+		CE270B402BACC3FD008CEEA9 /* MyAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE270B3F2BACC3FD008CEEA9 /* MyAccountView.swift */; };
+		CE270B422BACC407008CEEA9 /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE270B412BACC407008CEEA9 /* MyAccountViewController.swift */; };
+		CE270B442BACC412008CEEA9 /* MyAccountFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE270B432BACC412008CEEA9 /* MyAccountFactory.swift */; };
 		CE270B462BACC85C008CEEA9 /* CustomLogoutViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE270B452BACC85C008CEEA9 /* CustomLogoutViewButton.swift */; };
 		CE270CDB2A98172C00E69BF1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE270CDA2A98172C00E69BF1 /* GoogleService-Info.plist */; };
 		CE2F3B8A2B55E54400F68503 /* ViewCodeUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F3B892B55E54400F68503 /* ViewCodeUIView.swift */; };
@@ -86,6 +86,14 @@
 		CE6F211E2A98F674000B1B01 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F211D2A98F674000B1B01 /* HomeViewController.swift */; };
 		CE6F21252A99227E000B1B01 /* StatementCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F21242A99227E000B1B01 /* StatementCellView.swift */; };
 		CE6F21272A99229C000B1B01 /* CustomStatementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F21262A99229C000B1B01 /* CustomStatementTableViewCell.swift */; };
+		CE724D132BB1CD1500DF1E11 /* TransactionsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE724D122BB1CD1500DF1E11 /* TransactionsCoordinator.swift */; };
+		CE724D162BB1CEE300DF1E11 /* TransfersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE724D152BB1CEE300DF1E11 /* TransfersView.swift */; };
+		CE724D182BB1CEEE00DF1E11 /* TransfersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE724D172BB1CEEE00DF1E11 /* TransfersViewController.swift */; };
+		CE724D1A2BB1CF0600DF1E11 /* TransfersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE724D192BB1CF0600DF1E11 /* TransfersFactory.swift */; };
+		CE724D1D2BB1D62C00DF1E11 /* MyDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE724D1C2BB1D62C00DF1E11 /* MyDataView.swift */; };
+		CE724D1F2BB1D63800DF1E11 /* MyDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE724D1E2BB1D63800DF1E11 /* MyDataViewController.swift */; };
+		CE724D212BB1D64500DF1E11 /* MyDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE724D202BB1D64500DF1E11 /* MyDataFactory.swift */; };
+		CE724D232BB2276000DF1E11 /* CustomMyDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE724D222BB2276000DF1E11 /* CustomMyDataView.swift */; };
 		CE7D981D2BADD94600A7EC39 /* CustomViewHorizontalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D981C2BADD94600A7EC39 /* CustomViewHorizontalButton.swift */; };
 		CE7D981F2BAE00CA00A7EC39 /* PixViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D981E2BAE00CA00A7EC39 /* PixViewModel.swift */; };
 		CE7D98212BAE017100A7EC39 /* PixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D98202BAE017100A7EC39 /* PixViewController.swift */; };
@@ -186,9 +194,9 @@
 		CE270B382BAC75CC008CEEA9 /* CustomBlockedCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBlockedCardView.swift; sourceTree = "<group>"; };
 		CE270B3A2BAC7BDE008CEEA9 /* CustomImageCreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageCreditCard.swift; sourceTree = "<group>"; };
 		CE270B3C2BACA6A8008CEEA9 /* SimpleScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleScrollView.swift; sourceTree = "<group>"; };
-		CE270B3F2BACC3FD008CEEA9 /* MyDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataView.swift; sourceTree = "<group>"; };
-		CE270B412BACC407008CEEA9 /* MyDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataViewController.swift; sourceTree = "<group>"; };
-		CE270B432BACC412008CEEA9 /* MyDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataFactory.swift; sourceTree = "<group>"; };
+		CE270B3F2BACC3FD008CEEA9 /* MyAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountView.swift; sourceTree = "<group>"; };
+		CE270B412BACC407008CEEA9 /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
+		CE270B432BACC412008CEEA9 /* MyAccountFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountFactory.swift; sourceTree = "<group>"; };
 		CE270B452BACC85C008CEEA9 /* CustomLogoutViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLogoutViewButton.swift; sourceTree = "<group>"; };
 		CE270CDA2A98172C00E69BF1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE2F3B892B55E54400F68503 /* ViewCodeUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeUIView.swift; sourceTree = "<group>"; };
@@ -233,6 +241,14 @@
 		CE6F211D2A98F674000B1B01 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CE6F21242A99227E000B1B01 /* StatementCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementCellView.swift; sourceTree = "<group>"; };
 		CE6F21262A99229C000B1B01 /* CustomStatementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStatementTableViewCell.swift; sourceTree = "<group>"; };
+		CE724D122BB1CD1500DF1E11 /* TransactionsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsCoordinator.swift; sourceTree = "<group>"; };
+		CE724D152BB1CEE300DF1E11 /* TransfersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransfersView.swift; sourceTree = "<group>"; };
+		CE724D172BB1CEEE00DF1E11 /* TransfersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransfersViewController.swift; sourceTree = "<group>"; };
+		CE724D192BB1CF0600DF1E11 /* TransfersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransfersFactory.swift; sourceTree = "<group>"; };
+		CE724D1C2BB1D62C00DF1E11 /* MyDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataView.swift; sourceTree = "<group>"; };
+		CE724D1E2BB1D63800DF1E11 /* MyDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataViewController.swift; sourceTree = "<group>"; };
+		CE724D202BB1D64500DF1E11 /* MyDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataFactory.swift; sourceTree = "<group>"; };
+		CE724D222BB2276000DF1E11 /* CustomMyDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMyDataView.swift; sourceTree = "<group>"; };
 		CE7D981C2BADD94600A7EC39 /* CustomViewHorizontalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewHorizontalButton.swift; sourceTree = "<group>"; };
 		CE7D981E2BAE00CA00A7EC39 /* PixViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixViewModel.swift; sourceTree = "<group>"; };
 		CE7D98202BAE017100A7EC39 /* PixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixViewController.swift; sourceTree = "<group>"; };
@@ -434,6 +450,7 @@
 				CE270B3C2BACA6A8008CEEA9 /* SimpleScrollView.swift */,
 				CE270B452BACC85C008CEEA9 /* CustomLogoutViewButton.swift */,
 				CE7D981C2BADD94600A7EC39 /* CustomViewHorizontalButton.swift */,
+				CE724D222BB2276000DF1E11 /* CustomMyDataView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -444,6 +461,7 @@
 				CE6F21232A992257000B1B01 /* Cell */,
 				CE270B292BAB2B55008CEEA9 /* TransactionsViewController.swift */,
 				CE270B2B2BAB2BFE008CEEA9 /* TransactionsView.swift */,
+				CE724D122BB1CD1500DF1E11 /* TransactionsCoordinator.swift */,
 				CE270B2D2BAB2C0C008CEEA9 /* TransactionsFactory.swift */,
 				CE20FC522AA6273F00727585 /* TransactionsViewModel.swift */,
 			);
@@ -463,14 +481,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		CE270B302BAC7329008CEEA9 /* MyData */ = {
+		CE270B302BAC7329008CEEA9 /* MyAccount */ = {
 			isa = PBXGroup;
 			children = (
-				CE270B3F2BACC3FD008CEEA9 /* MyDataView.swift */,
-				CE270B412BACC407008CEEA9 /* MyDataViewController.swift */,
-				CE270B432BACC412008CEEA9 /* MyDataFactory.swift */,
+				CE270B3F2BACC3FD008CEEA9 /* MyAccountView.swift */,
+				CE270B412BACC407008CEEA9 /* MyAccountViewController.swift */,
+				CE270B432BACC412008CEEA9 /* MyAccountFactory.swift */,
 			);
-			path = MyData;
+			path = MyAccount;
 			sourceTree = "<group>";
 		};
 		CE270B312BAC73C8008CEEA9 /* CreditCard */ = {
@@ -601,7 +619,7 @@
 			isa = PBXGroup;
 			children = (
 				CE270B312BAC73C8008CEEA9 /* CreditCard */,
-				CE270B302BAC7329008CEEA9 /* MyData */,
+				CE270B302BAC7329008CEEA9 /* MyAccount */,
 				CE270B2F2BAC7318008CEEA9 /* Home */,
 				CE270B282BAB2B13008CEEA9 /* Transactions */,
 				CEDDC80B2BA9EFB5001A0173 /* Wallet */,
@@ -616,6 +634,26 @@
 				CE6F21262A99229C000B1B01 /* CustomStatementTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		CE724D142BB1CEC700DF1E11 /* Transfers */ = {
+			isa = PBXGroup;
+			children = (
+				CE724D152BB1CEE300DF1E11 /* TransfersView.swift */,
+				CE724D172BB1CEEE00DF1E11 /* TransfersViewController.swift */,
+				CE724D192BB1CF0600DF1E11 /* TransfersFactory.swift */,
+			);
+			path = Transfers;
+			sourceTree = "<group>";
+		};
+		CE724D1B2BB1D61500DF1E11 /* MyData */ = {
+			isa = PBXGroup;
+			children = (
+				CE724D1C2BB1D62C00DF1E11 /* MyDataView.swift */,
+				CE724D1E2BB1D63800DF1E11 /* MyDataViewController.swift */,
+				CE724D202BB1D64500DF1E11 /* MyDataFactory.swift */,
+			);
+			path = MyData;
 			sourceTree = "<group>";
 		};
 		CE8F9D752BA89DBB002AA060 /* RegisterToAnalyse */ = {
@@ -749,6 +787,8 @@
 		CEE734BD2A9E9AA7002320DB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CE724D1B2BB1D61500DF1E11 /* MyData */,
+				CE724D142BB1CEC700DF1E11 /* Transfers */,
 				CE6F211A2A98F656000B1B01 /* Home */,
 				CE1DCF212A9700AA00E3CC3E /* Login */,
 				CEE734C32A9E9D01002320DB /* Products */,
@@ -1051,17 +1091,20 @@
 				CE1C4AD72A984E0C00AEA219 /* Alert.swift in Sources */,
 				CE6D10B42AD602B800EFD5E7 /* OptionsTableView.swift in Sources */,
 				CEDDC8132BAA6E65001A0173 /* CustomViewButton.swift in Sources */,
-				CE270B422BACC407008CEEA9 /* MyDataViewController.swift in Sources */,
+				CE270B422BACC407008CEEA9 /* MyAccountViewController.swift in Sources */,
 				CE270B2A2BAB2B55008CEEA9 /* TransactionsViewController.swift in Sources */,
+				CE724D1D2BB1D62C00DF1E11 /* MyDataView.swift in Sources */,
 				CE5BA4CB2A97ABC500449C0A /* RegisterNameView.swift in Sources */,
 				CE7D981F2BAE00CA00A7EC39 /* PixViewModel.swift in Sources */,
 				CE270B372BAC7484008CEEA9 /* CreditCardFactory.swift in Sources */,
 				CE1B474E2A97FF8200056914 /* AuthenticatorFirebase.swift in Sources */,
 				CE8F9D6E2BA4E833002AA060 /* RegisterPasswordView.swift in Sources */,
 				CE6D10AB2AD59C7D00EFD5E7 /* Color+.swift in Sources */,
+				CE724D232BB2276000DF1E11 /* CustomMyDataView.swift in Sources */,
 				CEDDC8112BA9F04B001A0173 /* WalletFactory.swift in Sources */,
 				CE5D57ED2AFEAF6700FA99BA /* RegisterNameCoodinator.swift in Sources */,
 				CE6F21252A99227E000B1B01 /* StatementCellView.swift in Sources */,
+				CE724D182BB1CEEE00DF1E11 /* TransfersViewController.swift in Sources */,
 				CE1DCF242A97012300E3CC3E /* LoginViewController.swift in Sources */,
 				CE5BA4DD2A97EF4200449C0A /* RegisterPasswordViewModel.swift in Sources */,
 				CE5BA4C82A97AAB300449C0A /* UIViewController+.swift in Sources */,
@@ -1069,6 +1112,7 @@
 				CE5D57E92AFEA0CF00FA99BA /* LoginFactory.swift in Sources */,
 				CE94EBE62BA3C72900316987 /* CustomViewLogin.swift in Sources */,
 				CE5BA4CD2A97ABD100449C0A /* RegisterNameViewController.swift in Sources */,
+				CE724D1F2BB1D63800DF1E11 /* MyDataViewController.swift in Sources */,
 				CE8F9D7D2BA8A3E8002AA060 /* RegisterToAnalyseCoordinator.swift in Sources */,
 				CE1DCF322A9709D400E3CC3E /* ButtonDefault.swift in Sources */,
 				CEA6DC902A9D27CB004722AF /* String+.swift in Sources */,
@@ -1093,11 +1137,11 @@
 				CE270B352BAC7470008CEEA9 /* CreditCardViewController.swift in Sources */,
 				CEA6DC8B2A9CF280004722AF /* ExtratcModel.swift in Sources */,
 				CEA6DC8D2A9CFF22004722AF /* ServiceViewModel.swift in Sources */,
-				CE270B402BACC3FD008CEEA9 /* MyDataView.swift in Sources */,
+				CE270B402BACC3FD008CEEA9 /* MyAccountView.swift in Sources */,
 				CE1DCF262A97012E00E3CC3E /* LoginView.swift in Sources */,
 				CE5D57EB2AFEA2D400FA99BA /* LoginCoordinatoor.swift in Sources */,
 				CE6F211E2A98F674000B1B01 /* HomeViewController.swift in Sources */,
-				CE270B442BACC412008CEEA9 /* MyDataFactory.swift in Sources */,
+				CE270B442BACC412008CEEA9 /* MyAccountFactory.swift in Sources */,
 				CEE734BC2A9E5F6B002320DB /* FormatterNumber.swift in Sources */,
 				CE270B3B2BAC7BDE008CEEA9 /* CustomImageCreditCard.swift in Sources */,
 				CE6F21272A99229C000B1B01 /* CustomStatementTableViewCell.swift in Sources */,
@@ -1106,6 +1150,7 @@
 				CE8F9D702BA4E8A0002AA060 /* CustomViewRegisterPassword.swift in Sources */,
 				CE1FF8FE2B03A9D30021F67B /* ProductsCoordinator.swift in Sources */,
 				CE5F7F642AD0491F00410BFF /* CollectionCellView.swift in Sources */,
+				CE724D132BB1CD1500DF1E11 /* TransactionsCoordinator.swift in Sources */,
 				CE7D98252BAE05B700A7EC39 /* InsertMoneyCoordinator.swift in Sources */,
 				CEAC14B62AA13B8E00A56C7C /* ApiStatement.swift in Sources */,
 				CE5F7F622AD048EA00410BFF /* CustomCollectionCell.swift in Sources */,
@@ -1113,6 +1158,8 @@
 				CEDDC80D2BA9F022001A0173 /* WalletViewController.swift in Sources */,
 				CE1FF9022B03AE7A0021F67B /* InsertMoneyFactory.swift in Sources */,
 				CE2F3B8A2B55E54400F68503 /* ViewCodeUIView.swift in Sources */,
+				CE724D212BB1D64500DF1E11 /* MyDataFactory.swift in Sources */,
+				CE724D162BB1CEE300DF1E11 /* TransfersView.swift in Sources */,
 				CE270B332BAC7464008CEEA9 /* CreditCardView.swift in Sources */,
 				CEE2F2642BA4CFDD00362BB0 /* RegisterEmailView.swift in Sources */,
 				CE8F9D722BA4EC38002AA060 /* RegisterPasswordViewController.swift in Sources */,
@@ -1132,6 +1179,7 @@
 				CE0EF1162AFBBE8D00ED76B7 /* HomeFactory.swift in Sources */,
 				CE6F211C2A98F663000B1B01 /* HomeView.swift in Sources */,
 				CE7D98232BAE042D00A7EC39 /* WalletCoordinator.swift in Sources */,
+				CE724D1A2BB1CF0600DF1E11 /* TransfersFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

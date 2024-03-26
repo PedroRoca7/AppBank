@@ -40,7 +40,8 @@ final class InsertMoneyViewController: UIViewController {
     
     private func setupNavigationBar() {
         navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationBar.backItem?.title = "Inserir Dinheiro"
+        navigationController?.navigationBar.topItem?.title = "Inserir dinheiro"
+        navigationController?.navigationBar.tintColor = .black
     }
     
 }

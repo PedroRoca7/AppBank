@@ -19,9 +19,9 @@ final class WalletViewController: UIViewController {
         return element
     }()
     
-    private var coordinator: WalletCoordinator
+    private var coordinator: WalletCoordinating
     
-    init(coordinator: WalletCoordinator) {
+    init(coordinator: WalletCoordinating) {
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }
@@ -37,6 +37,7 @@ final class WalletViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         insertMoneyButtonTapped()
+        transferButtonTapped()
     }
     
     private func insertMoneyButtonTapped() {
@@ -45,4 +46,9 @@ final class WalletViewController: UIViewController {
         }.disposed(by: disposeBag)
     }
     
+    private func transferButtonTapped() {
+        viewScreen.transferButton.button.rx.tap.bind {
+            self.coordinator.showTransferScreen()
+        }.disposed(by: disposeBag)
+    }
 }

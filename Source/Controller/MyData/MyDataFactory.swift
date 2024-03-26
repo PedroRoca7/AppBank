@@ -2,13 +2,13 @@
 //  MyDataFactory.swift
 //  AppBank
 //
-//  Created by Pedro Henrique on 21/03/24.
+//  Created by Pedro Henrique on 25/03/24.
 //
 
-import Foundation
+import UIKit
 
 enum MyDataFactory {
-    static func makeModule() -> MyDataViewController {
+    static func makeModule() -> UIViewController {
         let viewController = MyDataViewController()
         return viewController
     }

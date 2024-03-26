@@ -1,5 +1,5 @@
 //
-//  MyDataView.swift
+//  MyAccountView.swift
 //  AppBank
 //
 //  Created by Pedro Henrique on 21/03/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MyDataView: UIView {
+final class MyAccountView: UIView {
     // MARK: ElementsVisual
     
     lazy var mainStackView: SimpleScrollView = {
@@ -99,7 +99,7 @@ final class MyDataView: UIView {
     }
 }
 
-extension MyDataView: ViewCodeUIView {
+extension MyAccountView: ViewCodeUIView {
     
     // MARK: Add Elements e Constraints
     

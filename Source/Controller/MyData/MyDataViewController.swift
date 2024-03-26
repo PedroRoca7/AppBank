@@ -2,17 +2,15 @@
 //  MyDataViewController.swift
 //  AppBank
 //
-//  Created by Pedro Henrique on 21/03/24.
+//  Created by Pedro Henrique on 25/03/24.
 //
 
-import Foundation
 import UIKit
 
 final class MyDataViewController: UIViewController {
     
     lazy var viewScreen: MyDataView = {
         let element = MyDataView()
-        element.translatesAutoresizingMaskIntoConstraints = false
         return element
     }()
         
@@ -22,5 +20,12 @@ final class MyDataViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationBar()
+    }
+    
+    private func setupNavigationBar() {
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.topItem?.title = "Meus dados"
+        navigationController?.navigationBar.tintColor = .black
     }
 }

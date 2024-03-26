@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class TransactionsViewController: UIViewController {
     
@@ -16,6 +18,7 @@ final class TransactionsViewController: UIViewController {
         return element
     }()
     
+    private var disposeBag = DisposeBag()
     private var viewModel: TransactionsViewModeling
     
     init(viewModel: TransactionsViewModeling) {
@@ -38,6 +41,20 @@ final class TransactionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configDelegates()
+        insertMoneyButtonTapped()
+        transferButtonTapped()
+    }
+    
+    private func insertMoneyButtonTapped() {
+        viewScreen.insertMoneyButton.button.rx.tap.bind {
+            self.viewModel.showInsertMoneyScreen()
+        }.disposed(by: disposeBag)
+    }
+    
+    private func transferButtonTapped() {
+        viewScreen.transferButton.button.rx.tap.bind {
+            self.viewModel.showTransferScreen()
+        }.disposed(by: disposeBag)
     }
     
     private func configDelegates() {

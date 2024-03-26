@@ -1,18 +1,18 @@
 //
-//  WalletCoordinator.swift
+//  TransactionsCoordinator.swift
 //  AppBank
 //
-//  Created by Pedro Henrique on 22/03/24.
+//  Created by Pedro Henrique on 25/03/24.
 //
 
 import UIKit
 
-protocol WalletCoordinating {
+protocol TransactionsCoordinating {
     func showInsertMoneyScreen()
     func showTransferScreen()
 }
 
-final class WalletCoordinator: WalletCoordinating {
+final class TransactionsCoordinator: TransactionsCoordinating {
     
     //MARK: Propertys
     
@@ -33,5 +33,4 @@ final class WalletCoordinator: WalletCoordinating {
         let transferView = TransfersFactory.makeModule(navigationController: navigationController)
         navigationController.pushViewController(transferView, animated: true)
     }
-    
 }

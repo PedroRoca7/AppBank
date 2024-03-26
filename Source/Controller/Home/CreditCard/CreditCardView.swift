@@ -16,7 +16,6 @@ final class CreditCardView: UIView {
                                                                    bottom: 15,
                                                                    trailing: 20))
         element.translatesAutoresizingMaskIntoConstraints = false
-        
         return element
     }()
         
