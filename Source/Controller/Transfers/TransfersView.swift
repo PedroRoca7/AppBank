@@ -84,7 +84,7 @@ extension TransfersView: ViewCodeUIView {
             headerBackground.topAnchor.constraint(equalTo: self.topAnchor),
             headerBackground.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             headerBackground.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            headerBackground.heightAnchor.constraint(equalToConstant: 250),
+            headerBackground.heightAnchor.constraint(equalToConstant: 200),
             
             mainStackView.topAnchor.constraint(equalTo: self.topAnchor),
             mainStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
