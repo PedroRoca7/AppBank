@@ -23,21 +23,21 @@ A aplicação possui dependências externas (SPM - Firebase / CocoaPods - RxSwif
 
 ## Demonstração
 <p align="center">
-    <img width=24% src="https://github.com/PedroRoca7/AppBank/blob/main/FilesImages/login.png"/>
-    <img width=24% src="https://github.com/PedroRoca7/AppBank/blob/main/FilesImages/registerName.png"/>
-    <img width=24% src="https://github.com/PedroRoca7/AppBank/blob/main/FilesImages/registerEmail.png"/>
-    <img width=24% src="https://github.com/PedroRoca7/AppBank/blob/main/FilesImages/registerPassword.png"/>
-    <img width=24% src="https://github.com/PedroRoca7/AppBank/blob/main/FilesImages/registerPassword2.png"/>
-    <img width=24% src="https://github.com/PedroRoca7/AppBank/blob/main/FilesImages/request.png"/>
+    <img width=30% src="https://github.com/PedroRoca7/AppBank/blob/main/FilesImages/login.png"/>
+    <img width=30% src="https://github.com/PedroRoca7/AppBank/blob/main/FilesImages/registerName.png"/>
+    <img width=30% src="https://github.com/PedroRoca7/AppBank/blob/main/FilesImages/registerEmail.png"/>
+    <img width=30% src="https://github.com/PedroRoca7/AppBank/blob/main/FilesImages/registerPassword.png"/>
+    <img width=30% src="https://github.com/PedroRoca7/AppBank/blob/main/FilesImages/registerPassword2.png"/>
+    <img width=30% src="https://github.com/PedroRoca7/AppBank/blob/main/FilesImages/request.png"/>
 </p>
 <p align="center">
-    <img width=24% src="https://github.com/PedroRoca7/AppBank/blob/main/FilesImages/homeWallet.png"/>
-    <img width=24% src="https://github.com/PedroRoca7/AppBank/blob/main/FilesImages/transfer.png"/>
-    <img width=24% src="https://github.com/PedroRoca7/AppBank/blob/main/FilesImages/pix.png"/>
-    <img width=24% src="https://github.com/PedroRoca7/AppBank/blob/main/FilesImages/homeTransactions.png"/>
-    <img width=24% src="https://github.com/PedroRoca7/AppBank/blob/main/FilesImages/imageCreditCard.png"/>
-    <img width=24% src="https://github.com/PedroRoca7/AppBank/blob/main/FilesImages/homeMyAccount.png"/>
-    <img width=24% src="https://github.com/PedroRoca7/AppBank/blob/main/FilesImages/myData.png"/>
+    <img width=30% src="https://github.com/PedroRoca7/AppBank/blob/main/FilesImages/homeWallet.png"/>
+    <img width=30% src="https://github.com/PedroRoca7/AppBank/blob/main/FilesImages/transfer.png"/>
+    <img width=30% src="https://github.com/PedroRoca7/AppBank/blob/main/FilesImages/pix.png"/>
+    <img width=30% src="https://github.com/PedroRoca7/AppBank/blob/main/FilesImages/homeTransactions.png"/>
+    <img width=30% src="https://github.com/PedroRoca7/AppBank/blob/main/FilesImages/imageCreditCard.png"/>
+    <img width=30% src="https://github.com/PedroRoca7/AppBank/blob/main/FilesImages/homeMyAccount.png"/>
+    <img width=30% src="https://github.com/PedroRoca7/AppBank/blob/main/FilesImages/myData.png"/>
 </p>
 
 ## Idiomas disponíveis
