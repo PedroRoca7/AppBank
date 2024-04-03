@@ -18,7 +18,7 @@ A aplicação possui dependências externas (SPM - Firebase / CocoaPods - RxSwif
 | **Framework** |   **Uso**  
 |---------------|-----------
 | UIKit         | Aplicação com view code
-| Fiebase       | Autenticação / Banco de dados
+| Firebase       | Autenticação / Banco de dados
 | RxSwift       | Programação reativa
 
 ## Demonstração
@@ -43,7 +43,7 @@ A aplicação possui dependências externas (SPM - Firebase / CocoaPods - RxSwif
 ## Idiomas disponíveis
 |     **Idiomas**     |
 |---------------------|
-| Português - Estados Unidos  |
+| Português - Brasil  |
 
 ## Licença
 Esse projeto é open source e licenciado pela [MIT License](https://github.com/PedroRoca7/AppBank/blob/main/LICENSE).
