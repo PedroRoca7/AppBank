@@ -14,6 +14,7 @@ protocol HomeViewModelProtocol: AnyObject {
 
 protocol HomeViewModeling: AnyObject {
     func loadStatements()
+    func showPixScreen(_ pixKey: String)
     var delegate: HomeViewModelProtocol? { get set }
     var bankExtracts: Extratcts { get }
 }
@@ -46,6 +47,10 @@ class HomeViewModel: HomeViewModeling {
         }
     }
         
+    public func showPixScreen(_ pixKey: String) {
+        coordinator.showPixScreen(pixKey)
+    }
+    
     private func currentBalance() {
         var balance: Double = 0
         for bankStatement in bankExtracts {
