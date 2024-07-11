@@ -69,11 +69,39 @@ class HomeViewController: UIViewController {
         hideKeyBoardWhenTapped()
         setupDelegates()
         selectedDefaultCellColletionView()
+        verifyPasteBoard()
     }
 }
 
 private extension HomeViewController {
 
+    func verifyPasteBoard() {
+        if let pasteboardString = UIPasteboard.general.string {
+            if isPixKey(pasteboardString) {
+                showAlertWithPixKey(pasteboardString)
+            }
+        }
+    }
+    
+    func isPixKey(_ pasteboardString: String) -> Bool {
+        return true
+    }
+    
+    func showAlertWithPixKey(_ pixKey: String) {
+        let alert = UIAlertController(title: "Chave Pix Detectada", message: "Deseja fazer um pix para a chave \(pixKey)?", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Fazer Pix", style: .default, handler: { [weak self] _ in
+            guard let self else { return }
+            self.viewModel.showPixScreen(pixKey)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+        
+        DispatchQueue.main.async {
+            self.present(alert, animated: true)
+        }
+    }
+    
     func selectedDefaultCellColletionView() {
         let indexPath = IndexPath(item: 0,section: 0)
         viewScreen.collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .top)
